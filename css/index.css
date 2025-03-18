@@ -23,7 +23,7 @@ main {
 }
 
 .doodleInicio {
-    background-image: url(img/doodleInicio.png);
+    background-image: url("../img/doodleInicio.png");
     background-repeat: no-repeat;
     background-size: contain;
     width: 100%;
@@ -31,7 +31,7 @@ main {
 }
 
 .imagenInicio{
-    background-image: url(img/imagenInicio.png);
+    background-image: url("../img/imagenInicio.png");
     background-size: contain; 
     background-repeat: no-repeat;
     background-position: right center; 
@@ -377,7 +377,7 @@ footer{
 }
 
 .doodleFooter{
-    background-image: url('/img/doodleInicio.png');
+    background-image: url("../img/doodleInicio.png");
     background-repeat: no-repeat;
     background-size: contain; 
     width: 100%;
