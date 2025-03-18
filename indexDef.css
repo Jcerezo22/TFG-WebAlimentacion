@@ -1,0 +1,792 @@
+/* Default ---- < 400px */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    min-height: auto; 
+    height: auto; 
+}
+
+:root{
+    background-color: white;
+}
+
+.bannerInicio {
+    background-color: #e4dbbe;
+    width: 100%;
+    height: auto;
+    min-height: 125px;  
+    display: flex;
+    position: relative;
+}
+
+.doodleInicio {
+    background-image: url(img/doodleInicio.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 100%;
+    height: auto;
+}
+
+.imagenInicio{
+    background-image: url(img/imagenInicio.png);
+    background-size: contain; 
+    background-repeat: no-repeat;
+    background-position: right center; 
+    width: 100%; 
+    height: 100%;
+}
+
+.tituloInicio {
+    font-family: "Anton", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1rem;
+    color: #98a533; 
+    position: absolute;
+    top: 30%;  /* Centra el título verticalmente */
+    right: 40%;
+}
+
+.tituloInicio  span{
+    color: #d35318; 
+}
+
+.promocionIncio{
+    background-color: white;
+    border-bottom: 1px solid #d35318 ;
+    width: 100%;
+    height: auto;
+    min-height: 20px;
+    position: relative;
+}
+
+.cajasProductos {
+    display: grid;
+    grid-template-columns: repeat(1, 180px);  
+    row-gap: 20px;
+    padding: 22px;
+    margin: auto; 
+    align-items: center;
+    justify-content: center;
+    margin-top: 40px;
+
+}
+
+div.producto {
+    padding: 20px;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+    height: 150px; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px; 
+}
+
+div#productoHuevos{
+    background-color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+div#productoHuevos::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60%;
+    background-color: #eed8c3;
+    z-index: 0;
+    border-radius: 10px; 
+}
+
+#productoHuevos img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-53%, -80%);
+    width: 200px;
+    height: auto;
+    z-index: 1;
+}
+
+
+div#productoAceite{
+    background-color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+div#productoAceite::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60%;
+    background-color: #c3981d;
+    z-index: 0;
+    border-radius: 10px; 
+}
+
+#productoAceite img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-53%, -80%);
+    width: 280px;
+    height: auto;
+    z-index: 1;
+}
+
+div#productoLeche{
+    background-color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+div#productoLeche::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60%;
+    background-color: #c6c6c2;
+    z-index: 0;
+    border-radius: 10px; 
+}
+
+#productoLeche img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -80%);
+    width: 170px;
+    height: auto;
+    z-index: 1;
+}
+
+div#productoCarne{
+    background-color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+div#productoCarne::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60%;
+    background-color: #d2938a;
+    z-index: 0;
+    border-radius: 10px; 
+}
+
+#productoCarne img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -67%);
+    width: 140px;
+    height: auto;
+    z-index: 1;
+}
+
+div#productoPescado{
+    background-color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+div#productoPescado::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60%;
+    background-color: #f1e2dd;
+    z-index: 0;
+    border-radius: 10px; 
+}
+
+#productoPescado img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-52%, -67%);
+    width: 200px;
+    height: auto;
+    z-index: 1;
+}
+
+div#productoNs{
+    background-color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+div#productoNs::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60%;
+    background-color: #aa9d98;
+    z-index: 0;
+    border-radius: 10px; 
+}
+
+#tituloProduc{
+    font-family: "Anton", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 2rem;
+    color: #d35318; 
+    position: absolute;
+    left: 27%;
+}
+
+@font-face{
+    font-family:Gagalin;
+    src: url('tipoLetra/Gagalin-Regular.otf');
+    font-weight:normal;
+    font-style:normal;
+}
+
+
+div#productoHuevos .nombre{
+    color: #7a563c;
+    font-size: 2rem;
+    position: absolute;
+    margin-top: 70px;
+    z-index: 1;
+    font-family: 'Gagalin';
+}
+
+div#productoHuevos .flecha{
+    color: #7a563c;
+    font-size: 3rem;
+    position: absolute;
+    margin-top:130px;
+    z-index: 1;
+    font-family: 'Gagalin';
+
+}
+
+div#productoAceite .nombre{
+    color: #fadd10;
+    font-size: 2rem;
+    position: absolute;
+    margin-top: 80px;
+    z-index: 1;
+    font-family: 'Gagalin';
+}
+
+div#productoAceite .flecha{
+    color: #fadd10;
+    font-size: 3rem;
+    position: absolute;
+    margin-top: 140px;
+    z-index: 1;
+    font-family: 'Gagalin';
+}
+
+div#productoLeche .nombre{
+    color: #9da6a4;
+    font-size: 2rem;
+    position: absolute;
+    margin-top: 90px;
+    z-index: 1;
+    font-family: 'Gagalin';
+}
+
+div#productoLeche .flecha{
+    color: #9da6a4;
+    font-size: 3rem;
+    position: absolute;
+    margin-top: 140px;
+    z-index: 1;
+    font-family: 'Gagalin';
+}
+
+div#productoCarne .nombre{
+    color: #6f1e1e;
+    font-size: 2rem;
+    position: absolute;
+    margin-top: 90px;
+    z-index: 1;
+    font-family: 'Gagalin';
+}
+
+div#productoCarne .flecha{
+    color: #6f1e1e;
+    font-size: 3rem;
+    position: absolute;
+    margin-top: 140px;
+    z-index: 1;
+    font-family: 'Gagalin';
+}
+
+div#productoPescado .nombre{
+    color: #ee9157;
+    font-size: 2rem;
+    position: absolute;
+    margin-top: 90px;
+    z-index: 1;
+    font-family: 'Gagalin';
+}
+
+div#productoPescado .flecha{
+    color: #ee9157;
+    font-size: 3rem;
+    position: absolute;
+    margin-top: 140px;
+    z-index: 1;
+    font-family: 'Gagalin';
+}
+
+footer{
+    background-color: #98a533;
+    width: 100%;
+    height: auto;
+    min-height: 120px;
+    margin-top: 60px;
+    position: relative;
+}
+
+.contenedorContacto{
+    background-color: #e4dbbe;
+    width: 60%;
+    height: 80px;
+    position: absolute;
+    top: 10%;
+    right: 38%;
+    border-radius: 10px;
+}
+
+.doodleFooter{
+    background-image: url('/img/doodleInicio.png');
+    background-repeat: no-repeat;
+    background-size: contain; 
+    width: 100%;
+    height: 80px;
+}  
+
+.contenedorLogo{
+    background-color: #e4dbbe;
+    width: 30%;
+    height: 52px;
+    position: absolute;
+    top: 10%;
+    right: 2%;
+    border-radius: 10px;
+    display: flex;  
+    justify-content: center; 
+    align-items: center;
+}
+
+.contenedorLogo img{
+    width: 45px;
+    height: auto;
+}
+
+.contenedorRedes {
+    background-color: #e4dbbe;
+    width: 30%;
+    height: 20px;
+    position: absolute;
+    top: 60%;
+    right: 2%;
+    border-radius: 10px;
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+}
+
+.contenedorRedes ul {
+    list-style: none; 
+    padding: 0;
+    margin: 0;
+    display: flex; 
+    gap: 10px; 
+}
+
+.contenedorRedes ul li {
+    display: inline-block;
+    font-size: 3pt; 
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+/* .contenedorRedes ul li.instagram {
+    width: 0px;
+} */
+
+.contenedorPrivacidad{
+    background-color: #e4dbbe;
+    width: 97%;
+    height: 15px;
+    position: absolute;
+    top: 85%;
+    right: 1.5%;
+    border-radius: 10px;
+    font-size: 3pt;
+    text-decoration: underline;
+    display: flex;  
+    justify-content: center; 
+    align-items: center;
+}
+
+.contenedorPrivacidad ul{
+    list-style: none; 
+    padding: 0; 
+    margin: 0;
+    
+}
+
+.contenedorPrivacidad ul li {
+    display: inline;
+    margin-right: 10px; 
+}
+
+
+
+/* ===================== MEDIA QUERY  400px - 500px  ================================= */
+@media (min-width: 400px) {
+    .bannerInicio {
+        min-height: 130px;  
+    }
+
+    .tituloInicio {
+        font-size: 1.5rem;
+    }
+
+    .promocionIncio{
+        min-height: 30px;
+    }
+
+    .cajasProductos {
+        grid-template-columns: repeat(2, 180px);  
+        column-gap: 30px;
+        margin-top: 50px;
+    }
+
+    #tituloProduc{
+        left: 37%;
+    }
+
+    footer{
+        min-height: 130px;
+    }
+    
+    .doodleFooter{
+        height: 130px;
+    } 
+}
+
+/* ===================== MEDIA QUERY  500px - 800px  ================================= */
+@media (min-width: 501px) {
+    .bannerInicio {
+        min-height: 190px; 
+    }
+
+    .tituloInicio {
+        font-size: 2rem;
+    }
+
+    .promocionIncio{
+        min-height: 40px;
+    }
+
+    #tituloProduc{
+        left: 40%;
+    }
+
+    footer{
+        min-height: 190px;
+    }
+    
+    .doodleFooter{
+        height: 190px;
+    } 
+}
+
+/* ===================== MEDIA QUERY  801px - 1000px  ================================= */
+@media (min-width: 801px) {
+    .bannerInicio {
+        min-height: 250px;
+    }
+
+    .tituloInicio {
+        font-size: 3rem;
+    }
+
+    
+    .promocionIncio{
+        min-height: 50px;
+    }
+
+    .cajasProductos {
+        grid-template-columns: repeat(3, 180px);  
+        column-gap: 30px;
+        margin-top: 70px;
+    }
+
+    #tituloProduc{
+        font-size: 3rem;
+        left: 40%;
+    }
+
+    footer{
+        min-height: 250px;
+    }
+    
+    .doodleFooter{
+        height: 250px;
+    } 
+}
+
+/* ===================== MEDIA QUERY  801px - 1200px  ================================= */
+@media (min-width: 1001px) {
+    .bannerInicio {
+        min-height: 350px;
+    }
+
+    .cajasProductos {
+        grid-template-columns: repeat(3, 280px);  
+        column-gap: 30px;
+        margin-top: 80px;
+    }
+
+    div.producto {
+        height: 250px; 
+    }
+    
+    #productoHuevos img {
+        width: 300px;
+    }
+
+    #productoAceite img {
+        width: 350px;
+    }
+
+    #productoLeche img {
+        width: 250px;
+    }
+
+    #productoCarne img {
+        width: 220px;
+    }
+
+    #productoPescado img {
+        width: 260px;
+    }
+
+    
+    div#productoHuevos .nombre{
+        font-size: 3rem;
+        margin-top: 100px;
+    }
+
+    div#productoHuevos .flecha{
+        font-size: 5rem;
+        margin-top:170px;
+    }
+
+    div#productoAceite .nombre{
+        font-size: 3rem;
+        margin-top: 110px;
+    }
+
+    div#productoAceite .flecha{
+        font-size: 5rem;
+        margin-top: 180px;
+    }
+
+    div#productoLeche .nombre{
+        font-size: 3rem;
+        margin-top: 130px;
+    }
+
+    div#productoLeche .flecha{
+        font-size: 5rem;
+        margin-top: 190px;
+    }
+
+    div#productoCarne .nombre{
+        font-size: 3rem;
+        margin-top: 130px;
+    }
+
+    div#productoCarne .flecha{
+        font-size: 5rem;
+        margin-top: 190px;
+    }
+
+    div#productoPescado .nombre{
+        font-size: 3rem;
+        margin-top: 140px;
+    }
+
+    div#productoPescado .flecha{
+        font-size: 5rem;
+        margin-top: 200px;
+    }
+
+    #tituloProduc{
+        font-size: 3.5rem;
+        left: 40%;
+    }
+
+    footer{
+        min-height: 350px;
+    }
+    
+    .doodleFooter{
+        height: 350px;
+    } 
+}
+
+/* ===================== MEDIA QUERY  1201px - 1600px  ================================= */
+@media (min-width: 1201px) {
+    .bannerInicio {
+        min-height: 405px;
+    }
+
+    .tituloInicio {
+        font-size: 4rem;
+    }
+
+    .promocionIncio{
+        min-height: 60px;
+    }
+
+    .cajasProductos {
+        grid-template-columns: repeat(3, 380px);  
+        column-gap: 30px;
+        margin-top: 90px;
+    }
+
+    div.producto {
+        height: 350px; 
+    }
+    
+    #productoHuevos img {
+        width: 400px;
+    }
+
+    #productoAceite img {
+        width: 450px;
+    }
+
+    #productoLeche img {
+        width: 350px;
+    }
+
+    #productoCarne img {
+        width: 320px;
+    }
+
+    #productoPescado img {
+        width: 380px;
+    }
+
+    
+    div#productoHuevos .nombre{
+        font-size: 4rem;
+        margin-top: 150px;
+    }
+
+    div#productoHuevos .flecha{
+        font-size: 6rem;
+        margin-top:230px;
+    }
+
+    div#productoAceite .nombre{
+        font-size: 4rem;
+        margin-top: 150px;
+    }
+
+    div#productoAceite .flecha{
+        font-size: 6rem;
+        margin-top: 230px;
+    }
+
+    div#productoLeche .nombre{
+        font-size: 4rem;
+        margin-top: 165px;
+    }
+
+    div#productoLeche .flecha{
+        font-size: 6rem;
+        margin-top: 240px;
+    }
+
+    div#productoCarne .nombre{
+        font-size: 4rem;
+        margin-top: 190px;
+    }
+
+    div#productoCarne .flecha{
+        font-size: 6rem;
+        margin-top: 270px;
+    }
+
+    div#productoPescado .nombre{
+        font-size: 4rem;
+        margin-top: 190px;
+    }
+
+    div#productoPescado .flecha{
+        font-size: 6rem;
+        margin-top: 270px;
+    }
+
+    #tituloProduc{
+        font-size: 4rem;
+        left: 40%;
+    }
+
+    footer{
+        min-height: 405px;
+    }
+    
+    .doodleFooter{
+        height: 405px;
+    } 
+}
+
+/* ===================== MEDIA QUERY  1601px  ================================= */
+@media (min-width: 1601px) {
+    .bannerInicio {
+        min-height: 510px;
+    }
+
+    .tituloInicio {
+        font-size: 5rem;
+    }
+
+    .promocionIncio{
+        min-height: 70px;
+    }
+
+    footer{
+        min-height: 510px;
+    }
+    
+    .doodleFooter{
+        height: 510px;
+    } 
+}
