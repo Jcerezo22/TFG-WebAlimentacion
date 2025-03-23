@@ -260,7 +260,7 @@ div#productoNs::after {
 
 @font-face{
     font-family:Gagalin;
-    src: url('tipoLetra/Gagalin-Regular.otf');
+    src: url('../tipoLetra/Gagalin-Regular.otf');
     font-weight:normal;
     font-style:normal;
 }
