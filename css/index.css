@@ -230,23 +230,34 @@ div#productoPescado::after {
     z-index: 1;
 }
 
-div#productoNs{
+div#productoHarina{
     background-color: white;
     position: relative;
     overflow: hidden;
 }
 
-div#productoNs::after {
+div#productoHarina::after {
     content: "";
     position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
     height: 60%;
-    background-color: #aa9d98;
+    background-color: #bda98c;
     z-index: 0;
     border-radius: 10px; 
 }
+
+#productoHarina img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-48%, -70%);
+    width: 150px;
+    height: auto;
+    z-index: 1;
+}
+
 
 #tituloProduc{
     font-family: "Anton", sans-serif;
@@ -350,6 +361,24 @@ div#productoPescado .nombre{
 
 div#productoPescado .flecha{
     color: #ee9157;
+    font-size: 3rem;
+    position: absolute;
+    margin-top: 140px;
+    z-index: 1;
+    font-family: 'Gagalin';
+}
+
+div#productoHarina .nombre{
+    color: #604c3a;
+    font-size: 2rem;
+    position: absolute;
+    margin-top: 90px;
+    z-index: 1;
+    font-family: 'Gagalin';
+}
+
+div#productoHarina .flecha{
+    color: #604c3a;
     font-size: 3rem;
     position: absolute;
     margin-top: 140px;
@@ -594,7 +623,10 @@ footer{
         width: 260px;
     }
 
-    
+    #productoHarina img {
+        width: 260px;
+    }
+
     div#productoHuevos .nombre{
         font-size: 3rem;
         margin-top: 100px;
@@ -641,6 +673,16 @@ footer{
     }
 
     div#productoPescado .flecha{
+        font-size: 5rem;
+        margin-top: 200px;
+    }
+
+    div#productoHarina .nombre{
+        font-size: 3rem;
+        margin-top: 140px;
+    }
+
+    div#productoHarina .flecha{
         font-size: 5rem;
         margin-top: 200px;
     }
@@ -703,6 +745,10 @@ footer{
         width: 380px;
     }
 
+    #productoHarina img {
+        width: 340px;
+    }
+
     
     div#productoHuevos .nombre{
         font-size: 4rem;
@@ -750,6 +796,16 @@ footer{
     }
 
     div#productoPescado .flecha{
+        font-size: 6rem;
+        margin-top: 270px;
+    }
+
+    div#productoHarina .nombre{
+        font-size: 4rem;
+        margin-top: 190px;
+    }
+
+    div#productoHarina .flecha{
         font-size: 6rem;
         margin-top: 270px;
     }
