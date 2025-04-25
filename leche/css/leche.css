@@ -1,0 +1,235 @@
+/* Default ---- < 400px */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'Gliker';
+    src: url('../../tipoLetra/Gliker-Regular.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+#pruebamenu {
+    height: 50px;
+    background-color: #77b4d8;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+#pestannas {
+    border: none;
+    box-shadow: none;
+    margin: 0;
+    padding: 0;
+}
+
+#pestannas ol {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+	gap: 6px;
+}
+
+#pestannas li {
+	flex: 1 1 auto;
+	width: 100%;
+}
+
+#pestannas li a {
+	display: block;
+    width: 100%;
+    padding: 10px;
+	font-size: 15px;
+	color: white;
+    background-color: #77b4d8;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+#pestannas li a:hover {
+    background-color: #2875a8;
+    color: white;
+}
+
+#pestannas .ui-tabs-active a {
+    background-color: #2980b9;
+    font-weight: bold;
+}
+
+#pestannas .ui-tabs-panel {
+    border: none;
+    padding: 0;
+}
+
+#pestannas .ui-widget-header {
+    border: none;
+    background-color: #efefef;
+}
+
+#bannerLeche {
+    background-image: url(../../img/fondo_leche2.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: auto;
+    min-height: 350px;
+    position: relative;
+}
+
+#tituloLeche {
+    font-family: 'Gliker';
+    color: #77b4d8;
+    position: absolute;
+	font-size: 70px;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-61%);
+	z-index: 2;
+} 
+
+#introLeche {
+    position: absolute;
+    top: 110px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 55%;
+    font-size: 14px;
+    color: #545454;
+    line-height: 1.4;
+    font-weight: 500;
+    text-align: center;
+	z-index: 2;
+    
+}
+
+#lecheBannerImg {
+    position: absolute;
+    top: 25px;
+    left: 70%;
+    height: 76px;
+    transform: rotate(18deg);
+	z-index: 1;
+}
+
+
+/* ===================== MEDIA QUERY  400px - 500px  ================================= */
+@media (min-width: 400px) {
+	#pestannas li a {
+		font-size: 16px;
+	}
+}
+
+/* ===================== MEDIA QUERY  500px - 800px  ================================= */
+@media (min-width: 501px) {
+	#pestannas li a {
+		font-size: 17px;
+	}
+}
+
+/* ===================== MEDIA QUERY  801px - 1000px  ================================= */
+@media (min-width: 801px) {
+	#pestannas li a {
+		font-size: 18px;
+	}
+	
+	#pestannas ol {
+    	flex-direction: row;
+	}
+
+	#pestannas li {
+		width: auto;
+	}
+}
+
+/* ===================== MEDIA QUERY  1001px - 1200px  ================================= */
+@media (min-width: 1001px) {
+	#pestannas li a {
+		font-size: 19px;
+	}
+}
+
+/* ===================== MEDIA QUERY  1201px - 1600px  ================================= */
+@media (min-width: 1201px) {
+	
+}
+
+/* ===================== MEDIA QUERY  1601px  ================================= */
+@media (min-width: 1601px) {
+	#pestannas li a {
+		font-size: 20px;
+	}
+}
+
+/* ---------- RESPONSIVE: AJUSTES EN MÓVIL ------------- */
+/* @media (max-width: 568px) {
+    #tituloLeche {
+        font-size: 60px;
+        left: 10%;
+        top: 20px;
+    }
+
+    #introLeche {
+        width: 80%;
+        left: 10%;
+        top: 100px;
+        font-size: 16px;
+    }
+
+    #lecheBannerImg {
+        position: static;
+        display: block;
+        margin: 20px auto;
+        transform: none;
+        height: auto;
+        max-width: 80%;
+    }
+} */
+
+/* ----------- BANNER Y TÍTULOS ------------------ */
+
+
+
+/* #lecheBannerImg {
+    position: absolute;
+    top: 26px;
+    left: 65%;
+    height: 310px;
+    transform: rotate(12deg);
+} */
+
+
+
+/* #tituloLeche {
+    font-family: 'Gliker';
+    font-size: 150px;
+    color: #77b4d8;
+    position: absolute;
+    top: 10px;
+    left: 20%;
+} */
+
+/* #introLeche {
+    position: absolute;
+    top: 185px;
+    left: 17%;
+    width: 35%;
+    font-size: 18px;
+    color: #545454;
+    line-height: 1.4;
+    font-weight: 400;
+    text-align: center;
+    
+} */
+/* background-color: white;
+    border-radius: 10px;
+    border: 2px solid #77b4d8 ;
+    padding: 12px; */
