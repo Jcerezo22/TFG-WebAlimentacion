@@ -14,9 +14,8 @@
 
 #pruebamenu {
     height: 50px;
-    background-color: #77b4d8;
+    background-color: #6e8192;
     width: 100%;
-    margin-bottom: 30px;
 }
 
 #pestannas {
@@ -48,20 +47,26 @@
     padding: 10px;
 	font-size: 15px;
 	color: white;
-    background-color: #77b4d8;
+    background-color: #6e8192;
     text-align: center;
     text-decoration: none;
     transition: background-color 0.3s;
 }
 
 #pestannas li a:hover {
-    background-color: #2875a8;
+    background-color: #8fa7bd;
     color: white;
 }
 
 #pestannas .ui-tabs-active a {
-    background-color: #2980b9;
+    background-color: #9ab5ce;
     font-weight: bold;
+    border: 2px solid #6e8192;
+}
+
+#pestannas .ui-state-active {
+    border: none;
+    box-shadow: none;
 }
 
 #pestannas .ui-tabs-panel {
@@ -71,32 +76,32 @@
 
 #pestannas .ui-widget-header {
     border: none;
-    background-color: #efefef;
+    background-color: #e0d1cb;
 }
 
-#bannerLeche {
-    background-image: url(../../img/fondo_leche2.jpg);
+#bannerPescado {
+    background-color: #e0d1cb;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     width: 100%;
     height: auto;
-    min-height: 350px;
+    min-height: 380px;
     position: relative;
 }
 
-#tituloLeche {
+#tituloPescado {
     font-family: 'Gliker';
-    color: #77b4d8;
+    color: #6e8192;
     position: absolute;
-	font-size: 70px;
-    top: 10px;
+	font-size: 45px;
+    top: 20px;
     left: 50%;
-    transform: translateX(-61%);
+    transform: translateX(-59%);
 	z-index: 2;
 } 
 
-#introLeche {
+#introPescado {
     position: absolute;
     top: 110px;
     left: 50%;
@@ -109,17 +114,17 @@
     text-align: center;
 	z-index: 2;
     background-color: white;
-    border: 2px solid #77b4d8;
+    border: 2px solid #fb8943;
     border-radius: 10px;
     padding: 10px;
 }
 
-#lecheBannerImg {
+#pescadoBannerImg {
     position: absolute;
-    top: 25px;
-    left: 70%;
-    height: 76px;
-    transform: rotate(18deg);
+    top: 23px;
+    left: 65%;
+    height: 48px;
+    transform: rotate(13deg);
 	z-index: 1;
 }
 
@@ -130,20 +135,20 @@
 		font-size: 16px;
 	}
 
-    #tituloLeche {
-        font-size: 90px;
-        top: 8px;
+    #tituloPescado {
+        font-size: 75px;
+        top: 20px;
     }
 
-    #introLeche {
+    #introPescado {
         font-size: 20px;
-        top: 130px;
+        top: 138px;
     }
 
-    #lecheBannerImg {
-        top: 17px;
-        left: 67%;
-        height: 96px;
+    #pescadoBannerImg {
+        top: 25px;
+        left: 63%;
+        height: 82px;
     }
 }
 
@@ -153,21 +158,22 @@
 		font-size: 17px;
 	}
 
-    #tituloLeche {
-        font-size: 105px;
-        top: 4px;
+    #tituloPescado {
+        font-size: 95px;
+        top: 15px;
+        transform: translateX(-62%);
     }
 
-    #introLeche {
+    #introPescado {
         font-size: 20px;
-        top: 145px;
+        top: 156px;
         width: 50%;
     }
 
-    #lecheBannerImg {
-        top: 17px;
-        left: 67%;
-        height: 115px;
+    #pescadoBannerImg {
+        top: 22px;
+        left: 63%;
+        height: 95px;
     }
     
 }
@@ -186,21 +192,23 @@
 		width: auto;
 	}
 
-    #lecheBannerImg {
-        top: 40px;
-        left: 64%;
-        height: 250px;
+    #pescadoBannerImg {
+        top: 70px;
+        left: 54%;
+        height: 177px;
+        transform: rotate(0deg);
     }
 
-    #tituloLeche {
+    #tituloPescado {
         font-size: 100px;
-        top: 12px;
-        left: 37%;
+        top: 47px;
+        left: 32%;
+        transform: translateX(-59%);
     }
 
-    #introLeche {
-        top: 140px;
-        left: 34%;
+    #introPescado {
+        top: 170px;
+        left: 28%;
         width: 40%;
         font-size: 18px;        
     }
@@ -212,41 +220,41 @@
 		font-size: 19px;
 	}
 
-    #lecheBannerImg {
-        top: 30px;
-        left: 64%;
-        height: 280px;
+    #pescadoBannerImg {
+        top: 65px;
+        left: 54%;
+        height: 210px;
     }
 
-    #tituloLeche {
+    #tituloPescado {
         font-size: 120px;
-        top: 12px;
+        top: 47px;
         left: 33%;
     }
 
-    #introLeche {
-        top: 160px;
-        left: 30%;
+    #introPescado {
+        top: 190px;
+        left: 28%;
         font-size: 18px;        
     }
 }
 
 /* ===================== MEDIA QUERY  1201px - 1600px  ================================= */
 @media (min-width: 1201px) {
-	#lecheBannerImg {
-        top: 26px;
-        left: 65%;
-        height: 310px;
+    #pescadoBannerImg {
+        top: 45px;
+        left: 55%;
+        height: 250px;
     }
 
-    #tituloLeche {
+    #tituloPescado {
         font-size: 130px;
-        top: 10px;
+        top: 50px;
         left: 33%;
     }
 
-    #introLeche {
-        top: 175px;
+    #introPescado {
+        top: 205px;
         left: 30%;
         width: 35%;
         font-size: 19px;        
@@ -259,19 +267,19 @@
 		font-size: 20px;
 	}
 
-    #lecheBannerImg {
-        top: 20px;
-        left: 65%;
-        height: 330px;
+    #pescadoBannerImg {
+        top: 50px;
+        left: 55%;
+        height: 270px;
     }
-    #tituloLeche {
+    #tituloPescado {
         font-size: 140px;
-        top: 10px;
+        top: 50px;
         left: 33%;
     }
 
-    #introLeche {
-        top: 185px;
+    #introPescado {
+        top: 225px;
         left: 30%;
         width: 40%;
         font-size: 22px;        

@@ -4,14 +4,22 @@
 		<title>Aceite </title>
 		<meta charset="utf-8" />
 		<meta name="author" content="Javier Cerezo y Alba Sánchez" />
-		<link href="css/aceite.css" rel="stylesheet" type="text/css" />
-		<script src=".js" type="text/javascript"> </script>
+		<!-- <link href="css/aceite.css" rel="stylesheet" type="text/css" /> -->
+		<link rel="stylesheet" href="css/aceite_banner.css" type="text/css" >
+        <link rel="stylesheet" href="../jquery/jquery-ui.min.css">
+        <script src="../jquery/jquery-3.7.1.min.js"></script>
+        <script src="../jquery/jquery-ui.min.js"></script>
+        <script src="js/aceite.js" type="text/javascript"> </script>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	</head>
 	<body>
 		<header>
 		
 		</header>
-		<nav class="menuHTML">
+		<nav>
+			<div id="pruebamenu"></div>
+		</nav>
+		<!-- <nav class="menuHTML">
 			<label for="menu-toggle">
 				<div class="botonMenu">
 					<span></span>
@@ -28,14 +36,46 @@
 				<li><a href="leche.html">leche</a></li>
 				<li><a href="pescado.html">pescado</a></li>
 			</ol>
-		</nav><br>
+		</nav><br> -->
 		<main>
 			<section>
-                <h1> Aceite </h1>
 				<article>
-					<div>
-						
+					<div id="bannerAceite">
+						<h1 id="tituloAceite">Aceite</h1>
+						<div id="introAceite">
+							Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+						</div>
+						<img src="../img/aceite_img.png" alt="Jarra de leche" id="aceiteBannerImg">
 					</div>
+				</article>
+				<article>
+					<div id="pestannas">
+                        <ol>
+                            <li><a href="#param">PARÁMETROS FÍSICO-QUÍMICOS</a></li>
+                            <li><a href="#cantabria">SIMULADOR</a></li>
+                            <li><a href="#cordoba">COMPARADOR DE LECHES</a></li>
+                            <li><a href="#salamanca">APLICACIONES DIETÉTICAS</a></li>
+                            <li><a href="#segovia">MAPA</a></li>
+                            <li><a href="#sevilla">CURIOSIDADES</a></li>
+							<li><a href="#sevilla">RECETAS</a></li>
+                        </ol>
+                        <div id="param">
+hola
+                        </div>
+                        <div id="cantabria">
+                        </div>
+                        <div id="cordoba">
+                        </div>
+                        <div id="salamanca">
+                        </div>
+                        <div id="segovia">
+                        </div>
+                        <div id="sevilla">
+                        </div>
+						<div id="sevilla">
+                        </div>
+                    </div>
 				</article>
 			</section>
 		</main>

@@ -14,9 +14,8 @@
 
 #pruebamenu {
     height: 50px;
-    background-color: #77b4d8;
+    background-color: #ab2a20;
     width: 100%;
-    margin-bottom: 30px;
 }
 
 #pestannas {
@@ -48,20 +47,26 @@
     padding: 10px;
 	font-size: 15px;
 	color: white;
-    background-color: #77b4d8;
+    background-color: #ab2a20;
     text-align: center;
     text-decoration: none;
     transition: background-color 0.3s;
 }
 
 #pestannas li a:hover {
-    background-color: #2875a8;
+    background-color: #df5046;
     color: white;
 }
 
 #pestannas .ui-tabs-active a {
-    background-color: #2980b9;
+    background-color: #e65d53;
     font-weight: bold;
+    border: 2px solid #ab2a20;
+}
+
+#pestannas .ui-state-active {
+    border: none;
+    box-shadow: none;
 }
 
 #pestannas .ui-tabs-panel {
@@ -71,32 +76,32 @@
 
 #pestannas .ui-widget-header {
     border: none;
-    background-color: #efefef;
+    background-color: #fbbbb1;
 }
 
-#bannerLeche {
-    background-image: url(../../img/fondo_leche2.jpg);
+#bannerCarne {
+    background-color: #fbbbb1;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     width: 100%;
     height: auto;
-    min-height: 350px;
+    min-height: 380px;
     position: relative;
 }
 
-#tituloLeche {
+#tituloCarne {
     font-family: 'Gliker';
-    color: #77b4d8;
+    color: #ab2a20;
     position: absolute;
-	font-size: 70px;
-    top: 10px;
+	font-size: 65px;
+    top: 20px;
     left: 50%;
-    transform: translateX(-61%);
+    transform: translateX(-58%);
 	z-index: 2;
 } 
 
-#introLeche {
+#introCarne {
     position: absolute;
     top: 110px;
     left: 50%;
@@ -109,17 +114,17 @@
     text-align: center;
 	z-index: 2;
     background-color: white;
-    border: 2px solid #77b4d8;
+    border: 2px solid #ab2a20;
     border-radius: 10px;
     padding: 10px;
 }
 
-#lecheBannerImg {
+#carneBannerImg {
     position: absolute;
-    top: 25px;
-    left: 70%;
-    height: 76px;
-    transform: rotate(18deg);
+    top: 23px;
+    left: 63%;
+    height: 43px;
+    transform: rotate(13deg);
 	z-index: 1;
 }
 
@@ -130,20 +135,20 @@
 		font-size: 16px;
 	}
 
-    #tituloLeche {
-        font-size: 90px;
-        top: 8px;
+    #tituloCarne {
+        font-size: 85px;
+        top: 12px;
     }
 
-    #introLeche {
+    #introCarne {
         font-size: 20px;
         top: 130px;
     }
 
-    #lecheBannerImg {
+    #carneBannerImg {
         top: 17px;
-        left: 67%;
-        height: 96px;
+        left: 63%;
+        height: 72px;
     }
 }
 
@@ -153,21 +158,21 @@
 		font-size: 17px;
 	}
 
-    #tituloLeche {
+    #tituloCarne {
         font-size: 105px;
         top: 4px;
     }
 
-    #introLeche {
+    #introCarne {
         font-size: 20px;
         top: 145px;
         width: 50%;
     }
 
-    #lecheBannerImg {
+    #carneBannerImg {
         top: 17px;
-        left: 67%;
-        height: 115px;
+        left: 63%;
+        height: 80px;
     }
     
 }
@@ -186,21 +191,22 @@
 		width: auto;
 	}
 
-    #lecheBannerImg {
-        top: 40px;
-        left: 64%;
-        height: 250px;
+    #carneBannerImg {
+        top: 70px;
+        left: 54%;
+        height: 177px;
+        transform: rotate(0deg);
     }
 
-    #tituloLeche {
+    #tituloCarne {
         font-size: 100px;
-        top: 12px;
-        left: 37%;
+        top: 47px;
+        left: 32%;
     }
 
-    #introLeche {
-        top: 140px;
-        left: 34%;
+    #introCarne {
+        top: 170px;
+        left: 29%;
         width: 40%;
         font-size: 18px;        
     }
@@ -212,20 +218,20 @@
 		font-size: 19px;
 	}
 
-    #lecheBannerImg {
-        top: 30px;
-        left: 64%;
-        height: 280px;
+    #carneBannerImg {
+        top: 65px;
+        left: 54%;
+        height: 210px;
     }
 
-    #tituloLeche {
+    #tituloCarne {
         font-size: 120px;
-        top: 12px;
+        top: 47px;
         left: 33%;
     }
 
-    #introLeche {
-        top: 160px;
+    #introCarne {
+        top: 190px;
         left: 30%;
         font-size: 18px;        
     }
@@ -233,20 +239,20 @@
 
 /* ===================== MEDIA QUERY  1201px - 1600px  ================================= */
 @media (min-width: 1201px) {
-	#lecheBannerImg {
-        top: 26px;
-        left: 65%;
-        height: 310px;
+    #carneBannerImg {
+        top: 45px;
+        left: 52%;
+        height: 250px;
     }
 
-    #tituloLeche {
+    #tituloCarne {
         font-size: 130px;
-        top: 10px;
+        top: 50px;
         left: 33%;
     }
 
-    #introLeche {
-        top: 175px;
+    #introCarne {
+        top: 205px;
         left: 30%;
         width: 35%;
         font-size: 19px;        
@@ -259,19 +265,19 @@
 		font-size: 20px;
 	}
 
-    #lecheBannerImg {
-        top: 20px;
-        left: 65%;
-        height: 330px;
+    #carneBannerImg {
+        top: 50px;
+        left: 55%;
+        height: 270px;
     }
-    #tituloLeche {
+    #tituloCarne {
         font-size: 140px;
-        top: 10px;
+        top: 50px;
         left: 33%;
     }
 
-    #introLeche {
-        top: 185px;
+    #introCarne {
+        top: 225px;
         left: 30%;
         width: 40%;
         font-size: 22px;        

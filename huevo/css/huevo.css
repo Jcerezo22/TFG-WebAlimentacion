@@ -14,9 +14,8 @@
 
 #pruebamenu {
     height: 50px;
-    background-color: #77b4d8;
+    background-color: #e78224;
     width: 100%;
-    margin-bottom: 30px;
 }
 
 #pestannas {
@@ -40,6 +39,7 @@
 #pestannas li {
 	flex: 1 1 auto;
 	width: 100%;
+    border: 2px solid #d26c00;
 }
 
 #pestannas li a {
@@ -48,20 +48,26 @@
     padding: 10px;
 	font-size: 15px;
 	color: white;
-    background-color: #77b4d8;
+    background-color: #e78224;
     text-align: center;
     text-decoration: none;
     transition: background-color 0.3s;
 }
 
 #pestannas li a:hover {
-    background-color: #2875a8;
+    background-color: #eaa565;
     color: white;
 }
 
 #pestannas .ui-tabs-active a {
-    background-color: #2980b9;
+    background-color: #eaa565;
     font-weight: bold;
+    border: 2px solid #d26c00;
+}
+
+#pestannas .ui-state-active {
+    border: none;
+    box-shadow: none;
 }
 
 #pestannas .ui-tabs-panel {
@@ -71,32 +77,32 @@
 
 #pestannas .ui-widget-header {
     border: none;
-    background-color: #efefef;
+    background-color: #fbcba3;
 }
 
-#bannerLeche {
-    background-image: url(../../img/fondo_leche2.jpg);
+#bannerHuevo {
+    background-color: #fbcba3;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     width: 100%;
     height: auto;
-    min-height: 350px;
+    min-height: 380px;
     position: relative;
 }
 
-#tituloLeche {
+#tituloHuevo {
     font-family: 'Gliker';
-    color: #77b4d8;
+    color: #e78224;
     position: absolute;
-	font-size: 70px;
-    top: 10px;
+	font-size: 65px;
+    top: 18px;
     left: 50%;
     transform: translateX(-61%);
 	z-index: 2;
 } 
 
-#introLeche {
+#introHuevo {
     position: absolute;
     top: 110px;
     left: 50%;
@@ -109,17 +115,16 @@
     text-align: center;
 	z-index: 2;
     background-color: white;
-    border: 2px solid #77b4d8;
+    border: 2px solid #e78224;
     border-radius: 10px;
     padding: 10px;
 }
 
-#lecheBannerImg {
+#huevoBannerImg {
     position: absolute;
     top: 25px;
-    left: 70%;
+    left: 67%;
     height: 76px;
-    transform: rotate(18deg);
 	z-index: 1;
 }
 
@@ -130,20 +135,20 @@
 		font-size: 16px;
 	}
 
-    #tituloLeche {
+    #tituloHuevo {
         font-size: 90px;
-        top: 8px;
+        top: 13px;
     }
 
-    #introLeche {
+    #introHuevo {
         font-size: 20px;
         top: 130px;
     }
 
-    #lecheBannerImg {
+    #huevoBannerImg {
         top: 17px;
-        left: 67%;
-        height: 96px;
+        left: 66%;
+        height: 110px;
     }
 }
 
@@ -153,21 +158,21 @@
 		font-size: 17px;
 	}
 
-    #tituloLeche {
-        font-size: 105px;
+    #tituloHuevo {
+        font-size: 115px;
         top: 4px;
     }
 
-    #introLeche {
+    #introHuevo {
         font-size: 20px;
         top: 145px;
         width: 50%;
     }
 
-    #lecheBannerImg {
-        top: 17px;
+    #huevoBannerImg {
+        top: 7px;
         left: 67%;
-        height: 115px;
+        height: 145px;
     }
     
 }
@@ -186,21 +191,21 @@
 		width: auto;
 	}
 
-    #lecheBannerImg {
+    #huevoBannerImg {
         top: 40px;
         left: 64%;
-        height: 250px;
+        height: 240px;
     }
 
-    #tituloLeche {
+    #tituloHuevo {
         font-size: 100px;
-        top: 12px;
+        top: 35px;
         left: 37%;
     }
 
-    #introLeche {
-        top: 140px;
-        left: 34%;
+    #introHuevo {
+        top: 160px;
+        left: 33%;
         width: 40%;
         font-size: 18px;        
     }
@@ -212,20 +217,20 @@
 		font-size: 19px;
 	}
 
-    #lecheBannerImg {
-        top: 30px;
+    #huevoBannerImg {
+        top: 10px;
         left: 64%;
-        height: 280px;
+        height: 300px;
     }
 
-    #tituloLeche {
+    #tituloHuevo {
         font-size: 120px;
-        top: 12px;
+        top: 32px;
         left: 33%;
     }
 
-    #introLeche {
-        top: 160px;
+    #introHuevo {
+        top: 180px;
         left: 30%;
         font-size: 18px;        
     }
@@ -233,20 +238,20 @@
 
 /* ===================== MEDIA QUERY  1201px - 1600px  ================================= */
 @media (min-width: 1201px) {
-	#lecheBannerImg {
-        top: 26px;
+	#huevoBannerImg {
+        top: 10px;
         left: 65%;
-        height: 310px;
+        height: 320px;
     }
 
-    #tituloLeche {
+    #tituloHuevo {
         font-size: 130px;
-        top: 10px;
+        top: 30px;
         left: 33%;
     }
 
-    #introLeche {
-        top: 175px;
+    #introHuevo {
+        top: 195px;
         left: 30%;
         width: 35%;
         font-size: 19px;        
@@ -259,19 +264,19 @@
 		font-size: 20px;
 	}
 
-    #lecheBannerImg {
-        top: 20px;
+    #huevoBannerImg {
+        top: 2px;
         left: 65%;
-        height: 330px;
+        height: 360px;
     }
-    #tituloLeche {
+    #tituloHuevo {
         font-size: 140px;
-        top: 10px;
+        top: 30px;
         left: 33%;
     }
 
-    #introLeche {
-        top: 185px;
+    #introHuevo {
+        top: 205px;
         left: 30%;
         width: 40%;
         font-size: 22px;        
