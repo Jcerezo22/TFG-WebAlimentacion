@@ -1,21 +1,4 @@
 /* Default < 400px */
-body {
-	background-color:white;
-	background-clip:content-box;
-	font-family:calibri;
-	font-size:14pt;
-	margin-top:2%;
-	margin-left:5%;
-	margin-right:3%;
-	padding: 1%;
-	color:#FCF401;
-}
-img {
-	width:20%;
-}
-h1, h2, h3 {
-	color:#fadd10;
-}
 .botonMenu {
 	margin: 0 auto;
 	display: block;
@@ -23,7 +6,7 @@ h1, h2, h3 {
 	height: 36px;
 	padding: 10px;
 	border-radius: 7px;
-	background: yellow;
+	background: #c3981d;
 	color: white;
 	cursor: pointer;
 	position: relative;
@@ -51,12 +34,12 @@ label {
 #menus li{
 	width:100%;
 	background-color: #982932;
-	border:1px solid yellow;
+	border:1px solid #c3981d;
 }
 #menu li a{
 	display: block;
 	padding: 10px 0;
-	color: yellow;
+	color: #c3981d;
 	font-family: Arial;
 	font-size:11px;
 	text-decoration: none; 
@@ -84,7 +67,7 @@ label {
 	}
 	#menus li{
 		width:200px;
-	 	background-color: yellow;
+	 	background-color: #c3981d;
 		border:1px solid #539033;
 	}
 	#menus li a {
@@ -114,7 +97,7 @@ label {
 		list-style:none;
 		display: none;
 		text-align: center;
-		background: yellow;
+		background: #c3981d;
 		padding: 10px ;
 		margin-left:0%;
 	}
@@ -126,7 +109,7 @@ label {
 	#menus li a {
 		display: block;
 		padding: 10px 0;
-		color: yellow;
+		color: #c3981d;
 		font-family: Arial;
 		font-size:11px;
 		text-decoration: none;
@@ -156,7 +139,7 @@ label {
 		text-decoration: none;
 		float:left;
 		padding: 10px;
-		background-color: yellow;
+		background-color: #c3981d;
 		color: #539033;
 		width: 13%;
 	}
@@ -169,13 +152,11 @@ label {
 
 /* > 1000px */
 @media (min-width:1000px) {
-	body {
-		font-size: 15pt;
-	}
 	.botonMenu{
 		display:none;
 	}
 	#menus {
+		width: 100%;
 		padding: 0;
 		background: white;
 		margin-left:0px;
@@ -190,8 +171,8 @@ label {
 		text-decoration: none;
 		float:left;
 		padding: 10px;
-		background-color: #fadd10;
-		color: black;
-		width: 14%;
+		background-color: #c3981d;
+		color: white;
+		width: 16.56%;
 	}
 }
