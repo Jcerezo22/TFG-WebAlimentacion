@@ -1,0 +1,304 @@
+/* Default ---- < 400px */
+
+#infografia {
+    position: relative;
+    text-align: center;
+    margin-bottom: 40px
+}
+
+#svg1 {
+    display: block;
+    margin: 20px auto;
+    position: static; 
+    width: 60%;
+}
+
+.infoParte {
+    margin-top: 20px;
+    text-align: center;
+    display: none; 
+    
+}
+
+#infoCascara h2{
+    color: #dbab89;
+    font-weight: bolder;
+    margin-bottom: 8px;
+    font-size: 40px;
+}
+
+#infoCascara ul {
+    list-style-position: inside; 
+    padding-left: 0;             
+    text-align: center;    
+    border: 2px solid #dbab89;
+    padding: 10px;   
+    border-radius: 10px;   
+}
+
+#infoCascara ul li{
+    margin-top: 10px;
+}
+
+#infoCascara ul li::marker {
+    color: #dbab89;
+}
+
+#infoClara h2{
+    color: #9da6a4;
+    font-weight: bolder;
+    margin-bottom: 8px;
+    font-size: 40px;
+}
+
+#infoClara ul {
+    list-style-position: inside; 
+    padding-left: 0;             
+    text-align: center;    
+    border: 2px solid #9da6a4;
+    padding: 10px;   
+    border-radius: 10px;   
+}
+
+#infoClara ul li ul{  
+    border: none;  
+}
+
+#infoClara ul li{
+    margin-top: 10px;
+}
+
+#infoClara ul li::marker {
+    color: #9da6a4;
+}
+
+#infoYema h2{
+    color: #fab635;
+    font-weight: bolder;
+    margin-bottom: 8px;
+    font-size: 40px;
+}
+
+#infoYema ul {
+    list-style-position: inside; 
+    padding-left: 0;             
+    text-align: center;    
+    border: 2px solid #fab635;
+    padding: 10px;   
+    border-radius: 10px;   
+}
+
+#infoYema ul li ul{  
+    border: none;  
+}
+
+#infoClara ul li{
+    margin-top: 10px;
+}
+
+#infoYema ul li::marker {
+    color: #fab635;
+}
+
+/* ===================== MEDIA QUERY  400px - 500px  ================================= */
+@media (min-width: 400px) {
+    #infoCascara h2{
+        font-size: 45px;
+    }
+
+    #infoCascara ul li{
+        font-size: 18px;
+    }
+
+    #infoClara h2{
+        font-size: 45px;
+    }
+
+    #infoClara ul li{
+        font-size: 18px;
+    }
+
+    #infoYema h2{
+        font-size: 45px;
+    }
+
+    #infoYema ul li{
+        font-size: 18px;
+    }
+}
+
+/* ===================== MEDIA QUERY  500px - 800px  ================================= */
+@media (min-width: 501px) {
+    #infoCascara h2{
+        font-size: 50px;
+    }
+
+    #infoCascara ul li{
+        font-size: 20px;
+    }
+
+    #infoClara h2{
+        font-size: 50px;
+    }
+
+    #infoClara ul li{
+        font-size: 20px;
+    }
+
+    #infoYema h2{
+        font-size: 50px;
+    }
+
+    #infoYema ul li{
+        font-size: 20px;
+    }
+
+    #svg1 {
+        width: 70%;
+    }
+}
+
+/* ===================== MEDIA QUERY  801px - 1000px  ================================= */
+@media (min-width: 801px) {
+    #infografia {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 70px; 
+        margin-top: 20px
+    }
+
+    #svg1 {
+        width: 50%;
+        margin: 0;
+        margin-top: 20px; 
+    }
+
+    .infoParte {
+        width: 50%;
+        margin: 0;
+        margin-right: 10px;        
+    }
+
+    #infoCascara ul li{
+        font-size: 15px;
+    } 
+
+    #infoClara ul li{
+        font-size: 15px;
+    } 
+
+    #infoYema ul li{
+        font-size: 15px;
+    } 
+}
+
+/* ===================== MEDIA QUERY  1001px - 1200px  ================================= */
+@media (min-width: 1001px) {
+    #infografia { 
+        margin-top: 25px
+    }
+
+    #svg1 {
+        width: 40%;
+        margin-top: 25px; 
+    }
+
+    .infoParte {
+        width: 60%;    
+    }
+
+    #infoCascara ul li{
+        font-size: 17px;
+    } 
+
+    #infoCascara h2{
+        font-size: 55px;
+    }
+
+    #infoClara ul li{
+        font-size: 17px;
+    } 
+
+    #infoClara h2{
+        font-size: 55px;
+    }
+
+    #infoYema ul li{
+        font-size: 17px;
+    } 
+
+    #infoYema h2{
+        font-size: 55px;
+    }
+}
+
+/* ===================== MEDIA QUERY  1201px - 1600px  ================================= */
+@media (min-width: 1201px) {
+    #infografia { 
+        margin-top: 30px
+    }
+
+    #svg1 {
+        margin-top: 30px; 
+    }
+
+    #infoCascara ul li{
+        font-size: 20px;
+    } 
+
+    #infoCascara h2{
+        font-size: 60px;
+    }
+
+    #infoClara ul li{
+        font-size: 20px;
+    } 
+
+    #infoClara h2{
+        font-size: 60px;
+    }
+
+    #infoYema ul li{
+        font-size: 20px;
+    } 
+
+    #infoYema h2{
+        font-size: 60px;
+    }
+}
+
+/* ===================== MEDIA QUERY  1601px  ================================= */
+@media (min-width: 1601px) {
+    #infografia { 
+        margin-top: 35px
+    }
+
+    #svg1 {
+        margin-top: 35px; 
+    }
+
+    #infoCascara ul li{
+        font-size: 23px;
+    } 
+
+    #infoCascara h2{
+        font-size: 65px;
+    }
+
+    #infoClara ul li{
+        font-size: 23px;
+    } 
+
+    #infoClara h2{
+        font-size: 65px;
+    }
+
+    #infoYema ul li{
+        font-size: 23px;
+    } 
+
+    #infoYema h2{
+        font-size: 65px;
+    }
+}
