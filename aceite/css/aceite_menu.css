@@ -15,7 +15,7 @@
 	display: block;
 	width: 40px;
 	height: 4px;
-	background: #539033;
+	background: white;
 	margin-top: 7px;
 }
 label {
@@ -28,18 +28,18 @@ label {
 	list-style:none;
 	display: none;
 	text-align: center;
-	background: #539033;
+	background: white;
 	padding: 10px ;
 }
 #menus li{
 	width:100%;
-	background-color: #982932;
-	border:1px solid #c3981d;
+	background-color: #c3981d;
+	border:1px solid #edc454;
 }
 #menu li a{
 	display: block;
 	padding: 10px 0;
-	color: #c3981d;
+	color: white;
 	font-family: Arial;
 	font-size:11px;
 	text-decoration: none; 
@@ -61,19 +61,19 @@ label {
 		list-style:none;
 		display: none;
 		text-align: center;
-		background: #539033;
+		background: white;
 		padding: 10px ;
 		margin-left:0%;
 	}
 	#menus li{
 		width:200px;
 	 	background-color: #c3981d;
-		border:1px solid #539033;
+		border:1px solid #edc454;
 	}
 	#menus li a {
 		display: block;
 		padding: 10px 0;
-		color: #982932;
+		color: white;
 		font-family: Arial;
 		font-size:11px;
 		text-decoration: none;
@@ -82,13 +82,6 @@ label {
 
 /* 600px - 800px */
 @media (min-width:600px) {
-	body {
-		font-size: 11pt;
-		color:#982932;
-	}
-	h1, h2, h3 {
-		color:#539033;
-	}
 	.botonMenu{
 		display:none;
 	}
@@ -97,19 +90,20 @@ label {
 		list-style:none;
 		display: none;
 		text-align: center;
-		background: #c3981d;
+		justify-content: center; 
+		background: white;
 		padding: 10px ;
 		margin-left:0%;
 	}
 	#menus li{
 		width:200px;
-	 	background-color: #539033;
-		border:1px solid #982932;
+	 	background-color: #c3981d;
+		border:1px solid #edc454;
 	}
 	#menus li a {
 		display: block;
 		padding: 10px 0;
-		color: #c3981d;
+		color: white;
 		font-family: Arial;
 		font-size:11px;
 		text-decoration: none;
@@ -118,35 +112,38 @@ label {
 
 /* 800px - 1000px */
 @media (min-width:800px) {
-	body {
-		font-size: 13pt;
-	}
 	.botonMenu{
 		display:none;
 	}
 	#menus {
-		padding: 0;
-		background: #982932;
-		margin-left:0px;
+		width: 100%;
+		padding: 0px;
+		margin-left: 0px;
+		padding-bottom: 2%;
+		background: white;
 	}
 	#menus li {
 		display: inline;
-		border:1px solid #982932;
+		border: 0px solid white;
 	}
 	#menus li a {
 		font-family: Arial;
-		font-size:11px;
+		font-size:17px;
 		text-decoration: none;
 		float:left;
-		padding: 10px;
+		padding: 1%;
 		background-color: #c3981d;
-		color: #539033;
-		width: 13%;
+		color: white;
+		width: 16%;
+	}
+	#menus li a#home{
+		width: 4%;
+		font-size:14px;
 	}
 	#menus li a:hover {
-		background-color: rgb(167, 127, 18);
+		background-color: #edc454;
 		margin-top:-2px;
-		padding-bottom:12px;
+		padding-bottom:0.75%;
 	}
 }
 
@@ -158,9 +155,9 @@ label {
 	#menus {
 		width: 100%;
 		padding: 0px;
-		background: white;
 		margin-left: 0px;
-		padding-bottom: 1%;
+		padding-bottom: 2%;
+		background: white;
 	}
 	#menus li {
 		display: inline;
@@ -168,15 +165,23 @@ label {
 	}
 	#menus li a {
 		font-family: Arial;
-		font-size:17px;
+		font-size:18px;
 		text-decoration: none;
 		float:left;
-		padding: 10px;
+		padding: 1%;
 		background-color: #c3981d;
 		color: white;
+		align-items: center;      
+   	 	justify-content: center; 
 		width: 16%;
 	}
 	#menus li a#home{
 		width: 4%;
+		font-size:15.5px;
+	}
+	#menus li a:hover {
+		background-color: #edc454;
+		margin-top:-2px;
+		padding-bottom:0.65%;
 	}
 }
