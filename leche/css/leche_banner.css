@@ -37,12 +37,12 @@
 	gap: 6px;
 }
 
-#pestannas li {
+#pestannas #pestannasMenu li {
 	flex: 1 1 auto;
 	width: 100%;
 }
 
-#pestannas li a {
+#pestannas #pestannasMenu li a {
 	display: block;
     width: 100%;
     padding: 10px;
@@ -54,17 +54,17 @@
     transition: background-color 0.3s;
 }
 
-#pestannas li a:hover {
+#pestannas #pestannasMenu li a:hover {
     background-color: #2875a8;
     color: white;
 }
 
-#pestannas .ui-tabs-active a {
+#pestannas #pestannasMenu .ui-tabs-active a {
     background-color: #2980b9;
     font-weight: bold;
 }
 
-#pestannas .ui-tabs-panel {
+#pestannas #pestannasMenu .ui-tabs-panel {
     border: none;
     padding: 0;
 }
@@ -126,7 +126,7 @@
 
 /* ===================== MEDIA QUERY  400px - 500px  ================================= */
 @media (min-width: 400px) {
-	#pestannas li a {
+	#pestannas #pestannasMenu li a {
 		font-size: 16px;
 	}
 
@@ -149,7 +149,7 @@
 
 /* ===================== MEDIA QUERY  500px - 800px  ================================= */
 @media (min-width: 501px) {
-	#pestannas li a {
+	#pestannas #pestannasMenu li a {
 		font-size: 17px;
 	}
 
@@ -174,7 +174,7 @@
 
 /* ===================== MEDIA QUERY  801px - 1000px  ================================= */
 @media (min-width: 801px) {
-	#pestannas li a {
+	#pestannas #pestannasMenu li a {
 		font-size: 18px;
 	}
 	
@@ -182,7 +182,7 @@
     	flex-direction: row;
 	}
 
-	#pestannas li {
+	#pestannas #pestannasMenu li {
 		width: auto;
 	}
 
@@ -208,7 +208,7 @@
 
 /* ===================== MEDIA QUERY  1001px - 1200px  ================================= */
 @media (min-width: 1001px) {
-	#pestannas li a {
+	#pestannas #pestannasMenu li a {
 		font-size: 19px;
 	}
 
@@ -255,12 +255,12 @@
 
 /* ===================== MEDIA QUERY  1601px  ================================= */
 @media (min-width: 1601px) {
-	#pestannas li a {
+	#pestannas #pestannasMenu li a {
 		font-size: 20px;
 	}
 
     #lecheBannerImg {
-        top: 20px;
+        top: 20px; 
         left: 65%;
         height: 330px;
     }
