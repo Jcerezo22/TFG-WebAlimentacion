@@ -97,5 +97,14 @@
 
 /* ===================== MEDIA QUERY  1601px  ================================= */
 @media (min-width: 1601px) {
+    #apliDiet h2{
+        font-size: 40px
+    }
+    #infoApli > ul > li {
+        font-size: 25px;
+    }
 
+    #infoApli{
+        width: 80%;
+    }
 }

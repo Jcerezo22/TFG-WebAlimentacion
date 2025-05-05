@@ -1,0 +1,237 @@
+#contenedorCirculos {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    width: 100%;
+    height: auto;
+    position: static;
+}
+
+#contenedorCirculos a{
+    text-decoration: none;
+}
+
+.circulo {
+    position: static;
+    width: auto;
+    max-width: 150px;
+    min-width: 120px;
+    flex: 1 1 100%; 
+    padding: 17px 10px;
+    background-color: #7ab7d9;
+    color: white;
+    border-radius: 50%;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1em;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    transition: background-color 0.3s;
+}
+
+.microorganismos {
+    padding: 15px 12px;
+}
+
+
+
+.circulo:hover {
+    background-color: #2875a8;
+    color: white;
+}
+
+/* ===================== MEDIA QUERY  400px - 500px  ================================= */
+@media (min-width: 400px) {
+    #contenedorCirculos {
+        flex-direction: row;
+        /* flex-wrap: wrap; */
+        /* justify-content: center;
+        align-items: normal; */
+    }
+
+    .circulo {
+        font-size: 1.2em;
+        padding: 25px 30px;
+        max-width: 180px;
+    }
+
+    .microorganismos {
+        padding: 35px 15px;
+    }
+}
+
+/* ===================== MEDIA QUERY  500px - 700px  ================================= */
+@media (min-width: 501px) {
+    .circulo {
+        font-size: 1.4em;
+        padding: 20px 35px;
+        max-width: 195px;
+    }
+
+    .microorganismos {
+        padding: 35px 10px;
+        font-size: 1.35em;
+    }
+    
+}
+
+/* ===================== MEDIA QUERY  701px - 1000px  ================================= */
+@media (min-width: 701px) {
+    #contenedorCirculos {
+        position: relative;
+        width: auto;
+        height: 500px;
+    }
+    
+    .circulo {
+        position: absolute;
+        font-size: 1.7em;
+        padding: 30px 45px;
+        max-width: 280px;
+    }
+
+    /* .acidez, .densidad, .ebullicion{
+        background-color: #a4c2d5;
+    } */
+
+    .ph {
+        top: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+      
+    .acidez {
+        top: 100px;
+        left: 10%;
+    }
+      
+    .densidad {
+        top: 90px;
+        right: 5%;
+    }
+      
+    .congelacion {
+        bottom: 160px;
+        left: 6%;
+    }
+      
+    .ebullicion {
+        bottom: 60px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    .microorganismos {
+        bottom: 170px;
+        right: 5%;
+        padding: 30px 15px;
+    }
+}
+
+/* ===================== MEDIA QUERY  1001px - 1200px  ================================= */
+@media (min-width: 1001px) {
+    .circulo {
+        font-size: 1.9em;
+        padding: 30px 45px;
+        max-width: 280px;
+    }
+      
+    .acidez {
+        top: 80px;
+        left: 17%;
+    }
+      
+    .densidad {
+        top: 70px;
+        right: 12%;
+    }
+      
+    .congelacion {
+        bottom: 140px;
+        left: 13%;
+    }
+      
+    .ebullicion {
+        bottom: 30px;
+    }
+    
+    .microorganismos {
+        bottom: 150px;
+        right: 11%;
+        padding: 30px 15px;
+    }
+}
+
+/* ===================== MEDIA QUERY  1201px - 1600px  ================================= */
+@media (min-width: 1201px) {
+    #contenedorCirculos {
+        height: 550px;
+    }
+
+    .circulo {
+        font-size: 2.1em;
+        padding: 45px 50px;
+        max-width: 300px;
+    }
+      
+    .acidez {
+        top: 70px;
+        left: 22%;
+    }
+      
+    .densidad {
+        top: 60px;
+        right: 17%;
+    }
+      
+    .congelacion {
+        bottom: 120px;
+        left: 15%;
+    }
+      
+    .ebullicion {
+        bottom: 5px;
+    }
+    
+    .microorganismos {
+        bottom: 115px;
+        right: 14%;
+        padding: 50px 12px;
+    }
+}
+
+/* ===================== MEDIA QUERY  1601px  ================================= */
+@media (min-width: 1601px) {
+    #contenedorCirculos {
+        height: 600px;
+    }
+
+    .circulo {
+        font-size: 2.3em;
+        padding: 50px 55px;
+        max-width: 320px;
+    }
+      
+    .acidez {
+        top: 80px;
+        left: 25%;
+    }
+      
+    .densidad {
+        top: 70px;
+        right: 20%;
+    }
+      
+    .congelacion {
+        bottom: 130px;
+        left: 18%;
+    }
+      
+    .microorganismos {
+        bottom: 130px;
+        right: 17%;
+        padding: 60px 12px;
+    }
+}
