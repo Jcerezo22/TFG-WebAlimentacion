@@ -4,7 +4,7 @@
 	display: block;
 	width: 40px;
 	height: 36px;
-	padding: 10px;
+	padding: 5px;
 	border-radius: 7px;
 	background: #c3981d;
 	color: white;
@@ -13,7 +13,7 @@
 }
 .botonMenu span {
 	display: block;
-	width: 40px;
+	width: 30px;
 	height: 4px;
 	background: white;
 	margin-top: 7px;
@@ -50,11 +50,13 @@ label {
 
 /* 400px - 600px */
 @media (min-width:400px) {
-	body {
-		font-size: 11pt;
-	}
 	.botonMenu{
 		display:none;
+	}
+	.menuHTML{
+		display: flex;
+		align-items: center;      /* Centra verticalmente */
+		justify-content: center;  /* Centra horizontalmente */
 	}
 	#menus {
 		display: block !important;
@@ -128,7 +130,7 @@ label {
 	}
 	#menus li a {
 		font-family: Arial;
-		font-size:17px;
+		font-size:16.8px;
 		text-decoration: none;
 		float:left;
 		padding: 1%;
@@ -138,12 +140,12 @@ label {
 	}
 	#menus li a#home{
 		width: 4%;
-		font-size:14px;
+		font-size:14.5px;
 	}
 	#menus li a:hover {
 		background-color: #edc454;
 		margin-top:-2px;
-		padding-bottom:0.75%;
+		padding-bottom:1%;
 	}
 }
 
@@ -165,7 +167,7 @@ label {
 	}
 	#menus li a {
 		font-family: Arial;
-		font-size:18px;
+		font-size:17.8px;
 		text-decoration: none;
 		float:left;
 		padding: 1%;
@@ -182,6 +184,6 @@ label {
 	#menus li a:hover {
 		background-color: #edc454;
 		margin-top:-2px;
-		padding-bottom:0.65%;
+		padding-bottom:1%;
 	}
 }
