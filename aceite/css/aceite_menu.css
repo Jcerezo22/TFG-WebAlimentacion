@@ -1,10 +1,11 @@
 /* Default < 400px */
 .botonMenu {
 	margin: 0 auto;
+	margin-top: 10px;
 	display: block;
 	width: 40px;
 	height: 36px;
-	padding: 5px;
+	padding: 5.45px;
 	border-radius: 7px;
 	background: #c3981d;
 	color: white;
@@ -13,10 +14,10 @@
 }
 .botonMenu span {
 	display: block;
-	width: 30px;
+	width: 29.5px;
 	height: 4px;
 	background: white;
-	margin-top: 7px;
+	margin-bottom: 6.5px;
 }
 label {
 	cursor: pointer;
@@ -36,7 +37,7 @@ label {
 	background-color: #c3981d;
 	border:1px solid #edc454;
 }
-#menu li a{
+#menus li a{
 	display: block;
 	padding: 10px 0;
 	color: white;
@@ -167,7 +168,7 @@ label {
 	}
 	#menus li a {
 		font-family: Arial;
-		font-size:17.8px;
+		font-size:17.9px;
 		text-decoration: none;
 		float:left;
 		padding: 1%;
