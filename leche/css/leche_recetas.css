@@ -1,3 +1,13 @@
+#recetasTab{
+    text-align: center;
+    margin-top: 40px;
+}
+
+#recetasTab h1{
+    margin-bottom: 30px;
+    color: #77b4d8;
+}
+
 #recetas{
     display: flex;
     flex-wrap: wrap;
@@ -19,22 +29,34 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-decoration: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+.receta:hover {
+    transform: scale(1.03); /* Levemente más grande */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2); /* Sombra más fuerte */
 }
 
 #recetaQueso h3{
     color: #c9bfad;
+    margin-bottom: 10px;
+    margin-top: 20px;
 }
 
 #recetaYogur h3{
     color: #605e5c;
+    margin-bottom: 10px;
+    margin-top: 20px;
 }
 
 #quesoImg{
-    width: 60%;
+    width: 50%;
 }
 
 #yogurImg{
-    width: 60%;
+    width: 50%;
 }
 
 
@@ -47,6 +69,19 @@
     #yogurImg{
         width: 42%;
     }
+
+    #recetasTab h1{
+        font-size: 30px;
+    }
+
+    #recetaQueso h3{
+        font-size: 22px;
+    }
+    
+    #recetaYogur h3{
+        font-size: 22px;
+    }
+    
 }
 
 /* ===================== MEDIA QUERY  500px - 800px  ================================= */
@@ -56,11 +91,23 @@
     }
 
     #quesoImg{
-        width: 33%;
+        width: 30%;
     }
     
     #yogurImg{
-        width: 33%;
+        width: 30%;
+    }
+
+    #recetasTab h1{
+        font-size: 40px;
+    }
+
+    #recetaQueso h3{
+        font-size: 28px;
+    }
+    
+    #recetaYogur h3{
+        font-size: 28px;
     }
 }
 
@@ -72,11 +119,23 @@
     }
     
     #quesoImg{
-        width: 47%;
+        width: 46%;
     }
     
     #yogurImg{
-        width: 47%;
+        width: 46%;
+    }
+
+    #recetasTab h1{
+        font-size: 45px;
+    }
+
+    #recetaQueso h3{
+        font-size: 32px;
+    }
+    
+    #recetaYogur h3{
+        font-size: 32px;
     }
 }
 
@@ -94,6 +153,18 @@
     #yogurImg{
         width: 52%;
     }
+
+    #recetasTab h1{
+        font-size: 50px;
+    }
+
+    #recetaQueso h3{
+        font-size: 35px;
+    }
+    
+    #recetaYogur h3{
+        font-size: 35px;
+    }
 }
 
 /* ===================== MEDIA QUERY  1201px - 1600px  ================================= */
@@ -103,11 +174,23 @@
     }
     
     #quesoImg{
-        width: 58%;
+        width: 56%;
     }
     
     #yogurImg{
-        width: 58%;
+        width: 56%;
+    }
+
+    #recetasTab h1{
+        font-size: 52px;
+    }
+
+    #recetaQueso h3{
+        font-size: 38px;
+    }
+    
+    #recetaYogur h3{
+        font-size: 38px;
     }
 }
 
