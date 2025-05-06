@@ -6,6 +6,7 @@
 		<meta name="author" content="tu nombre" />
         <link rel="stylesheet" href="css/leche_banner.css">
 		<link rel="stylesheet" href="css/leche_aplicaciones.css">
+		<link rel="stylesheet" href="css/leche_menu.css" type="text/css" />
 		<link rel="stylesheet" href="css/leche_param.css">
         <link rel="stylesheet" href="../jquery/jquery-ui.min.css">
         <script src="../jquery/jquery-3.7.1.min.js"></script>
@@ -17,8 +18,24 @@
 		<header>
 		
 		</header>
-		<nav>
-			<div id="pruebamenu"></div>
+		<nav class="menuHTML">
+			<label for="menu-toggle">
+				<div class="botonMenu">
+					<span></span>
+					<span></span>
+					<span></span>
+				</div>
+			</label>
+			<input type="checkbox" id="menu-toggle" />
+			<ol id="menus">
+				<li><a id="home" href="../index.html">🏠︎</a></li>
+				<li><a href="../aceite/aceite.html">aceite</a></li>
+				<li><a href="../carne/carne.html">carne</a></li>
+				<li><a href="../harina/harina.html">harina</a></li>
+				<li><a href="../huevo/huevo.html">huevo</a></li>
+				<li><a href="../leche/leche.html">leche</a></li>
+				<li><a href="../pescado/pescado.html">pescado</a></li>
+			</ol>
 		</nav>
 		<main>
 			<section>

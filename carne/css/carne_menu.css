@@ -8,7 +8,7 @@
 	height: 36px;
 	padding: 5.45px;
 	border-radius: 7px;
-	background: #c3981d;
+	background: #ab2a20;
 	color: white;
 	cursor: pointer;
 	position: relative;
@@ -35,8 +35,8 @@ label {
 }
 #menus li{
 	width:100%;
-	background-color: #c3981d;
-	border:1px solid #edc454;
+	background-color: #ab2a20;
+	border:1px solid #e65d53;
 }
 #menus li a{
 	display: block;
@@ -71,8 +71,8 @@ label {
 	}
 	#menus li{
 		width:200px;
-	 	background-color: #c3981d;
-		border:1px solid #edc454;
+	 	background-color: #ab2a20;
+		border:1px solid #e65d53;
 	}
 	#menus li a {
 		display: block;
@@ -109,7 +109,7 @@ label {
 		text-decoration: none;
 		float:left;
 		padding: 1%;
-		background-color: #c3981d;
+		background-color: #ab2a20;
 		color: white;
 		width: 16%;
 	}
@@ -118,7 +118,7 @@ label {
 		font-size:14.5px;
 	}
 	#menus li a:hover {
-		background-color: #edc454;
+		background-color: #e65d53;
 	}
 }
 
@@ -128,7 +128,6 @@ label {
 		font-size:17.9px;
 	}
 	#menus li a#home{
-		width: 4%;
 		font-size:15.5px;
 	}
 }
