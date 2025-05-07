@@ -1,22 +1,36 @@
-const milkOptions = document.querySelectorAll('.milk-option');
-const milkInfo = document.getElementById('milk-info');
+if (document.addEventListener)
+	window.addEventListener("load", inicio)
+else if (document.attachEvent)
+	window.attachEvent("onload", inicio);
 
-const descriptions = {
-  vaca: 'Leche de vaca: clásica y equilibrada.',
-  cabra: 'Leche de cabra: más digestiva, textura suave.',
-  oveja: 'Leche de oveja: rica en grasa, da queso cremoso.'
-};
+function inicio(){
+    let contenedor = document.querySelector('.contenedorOpciones');
 
-milkOptions.forEach(option => {
-  option.addEventListener('click', () => {
-    // Quitar selección previa
-    milkOptions.forEach(o => o.classList.remove('selected'));
+    if (document.addEventListener) {
+        contenedor.addEventListener("click", selecionarTipoLeche);
+    } else if (document.attachEvent) {
+        contenedor.attachEvent("onclick", selecionarTipoLeche);
+    }
+}
 
-    // Marcar actual
-    option.classList.add('selected');
+function selecionarTipoLeche(event){
 
-    // Mostrar info
-    const milkType = option.getAttribute('data-milk');
-    milkInfo.textContent = descriptions[milkType];
-  });
-});
+    let opcionesLeche = document.querySelectorAll('.opcionLeche');
+    let tipoLeche = '';
+
+    event = event || window.event;
+    let target = event.target
+
+    while (target && !target.classList.contains('opcionLeche')) {
+        target = target.parentNode;
+    }
+
+    if (target) {
+        opcionesLeche.forEach(opcion => opcion.classList.remove('selected'));
+
+        target.classList.add('selected');
+        tipoLeche = target.id;
+        
+        console.log(tipoLeche);
+    }
+}
