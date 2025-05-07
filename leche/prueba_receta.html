@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Receta Interactiva de Queso</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 700px;
+      margin: 40px auto;
+      padding: 20px;
+      background: #f9f9f9;
+    }
+
+    h2 {
+      text-align: center;
+    }
+
+    .milk-options {
+      display: flex;
+      gap: 20px;
+      margin: 15px 0;
+      justify-content: center;
+    }
+
+    .milk-option {
+      font-size: 1.5rem;
+      padding: 10px;
+      border: 2px solid #ccc;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.3s;
+      text-align: center;
+      width: 100px;
+    }
+
+    .milk-option.selected {
+      background-color: #d0eaff;
+      border-color: #007BFF;
+    }
+
+    label {
+      display: block;
+      margin: 15px 0 5px;
+    }
+
+    input[type="range"],
+    input[type="number"],
+    select {
+      width: 100%;
+      padding: 5px;
+      margin-bottom: 10px;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 1rem;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #005bb5;
+    }
+
+    .resultado {
+      margin-top: 30px;
+      padding: 15px;
+      border: 2px dashed #aaa;
+      background-color: #fff;
+    }
+
+    .queso-bloque {
+      font-size: 3rem;
+      margin-top: 10px;
+      text-align: center;
+    }
+
+    #descripcion {
+      white-space: pre-line;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Receta Interactiva de Queso</h2>
+
+  <!-- Paso 1: Selección de leche -->
+  <div class="milk-options">
+    <div class="milk-option" data-milk="vaca">🐄<br>Vaca</div>
+    <div class="milk-option" data-milk="cabra">🐐<br>Cabra</div>
+    <div class="milk-option" data-milk="oveja">🐑<br>Oveja</div>
+  </div>
+
+  <!-- Paso 2: pH -->
+  <label>pH:
+    <input type="range" id="ph-slider" min="3" max="7" step="0.1" value="5">
+    <span id="ph-value">5</span>
+  </label>
+
+  <!-- Paso 3: Cuajo -->
+  <label>Tipo de cuajo:
+    <select id="cuajo-select">
+      <option value="animal">Animal</option>
+      <option value="vegetal">Vegetal</option>
+      <option value="microbiano">Microbiano</option>
+    </select>
+  </label>
+
+  <!-- Paso 4: Temperatura y tiempo -->
+  <label>Temperatura (°C):
+    <input type="number" id="temp-input" value="32">
+  </label>
+
+  <label>Tiempo (min):
+    <input type="number" id="time-input" value="45">
+  </label>
+
+  <button id="simular-btn">Simular Queso</button>
+
+  <!-- Resultado -->
+  <div id="resultado" class="resultado" style="display: none;">
+    <h3>Resultado del Queso</h3>
+    <p id="descripcion"></p>
+    <div id="queso-visual" class="queso-bloque">🧀</div>
+  </div>
+
+  <script>
+    let tipoLeche = null;
+
+    const milkOptions = document.querySelectorAll('.milk-option');
+    milkOptions.forEach(opt => {
+      opt.addEventListener('click', () => {
+        milkOptions.forEach(o => o.classList.remove('selected'));
+        opt.classList.add('selected');
+        tipoLeche = opt.getAttribute('data-milk');
+      });
+    });
+
+    document.getElementById('ph-slider').addEventListener('input', e => {
+      document.getElementById('ph-value').textContent = e.target.value;
+    });
+
+    function calcularQueso({ leche, ph, cuajo, temperatura, tiempo }) {
+      let textura = 'media';
+      let descripcion = '';
+
+      if (!leche) {
+        descripcion = '¡Seleccioná un tipo de leche!';
+        return { textura: '❓', descripcion };
+      }
+
+      // pH
+      if (ph < 4.6) {
+        textura = 'quebradiza';
+        descripcion += 'El pH es bajo → queso seco y frágil.\n';
+      } else if (ph > 5.0) {
+        textura = 'blanda';
+        descripcion += 'El pH es alto → queso muy blando o no cuaja bien.\n';
+      } else {
+        descripcion += 'pH ideal para coagulación.\n';
+      }
+
+      // Temperatura
+      if (temperatura < 30 || temperatura > 35) {
+        descripcion += 'Temperatura fuera del rango óptimo (30–35°C).\n';
+      }
+
+      // Tiempo
+      if (tiempo < 30 || tiempo > 60) {
+        descripcion += 'Tiempo de cuajado no ideal (30–60 min).\n';
+      }
+
+      // Leche
+      if (leche === 'oveja') {
+        descripcion += 'Leche de oveja → textura cremosa.\n';
+        if (textura === 'media') textura = 'cremosa';
+      } else if (leche === 'cabra') {
+        descripcion += 'Leche de cabra → más suave.\n';
+        if (textura === 'media') textura = 'blanda';
+      } else if (leche === 'vaca') {
+        descripcion += 'Leche de vaca → textura firme estándar.\n';
+      }
+
+      return { textura, descripcion };
+    }
+
+    document.getElementById('simular-btn').addEventListener('click', () => {
+      const ph = parseFloat(document.getElementById('ph-slider').value);
+      const cuajo = document.getElementById('cuajo-select').value;
+      const temp = parseInt(document.getElementById('temp-input').value);
+      const time = parseInt(document.getElementById('time-input').value);
+
+      const { textura, descripcion } = calcularQueso({
+        leche: tipoLeche,
+        ph,
+        cuajo,
+        temperatura: temp,
+        tiempo: time
+      });
+
+      const resultadoDiv = document.getElementById('resultado');
+      resultadoDiv.style.display = 'block';
+      document.getElementById('descripcion').textContent = descripcion;
+
+      let visual = '🧀';
+      if (textura === 'cremosa') visual = '🧈';
+      if (textura === 'blanda') visual = '🧀 (blando)';
+      if (textura === 'quebradiza') visual = '🧀 (seco)';
+
+      document.getElementById('queso-visual').textContent = visual;
+    });
+  </script>
+
+</body>
+</html>

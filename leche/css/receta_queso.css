@@ -1,0 +1,124 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: white;
+}
+
+@font-face {
+    font-family: 'Chunkfive';
+    src: url('../../tipoLetra/Chunkfive\ Ex.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+#tituloReceta{
+    font-family: 'Chunkfive';
+    font-size: 30px;
+    text-align: center;
+    margin-top: 30px;
+    color: #77b4d8;
+}
+
+.opcionesLeche {
+    border: 1px solid rgb(77, 76, 76);
+    border-radius: 30px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    text-align: center; 
+    margin: 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.opcionesLeche h2{
+    margin-top: 25px;
+    font-size: 18px;
+}
+
+.contenedorOpciones {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    
+}
+
+.opcionLeche {
+    border: 1px solid rgb(77, 76, 76);
+    border-radius: 30px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    margin: 15px;
+    padding: 50px;
+    font-size: 25px;
+    font-weight: bolder;
+    
+}
+
+.opcionLeche img {
+    width: 80px;
+    margin-bottom: 20px;
+}
+
+
+
+/* ===================== MEDIA QUERY  400px - 500px  ================================= */
+@media (min-width: 400px) {
+    .opcionLeche img {
+        width: 90px;
+    }
+
+    .opcionLeche {
+        font-size: 27px;
+    }
+
+    .opcionesLeche h2{
+        font-size: 24px;
+    }
+
+    #tituloReceta{
+        font-size: 35px;
+    }
+}
+
+/* ===================== MEDIA QUERY  500px - 800px  ================================= */
+@media (min-width: 501px) {
+    .opcionLeche img {
+        width: 100px;
+    }
+
+    .opcionLeche {
+        font-size: 28px;
+    }
+
+    .opcionesLeche h2{
+        font-size: 27px;
+    }
+
+    #tituloReceta{
+        font-size: 35px;
+    }
+}
+
+/* ===================== MEDIA QUERY  801px - 1000px  ================================= */
+@media (min-width: 801px) {
+    
+}
+
+/* ===================== MEDIA QUERY  1001px - 1200px  ================================= */
+@media (min-width: 1001px) {
+   
+}
+
+/* ===================== MEDIA QUERY  1201px - 1600px  ================================= */
+@media (min-width: 1201px) {
+    
+}
+
+/* ===================== MEDIA QUERY  1601px  ================================= */
+@media (min-width: 1601px) {
+    
+}
