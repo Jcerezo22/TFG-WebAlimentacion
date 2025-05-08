@@ -113,7 +113,8 @@ body{
     display: flex;
     align-items: center; 
     gap: 10px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
+    margin-top: 10px;
 }
 
 #tituloRangoPh h2 {
@@ -438,11 +439,6 @@ input[type="range"]::-ms-thumb {
         height: 27px;
     }
 
-
-    #tituloRangoPh {
-        margin-top: 10px;
-    }
-
     #tituloRangoPh img {
         width: 32px;
         height: 32px;
@@ -523,11 +519,6 @@ input[type="range"]::-ms-thumb {
     }
 
 
-
-    #tituloRangoPh {
-        margin-top: 12px;
-    }
-
     #tituloRangoPh img {
         width: 34px;
         height: 34px;
@@ -604,9 +595,7 @@ input[type="range"]::-ms-thumb {
     }
 
 
-    #tituloRangoPh {
-        margin-top: 16px;
-    }
+
 
     #tituloRangoPh img {
         width: 36px;
@@ -680,9 +669,7 @@ input[type="range"]::-ms-thumb {
     }
 
 
-    #tituloRangoPh {
-        margin-top: 20px;
-    }
+
 
     #tituloRangoPh img {
         width: 39px;
