@@ -40,13 +40,30 @@
                         <span>Objetivo: </span>Aprender cómo el pH y la acidez afectan la coagulación de la leche y la textura del queso.
                     </p>
 					<div class="opcionesLeche">
-                        <h2>Selecciona el tipo de leche</h2>
+						<div id="tituloOpcionesTipo">
+							<img src="../img/elegir.png" alt="">
+							<h2>Selecciona el tipo de leche</h2>
+						</div>
                         <div class="contenedorOpciones">
                             <div class="opcionLeche" id="vaca"><img src="../img/vaca.jpg" alt="Vaca"><br>Vaca</div>
                             <div class="opcionLeche" id="cabra"><img src="../img/cabra.jpg" alt="Cabra"><br>Cabra</div>
                             <div class="opcionLeche" id="oveja"><img src="../img/oveja.jpg" alt="Oveja"><br>Oveja</div>
                         </div>
                     </div>
+					<div class="opcionesLeche" id="barraRango">
+						<div id="tituloRangoPh">
+							<img src="../img/medidor-de-ph-del-suelo.png" alt="">
+							<h2>Ajusta el pH</h2>
+						</div>
+						<label>
+							<input type="range" id="phRango" min="3" max="7" step="0.1" value="4">
+							<div id="valoresRango">
+								<span id="phValorMov">5.0</span>
+								<span id="phValorFin">7.0</span>
+							</div>
+							
+						</label>
+					</div>
 				</article>
 			</section>
 		</main>

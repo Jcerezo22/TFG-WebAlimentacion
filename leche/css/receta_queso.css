@@ -37,7 +37,7 @@ body{
 
 .opcionesLeche {
     border: 1px solid rgb(77, 76, 76);
-    border-radius: 30px;
+    border-radius: 15px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
     text-align: center; 
     margin: 20px auto;
@@ -47,8 +47,26 @@ body{
 }
 
 .opcionesLeche h2{
-    margin-top: 25px;
-    font-size: 18px;
+    font-size: 17px;
+}
+
+#tituloOpcionesTipo {
+    display: flex;
+    align-items: center;           
+    justify-content: center;       
+    gap: 10px;     
+    margin-top: 30px;               
+    margin-bottom: 20px;
+}
+
+#tituloOpcionesTipo h2 {
+    margin-top: 55;
+}
+
+#tituloOpcionesTipo img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
 }
 
 .contenedorOpciones {
@@ -82,6 +100,110 @@ body{
     box-shadow: 0 2px 10px rgba(17, 87, 152, 0.874);
 }
 
+#barraRango {
+    display: flex;
+    flex-direction: column;   
+    align-items: flex-start;     
+    justify-content: flex-start; 
+    height: 120px;
+    background-color: #f5f5f5;
+    padding: 25px;
+    padding-top: 20px;
+}
+
+#tituloRangoPh {
+    display: flex;
+    align-items: center; 
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+#tituloRangoPh h2 {
+    margin: 0; 
+}
+
+#tituloRangoPh img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+}
+  
+#barraRango label {
+    display: flex;
+    flex-direction: column;
+    align-items:flex-start;
+    width: 100%;
+    gap: 10px;
+
+}
+
+#valoresRango{
+    display: flex;
+    justify-content: space-between; 
+    width: 100%;
+}
+
+#phValorMov, #phValorFin {
+    font-size: 13px;
+    color: #6d716f;
+    text-align: center;
+}
+
+
+input[type="range"] {
+    width: 100%;  
+    height: 4px; 
+    appearance: none;             
+    -webkit-appearance: none;     
+    -moz-appearance: none; 
+    background: transparent; 
+    margin-top: 10px;
+}
+  
+/* Estilo de la barra*/
+input[type="range"]::-webkit-slider-runnable-track {
+    height: 5px;
+    border-radius: 10px;
+}
+  
+input[type="range"]::-moz-range-track {
+    height: 5px;
+    border-radius: 10px;
+}
+  
+input[type="range"]::-ms-track {
+    height: 5px;
+    border-radius: 10px;
+    border: none;
+    color: transparent;
+}
+  
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 15px;
+    height: 15px;
+    background: #ffffff;
+    border: 2px solid #77b4d8;
+    border-radius: 50%;
+    margin-top: -6px; 
+}
+  
+input[type="range"]::-moz-range-thumb {
+    width: 15px;
+    height: 15px;
+    background: #ffffff;
+    border: 2px solid #77b4d8;
+    border-radius: 50%;
+}
+
+input[type="range"]::-ms-thumb {
+    width: 15px;
+    height: 15px;
+    background: #ffffff;
+    border: 2px solid #77b4d8;
+    border-radius: 50%;
+}
+
 /* ===================== MEDIA QUERY  400px - 500px  ================================= */
 @media (min-width: 400px) {
     .opcionLeche img {
@@ -102,6 +224,41 @@ body{
 
     #objetivoReceta{
         font-size: 16px;
+    }
+
+    #tituloOpcionesTipo img {
+        width: 25px;
+        height: 25px;
+    }
+
+
+
+    #tituloRangoPh img {
+        width: 25px;
+        height: 25px;
+    }
+
+    #phValorMov, #phValorFin {
+        font-size: 14px;
+    }
+
+    input[type="range"] {
+        height: 6px; 
+    }
+      
+    input[type="range"]::-webkit-slider-thumb {
+        width: 16px;
+        height: 16px;
+    }
+      
+    input[type="range"]::-moz-range-thumb {
+        width: 16px;
+        height: 16px;
+    }
+    
+    input[type="range"]::-ms-thumb {
+        width: 16px;
+        height: 16px;
     }
 }
 
@@ -131,6 +288,45 @@ body{
 
     #objetivoReceta{
         font-size: 17px;
+    }
+
+    #tituloOpcionesTipo img {
+        width: 26px;
+        height: 26px;
+    }
+
+
+
+    #barraRango {
+        height: 130px;
+    }
+
+    #tituloRangoPh img {
+        width: 27px;
+        height: 27px;
+    }
+
+    #phValorMov, #phValorFin {
+        font-size: 16px;
+    }
+
+    input[type="range"] {
+        height: 7px; 
+    }
+      
+    input[type="range"]::-webkit-slider-thumb {
+        width: 17px;
+        height: 17px;
+    }
+      
+    input[type="range"]::-moz-range-thumb {
+        width: 17px;
+        height: 17px;
+    }
+    
+    input[type="range"]::-ms-thumb {
+        width: 17px;
+        height: 17px;
     }
 }
 
@@ -162,6 +358,50 @@ body{
     #objetivoReceta{
         font-size: 18px;
     }
+
+    #tituloOpcionesTipo img {
+        width: 27px;
+        height: 27px;
+    }
+
+
+
+
+    #barraRango {
+        height: 140px;
+    }
+
+    #tituloRangoPh {
+        margin-top: 10px;
+    }
+
+    #tituloRangoPh img {
+        width: 32px;
+        height: 32px;
+    }
+
+    #phValorMov, #phValorFin {
+        font-size: 18px;
+    }
+
+    input[type="range"] {
+        height: 8px; 
+    }
+      
+    input[type="range"]::-webkit-slider-thumb {
+        width: 18px;
+        height: 18px;
+    }
+      
+    input[type="range"]::-moz-range-thumb {
+        width: 18px;
+        height: 18px;
+    }
+    
+    input[type="range"]::-ms-thumb {
+        width: 18px;
+        height: 18px;
+    }
 }
 
 /* ===================== MEDIA QUERY  1001px - 1200px  ================================= */
@@ -191,6 +431,50 @@ body{
 
     #objetivoReceta{
         font-size: 19px;
+    }
+
+    #tituloOpcionesTipo img {
+        width: 28px;
+        height: 28px;
+    }
+
+
+
+
+    #barraRango {
+        height: 150px;
+    }
+
+    #tituloRangoPh {
+        margin-top: 12px;
+    }
+
+    #tituloRangoPh img {
+        width: 34px;
+        height: 34px;
+    }
+
+    #phValorMov, #phValorFin {
+        font-size: 19px;
+    }
+
+    input[type="range"] {
+        height: 9px; 
+    }
+      
+    input[type="range"]::-webkit-slider-thumb {
+        width: 19px;
+        height: 19px;
+    }
+      
+    input[type="range"]::-moz-range-thumb {
+        width: 19px;
+        height: 19px;
+    }
+    
+    input[type="range"]::-ms-thumb {
+        width: 19px;
+        height: 19px;
     }
 }
 
@@ -222,9 +506,118 @@ body{
     #objetivoReceta{
         font-size: 22px;
     }
+
+    #tituloOpcionesTipo img {
+        width: 29px;
+        height: 29px;
+    }
+
+
+
+
+    #barraRango {
+        height: 170px;
+    }
+
+    #tituloRangoPh {
+        margin-top: 16px;
+    }
+
+    #tituloRangoPh img {
+        width: 36px;
+        height: 36px;
+    }
+
+    #phValorMov, #phValorFin {
+        font-size: 20px;
+    }
+
+    input[type="range"] {
+        height: 10px; 
+    }
+      
+    input[type="range"]::-webkit-slider-thumb {
+        width: 20px;
+        height: 20px;
+    }
+      
+    input[type="range"]::-moz-range-thumb {
+        width: 20px;
+        height: 20px;
+    }
+    
+    input[type="range"]::-ms-thumb {
+        width: 20px;
+        height: 20px;
+    }
 }
 
 /* ===================== MEDIA QUERY  1601px  ================================= */
 @media (min-width: 1601px) {
+    .opcionLeche img {
+        width: 120px;
+    }
+
+    .opcionLeche {
+        font-size: 25px;
+    }
+
+    .opcionesLeche{
+        max-width: 900px;   
+    }
+
+    .opcionesLeche h2{
+        font-size: 32px;
+    }
+
+    #tituloReceta{
+        font-size: 50px;
+    }
+
+    #objetivoReceta{
+        font-size: 25px;
+    }
+
+    #tituloOpcionesTipo img {
+        width: 32px;
+        height: 32px;
+    }
+
+
+
+    #barraRango {
+        height: 185px;
+    }
+
+    #tituloRangoPh {
+        margin-top: 20px;
+    }
+
+    #tituloRangoPh img {
+        width: 39px;
+        height: 39px;
+    }
+
+    #phValorMov, #phValorFin {
+        font-size: 22px;
+    }
+
+    input[type="range"] {
+        height: 13px; 
+    }
+      
+    input[type="range"]::-webkit-slider-thumb {
+        width: 23px;
+        height: 23px;
+    }
+      
+    input[type="range"]::-moz-range-thumb {
+        width: 23px;
+        height: 23px;
+    }
     
+    input[type="range"]::-ms-thumb {
+        width: 23px;
+        height: 23px;
+    }
 }
