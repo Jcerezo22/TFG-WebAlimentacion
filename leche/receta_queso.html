@@ -84,6 +84,40 @@
 						  </label>
 						</div>
 					</div>
+					<div class="opcionesLeche" id="barraRangosT">
+						<div id="tituloRangosT">
+							<img src="../img/termometro.png" alt="">
+							<h2>Controla la temperatura y el tiempo</h2>
+						</div>
+						<div id="rangosT">
+							<label>
+								<p>Temperatura (ºC)</p>
+								<input type="range" id="tempRango" min="0" max="50" step="1" value="20">
+								<div id="valoresRangoTemp">
+									<span id="tempValorMov">20</span>
+									<span id="tempValorFin">50</span>
+								</div>
+							</label>
+							<label>
+								<p>Tiempo (min)</p>
+								<input type="range" id="tiemRango" min="0" max="90" step="1" value="30">
+								<div id="valoresRangoTiem">
+									<span id="tiemValorMov">30</span>
+									<span id="tiemValorFin">90</span>
+								</div>
+							</label>
+						</div>
+					</div>
+					<div id="botonQueso">
+						<button id="simularQueso">Simular Queso</button>
+					</div>
+					<div id="resultadoQueso" class="opcionesLeche" style="display: none;">
+						<h2>Resultado del Queso</h2>
+						<div class="contenidoResultado">
+							<div id="descripcion"></div>
+							<div id="quesoVisual"></div>
+						  </div>
+					</div>
 				</article>
 			</section>
 		</main>

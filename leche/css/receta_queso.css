@@ -257,6 +257,123 @@ input[type="range"]::-ms-thumb {
     margin-right: 8px; 
 }
 
+
+
+
+#barraRangosT {
+    display: flex;
+    flex-direction: column;   
+    align-items: flex-start;     
+    justify-content: flex-start; 
+    padding: 25px;
+    padding-top: 20px;
+}
+
+#tituloRangosT {
+    display: flex;
+    align-items: center; 
+    gap: 10px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+
+#tituloRangosT h2 {
+    margin: 0; 
+}
+
+#tituloRangosT img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+}
+
+#rangosT{
+    display: flex;
+    align-items: center;     
+    justify-content: space-between; 
+    gap: 8px;
+    width: 100%;
+    margin-top: 10px;
+}
+
+#rangosT p{
+    font-size: 13px;
+    margin-bottom: 5px;
+}
+  
+#rangosT label {
+    display: flex;
+    flex-direction: column;
+    align-items:flex-start;
+    width: 100%;
+    gap: 10px;
+}
+
+#valoresRangoTemp, #valoresRangoTiem{
+    display: flex;
+    justify-content: space-between; 
+    width: 100%;
+}
+
+#tempValorMov, #tempValorFin,#tiemValorMov,#tiemValorFin {
+    font-size: 13px;
+    color: #6d716f;
+    text-align: center;
+}
+
+#botonQueso{
+    max-width: 1000px;
+    width: 90%;
+    margin: 20px auto;
+    display: flex;
+    justify-content: flex-start;
+}
+
+button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #77b4d8;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #86c7ed;
+}
+
+
+
+#resultadoQueso{
+    text-align: start;
+    padding: 25px;
+}
+
+#resultadoQueso h2{
+    margin-bottom: 20px;
+}
+
+.contenidoResultado {
+    display: flex;
+    align-items: center; 
+    line-height: 30px;
+    /* justify-content: space-between;  */
+}
+  
+#descripcion {
+    flex: 1;
+    text-align: left;
+}
+  
+#quesoVisual {
+    font-size: 50px; 
+    /* margin-right: 50px; */
+}
+
+
+
 /* ===================== MEDIA QUERY  400px - 500px  ================================= */
 @media (min-width: 400px) {
     .opcionLeche img {
@@ -326,6 +443,26 @@ input[type="range"]::-ms-thumb {
         height: 70px;
         font-size: 18px;
     }
+
+
+    #tituloRangosT img {
+        width: 25px;
+        height: 25px;
+    }
+
+    #rangosT{
+        gap: 9px;
+    }
+    
+    #rangosT p{
+        font-size: 16px;
+    }
+
+    #tempValorMov, #tempValorFin,#tiemValorMov,#tiemValorFin {
+        font-size: 14px;
+    }
+
+    
 }
 
 /* ===================== MEDIA QUERY  500px - 800px  ================================= */
@@ -402,6 +539,33 @@ input[type="range"]::-ms-thumb {
     #opcionesTipoCuajo label {
         width: 150px;
         font-size: 19px;
+    }
+
+
+    #tituloRangosT img {
+        width: 27px;
+        height: 27px;
+    }
+
+    #rangosT{
+        gap: 12px;
+    }
+    
+    #rangosT p{
+        font-size: 17px;
+    }
+
+    #tempValorMov, #tempValorFin,#tiemValorMov,#tiemValorFin {
+        font-size: 15px;
+    }
+
+
+    #botonQueso{
+        max-width: 580px; 
+    }
+
+    button {
+        font-size: 1.2rem;
     }
 }
 
@@ -482,6 +646,32 @@ input[type="range"]::-ms-thumb {
         height: 85px;
         font-size: 20px;
     }
+
+
+    #tituloRangosT img {
+        width: 28px;
+        height: 28px;
+    }
+
+    #rangosT{
+        gap: 15px;
+    }
+    
+    #rangosT p{
+        font-size: 18px;
+    }
+
+    #tempValorMov, #tempValorFin,#tiemValorMov,#tiemValorFin {
+        font-size: 16px;
+    }
+
+    #botonQueso{
+        max-width: 700px; 
+    }
+
+    button {
+        font-size: 1.3rem;
+    }
 }
 
 /* ===================== MEDIA QUERY  1001px - 1200px  ================================= */
@@ -557,6 +747,31 @@ input[type="range"]::-ms-thumb {
         width: 200px;
         height: 90px;
         font-size: 21px;
+    }
+
+    #tituloRangosT img {
+        width: 30px;
+        height: 30px;
+    }
+
+    #rangosT{
+        gap: 19px;
+    }
+    
+    #rangosT p{
+        font-size: 19px;
+    }
+
+    #tempValorMov, #tempValorFin,#tiemValorMov,#tiemValorFin {
+        font-size: 17px;
+    }
+
+    #botonQueso{
+        max-width: 780px; 
+    }
+
+    button {
+        font-size: 1.4rem;
     }
 }
 
@@ -635,6 +850,32 @@ input[type="range"]::-ms-thumb {
         height: 100px;
         font-size: 22px;
     }
+
+
+    #tituloRangosT img {
+        width: 32px;
+        height: 32px;
+    }
+
+    #rangosT{
+        gap: 25px;
+    }
+    
+    #rangosT p{
+        font-size: 20px;
+    }
+
+    #tempValorMov, #tempValorFin,#tiemValorMov,#tiemValorFin {
+        font-size: 18px;
+    }
+
+    #botonQueso{
+        max-width: 900px;   
+    }
+
+    button {
+        font-size: 1.5rem;
+    }
 }
 
 /* ===================== MEDIA QUERY  1601px  ================================= */
@@ -708,5 +949,26 @@ input[type="range"]::-ms-thumb {
         width: 250px;
         height: 110px;
         font-size: 23px;
+    }
+
+    #tituloRangosT img {
+        width: 35px;
+        height: 35px;
+    }
+
+    #rangosT{
+        gap: 28px;
+    }
+    
+    #rangosT p{
+        font-size: 21px;
+    }
+
+    #tempValorMov, #tempValorFin,#tiemValorMov,#tiemValorFin {
+        font-size: 19px;
+    }
+
+    button {
+        font-size: 1.65rem;
     }
 }
