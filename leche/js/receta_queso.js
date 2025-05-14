@@ -78,58 +78,81 @@ function actualizarValorPh(event){
 }
 
 function calcularQueso(leche, ph, cuajo, temperatura, tiempo) {
-    let textura = 'media';
     let descripcion = '';
-    
+    let textura = '';
+    let puntajeTextura = 0;
+
     // Leche
     if (leche === 'oveja') {
-        descripcion += 'La leche de oveja → Rica en grasa y proteína, produce un queso más cremoso y untuoso.<br />';
-        if (textura === 'media') 
-            textura = 'cremosa';
+        descripcion += '&#x1f411 La leche de oveja → Rica en grasa y proteína, produce un queso más cremoso y untuoso.<br />';
+        puntajeTextura += 1;
     } else if (leche === 'cabra') {
-        descripcion += 'La leche de cabra → Más digestiva y blanca, tiende a dar un queso más suave y con menos grasa.<br />';
-        if (textura === 'media') 
-            textura = 'blanda';
+        descripcion += '&#x1f410 La leche de cabra → Más digestiva y blanca, tiende a dar un queso más suave y con menos grasa.<br />';
+        puntajeTextura += 0;
     } else if (leche === 'vaca') {
-        descripcion += 'La leche de vaca → Es común y equilibrada, da como resultado un queso de textura media.<br />';
+        descripcion += ' &#x1f404 La leche de vaca → Es común y equilibrada, da como resultado un queso de textura media.<br />';
+        puntajeTextura += 0;
     }
 
     // pH
     if (ph < 4.6) {
-      textura = 'quebradiza';
-      descripcion += 'El pH es demasiado bajo → Lo que genera una coagulación excesiva: el queso queda seco y quebradizo.<br />';
+        descripcion += '&#x26a0;&#xfe0f; El pH es demasiado bajo → Lo que genera una coagulación excesiva: el queso queda seco y quebradizo.<br />';
+        puntajeTextura -= 2;
     } else if (ph > 5.0) {
-      textura = 'blanda';
-      descripcion += 'El pH es alto → Fuera del rango ideal de 4.6-5.0,  por lo que la leche no coagula bien. El queso será blando o no se formará.<br />';
+        descripcion += '&#x26a0;&#xfe0f; El pH es demasiado alto → Fuera del rango ideal de 4.6-5.0,  por lo que la leche no coagula bien. El queso será blando o no se formará.<br />';
+        puntajeTextura -= 1;
     } else {
-      descripcion += 'El pH está en el rango óptimo → Lo que da un queso bien formado.<br />';
+        descripcion += ' &#x2705 El pH está en el rango óptimo → Lo que da un queso bien formado.<br />';
+        puntajeTextura += 2;
     }
 
     // Cuajo
     if (cuajo === 'animal') {
-        descripcion += 'El cuajo animal → Es rápido y efectivo, ideal para una coagulación firme.<br />';
+        descripcion += '&#x1f9ea El cuajo animal → Es rápido y efectivo, ideal para una coagulación firme.<br />';
+        puntajeTextura += 2;
     } else if (cuajo === 'vegetal') {
-        descripcion += 'El cuajo vegetal → Actúa más lento y puede dejar sabores amargos si no se controla bien.<br />';
+        descripcion += '&#x1f33f El cuajo vegetal → Actúa más lento y puede dejar sabores amargos si no se controla bien.<br />';
+        puntajeTextura += 0;
     } else if (cuajo === 'microbiano') {
-        descripcion += 'El cuajo microbiano → Es más lento y suave, ideal para opciones vegetarianas pero menos firme.<br />';
+        descripcion += '&#x1f52c El cuajo microbiano → Es más lento y suave, ideal para opciones vegetarianas pero menos firme.<br />';
+        puntajeTextura -= 1;
     }
   
     // Temperatura
     if (temperatura < 30) {
-        descripcion += "La temperatura es demasiado baja → Esto retrasa la coagulación y produce un queso suelto.<br />";
+        descripcion += "&#x2744;&#xfe0f; La temperatura es demasiado baja → Esto retrasa la coagulación y produce un queso suelto.<br />";
+        puntajeTextura -= 2;
     } else if (temperatura > 35) {
-        descripcion += "La temperatura es demasiado alta → Lo que puede hacer que el queso quede seco o grumoso.<br />";
+        descripcion += "&#x1f525 La temperatura es demasiado alta → Lo que puede hacer que el queso quede seco o grumoso.<br />";
+        puntajeTextura -= 1;
     } else {
-        descripcion += "La temperatura está en el rango ideal (30-35°C) → Para activar el cuajo y formar un buen gel.<br />";
+        descripcion += "&#x1f321;&#xfe0f; La temperatura está en el rango ideal (30-35°C) → Para activar el cuajo y formar un buen gel.<br />";
+        puntajeTextura += 2;
     }
   
     // Tiempo
     if (tiempo < 30) {
         descripcion += "El tiempo fue insuficiente → La coagulación no se completó, y el queso quedó incompleto o líquido.<br />";
+        puntajeTextura -= 2;
     } else if (tiempo > 60) {
         descripcion += "El tiempo fue excesivo → Esto puede endurecer demasiado el queso o separarlo en suero y masa.<br />";
+        puntajeTextura -= 1;
     } else {
         descripcion += "El tiempo fue adecuado → Para que el queso coagulara correctamente.<br />";
+        puntajeTextura += 2;
+    }
+
+
+    if (puntajeTextura >= 6) {
+        textura = 'cremosa';
+    } else if (puntajeTextura >= 3) {
+        textura = 'media';
+    } else if (puntajeTextura >= 0) {
+        textura = 'blanda';
+    } else if (puntajeTextura >= -2) {
+        textura = 'quebradiza';
+    } else {
+        textura = 'liquida';
     }
   
     return { textura, descripcion };

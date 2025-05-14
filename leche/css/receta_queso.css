@@ -356,8 +356,8 @@ button:hover {
 }
 
 .contenidoResultado {
-    display: flex;
-    align-items: center; 
+    /* display: flex;
+    align-items: center;  */
     line-height: 30px;
     /* justify-content: space-between;  */
 }
@@ -368,6 +368,8 @@ button:hover {
 }
   
 #quesoVisual {
+    text-align: center;
+    margin-top: 20px;
     font-size: 50px; 
     /* margin-right: 50px; */
 }
@@ -566,6 +568,11 @@ button:hover {
 
     button {
         font-size: 1.2rem;
+    }
+
+    .contenidoResultado {
+        display: flex;
+        align-items: center; 
     }
 }
 
