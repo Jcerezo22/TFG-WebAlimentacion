@@ -43,7 +43,9 @@ body{
     margin: 20px auto;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     max-width: 1000px;   
-    width: 90%;         
+    width: 90%;       
+    /* background-color: #fbfaf7; */
+    /* background-color: #fafaf5;   */
 }
 
 .opcionesLeche h2{
@@ -87,7 +89,7 @@ body{
     padding: 20px;
     font-size: 15px;
     font-weight: bolder;
-    
+    background-color: white;
 }
 
 .opcionLeche img {
@@ -237,6 +239,7 @@ input[type="range"]::-ms-thumb {
     gap: 10px;
     margin-top: 15px;
     margin-bottom: 5px;
+    
 }
   
 #opcionesTipoCuajo label {
@@ -251,6 +254,7 @@ input[type="range"]::-ms-thumb {
     padding: 8px;
     margin: 5px;
     font-weight: bolder;
+    background-color: white;
 }
 
 #opcionesTipoCuajo input[type="radio"] {
@@ -356,10 +360,7 @@ button:hover {
 }
 
 .contenidoResultado {
-    /* display: flex;
-    align-items: center;  */
     line-height: 30px;
-    /* justify-content: space-between;  */
 }
   
 #descripcion {
@@ -367,11 +368,8 @@ button:hover {
     text-align: left;
 }
   
-#quesoVisual {
+#imagenQueso {
     text-align: center;
-    margin-top: 20px;
-    font-size: 50px; 
-    /* margin-right: 50px; */
 }
 
 
@@ -573,6 +571,11 @@ button:hover {
     .contenidoResultado {
         display: flex;
         align-items: center; 
+        font-size: 15px;
+    }
+
+    #imagenQueso {
+       margin-left: 10px;
     }
 }
 

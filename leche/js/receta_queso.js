@@ -132,27 +132,27 @@ function calcularQueso(leche, ph, cuajo, temperatura, tiempo) {
   
     // Tiempo
     if (tiempo < 30) {
-        descripcion += "El tiempo fue insuficiente → La coagulación no se completó, y el queso quedó incompleto o líquido.<br />";
+        descripcion += " &#x1f550 El tiempo fue insuficiente → La coagulación no se completó, y el queso quedó incompleto o líquido.<br />";
         puntajeTextura -= 2;
     } else if (tiempo > 60) {
-        descripcion += "El tiempo fue excesivo → Esto puede endurecer demasiado el queso o separarlo en suero y masa.<br />";
+        descripcion += " &#x1f559 El tiempo fue excesivo → Esto puede endurecer demasiado el queso o separarlo en suero y masa.<br />";
         puntajeTextura -= 1;
     } else {
-        descripcion += "El tiempo fue adecuado → Para que el queso coagulara correctamente.<br />";
+        descripcion += "&#x1f554 El tiempo fue adecuado → Para que el queso coagulara correctamente.<br />";
         puntajeTextura += 2;
     }
 
 
     if (puntajeTextura >= 6) {
-        textura = 'cremosa';
+        textura = 'cremoso';
     } else if (puntajeTextura >= 3) {
-        textura = 'media';
+        textura = 'medio';
     } else if (puntajeTextura >= 0) {
-        textura = 'blanda';
+        textura = 'blando';
     } else if (puntajeTextura >= -2) {
-        textura = 'quebradiza';
+        textura = 'quebradizo';
     } else {
-        textura = 'liquida';
+        textura = 'liquido';
     }
   
     return { textura, descripcion };
@@ -180,17 +180,13 @@ function simularQueso() {
 
             document.getElementById('descripcion').innerHTML = resultado.descripcion;
 
-            let quesoVisual = '';
+            let nombreImagen = `queso_${resultado.textura}_${tipoLeche}.png`;
+            let rutaImagen = `../img/${nombreImagen}`;
 
-            if (resultado.textura === 'media') {
-                quesoVisual = '🧀';
-            } else if (resultado.textura === 'quebradiza') {
-                quesoVisual = '🧀🧀';
-            } else {
-                quesoVisual = '🧀🧀🧀';
-            }
-
-            document.getElementById('quesoVisual').textContent = quesoVisual; 
+            let imagenQueso = document.getElementById('imagenQueso');
+            imagenQueso.src = rutaImagen;
+            imagenQueso.alt = `Queso ${resultado.textura} hecho con leche de ${tipoLeche}`; 
+            imagenQueso.style.display = 'block';
         }
     }
 }
