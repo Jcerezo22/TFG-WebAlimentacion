@@ -44,8 +44,6 @@ body{
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     max-width: 1000px;   
     width: 90%;       
-    /* background-color: #fbfaf7; */
-    /* background-color: #fafaf5;   */
 }
 
 .opcionesLeche h2{
@@ -90,6 +88,8 @@ body{
     font-size: 15px;
     font-weight: bolder;
     background-color: white;
+    word-break: break-word;
+    white-space: normal;
     text-align: center;          
     width: 100px;
 }
@@ -104,136 +104,32 @@ body{
     box-shadow: 0 2px 10px rgba(17, 87, 152, 0.874);
 }
 
-#barraRango {
-    display: flex;
-    flex-direction: column;   
-    align-items: flex-start;     
-    justify-content: flex-start; 
-    padding: 25px;
-    padding-top: 20px;
-}
-
-#tituloRangoPh {
-    display: flex;
-    align-items: center; 
-    gap: 10px;
-    margin-bottom: 20px;
-    margin-top: 10px;
-}
-
-#tituloRangoPh h2 {
-    margin: 0; 
-}
-
-#tituloRangoPh img {
-    width: 24px;
-    height: 24px;
-    object-fit: contain;
-}
-  
-#barraRango label {
-    display: flex;
-    flex-direction: column;
-    align-items:flex-start;
-    width: 100%;
-    gap: 10px;
-
-}
-
-#valoresRango{
-    display: flex;
-    justify-content: space-between; 
-    width: 100%;
-}
-
-#phValorMov, #phValorFin {
-    font-size: 13px;
-    color: #6d716f;
-    text-align: center;
-}
 
 
-input[type="range"] {
-    width: 100%;  
-    height: 4px; 
-    appearance: none;             
-    -webkit-appearance: none;     
-    -moz-appearance: none; 
-    background: transparent; 
-    margin-top: 10px;
-    border-radius: 10px;
-}
-  
-/* Estilo de la barra*/
-input[type="range"]::-webkit-slider-runnable-track {
-    height: 5px;
-    border-radius: 10px;
-}
-  
-input[type="range"]::-moz-range-track {
-    height: 5px;
-    border-radius: 10px;
-}
-  
-input[type="range"]::-ms-track {
-    height: 5px;
-    border-radius: 10px;
-    border: none;
-    color: transparent;
-}
-  
-input[type="range"]::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    width: 15px;
-    height: 15px;
-    background: #ffffff;
-    border: 2px solid #77b4d8;
-    border-radius: 50%;
-    margin-top: -6px; 
-}
-  
-input[type="range"]::-moz-range-thumb {
-    width: 15px;
-    height: 15px;
-    background: #ffffff;
-    border: 2px solid #77b4d8;
-    border-radius: 50%;
-}
-
-input[type="range"]::-ms-thumb {
-    width: 15px;
-    height: 15px;
-    background: #ffffff;
-    border: 2px solid #77b4d8;
-    border-radius: 50%;
-}
-
-
-
-#opcionesCuajoConten {
+#opcionesBactConten {
     display: flex;
     flex-direction: column;   
     padding: 25px;
 }
 
-#tituloTipoCuajo {
+#tituloTipoBact {
     display: flex;
     align-items: center; 
     gap: 10px;
     margin-bottom: 10px;
 }
 
-#tituloTipoCuajo h2 {
+#tituloTipoBact h2 {
     margin: 0; 
 }
 
-#tituloTipoCuajo img {
+#tituloTipoBact img {
     width: 24px;
     height: 24px;
     object-fit: contain;
 }
 
-#opcionesTipoCuajo {
+#opcionesTipoBact {
     display: flex;
     flex-wrap: wrap;
     align-items: center;     
@@ -244,14 +140,14 @@ input[type="range"]::-ms-thumb {
     
 }
   
-#opcionesTipoCuajo label {
+#opcionesTipoBact label {
     display: flex;
     align-items: center;     
     justify-content: center; 
     border: 1px solid rgb(77, 76, 76);
     border-radius: 15px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-    width: 130px;
+    width: 155px;
     height: 65px;
     padding: 8px;
     margin: 5px;
@@ -259,7 +155,7 @@ input[type="range"]::-ms-thumb {
     background-color: white;
 }
 
-#opcionesTipoCuajo input[type="radio"] {
+#opcionesTipoBact input[type="radio"] {
     margin-right: 8px; 
 }
 
@@ -327,7 +223,64 @@ input[type="range"]::-ms-thumb {
     text-align: center;
 }
 
-#botonQueso{
+input[type="range"] {
+    width: 100%;  
+    height: 4px; 
+    appearance: none;             
+    -webkit-appearance: none;     
+    -moz-appearance: none; 
+    background: transparent; 
+    margin-top: 10px;
+    border-radius: 10px;
+}
+  
+input[type="range"]::-webkit-slider-runnable-track {
+    height: 5px;
+    border-radius: 10px;
+}
+  
+input[type="range"]::-moz-range-track {
+    height: 5px;
+    border-radius: 10px;
+}
+  
+input[type="range"]::-ms-track {
+    height: 5px;
+    border-radius: 10px;
+    border: none;
+    color: transparent;
+}
+  
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 15px;
+    height: 15px;
+    background: #ffffff;
+    border: 2px solid #77b4d8;
+    border-radius: 50%;
+    margin-top: -6px; 
+}
+  
+input[type="range"]::-moz-range-thumb {
+    width: 15px;
+    height: 15px;
+    background: #ffffff;
+    border: 2px solid #77b4d8;
+    border-radius: 50%;
+}
+
+input[type="range"]::-ms-thumb {
+    width: 15px;
+    height: 15px;
+    background: #ffffff;
+    border: 2px solid #77b4d8;
+    border-radius: 50%;
+}
+
+
+
+
+#botonYogur{
     max-width: 1000px;
     width: 90%;
     margin: 20px auto;
@@ -352,12 +305,12 @@ button:hover {
 
 
 
-#resultadoQueso{
+#resultadoYogur{
     text-align: start;
     padding: 25px;
 }
 
-#resultadoQueso h2{
+#resultadoYogur h2{
     margin-bottom: 20px;
 }
 
@@ -370,7 +323,7 @@ button:hover {
     text-align: left;
 }
   
-#imagenQueso {
+#imagenYogur {
     text-align: center;
 }
 
@@ -406,43 +359,13 @@ button:hover {
 
 
 
-    #tituloRangoPh img {
-        width: 25px;
-        height: 25px;
-    }
-
-    #phValorMov, #phValorFin {
-        font-size: 14px;
-    }
-
-    input[type="range"] {
-        height: 6px; 
-    }
-      
-    input[type="range"]::-webkit-slider-thumb {
-        width: 16px;
-        height: 16px;
-    }
-      
-    input[type="range"]::-moz-range-thumb {
-        width: 16px;
-        height: 16px;
-    }
-    
-    input[type="range"]::-ms-thumb {
-        width: 16px;
-        height: 16px;
-    }
-
-
-
-    #tituloTipoCuajo img {
+    #tituloTipoBact img {
         width: 26px;
         height: 26px;
     }
 
-    #opcionesTipoCuajo label {
-        width: 140px;
+    #opcionesTipoBact label {
+        width: 175px;
         height: 70px;
         font-size: 18px;
     }
@@ -465,7 +388,24 @@ button:hover {
         font-size: 14px;
     }
 
+    input[type="range"] {
+        height: 6px; 
+    }
+      
+    input[type="range"]::-webkit-slider-thumb {
+        width: 16px;
+        height: 16px;
+    }
+      
+    input[type="range"]::-moz-range-thumb {
+        width: 16px;
+        height: 16px;
+    }
     
+    input[type="range"]::-ms-thumb {
+        width: 16px;
+        height: 16px;
+    }
 }
 
 /* ===================== MEDIA QUERY  500px - 800px  ================================= */
@@ -503,16 +443,32 @@ button:hover {
     }
 
 
-
-   
-
-    #tituloRangoPh img {
+    #tituloTipoBact img {
         width: 27px;
         height: 27px;
     }
 
-    #phValorMov, #phValorFin {
-        font-size: 16px;
+    #opcionesTipoBact label {
+        width: 190px;
+        font-size: 19px;
+    }
+
+
+    #tituloRangosT img {
+        width: 27px;
+        height: 27px;
+    }
+
+    #rangosT{
+        gap: 12px;
+    }
+    
+    #rangosT p{
+        font-size: 17px;
+    }
+
+    #tempValorMov, #tempValorFin,#tiemValorMov,#tiemValorFin {
+        font-size: 15px;
     }
 
     input[type="range"] {
@@ -535,36 +491,7 @@ button:hover {
     }
 
 
-    #tituloTipoCuajo img {
-        width: 27px;
-        height: 27px;
-    }
-
-    #opcionesTipoCuajo label {
-        width: 150px;
-        font-size: 19px;
-    }
-
-
-    #tituloRangosT img {
-        width: 27px;
-        height: 27px;
-    }
-
-    #rangosT{
-        gap: 12px;
-    }
-    
-    #rangosT p{
-        font-size: 17px;
-    }
-
-    #tempValorMov, #tempValorFin,#tiemValorMov,#tiemValorFin {
-        font-size: 15px;
-    }
-
-
-    #botonQueso{
+    #botonYogur{
         max-width: 580px; 
     }
 
@@ -578,7 +505,7 @@ button:hover {
         font-size: 15px;
     }
 
-    #imagenQueso {
+    #imagenYogur {
        margin-left: 10px;
     }
 }
@@ -618,48 +545,23 @@ button:hover {
         height: 27px;
     }
 
-    #tituloRangoPh img {
-        width: 32px;
-        height: 32px;
-    }
-
-    #phValorMov, #phValorFin {
-        font-size: 18px;
-    }
 
     input[type="range"] {
         height: 8px; 
     }
-      
-    input[type="range"]::-webkit-slider-thumb {
-        width: 18px;
-        height: 18px;
-    }
-      
-    input[type="range"]::-moz-range-thumb {
-        width: 18px;
-        height: 18px;
-    }
-    
-    input[type="range"]::-ms-thumb {
-        width: 18px;
-        height: 18px;
-    }
 
 
-    #tituloTipoCuajo img {
+    #tituloTipoBact img {
         width: 29px;
         height: 29px;
     }
 
-    #opcionesTipoCuajo {   
-        justify-content: space-between; 
-    }
-
-    #opcionesTipoCuajo label {
-        width: 180px;
+    #opcionesTipoBact label {
+        width: 250px;
         height: 85px;
         font-size: 20px;
+        margin-left: 30px;
+        margin-right: 30px;
     }
 
 
@@ -680,7 +582,23 @@ button:hover {
         font-size: 16px;
     }
 
-    #botonQueso{
+          
+    input[type="range"]::-webkit-slider-thumb {
+        width: 18px;
+        height: 18px;
+    }
+      
+    input[type="range"]::-moz-range-thumb {
+        width: 18px;
+        height: 18px;
+    }
+    
+    input[type="range"]::-ms-thumb {
+        width: 18px;
+        height: 18px;
+    }
+
+    #botonYogur{
         max-width: 700px; 
     }
 
@@ -725,42 +643,13 @@ button:hover {
     }
 
 
-    #tituloRangoPh img {
-        width: 34px;
-        height: 34px;
-    }
-
-    #phValorMov, #phValorFin {
-        font-size: 19px;
-    }
-
-    input[type="range"] {
-        height: 9px; 
-    }
-      
-    input[type="range"]::-webkit-slider-thumb {
-        width: 19px;
-        height: 19px;
-    }
-      
-    input[type="range"]::-moz-range-thumb {
-        width: 19px;
-        height: 19px;
-    }
-    
-    input[type="range"]::-ms-thumb {
-        width: 19px;
-        height: 19px;
-    }
-
-
-    #tituloTipoCuajo img {
+    #tituloTipoBact img {
         width: 32px;
         height: 32px;
     }
 
-    #opcionesTipoCuajo label {
-        width: 200px;
+    #opcionesTipoBact label {
+        width: 290px;
         height: 90px;
         font-size: 21px;
     }
@@ -782,7 +671,26 @@ button:hover {
         font-size: 17px;
     }
 
-    #botonQueso{
+        input[type="range"] {
+        height: 9px; 
+    }
+      
+    input[type="range"]::-webkit-slider-thumb {
+        width: 19px;
+        height: 19px;
+    }
+      
+    input[type="range"]::-moz-range-thumb {
+        width: 19px;
+        height: 19px;
+    }
+    
+    input[type="range"]::-ms-thumb {
+        width: 19px;
+        height: 19px;
+    }
+
+    #botonYogur{
         max-width: 780px; 
     }
 
@@ -827,43 +735,13 @@ button:hover {
     }
 
 
-
-
-    #tituloRangoPh img {
-        width: 36px;
-        height: 36px;
-    }
-
-    #phValorMov, #phValorFin {
-        font-size: 20px;
-    }
-
-    input[type="range"] {
-        height: 10px; 
-    }
-      
-    input[type="range"]::-webkit-slider-thumb {
-        width: 20px;
-        height: 20px;
-    }
-      
-    input[type="range"]::-moz-range-thumb {
-        width: 20px;
-        height: 20px;
-    }
-    
-    input[type="range"]::-ms-thumb {
-        width: 20px;
-        height: 20px;
-    }
-
-    #tituloTipoCuajo img {
+    #tituloTipoBact img {
         width: 34px;
         height: 34px;
     }
 
-    #opcionesTipoCuajo label {
-        width: 240px;
+    #opcionesTipoBact label {
+        width: 340px;
         height: 100px;
         font-size: 22px;
     }
@@ -886,7 +764,26 @@ button:hover {
         font-size: 18px;
     }
 
-    #botonQueso{
+    input[type="range"] {
+        height: 10px; 
+    }
+      
+    input[type="range"]::-webkit-slider-thumb {
+        width: 20px;
+        height: 20px;
+    }
+      
+    input[type="range"]::-moz-range-thumb {
+        width: 20px;
+        height: 20px;
+    }
+    
+    input[type="range"]::-ms-thumb {
+        width: 20px;
+        height: 20px;
+    }
+
+    #botonYogur{
         max-width: 900px;   
     }
 
@@ -928,43 +825,13 @@ button:hover {
     }
 
 
-
-
-    #tituloRangoPh img {
-        width: 39px;
-        height: 39px;
-    }
-
-    #phValorMov, #phValorFin {
-        font-size: 22px;
-    }
-
-    input[type="range"] {
-        height: 13px; 
-    }
-      
-    input[type="range"]::-webkit-slider-thumb {
-        width: 23px;
-        height: 23px;
-    }
-      
-    input[type="range"]::-moz-range-thumb {
-        width: 23px;
-        height: 23px;
-    }
-    
-    input[type="range"]::-ms-thumb {
-        width: 23px;
-        height: 23px;
-    }
-
-    #tituloTipoCuajo img {
+    #tituloTipoBact img {
         width: 36px;
         height: 36px;
     }
 
-    #opcionesTipoCuajo label {
-        width: 250px;
+    #opcionesTipoBact label {
+        width: 350px;
         height: 110px;
         font-size: 23px;
     }
@@ -984,6 +851,25 @@ button:hover {
 
     #tempValorMov, #tempValorFin,#tiemValorMov,#tiemValorFin {
         font-size: 19px;
+    }
+
+       input[type="range"] {
+        height: 13px; 
+    }
+      
+    input[type="range"]::-webkit-slider-thumb {
+        width: 23px;
+        height: 23px;
+    }
+      
+    input[type="range"]::-moz-range-thumb {
+        width: 23px;
+        height: 23px;
+    }
+    
+    input[type="range"]::-ms-thumb {
+        width: 23px;
+        height: 23px;
     }
 
     button {

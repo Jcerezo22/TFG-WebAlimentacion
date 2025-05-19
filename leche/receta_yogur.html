@@ -1,12 +1,12 @@
 <!doctype html>
 <html lang="es">
 	<head>
-		<title>Receta Queso</title>
+		<title>Receta Yogur</title>
 		<meta charset="utf-8" />
 		<meta name="author" content="tu nombre" />
-		<link href="css/receta_queso.css" rel="stylesheet" type="text/css" />
+		<link href="css/receta_yogur.css" rel="stylesheet" type="text/css" />
         <link rel="stylesheet" href="css/leche_menu.css" type="text/css" />
-		<script src="js/receta_queso.js" type="text/javascript"> </script>
+		<script src="js/receta_yogur.js" type="text/javascript"> </script>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	</head>
 	<body>
@@ -35,9 +35,9 @@
 		<main>
 			<section>
 				<article>
-                    <h1 id="tituloReceta">RECETA QUESO FRESCO</h1>
+                    <h1 id="tituloReceta">RECETA YOGUR CASERO</h1>
                     <p id="objetivoReceta">
-                        <span>Objetivo: </span>Aprender cómo el <strong>pH y la acidez</strong> afectan la coagulación de la leche y la textura del queso.
+                        <span>Objetivo: </span> Mostrar cómo las bacterias fermentan la lactosa en ácido láctico y modifican el <strong>pH</strong>.
                     </p>
 					<div class="opcionesLeche">
 						<div id="tituloOpcionesTipo">
@@ -47,46 +47,28 @@
                         <div class="contenedorOpciones">
                             <div class="opcionLeche" id="vaca"><img src="../img/vaca.jpg" alt="Vaca"><br>Vaca</div>
                             <div class="opcionLeche" id="cabra"><img src="../img/cabra.jpg" alt="Cabra"><br>Cabra</div>
-                            <div class="opcionLeche" id="oveja"><img src="../img/oveja.jpg" alt="Oveja"><br>Oveja</div>
+                            <div class="opcionLeche" id="sinLactosa"><img src="../img/leche_sin_lactosa.jpg" alt="Icono de leche sin lactosa"><br>Sin Lactosa</div>
                         </div>
                     </div>
-					<div class="opcionesLeche" id="barraRango">
-						<div id="tituloRangoPh">
-							<img src="../img/medidor-de-ph-del-suelo.png" alt="Icono medidor de pH">
-							<h2>Ajusta el pH</h2>
+					<div class="opcionesLeche" id="opcionesBactConten">
+						<div id="tituloTipoBact">
+						  <img src="../img/bacteria.png" alt="Icono bacteria">
+						  <h2>Añade los cultivos bacterianos</h2>
 						</div>
-						<label>
-							<input type="range" id="phRango" min="3" max="7" step="0.1" value="4">
-							<div id="valoresRango">
-								<span id="phValorMov">5.0</span>
-								<span id="phValorFin">7.0</span>
-							</div>
-							
-						</label>
-					</div>
-					<div class="opcionesLeche" id="opcionesCuajoConten">
-						<div id="tituloTipoCuajo">
-						  <img src="../img/cuajada.png" alt="Icono cuendo de cuajo">
-						  <h2>Elige el tipo de cuajo</h2>
-						</div>
-						<div id="opcionesTipoCuajo">
-						  <label for="cuajoAnimal">
-							<input type="radio" id="cuajoAnimal" name="tipoCuajo" value="animal">
-							Cuajo Animal
+						<div id="opcionesTipoBact">
+						  <label for="bactLacto">
+							<input type="checkbox" id="bactLacto" name="tipoBact" value="lactobacillus">
+							Lactobacillus bulgaricus
 						  </label>
-						  <label for="cuajoVegetal">
-							<input type="radio" id="cuajoVegetal" name="tipoCuajo" value="vegetal">
-							Cuajo vegetal
-						  </label>
-						  <label for="cuajoMicrobiano">
-							<input type="radio" id="cuajoMicrobiano" name="tipoCuajo" value="microbiano">
-							Cuajo Microbiano
+						  <label for="bactStrep">
+							<input type="checkbox" id="bactStrep" name="tipoBact" value="streptococcus">
+							Streptococcus thermophilus
 						  </label>
 						</div>
 					</div>
 					<div class="opcionesLeche" id="barraRangosT">
 						<div id="tituloRangosT">
-							<img src="../img/termometro.png" alt="Icono termometro">
+							<img src="../img/termometro.png" alt="">
 							<h2>Controla la temperatura y el tiempo</h2>
 						</div>
 						<div id="rangosT">
@@ -108,14 +90,14 @@
 							</label>
 						</div>
 					</div>
-					<div id="botonQueso">
-						<button id="simularQueso">Simular Queso</button>
+					<div id="botonYogur">
+						<button id="simularYogur">Simular Yogur</button>
 					</div>
-					<div id="resultadoQueso" class="opcionesLeche" style="display: none;">
-						<h2>Resultado del Queso</h2>
+					<div id="resultadoYogur" class="opcionesLeche" style="display: none;">
+						<h2>Resultado del Yogur</h2>
 						<div class="contenidoResultado">
 							<div id="descripcion"></div>
-							<img id="imagenQueso" src="" alt="" style="display:none; max-width: 200px;"/>
+							<img id="imagenYogur" src="" alt="" style="display:none; max-width: 200px;"/>
 						  </div>
 					</div>
 				</article>
