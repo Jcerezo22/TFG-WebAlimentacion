@@ -71,82 +71,70 @@ function actualizarValorRangos(event){
     barra.style.background = `linear-gradient(to right, ${colorIzquierda} 0%, ${colorIzquierda} ${porcentaje}%, ${colorDerecha} ${porcentaje}%, ${colorDerecha} 100%)`;
 }
 
-function calcularYogur(leche, bact, temperatura, tiempo) {
+function calcularYogur(leche, lactobacillus, streptococcus, temperatura, tiempo) {
     let descripcion = '';
     let textura = '';
     let puntajeTextura = 0;
 
     // Leche
-    if (leche === 'oveja') {
-        descripcion += '&#x1f411 La leche de oveja → Rica en grasa y proteína, produce un queso más cremoso y untuoso.<br />';
+    if (leche === 'cabra') {
+        descripcion += '&#x1f410 La leche de cabra → Es más digestiva y ligera. Tiende a formar yogures más suaves y con menos firmeza.<br />';
         puntajeTextura += 1;
-    } else if (leche === 'cabra') {
-        descripcion += '&#x1f410 La leche de cabra → Más digestiva y blanca, tiende a dar un queso más suave y con menos grasa.<br />';
-        puntajeTextura += 0;
     } else if (leche === 'vaca') {
-        descripcion += ' &#x1f404 La leche de vaca → Es común y equilibrada, da como resultado un queso de textura media.<br />';
+        descripcion += '&#x1f404 La leche de vaca → Es equilibrada en grasa y proteína. Ideal para un yogur cremoso y bien formado.<br />';
         puntajeTextura += 0;
+    } else if (leche === 'sinlactosa') {
+        descripcion += '&#x26a0;&#xfe0f; Leche sin lactosa → Puede dificultar la fermentación porque las bacterias se alimentan de lactosa.<br />';
+        puntajeTextura -= 1;
     }
 
-    // pH
-    if (ph < 4.6) {
-        descripcion += '&#x26a0;&#xfe0f; El pH es demasiado bajo → Lo que genera una coagulación excesiva: el queso queda seco y quebradizo.<br />';
-        puntajeTextura -= 2;
-    } else if (ph > 5.0) {
-        descripcion += '&#x26a0;&#xfe0f; El pH es demasiado alto → Fuera del rango ideal de 4.6-5.0,  por lo que la leche no coagula bien. El queso será blando o no se formará.<br />';
-        puntajeTextura -= 1;
-    } else {
-        descripcion += ' &#x2705 El pH está en el rango óptimo → Lo que da un queso bien formado.<br />';
-        puntajeTextura += 2;
-    }
-
-    // Cuajo
-    if (cuajo === 'animal') {
-        descripcion += '&#x1f9ea El cuajo animal → Es rápido y efectivo, ideal para una coagulación firme.<br />';
-        puntajeTextura += 2;
-    } else if (cuajo === 'vegetal') {
-        descripcion += '&#x1f33f El cuajo vegetal → Actúa más lento y puede dejar sabores amargos si no se controla bien.<br />';
+    // Bacterias
+    if (lactobacillus && streptococcus) {
+        descripcion += '&#x1f9a0; Has añadido *Lactobacillus bulgaricus* y *Streptococcus thermophilus* → ¡Perfecta simbiosis! Juntas acidifican y espesan mejor.<br />';
+        puntajeTextura += 3;
+    } else if (lactobacillus || streptococcus) {
+        descripcion += '&#x1f9a0; Solo has añadido una bacteria → La fermentación será más lenta y menos efectiva.<br />';
         puntajeTextura += 0;
-    } else if (cuajo === 'microbiano') {
-        descripcion += '&#x1f52c El cuajo microbiano → Es más lento y suave, ideal para opciones vegetarianas pero menos firme.<br />';
-        puntajeTextura -= 1;
+    } else{
+        descripcion += '&#x26a0;&#xfe0f; No has añadido bacterias → No se puede iniciar la fermentación sin cultivos activos.<br />';
+        puntajeTextura -= 3;
     }
   
     // Temperatura
-    if (temperatura < 30) {
-        descripcion += "&#x2744;&#xfe0f; La temperatura es demasiado baja → Esto retrasa la coagulación y produce un queso suelto.<br />";
-        puntajeTextura -= 2;
-    } else if (temperatura > 35) {
-        descripcion += "&#x1f525 La temperatura es demasiado alta → Lo que puede hacer que el queso quede seco o grumoso.<br />";
-        puntajeTextura -= 1;
-    } else {
-        descripcion += "&#x1f321;&#xfe0f; La temperatura está en el rango ideal (30-35°C) → Para activar el cuajo y formar un buen gel.<br />";
+    if (temperatura >= 42 && temperatura <= 45) {
+        descripcion += '&#x1f321;&#xfe0f; Temperatura ideal → Las bacterias trabajan eficientemente entre 42 y 45°C.<br />';
         puntajeTextura += 2;
+    } else if (temperatura < 42) {
+        descripcion += '&#x2744;&#xfe0f; Temperatura baja → Las bacterias no fermentan bien por debajo de 40°C. Yogur quedará líquido.<br />';
+        puntajeTextura -= 2;
+    } else if (temperatura > 47){
+        descripcion += '&#x1f525; Temperatura alta → Puede matar bacterias y hacer que el yogur se corte.<br />';
+        puntajeTextura -= 1;
     }
   
     // Tiempo
-    if (tiempo < 30) {
-        descripcion += " &#x1f550 El tiempo fue insuficiente → La coagulación no se completó, y el queso quedó incompleto o líquido.<br />";
+    if (tiempo >= 6 && tiempo <= 8) {
+        descripcion += '&#x23f3; Tiempo ideal → Las bacterias tienen suficiente tiempo para fermentar y espesar bien la leche.<br />';
+        puntajeTextura += 2;;
+    } else if (tiempo < 6) {
+        descripcion += '&#x1f550; Tiempo insuficiente → El yogur no llega a formar su textura ni su acidez características.<br />';
         puntajeTextura -= 2;
-    } else if (tiempo > 60) {
-        descripcion += " &#x1f559 El tiempo fue excesivo → Esto puede endurecer demasiado el queso o separarlo en suero y masa.<br />";
+    } else if (tiempo >= 9) {
+        descripcion += '&#x23f1;&#xfe0f; Tiempo excesivo → El yogur se vuelve demasiado ácido y puede separarse el suero.<br />';
         puntajeTextura -= 1;
-    } else {
-        descripcion += "&#x1f554 El tiempo fue adecuado → Para que el queso coagulara correctamente.<br />";
-        puntajeTextura += 2;
     }
 
 
     if (puntajeTextura >= 6) {
-        textura = 'cremoso';
+        textura = 'firme';
     } else if (puntajeTextura >= 3) {
-        textura = 'medio';
+        textura = 'cremoso';
     } else if (puntajeTextura >= 0) {
-        textura = 'blando';
-    } else if (puntajeTextura >= -2) {
-        textura = 'quebradizo';
-    } else {
         textura = 'liquido';
+    } else if (puntajeTextura >= -2) {
+        textura = 'separado';
+    } else {
+        textura = 'nofermentado';
     }
   
     return { textura, descripcion };
@@ -160,16 +148,17 @@ function simularYogur() {
         document.getElementById('descripcion').textContent = "¡Selecciona un tipo de leche!";
     }
     else{
-        let bactInput  = document.querySelector('input[name="tipoBact"]:checked');
+        let lactobacillus = document.getElementById('bactLacto').checked;
+        let streptococcus = document.getElementById('bactStrep').checked;
+
         let temp = parseInt(document.getElementById('tempRango').value);
         let time = parseInt(document.getElementById('tiemRango').value);
 
-        let bact = bactInput.value 
-        let resultado = calcularYogur(tipoLeche,bact,temp,time);
+        let resultado = calcularYogur(tipoLeche, lactobacillus, streptococcus, temp, time);
 
         document.getElementById('descripcion').innerHTML = resultado.descripcion;
 
-        let nombreImagen = `yogur_${resultado.textura}_${tipoLeche}.png`;
+        let nombreImagen = `yogur_${resultado.textura}.png`;
         let rutaImagen = `../img/${nombreImagen}`;
 
         let imagenYogur = document.getElementById('imagenYogur');
