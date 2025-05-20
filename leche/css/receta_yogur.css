@@ -15,13 +15,28 @@ body{
     font-style: normal;
 }
 
+#contenTitulo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-top: 50px;
+}
+
+#contenTitulo img{
+    width: 40px;
+}
+
 #tituloReceta{
     font-family: 'Chunkfive';
     font-size: 24px;
     text-align: center;
-    margin-top: 30px;
     color: #77b4d8;
+    margin-right: 20px;
+    margin-left: 20px;
 }
+
+
 
 #objetivoReceta{
     text-align: center;
