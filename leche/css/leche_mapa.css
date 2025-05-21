@@ -1,0 +1,17 @@
+#mapa {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.mapaContenedor {
+    max-width: 100%;
+    width: 100%;
+}
+
+.mapaContenedor img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
