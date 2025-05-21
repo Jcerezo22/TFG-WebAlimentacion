@@ -9,6 +9,7 @@
 		<link rel="stylesheet" href="css/leche_menu.css" type="text/css" />
 		<link rel="stylesheet" href="css/leche_param.css">
 		<link rel="stylesheet" href="css/leche_recetas.css">
+		<link rel="stylesheet" href="css/leche_paramfq.css">
         <link rel="stylesheet" href="../jquery/jquery-ui.min.css">
         <script src="../jquery/jquery-3.7.1.min.js"></script>
         <script src="../jquery/jquery-ui.min.js"></script>
@@ -64,14 +65,50 @@
                         <div id="param">
 							<div id="contenedorCirculos">
 								<a href=""><div class="circulo ph">PH</div></a>
-								<a href=""><div class="circulo acidez">Acidez</div></a>
+								<a href="#infoAcidez"><div class="circulo acidez">Acidez</div></a>
 								<a href=""><div class="circulo densidad">Densidad<br>específica</div></a>
 								<a href=""><div class="circulo congelacion">Punto de<br>congelación</div></a>
 								<a href=""><div class="circulo ebullicion">Punto de<br>ebullición</div></a>
 								<a href=""><div class="circulo microorganismos">Microorganismos</div></a>
 							</div>
                         </div>
-                        <div id="cantabria">
+						<div id="infoAcidez" class="infoParte">
+							<h2>Acidez</h2>
+							<p>La acidez de la leche es dada por su componentes ácidos como son fosfatos, citratos, carbonatos, hidroxilos y proteínas; y los componentes básicos que incluyen sodio, potasio, calcio, magnesio e hidrógeno. En la leche de vaca, la acidez titulable generalmente varía entre 14°D y 18°D en condiciones normales. Por lo tanto, para detectar posibles alteraciones, una acidez en vaca inferior a 14ºD puede indicar procedencia de animales enfermos (mastitis, es decir, infección en la ubre), leches aguadas o la adición de alguna sustancia alcalinizante (hablará santi). En cambio, la acidez por encima de 18ºD, nos indican leches procedentes de ordeño poco higiénico o que han pasado más de 10 horas sin refrigeración y por consiguiente se ha empezado a producir ácido láctico por degradación de la lactosa.</p>
+							<p>La acidez de la leche puede ser clasificada como original y desarrollada. La original resulta de la presencia de sus constituyentes, y la desarrollada deriva del ácido láctico, producido a partir del crecimiento bacteriano.</p>
+							<p>La acidez de la leche puede medirse de dos formas: acidez actual y acidez titulable. La acidez actual se determina mediante un potenciómetro y se expresa en valores de pH. Sin embargo, debido al sistema tampón natural de la leche, su pH no cambia fácilmente incluso cuando hay variaciones en la cantidad de ácidos presentes. Esto se debe a la presencia de proteínas y sales que estabilizan el pH, lo que hace que esta medición no sea un indicador preciso de la acidez real de la leche.</p>
+							<p>Por esta razón, se prefiere la acidez titulable, que se determina a través de una titulación con una base, como el hidróxido de sodio (NaOH). En este proceso, la base reacciona con los ácidos presentes en la leche hasta alcanzar la neutralización, lo que permite cuantificar con mayor precisión la cantidad de ácido. Debido a su mayor sensibilidad y precisión, la acidez titulable es el método más utilizado para evaluar la acidez de la leche, ya que permite conocer la cantidad total de ácidos presentes sin la interferencia del sistema tampón que afecta la medición del pH.</p>
+							<img src="../img/graficaAcidez.png" alt="Grafica acidez">
+						</div>
+						<div id="infoClara" class="infoParte">
+							<h2>Clara (albumen)</h2>
+							<ul>
+								<li>Es <strong>88% agua y 12% proteínas</strong>, sin grasa.</li>
+								<li>
+									Contiene proteínas importantes:
+									<ul>
+										<li><strong>Ovoalbúmina</strong> (54%)</li>
+										<li><strong>Ovotransferrina</strong> (12%)</li>
+										<li><strong>Ovomucoide</strong> (11%)</li>
+										<li><strong>Lisozima</strong> (3.5%), que destruye bacterias.</li>
+									</ul>
+								</li>
+								<li>Con el tiempo, la clara se vuelve más líquida.</li>
+								<li>Las <strong>nubes blancas</strong> son normales y signo de frescura</li>
+							</ul>
+						</div>
+						<div id="infoYema" class="infoParte">
+							<h2>Yema (vitelo)</h2>
+							<ul>
+								<li>Parte amarilla rica en nutrientes: <strong>vitaminas, minerales, grasas y antioxidantes.</strong></li>
+								<li>Es <strong>50% agua</strong>, el resto proteínas y lípidos</li>
+								<li>Su color depende de la alimentación de la gallina.</li>
+								<li>Tiene <strong>propiedades funcionales:</strong> emulsionante, colorante, gelificante</li>
+								<li>Contiene las <strong>chalazas</strong>, que la mantienen centrada.</li>
+								<li>Con el tiempo, <strong>pierde firmeza y sube su pH.</strong></li>
+							</ul>
+						</div>
+						<div id="cantabria">
                         </div>
                         <div id="cordoba">
                         </div>
