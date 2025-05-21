@@ -1,25 +1,21 @@
-$(window).on("load",inicio);
+$(window).on("load", inicio);
 
-function inicio(){
-    $("#pestannas").tabs({
-        event:"click"
-    });
+function inicio() {
+    $("#pestannas").tabs({ event: "click" });
 
-    $('.cargar').on('click', function(e) {
+    $(".cargar").on("click", function (e) {
         e.preventDefault();
-        const url = $(this).data('url');
-        $('#recetasTab').load(url); // Cargar contenido externo en esa pestaña
+        const url = $(this).data("url");
+        $("#recetasTab").load(url);
     });
 
-
-    let imagenMapa = $('#imagenMapa');
-
-    imagenMapa.on('load', function () {
-        $('map').imageMapResize();
-    });
+    let imagenMapa = $("#imagenMapa");
 
     if (imagenMapa[0].complete) {
-        $('map').imageMapResize();
+        $("map").imageMapResize(); 
+    } else {
+        imagenMapa.on("load", function () {
+        $("map").imageMapResize(); 
+        });
     }
 }
-
