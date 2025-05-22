@@ -63,6 +63,7 @@
   margin: 2%;
   box-sizing: border-box;
   height: 250px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
 }
 
 #tipicoIndia{
