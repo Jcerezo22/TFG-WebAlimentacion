@@ -216,6 +216,43 @@
   margin-right: 50px;
 }
 
+
+#dialogPaises {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	padding: 2rem;
+	border: 3.5px solid #77b4d8;
+	border-radius: 8px;
+	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+	min-width: 150px;
+	min-height: 50px;
+	text-align: center;
+}
+
+#cerrarBoton {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	width: 8px;
+	height: 8px;
+	cursor: pointer;
+}
+
+.contenidoDialogo {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+  width: 80%;
+  font-size: 6px;
+}
+
+#infoTitulo{
+  margin-bottom: 10px;
+}
+
 /* ===================== MEDIA QUERY  400px - 500px  ================================= */
 @media (min-width: 400px) {
   .titulosMapa{
@@ -309,6 +346,17 @@
   #listaExportadores{
     font-size: 14px;
   }
+
+  #dialogPaises {
+    min-width: 240px;
+    min-height: 75px;
+  }
+
+  .contenidoDialogo {
+    font-size: 8px;
+  }
+
+
 }
 
 /* ===================== MEDIA QUERY  500px - 800px  ================================= */
@@ -419,6 +467,21 @@
 
   #listaExportadores{
     font-size: 16px;
+  }
+
+
+  #dialogPaises {
+    min-width: 320px;
+    min-height: 100px;
+  }
+
+  .contenidoDialogo {
+    font-size: 11px;
+  }
+
+  #cerrarBoton {
+    width: 10px;
+    height: 10px;
   }
 }
 
@@ -531,6 +594,16 @@
 
   #listaExportadores{
     font-size: 18px;
+  }
+
+
+  #dialogPaises {
+    min-width: 350px;
+    min-height: 120px;
+  }
+
+  .contenidoDialogo {
+    font-size: 14px;
   }
 }
 
@@ -645,6 +718,15 @@
 
   #listaExportadores{
     font-size: 19px;
+  }
+
+  #dialogPaises {
+    min-width: 380px;
+    min-height: 170px;
+  }
+
+  .contenidoDialogo {
+    font-size: 16px;
   }
 }
 
@@ -766,6 +848,21 @@
     margin-left: 80px;
     margin-right: 80px;
   }
+
+  #dialogPaises {
+    min-width: 550px;
+    min-height: 200px;
+  }
+
+  .contenidoDialogo {
+    font-size: 20px;
+  }
+
+  #cerrarBoton {
+    width: 20px;
+    height: 20px;
+  }
+
 }
 
 /* ===================== MEDIA QUERY  1601px  ================================= */
@@ -878,5 +975,14 @@
 
   #listaExportadores{
     font-size: 25px;
+  }
+
+  #dialogPaises {
+    min-width: 700px;
+    min-height: 250px;
+  }
+
+  .contenidoDialogo {
+    font-size: 24px;
   }
 }
