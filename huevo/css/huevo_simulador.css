@@ -1,0 +1,169 @@
+@font-face {
+    font-family: 'Gliker';
+    src: url('../../tipoLetra/Gliker-Regular.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+#contenTituloSimu{
+    margin-top: 40px;
+    margin-bottom: 50px;
+    text-align: center;
+    font-family: 'Gliker';
+    color: #e78224;
+    font-size: 15px;
+}
+
+#contenSimulador {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+}
+
+#formuSimulador {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+  height: 400px;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 10px #ddd;
+}
+
+#formuSimulador p{
+    margin-bottom: 20px;
+    font-weight: bolder;
+    color: #e78224;
+    font-size: large;
+}
+
+#formuSimulador label{
+    margin-left: 20px;
+}
+
+#botonFrescura{
+    width: 200px;
+    padding: 5px 10px;
+    background-color: #e78224;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+#botonFrescura:hover {
+  background-color: #fb8a20;
+}
+
+#botonFrescura:active {
+  background-color: #ec7200;
+}
+
+#resultadoSimulador {
+    width: 100%;
+    height: 400px;
+    padding: 1rem;
+    border: 2px solid #ec7200;
+    border-radius: 1rem;
+    box-shadow: 0 0 10px #ddd;
+    text-align: center;
+}
+
+
+/* ===================== MEDIA QUERY  400px - 500px  ================================= */
+@media (min-width: 400px) {
+    #contenTituloSimu{
+        font-size: 1.2rem;
+    }
+
+
+    #contenSimulador {
+        font-size: 1.1rem;
+    }
+
+
+    #formuSimulador p{
+        margin-bottom: 25px;
+        font-size: 1.2rem;
+    }
+}   
+
+/* ===================== MEDIA QUERY  500px - 800px  ================================= */
+@media (min-width: 501px) {
+    #formuSimulador {
+        width: 80%;
+    }
+
+    #resultadoSimulador {
+        width: 80%;
+    }
+
+    #contenSimulador {
+        font-size: 1.2rem;
+    }
+
+    #formuSimulador p{
+        font-size: 1.3rem;
+    }
+
+}
+
+/* ===================== MEDIA QUERY  801px - 1000px  ================================= */
+@media (min-width: 801px) {
+    #contenTituloSimu{
+        font-size: 1.4rem;
+    }
+
+    #contenSimulador {
+        flex-direction: row-reverse; 
+    }
+
+    #formuSimulador {
+        width: 47%;
+        border-radius: none;
+        box-shadow: none;
+    }
+
+    #resultadoSimulador {
+        width: 47%;
+    }
+}
+
+/* ===================== MEDIA QUERY  1001px - 1200px  ================================= */
+@media (min-width: 1001px) {
+    #contenSimulador {
+        font-size: 1.2rem;
+        
+    }
+
+    #formuSimulador p{
+        font-size: 1.3rem;
+    }
+}
+
+/* ===================== MEDIA QUERY  1201px - 1600px  ================================= */
+@media (min-width: 1201px) {
+    #contenTituloSimu{
+        font-size: 1.6rem;
+    }
+
+    #contenSimulador {
+        font-size: 1.4rem;
+        
+    }
+
+    #formuSimulador p{
+        font-size: 1.5rem;
+    }
+}
+
+/* ===================== MEDIA QUERY  1601px  ================================= */
+@media (min-width: 1601px) {
+    #contenTituloSimu{
+        font-size: 1.8rem;
+    }
+}

@@ -8,6 +8,7 @@
         <link rel="stylesheet" href="css/huevo_infografia.css">
 		<link rel="stylesheet" href="css/huevo_menu.css" type="text/css" />
 		<link rel="stylesheet" href="css/huevo_sabiasque.css" type="text/css" />
+		<link rel="stylesheet" href="css/huevo_simulador.css" type="text/css" />
         <link rel="stylesheet" href="../jquery/jquery-ui.min.css">
         <script src="../jquery/jquery-3.7.1.min.js"></script>
         <script src="../jquery/jquery-ui.min.js"></script>
@@ -167,6 +168,33 @@
 							</div>
                         </div>
                         <div id="simulador">
+							<div id="contenTituloSimu">
+								<h2 class="tituloSimu">SIMULADOR DE FRESCURA</h2>
+							</div>
+							<div id="contenSimulador">
+								<div id="formuSimulador">
+									<p>Selecciona el tipo de fecha:</p>
+									
+									<label>
+									<input type="radio" name="tipo-fecha" value="puesta" checked>
+									Fecha de puesta
+									</label><br>
+									
+									<label>
+									<input type="radio" name="tipo-fecha" value="fcp">
+									Fecha de consumo preferente
+									</label><br><br>
+									<p>Fecha:</p>
+									<label>📅 
+									<input type="date" id="fecha-input">
+									</label><br><br>
+									<button id="botonFrescura">Calcular frescura</button>
+								</div>
+								<div id="resultadoSimulador">
+									<p>🔍 Aquí aparecerán los resultados.</p>
+									<img src="huevo-inicial.png" alt="Huevo esperando análisis" style="max-width: 100%; margin-top: 1rem;">
+								</div>
+							</div>
                         </div>
                         <div id="aprender">
 							<div id="contenAprender">
