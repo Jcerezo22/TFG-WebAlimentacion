@@ -174,12 +174,10 @@
 							<div id="contenSimulador">
 								<div id="formuSimulador">
 									<p>Selecciona el tipo de fecha:</p>
-									
 									<label>
 									<input type="radio" name="tipoFecha" value="puesta" checked>
 									Fecha de puesta
 									</label><br>
-									
 									<label>
 									<input type="radio" name="tipoFecha" value="fcp">
 									Fecha de consumo preferente
@@ -192,7 +190,18 @@
 								</div>
 								<div id="resultadoSimulador" class="estadoInicial">
 									<h2>Resultado</h2>
+									<img src="" alt="" id="imagenSimulador">
 									<p id="mensajeResultado">Introduce una fecha y pulsa <strong>“Calcular frescura”</strong> para saber si tu huevo está fresco.</p>
+									<div id="phBarras">
+										<p>🧪 pH Clara:<span id="phClaraTexto">-</span></p>
+										<div class="barrasFondo">
+											<div id="barraClara"></div>
+										</div>
+										<p>🧪 pH Yema: <span id="phYemaTexto">-</span></p>
+										<div class="barrasFondo">
+											<div id="barraYema"></div>
+										</div>
+									</div>
 								</div>
 							</div>
                         </div>
