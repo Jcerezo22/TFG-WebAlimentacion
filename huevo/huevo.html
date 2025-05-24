@@ -176,23 +176,23 @@
 									<p>Selecciona el tipo de fecha:</p>
 									
 									<label>
-									<input type="radio" name="tipo-fecha" value="puesta" checked>
+									<input type="radio" name="tipoFecha" value="puesta" checked>
 									Fecha de puesta
 									</label><br>
 									
 									<label>
-									<input type="radio" name="tipo-fecha" value="fcp">
+									<input type="radio" name="tipoFecha" value="fcp">
 									Fecha de consumo preferente
 									</label><br><br>
 									<p>Fecha:</p>
 									<label>📅 
-									<input type="date" id="fecha-input">
+									<input type="date" id="fechaInput">
 									</label><br><br>
 									<button id="botonFrescura">Calcular frescura</button>
 								</div>
-								<div id="resultadoSimulador">
-									<p>🔍 Aquí aparecerán los resultados.</p>
-									<img src="huevo-inicial.png" alt="Huevo esperando análisis" style="max-width: 100%; margin-top: 1rem;">
+								<div id="resultadoSimulador" class="estadoInicial">
+									<h2>Resultado</h2>
+									<p id="mensajeResultado">Introduce una fecha y pulsa <strong>“Calcular frescura”</strong> para saber si tu huevo está fresco.</p>
 								</div>
 							</div>
                         </div>

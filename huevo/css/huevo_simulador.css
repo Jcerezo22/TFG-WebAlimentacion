@@ -24,6 +24,7 @@
 }
 
 #formuSimulador {
+    width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center; 
@@ -64,7 +65,6 @@
 }
 
 #resultadoSimulador {
-    width: 100%;
     height: 400px;
     padding: 1rem;
     border: 2px solid #ec7200;
@@ -72,6 +72,24 @@
     box-shadow: 0 0 10px #ddd;
     text-align: center;
 }
+
+
+.estadoInicial{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.estadoInicial p{
+    padding: 10px;
+}
+
+#resultadoSimulador h2{
+    color: #e78224;
+    margin-bottom: 30px;
+}
+
 
 
 /* ===================== MEDIA QUERY  400px - 500px  ================================= */
