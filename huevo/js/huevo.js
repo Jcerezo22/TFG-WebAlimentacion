@@ -34,6 +34,7 @@ function calcularFrescura(event){
     let fechaStr = $('#fechaInput').val();
 
     if (fechaStr) {
+        $('#mensajeInicial').hide();
         let fecha = new Date(fechaStr);
         let fechaActual = new Date();
 
@@ -49,7 +50,7 @@ function calcularFrescura(event){
 
 
         $('#resultadoSimulador').removeClass('estadoInicial').addClass('estadoFinal');
-        $('#mensajeResultado').text('📅 Días desde la puesta: '+diasPasados);
+        $('#mensajeResultado').html('&#x1f5d3;&#xfe0f; Días desde la puesta: '+diasPasados);
 
         $('#phBarras').show();
         $('#barraClara').css('width', `${(phClara - 7.5) * 40}%`);
@@ -58,16 +59,22 @@ function calcularFrescura(event){
         $('#phYemaTexto').text(" "+phYema);
 
         let estadoHuevo = determinarEstado(phClara, phYema);
+
         $('#imagenSimulador').attr('src', `../img/huevo_${estadoHuevo.replace(' ', '_')}.png`);
 
+        if(estadoHuevo == 'muy fresco'){
+            $('#mensajeEstadoHuevo').html('&#x1f7e2 Muy Fresco');
+        }else if (estadoHuevo == 'aun fresco'){
+            $('#mensajeEstadoHuevo').html('&#x1f7e1 Aún Fresco');
+        }else if(estadoHuevo == 'poco fresco'){
+            $('#mensajeEstadoHuevo').html('&#x1f7e1 Poco Fresco');
+        }else{
+            $('#mensajeEstadoHuevo').html('&#x1f7e0 No Fresco');
+        }
+
     } else {
-        $('#mensajeResultado').text('Por favor selecciona una fecha.');
+        $('#mensajeInicial').text('Por favor selecciona una fecha.');
     }
-
-    
-
-    // $('#mensajeResultado').text('✅ El huevo está fresco medio (🟡)');
-    // $('#imagenResultado').attr('src', 'huevo-fresco-medio.png');
 }
 
 

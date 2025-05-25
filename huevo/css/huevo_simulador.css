@@ -28,7 +28,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center; 
-  height: 400px;
+  height: 450px;
   padding: 1.5rem;
   border-radius: 1rem;
   box-shadow: 0 0 10px #ddd;
@@ -66,7 +66,7 @@
 
 #resultadoSimulador {
     width: 100%;
-    height: 400px;
+    height: 450px;
     padding: 1rem;
     border: 2px solid #ec7200;
     border-radius: 1rem;
@@ -80,15 +80,15 @@
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
-.estadoInicial p{
-    padding: 10px;
-}
 
 #resultadoSimulador h2{
     color: #e78224;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
+    margin-top: 5px;
 }
 
 
@@ -101,7 +101,12 @@
     background:#ccc;
     height:10px;
     border-radius:5px;
-    width:50%;
+    width:100%;
+    margin-bottom: 15px;
+}
+
+#phBarras p{
+    margin-bottom: 15px;
 }
 
 #barraClara{
@@ -118,9 +123,30 @@
     border-radius:5px;
 }
 
-/* #imagenSimulador{
-    display: none;
-} */
+.estadoFinal{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#imagenSimulador{
+    width: 120px;
+    margin-bottom: 5px;
+}
+
+.contenResultadoContenido {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.datosSimulador,.contenImagenSimulador {
+    width: 100%;
+    text-align: center;
+}
+
 
 
 /* ===================== MEDIA QUERY  400px - 500px  ================================= */
@@ -172,13 +198,53 @@
     }
 
     #formuSimulador {
-        width: 47%;
+        width: 34%;
         border-radius: none;
         box-shadow: none;
+        height: 400px;
     }
 
     #resultadoSimulador {
-        width: 47%;
+        width: 60%;
+        height: 400px;
+    }
+
+    .contenResultadoContenido {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 2rem;
+    }
+
+    .datosSimulador {
+        width: 60%;
+        text-align: left;
+    }
+
+    .contenImagenSimulador {
+        width: 45%;
+        text-align: right;
+        display: flex;
+        justify-content: flex-end;
+        margin-right: 20px;
+    }
+
+    #imagenSimulador{
+        width: 80%;
+    }
+
+    #resultadoSimulador h2 {
+        text-align: center;
+        width: 100%;
+        margin-bottom: 60px;
+    }
+
+    #mensajeResultado {
+        white-space: nowrap;
+    }
+
+    #mensajeEstadoHuevo{
+        margin-top: 30px;
     }
 }
 
@@ -187,6 +253,14 @@
     #contenSimulador {
         font-size: 1.2rem;
         
+    }
+
+    #formuSimulador {
+        width: 38%;
+    }
+
+    #resultadoSimulador {
+        width: 56%;
     }
 
     #formuSimulador p{
@@ -205,8 +279,24 @@
         
     }
 
+    #formuSimulador {
+        width: 41%;
+    }
+
+    #resultadoSimulador {
+        width: 52%;
+    }
+
     #formuSimulador p{
         font-size: 1.5rem;
+    }
+
+    .contenImagenSimulador {
+        margin-right: 80px;
+    }
+
+    #imagenSimulador{
+        width: 90%;
     }
 }
 

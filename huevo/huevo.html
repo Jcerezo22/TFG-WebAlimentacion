@@ -183,23 +183,29 @@
 									Fecha de consumo preferente
 									</label><br><br>
 									<p>Fecha:</p>
-									<label>📅 
+									<label>&#x1f5d3;&#xfe0f;
 									<input type="date" id="fechaInput">
 									</label><br><br>
 									<button id="botonFrescura">Calcular frescura</button>
 								</div>
 								<div id="resultadoSimulador" class="estadoInicial">
 									<h2>Resultado</h2>
-									<img src="" alt="" id="imagenSimulador">
-									<p id="mensajeResultado">Introduce una fecha y pulsa <strong>“Calcular frescura”</strong> para saber si tu huevo está fresco.</p>
-									<div id="phBarras">
-										<p>🧪 pH Clara:<span id="phClaraTexto">-</span></p>
-										<div class="barrasFondo">
-											<div id="barraClara"></div>
+									<div id="mensajeInicial">
+										<p>Introduce una fecha y pulsa <strong>“Calcular frescura”</strong> para saber si tu huevo está fresco.</p>
+									</div>
+									<div class="contenResultadoContenido">
+										<div class="contenImagenSimulador">
+											<img src="" alt="" id="imagenSimulador">
 										</div>
-										<p>🧪 pH Yema: <span id="phYemaTexto">-</span></p>
-										<div class="barrasFondo">
-											<div id="barraYema"></div>
+										<div class="datosSimulador">
+											<p id="mensajeResultado"></p>
+											<div id="phBarras">
+												<p>&#x1f9ea pH Clara:<span id="phClaraTexto">-</span></p>
+												<div class="barrasFondo"><div id="barraClara"></div></div>
+												<p>&#x1f9ea pH Yema: <span id="phYemaTexto">-</span></p>
+												<div class="barrasFondo"><div id="barraYema"></div></div>
+											</div>
+											<p id="mensajeEstadoHuevo"></p>
 										</div>
 									</div>
 								</div>
