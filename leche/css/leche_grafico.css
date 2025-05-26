@@ -1,0 +1,24 @@
+#contenedorComparador{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+canvas {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    width: 100% !important; /* Importante */
+  height: auto !important; /* Mantiene proporción */
+  /* max-height: 300px;  */
+}
+
+
+#contenedorGrafico {
+  width: 100%; /* Puedes usar 100%, 80%, etc. */
+  max-width: 800px; /* Límite superior opcional */
+  margin: 20px auto;
+}

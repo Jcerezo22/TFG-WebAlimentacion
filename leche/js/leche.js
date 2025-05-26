@@ -24,6 +24,8 @@ function inicio() {
     })
 
     $("#cerrarBoton").on("click", cerrarInfo);
+
+    graficoLeche();
 }
 
 
@@ -195,4 +197,85 @@ function cerrarInfo() {
 
 function normalizarPais(nombre) {
     return nombre.toLowerCase().replace(/\s+/g, "_");
+}
+
+function graficoLeche(){
+    let contextoGrafico = document.getElementById('graficoLeche').getContext('2d');
+
+    let grafico = new Chart(contextoGrafico, {
+      type: 'bar',
+      data: {
+        labels: ['Grasa', 'Proteínas', 'Lactosa'],
+        datasets: [
+          {
+            label: '🐄 Vaca',
+            data: [2, 3, 2],
+            backgroundColor: '#a3d9a5'
+          },
+          {
+            label: '🐐 Cabra',
+            data: [2, 3, 1],
+            backgroundColor: '#ffd6a5'
+          },
+          {
+            label: '🐑 Oveja',
+            data: [3, 4, 2],
+            backgroundColor: '#cdb4db'
+          },
+          {
+            label: '🐃 Búfala',
+            data: [4, 4, 1],
+            backgroundColor: '#b5ead7'
+          },
+          {
+            label: '👩‍🍼 Humana',
+            data: [1, 1, 3],
+            backgroundColor: '#ffb5a7'
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: {
+            position: 'top'
+          },
+          tooltip: {
+            callbacks: {
+              label: function(context) {
+                const labels = ['Muy baja', 'Baja', 'Media', 'Alta', 'Muy alta'];
+                const val = context.raw;
+                return `${context.dataset.label}: ${val} (${labels[val - 1] || ''})`;
+              }
+            }
+          }
+        },
+        scales: {
+          y: {
+            beginAtZero: true,
+            ticks: {
+              stepSize: 1,
+              callback: function(value) {
+                const levels = ['', 'Baja', 'Media', 'Alta', 'Muy alta'];
+                return levels[value] || value;
+              }
+            },
+            title: {
+              display: true,
+              text: 'Nivel'
+            }
+          },
+          x: {
+            title: {
+              display: true,
+              text: 'Nutriente'
+            },
+            ticks: {
+                autoSkip: false, 
+            }
+          }
+        }
+      }
+    });
 }
