@@ -4,8 +4,9 @@
 		<title>Carne </title>
 		<meta charset="utf-8" />
 		<meta name="author" content="tu nombre" />
-        <link rel="stylesheet" href="css/carne.css">
+        <link rel="stylesheet" href="css/carne_banner.css">
 		<link rel="stylesheet" href="css/carne_menu.css" type="text/css" />
+		<link rel="stylesheet" href="css/carne_checklist.css" type="text/css" />
         <link rel="stylesheet" href="../jquery/jquery-ui.min.css">
         <script src="../jquery/jquery-3.7.1.min.js"></script>
         <script src="../jquery/jquery-ui.min.js"></script>
@@ -52,26 +53,177 @@
                         <ol>
                             <li><a href="#param">PARÁMETROS FÍSICO-QUÍMICOS</a></li>
                             <li><a href="#cantabria">SIMULADOR</a></li>
-                            <li><a href="#cordoba">COMPARADOR DE LECHES</a></li>
                             <li><a href="#salamanca">APLICACIONES DIETÉTICAS</a></li>
-                            <li><a href="#segovia">MAPA</a></li>
-                            <li><a href="#sevilla">CURIOSIDADES</a></li>
-							<li><a href="#sevilla">RECETAS</a></li>
+                            <li><a href="#checklist">CHECKLIST</a></li>
                         </ol>
                         <div id="param">
 hola
                         </div>
                         <div id="cantabria">
                         </div>
-                        <div id="cordoba">
-                        </div>
                         <div id="salamanca">
                         </div>
-                        <div id="segovia">
-                        </div>
-                        <div id="sevilla">
-                        </div>
-						<div id="sevilla">
+						<div id="checklist">
+							<h2 id="checklistTitulo">CHECKLIST</h2>
+							<div id="contenedorPreguntas">
+								<div class="contendorPregunta" id="p0">
+									<h3>1 - Aspecto general y contenido de agua</h3>
+									<label for="" class="correcta">
+										<input type="checkbox" >
+										<span>La carne tiene un aspecto brillante, húmedo y fresco</span>
+									</label>
+									<label for="" class="incorrecta">
+										<input type="checkbox">
+										<span>Presencia de sangre coagulada, mucosidad o mal olor.</span>
+									</label>
+								</div>
+								<div class="contendorPregunta" id="p1">
+									<h3>2 - Textura y Consistencia</h3>
+									<label for="" class="correcta">
+										<input type="checkbox" >
+										<span>Textura firme, elástica y no pegajosa.</span>
+									</label>
+									<label for="" class="incorrecta">
+										<input type="checkbox" >
+										<span>Presenta flacidez o sensación pegajosa.</span>
+									</label>
+									<label for="" class="incorrecta">
+										<input type="checkbox">
+										<span>No presenta signos de sequedad o deshidratación</span>
+									</label>
+								</div>
+								<div class="contendorPregunta" id="p3">
+									<h3>3 - Color</h3>
+									<label for="" class="incorrecta">
+										<input type="checkbox" >
+										<span>Color pálido o muy oscuro (PSE o DFD).</span>
+									</label>
+									<label for="" class="correcta">
+										<input type="checkbox" >
+										<span>Color uniforme: rojo brillante (ternera), rosado claro (cerdo), rosado pálido (pollo).</span>
+									</label>
+									<label for="" class="incorrecta">
+										<input type="checkbox">
+										<span>Presencia de zonas verdosas, pardas o viscosas</span>
+									</label>
+								</div>
+								<div class="contendorPregunta" id="p4">
+									<h3>4 - Conductividad eléctrica</h3>
+									<label for="" class="incorrecta">
+										<input type="checkbox" >
+										<span>Conductividad mayor a 6 mS/cm</span>
+									</label>
+									<label for="" class="correcta">
+										<input type="checkbox" >
+										<span>Conductividad entre 2,5 y 4 mS/cm.</span>
+									</label>
+								</div>
+								<div class="contendorPregunta" id="p5">
+									<h3>5 - pH de la carne</h3>
+									<label for="" class="incorrecta">
+										<input type="checkbox" >
+										<span>pH a los 45 min menor a 6.0 (riesgo PSE).</span>
+									</label>
+									<label for="" class="correcta">
+										<input type="checkbox" >
+										<span>pH a los 45 min entre 6.0 y 6.5</span>
+									</label>
+									<label for="" class="correcta">
+										<input type="checkbox" >
+										<span>pH a las 24 h entre 5.4 y 5.8.</span>
+									</label>
+									<label for="" class="incorrecta">
+										<input type="checkbox" >
+										<span>pH a las 24 h mayor a 6.0 (riesgo DFD).</span>
+									</label>
+								</div>
+								<div class="contendorPregunta" id="p6">
+									<h3>6 - Análisis colorimétrico (CIELAB)</h3>
+									<label for="" class="correcta">
+										<input type="checkbox" >
+										<span>L* medio, a* alto (rojo), b* equilibrado.</span>
+									</label>
+									<label for="" class="incorrecta">
+										<input type="checkbox" >
+										<span>L* alto y a* bajo (indicativo de PSE).</span>
+									</label>
+									<label for="" class="incorrecta">
+										<input type="checkbox" >
+										<span>L* muy bajo y a* alto (indicativo de DFD).</span>
+									</label>
+								</div>
+								<div class="contendorPregunta" id="p7">
+									<h3>7 - Capacidad de Retención de Agua (CRA)</h3>
+									<label for="" class="correcta">
+										<input type="checkbox" >
+										<span>Baja pérdida por goteo, presión o centrifugación.</span>
+									</label>
+									<label for="" class="incorrecta">
+										<input type="checkbox" >
+										<span>Alta pérdida por goteo, presión o centrifugación.</span>
+									</label>
+								</div>
+								<div class="contendorPregunta" id="p8">
+									<h3>8 - Composición nutricional</h3>
+									<label class="correcta">
+										<input type="checkbox">
+										<span>Baja o moderada en grasa visible (&lt;30%).</span>
+									</label>
+									<label class="incorrecta">
+										<input type="checkbox">
+										<span>Contenido proteico inferior al 10%.</span>
+									</label>
+									<label class="correcta">
+										<input type="checkbox">
+										<span>Alto contenido proteico (18-22%).</span>
+									</label>
+								</div>
+								<div class="contendorPregunta" id="p9">
+									<h3>9 - Estado microbiológico e higiene</h3>
+									<label class="correcta">
+										<input type="checkbox">
+										<span>Temperatura constante de refrigeración (0-4 °C).</span>
+									</label>
+									<label class="correcta">
+										<input type="checkbox">
+										<span>Sin olores extraños, viscosidad o coloración anómala.</span>
+									</label>
+									<label class="incorrecta">
+										<input type="checkbox">
+										<span>Olor fuerte, viscosidad o cambio de color evidente.</span>
+									</label>
+								</div>
+								<div class="contendorPregunta" id="p10">
+									<h3>10 - Contaminantes abióticos y químicos</h3>
+									<label class="incorrecta">
+										<input type="checkbox">
+										<span>Procedencia dudosa y sin garantías sanitarias.</span>
+									</label>
+									<label class="correcta">
+										<input type="checkbox">
+										<span>Libre de residuos de antibióticos, metales pesados o plaguicidas.</span>
+									</label>
+									<label class="correcta">
+										<input type="checkbox">
+										<span>Procedencia verificada con control de contaminantes (dioxinas, PCBs).</span>
+									</label>
+								</div>
+								<div class="contendorPregunta" id="p11">
+									<h3>11 - Etiquetado y trazabilidad</h3>
+									<label class="correcta">
+										<input type="checkbox">
+										<span>Información clara sobre especie, origen, fecha y conservación.</span>
+									</label>
+									<label class="correcta">
+										<input type="checkbox">
+										<span>Cumple con normativas de bienestar animal y sostenibilidad.</span>
+									</label>
+									<label class="incorrecta">
+										<input type="checkbox">
+										<span>Etiqueta incompleta o sin trazabilidad del producto.</span>
+									</label>
+								</div>
+							</div>
                         </div>
                     </div>
 				</article>
