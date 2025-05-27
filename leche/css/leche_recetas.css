@@ -1,9 +1,17 @@
+@font-face {
+  font-family: 'Gliker';
+  src: url('../../tipoLetra/Gliker-Regular.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
 #recetasTab{
     text-align: center;
     margin-top: 40px;
 }
 
 #recetasTab h1{
+    font-family: 'Gliker';
     margin-bottom: 30px;
     color: #77b4d8;
 }
@@ -40,12 +48,14 @@
 }
 
 #recetaQueso h3{
+    font-family: 'Gliker';
     color: #c9bfad;
     margin-bottom: 10px;
     margin-top: 20px;
 }
 
 #recetaYogur h3{
+    font-family: 'Gliker';
     color: #605e5c;
     margin-bottom: 10px;
     margin-top: 20px;

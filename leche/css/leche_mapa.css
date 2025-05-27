@@ -1,8 +1,8 @@
 @font-face {
-    font-family: 'Chunkfive';
-    src: url('../../tipoLetra/Chunkfive\ Ex.ttf');
-    font-weight: normal;
-    font-style: normal;
+  font-family: 'Gliker';
+  src: url('../../tipoLetra/Gliker-Regular.ttf');
+  font-weight: normal;
+  font-style: normal;
 }
 
 #mapa {
@@ -16,7 +16,7 @@
 }
 
 .titulosMapa{
-  font-family: 'Chunkfive';
+  font-family: 'Gliker';
   font-size: 23px;
   margin-bottom: 15px;
   color: #77b4d8;

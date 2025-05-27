@@ -1,3 +1,10 @@
+@font-face {
+    font-family: 'Gliker';
+    src: url('../../tipoLetra/Gliker-Regular.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
 #apliDiet {
     margin-top: 50px;
     margin-bottom: 50px;
@@ -8,6 +15,7 @@
 
 #apliDiet h2{
     margin-bottom: 50px;
+    font-family: 'Gliker';
 }
 
 #infoApli {
