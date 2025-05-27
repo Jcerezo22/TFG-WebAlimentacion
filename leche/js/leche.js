@@ -26,6 +26,8 @@ function inicio() {
     $("#cerrarBoton").on("click", cerrarInfo);
 
     graficoLeche();
+    graficoLecheDensidad();
+    graficoLecheDiges();
 }
 
 
@@ -210,27 +212,27 @@ function graficoLeche(){
           {
             label: '🐄 Vaca',
             data: [2, 3, 2],
-            backgroundColor: '#a3d9a5'
+            backgroundColor: '#77b4d8'
           },
           {
             label: '🐐 Cabra',
             data: [2, 3, 1],
-            backgroundColor: '#ffd6a5'
+            backgroundColor: '#d4dee4'
           },
           {
             label: '🐑 Oveja',
             data: [3, 4, 2],
-            backgroundColor: '#cdb4db'
+            backgroundColor: '#dafafa'
           },
           {
             label: '🐃 Búfala',
             data: [4, 4, 1],
-            backgroundColor: '#b5ead7'
+            backgroundColor: '#b6e6f0'
           },
           {
             label: '👩‍🍼 Humana',
             data: [1, 1, 3],
-            backgroundColor: '#ffb5a7'
+            backgroundColor: '#81d0ff'
           }
         ]
       },
@@ -257,8 +259,8 @@ function graficoLeche(){
             ticks: {
               stepSize: 1,
               callback: function(value) {
-                const levels = ['', 'Baja', 'Media', 'Alta', 'Muy alta'];
-                return levels[value] || value;
+                const niveles = ['', 'Baja', 'Media', 'Alta', 'Muy alta'];
+                return niveles[value] || value;
               }
             },
             title: {
@@ -267,10 +269,6 @@ function graficoLeche(){
             }
           },
           x: {
-            title: {
-              display: true,
-              text: 'Nutriente'
-            },
             ticks: {
                 autoSkip: false, 
             }
@@ -278,4 +276,149 @@ function graficoLeche(){
         }
       }
     });
+}
+
+
+function graficoLecheDensidad(){
+  let contextoGrafico = document.getElementById('graficoDensi').getContext('2d');
+
+  new Chart(contextoGrafico, {
+    type: 'bar',
+    data: {
+      labels: ['🐄 Vaca', '🐐 Cabra', '🐑 Oveja', '🐃 Búfala', '👩‍🍼 Humana'],
+      datasets: [{
+        label: 'Densidad (g/cm³)',
+        data: [1.031, 1.032, 1.039, 1.040, 1.028],
+        backgroundColor: [
+          '#77b4d8', 
+          '#d4dee4', 
+          '#dafafa', 
+          '#b6e6f0', 
+          '#81d0ff'  
+        ]
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        title: {
+          display: true,
+          text: 'Densidad',
+          font: {
+            family: 'Gliker',
+            size: 30,
+            weight: 'bold'
+          },
+          color: '#77b4d8',
+          align: 'center',
+          padding: {
+            top: 10,
+            bottom: 30
+          }
+        },
+        legend: {
+          display: false 
+        },
+        tooltip: {
+          callbacks: {
+            label: function(context) {
+              return `Densidad: ${context.raw}`;
+            }
+          }
+        }
+      },
+      scales: {
+        y: {
+          min: 1.026,
+          title: {
+            display: true,
+            text: 'Densidad (g/cm³)'
+          }
+        },
+        x: {
+          title: {
+            display: true,
+            text: 'Tipo de leche'
+          }
+        }
+      }
+    }
+  })
+}
+
+function graficoLecheDiges(){
+  let contextoGrafico = document.getElementById('graficoDiges').getContext('2d');
+
+  new Chart(contextoGrafico, {
+    type: 'bar',
+    data: {
+      labels: ['🐄 Vaca', '🐐 Cabra', '🐑 Oveja', '🐃 Búfala', '👩‍🍼 Humana'],
+      datasets: [{
+        label: 'Digestibilidad',
+        data: [3, 4, 4, 2, 5],
+        backgroundColor: [
+          '#77b4d8', 
+          '#d4dee4', 
+          '#dafafa', 
+          '#b6e6f0', 
+          '#81d0ff'  
+        ]
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        title: {
+          display: true,
+          text: 'Digestibilidad',
+          font: {
+            family: 'Gliker',
+            size: 30,
+            weight: 'bold'
+          },
+          color: '#77b4d8',
+          align: 'center',
+          padding: {
+            top: 10,
+            bottom: 30
+          }
+        },
+        legend: {
+          display: false 
+        },
+        tooltip: {
+          callbacks: {
+            label: function(context) {
+              const niveles = ['', 'Muy difícil', 'Difícil', 'Normal', 'Fácil', 'Digestible'];
+              return `Digestibilidad: ${niveles[context.raw]}`;
+            }
+          }
+        }
+      },
+      scales: {
+        y: {
+          beginAtZero: true,
+          ticks: {
+              stepSize: 1,
+              callback: function(value) {
+                const niveles = ['', 'Muy difícil', 'Difícil', 'Normal', 'Fácil', 'Digestible'];
+                return niveles[value] || value;
+              }
+          },
+          title: {
+            display: true,
+            text: 'Digestibilidad'
+          }
+        },
+        x: {
+          title: {
+            display: true,
+            text: 'Tipo de leche'
+          }
+        }
+      }
+    }
+  })
 }
