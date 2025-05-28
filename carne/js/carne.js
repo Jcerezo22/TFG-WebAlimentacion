@@ -5,9 +5,12 @@ function inicio(){
         event:"click"
     });
 
+    graficoCarne();
+
     $("#botonCorregir").on("click", corregirChecklist);
     $("#botonVolverEmp").on("click", reiniciarChecklist);
-    graficoCarne()
+    $("#horasRango").on("input", actualizarValorSlider);
+    $("#horasRango").trigger("input");
 }
 
 function corregirChecklist() {
@@ -114,4 +117,23 @@ function graficoCarne(){
             }
         }
     });
+}
+
+function actualizarValorSlider(event) {
+    let barra = $(event.target);
+
+    let valor = parseFloat(barra.val());
+    let min = parseFloat(barra.attr("min"));
+    let max = parseFloat(barra.attr("max"));
+
+    let porcentaje = ((valor - min) / (max - min)) * 100;
+
+    if (barra.attr("id") === "horasRango") {
+        $("#horasValorMov").text(valor.toFixed(2));
+    }
+
+    let colorIzquierda = "#ab2a20";
+    let colorDerecha = "#ddd";
+
+    barra.css("background", `linear-gradient(to right, ${colorIzquierda} 0%, ${colorIzquierda} ${porcentaje}%, ${colorDerecha} ${porcentaje}%, ${colorDerecha} 100%)`);
 }

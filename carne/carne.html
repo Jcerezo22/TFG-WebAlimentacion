@@ -8,6 +8,7 @@
 		<link rel="stylesheet" href="css/carne_menu.css" type="text/css" />
 		<link rel="stylesheet" href="css/carne_checklist.css" type="text/css" />
 		<link rel="stylesheet" href="css/carne_compqui.css" type="text/css" />
+		<link rel="stylesheet" href="css/carne_ph.css" type="text/css" />
         <link rel="stylesheet" href="../jquery/jquery-ui.min.css">
         <script src="../jquery/jquery-3.7.1.min.js"></script>
         <script src="../jquery/jquery-ui.min.js"></script>
@@ -126,6 +127,65 @@
 							</div>
                         </div>
                         <div id="ph">
+							<div id="contenedorPh">
+								<div id="phTituloConten">
+									<h2 id="phTitulo">PH</h2>
+									<p>El pH es una medida de la acidez o alcalinidad de un material. En el caso de la carne, el pH tiene un impacto directo sobre su textura, sabor, color y vida útil. Este valor cambia en el tiempo después de que el animal es sacrificado, debido a los procesos metabólicos que ocurren en los músculos. </p>
+								</div>
+								<div id="contenInfoPh">
+									<div class="infoPh" id="infoHigPh">
+										<h3>PH Y CALIDAD HIGIÉNICA</h3>
+										<ul>
+											<li>El pH afecta textura, sabor, color y vida útil.</li>
+											<li>Tras el sacrificio, el pH baja por ácido láctico</li>
+											<li>pH bajo (&lt;5.5): menos bacterias, pero textura más dura y sabor ácido.</li>
+											<li>pH alto (>6.2): más riesgo de bacterias como E. coli y Salmonella.</li>
+										</ul>
+										<h4>Calidad higiénica:</h3>
+										<ul>
+											<li>Crucial para evitar proliferación bacteriana</li>
+											<li>Factores: manipulación, conservación, refrigeración, contaminación cruzada</li>
+										</ul>
+										<h4>Maduración:</h3>
+										<ul>
+											<li>Durante este proceso, el pH baja lentamente, mejorando sabor y ternura</li>
+											<li>Requiere buena higiene para evitar contaminación.</li>
+										</ul>
+									</div>
+									<div class="infoPh" id="infoTecPh">
+										<h3>PH Y CALIDAD TECNOLÓGICA</h3>
+										<div id="infophParra1">
+											El pH de la carne es un indicador fundamental de su calidad y se mide utilizando un
+											pH-metro previamente calibrado con soluciones tampón de pH 4.0 y 7.0. En
+											condiciones normales, el pH medido a los 45 minutos post mortem (pH₄₅) debe
+											situarse entre 6.0 y 6.5, mientras que a las 24 horas (pH₂₄) debe haber descendido
+											hasta un rango de 5.4 a 5.8. Estos valores indican que la carne ha seguido un
+											proceso de acidificación adecuado.
+										</div>
+										<div  id="infophParra2">
+											Cuando el pH₂₄ supera 6.0, existe riesgo de que la carne sea DFD (oscura, firme y
+											seca), lo que puede deberse a un agotamiento del glucógeno muscular antes del
+											sacrificio. Por otro lado, si el pH₄₅ es inferior a 6.0, se puede desarrollar carne PSE
+											(pálida, blanda y exudativa), normalmente asociada a un descenso rápido del pH
+											mientras la temperatura aún es elevada
+										</div>
+									</div>
+								</div>
+								<div id="contenSliderPh">
+									<h3>SIMULADOR DE pH EN TIEMPO POST MORTEM</h3>
+									<h4>Tiempo transcurrido desde el sacrificio (horas/min):</h4>
+									<label>
+										<input type="range" id="horasRango" min="0" max="24" step="0.25" value="4">
+										<div id="valoresRango">
+											<span id="horasValorMov">4</span>
+											<span id="horasValorFin">24.00</span>
+										</div>
+									</label>
+									<div id="resultadoSliderPh">
+										<h4>Efectos en la carne:</h4>
+									</div>
+								</div>
+							</div>
                         </div>
 						<div id="contaminantes">
                         </div>
