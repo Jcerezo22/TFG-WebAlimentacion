@@ -7,6 +7,7 @@ function inicio(){
 
     $("#botonCorregir").on("click", corregirChecklist);
     $("#botonVolverEmp").on("click", reiniciarChecklist);
+    graficoCarne()
 }
 
 function corregirChecklist() {
@@ -50,4 +51,67 @@ function reiniciarChecklist() {
     $("#checklist label").removeClass("correctaAcertada incorrectaMarcada correctaNoMarcada");
 
     $("#resultado").hide();
+}
+
+
+function graficoCarne(){
+    let contextoGrafico = document.getElementById('graficoCarne').getContext('2d');
+
+    let grafico = new Chart(contextoGrafico, {
+        type: 'doughnut',
+        data: {
+            labels: ['Agua', 'Proteínas', 'Grasas', 'Carbohidratos', 'Minerales','Vitaminas'],
+            datasets: [{
+                label: 'Composición Nutricional (%)',
+                data: [70, 19, 15, 1.5, 0.5, 0.5],
+                backgroundColor: [
+                    '#ab2a20',
+                    '#da635a',
+                    '#cb8984',
+                    '#ab4537',
+                    '#fbeada',
+                    '#fb6a3f'
+                ],
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    position: 'right'
+                },
+                title: {
+                    display: true,
+                    text: 'Composición Química de la Carne',
+                    font: {
+                        family: 'Gliker',
+                        size: 20,
+                        weight: 'bold'
+                    },
+                    color: '#ab2a20',
+                    align: 'center',
+                    padding: {
+                        top: 10,
+                        bottom: 30
+                    }
+                },
+                tooltip: {
+                    callbacks: {
+                        label: function(context) {
+                            const rangos = {
+                                'Agua': '60-75%',
+                                'Proteínas': '~19%',
+                                'Grasas': '0.5%-30%',
+                                'Carbohidratos': '1-2%',
+                                'Minerales': '<1%',
+                                'Vitaminas': '<1%'
+                            };
+                            return `${context.label}: ${rangos[context.label]}`;
+                        }
+                    }
+                }
+            }
+        }
+    });
 }

@@ -142,7 +142,7 @@
     #carneBannerImg {
         top: 17px;
         left: 63%;
-        height: 72px;
+        height: 62px;
     }
 }
 
@@ -166,7 +166,7 @@
     #carneBannerImg {
         top: 17px;
         left: 63%;
-        height: 80px;
+        height: 70px;
     }
     
 }
@@ -187,8 +187,8 @@
 
     #carneBannerImg {
         top: 70px;
-        left: 54%;
-        height: 177px;
+        left: 52%;
+        height: 157px;
         transform: rotate(0deg);
     }
 
@@ -215,7 +215,7 @@
     #carneBannerImg {
         top: 65px;
         left: 54%;
-        height: 210px;
+        height: 190px;
     }
 
     #tituloCarne {
@@ -236,7 +236,7 @@
     #carneBannerImg {
         top: 45px;
         left: 52%;
-        height: 250px;
+        height: 230px;
     }
 
     #tituloCarne {
