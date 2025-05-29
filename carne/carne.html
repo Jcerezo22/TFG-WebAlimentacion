@@ -129,7 +129,7 @@
                         <div id="ph">
 							<div id="contenedorPh">
 								<div id="phTituloConten">
-									<h2 id="phTitulo">PH</h2>
+									<h2 id="phTitulo">pH</h2>
 									<p>El pH es una medida de la acidez o alcalinidad de un material. En el caso de la carne, el pH tiene un impacto directo sobre su textura, sabor, color y vida útil. Este valor cambia en el tiempo después de que el animal es sacrificado, debido a los procesos metabólicos que ocurren en los músculos. </p>
 								</div>
 								<div id="contenInfoPh">
@@ -177,13 +177,23 @@
 									<label>
 										<input type="range" id="horasRango" min="0" max="24" step="0.25" value="4">
 										<div id="valoresRango">
-											<span id="horasValorMov">4</span>
-											<span id="horasValorFin">24.00</span>
+											<span id="horasValorMov">4 h</span>
+											<span id="horasValorFin">24 h</span>
 										</div>
 									</label>
 									<div id="resultadoSliderPh">
 										<h4>Efectos en la carne:</h4>
+										<ul>
+											<li>pH estimado: <span id="phCarne"></span></li>
+											<li>Estado de la carne: <span id="estadoCarne"></span></li>
+											<li>Riesgo bacteriano: <span id="riesgoBacteriano"></span></li>
+										</ul>
 									</div>
+									<div class="botonesInfoPh">
+										<button id="botonDfd" class="botonpH">¿Cuándo hay riesgo de DFD?</button>
+										<button id="botonPse" class="botonpH">¿Cuándo hay riesgo de PSE?</button>
+									</div>
+									<div id="infoExtra"></div>
 								</div>
 							</div>
                         </div>

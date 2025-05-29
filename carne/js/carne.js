@@ -9,8 +9,16 @@ function inicio(){
 
     $("#botonCorregir").on("click", corregirChecklist);
     $("#botonVolverEmp").on("click", reiniciarChecklist);
-    $("#horasRango").on("input", actualizarValorSlider);
+
+    $("#horasRango").on("input", function(event) {
+        actualizarValorSlider(event);
+        actualizarResultadoSlider($(this).val());
+    });
+
     $("#horasRango").trigger("input");
+
+    $("#botonDfd").on("click", mostrarInfopH);
+    $("#botonPse").on("click", mostrarInfopH);
 }
 
 function corregirChecklist() {
@@ -128,12 +136,62 @@ function actualizarValorSlider(event) {
 
     let porcentaje = ((valor - min) / (max - min)) * 100;
 
-    if (barra.attr("id") === "horasRango") {
-        $("#horasValorMov").text(valor.toFixed(2));
-    }
-
     let colorIzquierda = "#ab2a20";
     let colorDerecha = "#ddd";
 
     barra.css("background", `linear-gradient(to right, ${colorIzquierda} 0%, ${colorIzquierda} ${porcentaje}%, ${colorDerecha} ${porcentaje}%, ${colorDerecha} 100%)`);
+}
+
+function minutosAHoras(min) {
+    const h = Math.floor(min / 60);
+    const m = min % 60;
+    return `${h}h ${m}min`;
+}
+
+
+function actualizarResultadoSlider(horas){
+    let ph, estado, riesgo;
+
+    let minutos = horas * 60;
+
+    if (minutos === 0) {
+        $("#horasValorMov").text("0 h");
+    } else {
+        $("#horasValorMov").text(minutosAHoras(minutos));
+    }
+
+    if (horas == 0) {
+        ph = 7.0;
+        estado = "🔴 Fresca, sin cambios aún";
+        riesgo = "Alto";
+    } else if (horas <= 0.75) { 
+        ph = 7.0 - (horas * 1.33);
+        estado = "Inicia acidificación";
+        riesgo = "🟠 Medio";
+    } else if (horas <= 6) {
+        ph = 6.3 - ((horas - 0.75) * 0.15); 
+        estado = "En proceso de maduración";
+        riesgo = "🟢  Bajo";
+    } else {
+        ph = 5.8 - ((horas - 6) * 0.02); 
+        estado = "Maduración avanzada"; 
+        riesgo = "🟢 Muy bajo";
+    }
+
+    $("#phCarne").text(ph.toFixed(2));
+    $("#estadoCarne").text(estado);
+    $("#riesgoBacteriano").text(riesgo);    
+}
+
+function mostrarInfopH(event){
+    let boton = $(event.target);
+
+    if (boton.is("#botonDfd")) {
+        $("#infoExtra").html("<strong>DFD</strong>: Ocurre cuando el pH sigue siendo mayor a 6.0 a las 24 horas. Puede deberse a un agotamiento del glucógeno muscular antes del sacrificio. La carne resultante suele ser oscura, firme y seca.");
+    }
+    else if(boton.is("#botonPse")){
+        $("#infoExtra").html("<strong>PSE</strong>: Se produce cuando el pH₄₅ es inferior a 6.0. Suele estar asociado a un descenso rápido del pH mientras la temperatura post mortem aún es elevada. La carne resultante es pálida, blanda y exudativa.")
+    }
+
+    $("#infoExtra").show();
 }
