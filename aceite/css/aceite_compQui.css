@@ -1,0 +1,39 @@
+#contenCompQui{
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.mapa {
+    position: relative;
+    width: 90vw;
+    max-width: 500px;
+    aspect-ratio: 1/1;
+}
+
+.nodo {
+    position: absolute;
+    width: 20%;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    background-color: #ffcc70;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.aceite  { top: 40%; left: 40%; background: #f9a825; }
+.ph      { top: 0; left: 40%; }
+.acidos  { bottom: 0; left: 40%; }
+.grasa   { top: 40%; right: 0; }
+.cascara { top: 40%; left: 0; }
+
+svg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}

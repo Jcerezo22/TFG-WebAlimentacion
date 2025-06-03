@@ -6,6 +6,7 @@
 		<meta name="author" content="Javier Cerezo y Alba Sánchez" />
 		<link rel="stylesheet" href="css/aceite_menu.css" type="text/css" />
 		<link rel="stylesheet" href="css/aceite_banner.css" type="text/css" >
+		<link rel="stylesheet" href="css/aceite_compQui.css" type="text/css" >
         <link rel="stylesheet" href="../jquery/jquery-ui.min.css">
         <script src="../jquery/jquery-3.7.1.min.js"></script>
         <script src="../jquery/jquery-ui.min.js"></script>
@@ -41,8 +42,10 @@
 					<div id="bannerAceite">
 						<h1 id="tituloAceite">Aceite</h1>
 						<div id="introAceite">
-							Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-                            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+							El aceite de oliva es un aceite vegetal obtenido del fruto del olivo (Olea europaea),
+							ampliamente utilizado en la gastronomía y apreciado por sus propiedades
+							nutricionales. Su calidad depende del método de extracción y del grado de
+							refinamiento.
 						</div>
 						<img src="../img/aceite_img.png" alt="Jarra de leche" id="aceiteBannerImg">
 					</div>
@@ -50,28 +53,42 @@
 				<article>
 					<div id="pestannas">
                         <ol>
-                            <li><a href="#param">PARÁMETROS FÍSICO-QUÍMICOS</a></li>
-                            <li><a href="#cantabria">SIMULADOR</a></li>
-                            <li><a href="#cordoba">COMPARADOR DE LECHES</a></li>
-                            <li><a href="#salamanca">APLICACIONES DIETÉTICAS</a></li>
-                            <li><a href="#segovia">MAPA</a></li>
-                            <li><a href="#sevilla">CURIOSIDADES</a></li>
-							<li><a href="#sevilla">RECETAS</a></li>
+                            <li><a href="#compQui">COMPOSICIÓN QUÍMICA</a></li>
+                            <li><a href="#benefSalud">BENEFICIOS PARA LA SALUD</a></li>
+                            <li><a href="#critAnali">CRITERIOS ANALÍTICOS</a></li>
+                            <li><a href="#apliDiet">APLICACIONES DIETÉTICAS</a></li>
                         </ol>
-                        <div id="param">
-hola
+                        <div id="compQui">
+							<div id="contenCompQui">
+								<div class="mapa">
+									<!-- SVG con viewBox para que escale bien -->
+									<svg viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet">
+									<defs>
+										<marker id="arrow" markerWidth="5" markerHeight="5" refX="4" refY="2.5" orient="auto">
+										<polygon points="0,0 0,5 5,2.5" fill="#555"/>
+										</marker>
+									</defs>
+									<!-- De Aceite al resto -->
+									<line x1="50" y1="50" x2="50" y2="10" stroke="#555" stroke-width="1" marker-end="url(#arrow)"/>
+									<line x1="50" y1="50" x2="50" y2="90" stroke="#555" stroke-width="1" marker-end="url(#arrow)"/>
+									<line x1="50" y1="50" x2="90" y2="50" stroke="#555" stroke-width="1" marker-end="url(#arrow)"/>
+									<line x1="50" y1="50" x2="10" y2="50" stroke="#555" stroke-width="1" marker-end="url(#arrow)"/>
+									</svg>
+
+									<!-- Nodos -->
+									<div class="nodo aceite">Aceite</div>
+									<div class="nodo ph">pH</div>
+									<div class="nodo acidos">Ácidos</div>
+									<div class="nodo grasa">Grasa</div>
+									<div class="nodo cascara">Cáscara</div>
+								</div>
+							</div>
                         </div>
-                        <div id="cantabria">
+                        <div id="benefSalud">
                         </div>
-                        <div id="cordoba">
+                        <div id="critAnali">
                         </div>
-                        <div id="salamanca">
-                        </div>
-                        <div id="segovia">
-                        </div>
-                        <div id="sevilla">
-                        </div>
-						<div id="sevilla">
+                        <div id="apliDiet">
                         </div>
                     </div>
 				</article>
