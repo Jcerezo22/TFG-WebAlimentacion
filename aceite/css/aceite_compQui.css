@@ -3,20 +3,22 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 40px;
+    margin-bottom: 40px;
 }
 .mapa {
     position: relative;
-    width: 90vw;
-    max-width: 500px;
+    width: 90%;
+    max-width: 45%;
     aspect-ratio: 1/1;
 }
 
 .nodo {
     position: absolute;
-    width: 20%;
+    width: 25%;
     aspect-ratio: 1/1;
     border-radius: 50%;
-    background-color: #ffcc70;
+    background-color: #c3981d;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -25,11 +27,15 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.aceite  { top: 40%; left: 40%; background: #f9a825; }
-.ph      { top: 0; left: 40%; }
-.acidos  { bottom: 0; left: 40%; }
-.grasa   { top: 40%; right: 0; }
-.cascara { top: 40%; left: 0; }
+.aceite img{
+    width: 100%;
+}
+
+.aceite  { top: 35%; left: 35%; background: #f9a825; }
+.ph      { top: 0; left: 35%; }
+.acidos  { bottom: 0; left: 35%; }
+.grasa   { top: 35%; right: 0; }
+.cascara { top: 35%; left: 0; }
 
 svg {
     position: absolute;
