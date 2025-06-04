@@ -101,7 +101,7 @@
     left: 50%;
     transform: translateX(-50%);
     width: 55%;
-    font-size: 14px;
+    font-size: 11px;
     color: #545454;
     line-height: 1.4;
     font-weight: 500;
@@ -135,7 +135,7 @@
     }
 
     #introPescado {
-        font-size: 20px;
+        font-size: 14px;
         top: 138px;
     }
 
@@ -159,7 +159,7 @@
     }
 
     #introPescado {
-        font-size: 20px;
+        font-size: 14px;
         top: 156px;
         width: 50%;
     }
@@ -203,8 +203,8 @@
     #introPescado {
         top: 170px;
         left: 28%;
-        width: 40%;
-        font-size: 18px;        
+        width: 50%;
+        font-size: 15px;        
     }
 }
 
@@ -229,7 +229,7 @@
     #introPescado {
         top: 190px;
         left: 28%;
-        font-size: 18px;        
+        font-size: 15px;        
     }
 }
 
@@ -250,8 +250,8 @@
     #introPescado {
         top: 205px;
         left: 30%;
-        width: 35%;
-        font-size: 19px;        
+        width: 50%;
+        font-size: 15px;        
     }
 }
 
