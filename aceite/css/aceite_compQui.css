@@ -13,6 +13,20 @@
     aspect-ratio: 1/1;
 }
 
+@font-face {
+    font-family: 'LeagueSpartan';
+    src: url('../../tipoLetra/LeagueSpartan-VariableFont_wght.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Gliker';
+    src: url('../../tipoLetra/Gliker-Regular.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
 .nodo {
   position: absolute;
   width: 30%;
@@ -32,6 +46,8 @@
   animation-delay: var(--delay);
   opacity: 0;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+    font-family: 'LeagueSpartan';
+
 }
 
 .aceite img{
@@ -147,10 +163,22 @@ svg {
     color: #c3981d;
 }
 
+#contenTituloCompQui{
+    display: flex;
+    margin-top: 50px;
+    margin-bottom: 30px;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Gliker';
+    color: #c3981d;
+    font-size: 15px;
+    
+}
+
 /* ===================== MEDIA QUERY  400px - 500px  ================================= */
 @media (min-width: 400px) {
     .nodo {
-        font-size: 8.5px;
+        font-size: 10px;
     }
 
     #cerrarBoton {
@@ -165,12 +193,16 @@ svg {
     #infoContenido p {
         font-size: 0.95rem;
     }
+
+    #contenTituloCompQui{
+        font-size: 1.2rem;
+    }
 }   
 
 /* ===================== MEDIA QUERY  500px - 800px  ================================= */
 @media (min-width: 501px) {
     .nodo {
-        font-size: 11px;
+        font-size: 14px;
     }
 
     .mapa {
@@ -194,7 +226,7 @@ svg {
 /* ===================== MEDIA QUERY  801px - 1000px  ================================= */
 @media (min-width: 801px) {
     .nodo {
-        font-size: 15px;
+        font-size: 16px;
     }
 
     .mapa {
@@ -218,12 +250,16 @@ svg {
     #infoContenido p {
         font-size: 1.1rem;
     }
+
+    #contenTituloCompQui{
+        font-size: 1.4rem;
+    }
 }
 
 /* ===================== MEDIA QUERY  1001px - 1200px  ================================= */
 @media (min-width: 1001px) {
     .nodo {
-        font-size: 16px;
+        font-size: 18px;
     }
 
     .mapa {
@@ -253,7 +289,7 @@ svg {
 /* ===================== MEDIA QUERY  1201px - 1600px  ================================= */
 @media (min-width: 1201px) {
     .nodo {
-        font-size: 18px;
+        font-size: 22px;
     }
 
     .mapa {
@@ -263,14 +299,6 @@ svg {
     #cerrarBoton {
         width: 8px;
         height: 8px;
-    }
-
-    #infoTitulo {
-        font-size: 1rem;
-    }
-
-    #infoContenido p {
-        font-size: 0.85rem;
     }
 
     #dialogMindMap {
@@ -290,12 +318,16 @@ svg {
     #infoContenido p {
         font-size: 1.3rem;
     }
+
+    #contenTituloCompQui{
+        font-size: 1.6rem;
+    }
 }
 
 /* ===================== MEDIA QUERY  1601px  ================================= */
 @media (min-width: 1601px) {
     .nodo {
-        font-size: 19px;
+        font-size: 24px;
     }
 
     .mapa {

@@ -82,7 +82,7 @@
 
 #contenBenefSalud{
     display: flex;
-    margin-top: 40px;
+    margin-top: 50px;
     margin-bottom: 30px;
     justify-content: center;
     align-items: center;
@@ -90,11 +90,6 @@
     color: #c3981d;
     font-size: 15px;
     
-}
-
-#contenBenefSalud img{
-    width: 25px;
-    margin: 8px;
 }
 
 .tituloFront {
@@ -185,11 +180,11 @@
         margin: 20px; 
     }
 
-    #contenAprender{
+    #contenBenefSalud{
         font-size: 1.8rem;
     }
 
-    #contenAprender img{
+    #contenBenefSalud img{
         width: 65px;
     }
 }
