@@ -47,7 +47,7 @@
 							nutricionales. Su calidad depende del método de extracción y del grado de
 							refinamiento.
 						</div>
-						<img src="../img/aceite_img.png" alt="Jarra de leche" id="aceiteBannerImg">
+						<img src="../img/aceite_img.png" alt="Botellas de aceite" id="aceiteBannerImg">
 					</div>
 				</article>
 				<article>
@@ -65,23 +65,32 @@
 									<svg viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet">
 									<defs>
 										<marker id="arrow" markerWidth="5" markerHeight="5" refX="4" refY="2.5" orient="auto">
-										<polygon points="0,0 0,5 5,2.5" fill="#555"/>
+										<polygon points="0,0 0,5 5,2.5" fill="#cba000"/>
 										</marker>
 									</defs>
 									<!-- De Aceite al resto -->
-									<line x1="50" y1="50" x2="50" y2="10" stroke="#555" stroke-width="1" marker-end="url(#arrow)"/>
-									<line x1="50" y1="50" x2="50" y2="75" stroke="#555" stroke-width="1" marker-end="url(#arrow)"/>
-									<line x1="50" y1="50" x2="90" y2="50" stroke="#555" stroke-width="1" marker-end="url(#arrow)"/>
-									<line x1="50" y1="50" x2="10" y2="50" stroke="#555" stroke-width="1" marker-end="url(#arrow)"/>
+									<line x1="50" y1="50" x2="50" y2="25" stroke="#cba000" stroke-width="1" marker-end="url(#arrow)"/>
+									<line x1="50" y1="50" x2="50" y2="75" stroke="#cba000" stroke-width="1" marker-end="url(#arrow)"/>
+									<line x1="50" y1="50" x2="90" y2="50" stroke="#cba000" stroke-width="1" marker-end="url(#arrow)"/>
+									<line x1="50" y1="50" x2="10" y2="50" stroke="#cba000" stroke-width="1" marker-end="url(#arrow)"/>
 									</svg>
 
 									<!-- Nodos -->
-									<div class="nodo aceite"><img src="../img/mapa_aceite.png" alt=""></div>
-									<div class="nodo ph">pH</div>
-									<div class="nodo acidos">Ácidos</div>
-									<div class="nodo grasa">Grasa</div>
-									<div class="nodo cascara">Cáscara</div>
+									<div class="nodo aceite"><img src="../img/mind_map_aceite.png" alt=""></div>
+									<div class="nodo acidosGrasos" id="acidosGrasos">Ácidos grasos</div>
+									<div class="nodo polifenoles" id="polifenoles">Polifenoles</div>
+									<div class="nodo tocoferoles" id="tocoferoles">Tocoferoles</div>
+									<div class="nodo compVolAro" id="compVolAro">Compuestos volátiles y aromáticos</div>
 								</div>
+								<dialog id="dialogMindMap">
+									<img src="../img/cruzAceite.png" alt="Icono cruz" id="cerrarBoton">
+									<div class="contenidoDialogo">
+										<h2 id="infoTitulo">Título</h2>
+										<div id="infoContenido">
+											<p><span class="inofNegrita">Información:</span> <span id="infoDesc"></span></p>
+										</div>
+									</div>
+								</dialog>
 							</div>
                         </div>
                         <div id="benefSalud">
