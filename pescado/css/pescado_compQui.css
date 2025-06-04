@@ -1,0 +1,441 @@
+@font-face {
+    font-family: 'LeagueSpartan';
+    src: url('../../tipoLetra/LeagueSpartan-VariableFont_wght.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Gliker';
+    src: url('../../tipoLetra/Gliker-Regular.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+#contenParamQui{
+    display: flex;
+    margin-top: 50px;
+    margin-bottom: 30px;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Gliker';
+    color: #6e8192;
+    font-size: 15px;
+}
+
+.simulador {
+    background: white;
+    width: 90%;
+    margin: 0 auto 40px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.simulador h2{
+    font-family: 'Gliker';
+    color: #6e8192;
+    font-size: 15px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.simulador label {
+    display: flex;
+    flex-direction: column;
+    align-items:flex-start;
+    width: 80%;
+    gap: 10px;
+    margin-bottom: 40px;
+    margin-top: 20px;
+}
+
+#valoresRango{
+    display: flex;
+    justify-content: space-between; 
+    width: 100%;
+}
+
+#diasValorMov, #diasValorFin {
+    font-size: 13px;
+    color: #6d716f;
+    text-align: center;
+}
+
+
+input[type="range"] {
+    width: 100%;  
+    height: 4px; 
+    appearance: none;             
+    -webkit-appearance: none;     
+    -moz-appearance: none; 
+    background: transparent; 
+    margin-top: 10px;
+    border-radius: 10px;
+}
+  
+/* Estilo de la barra*/
+input[type="range"]::-webkit-slider-runnable-track {
+    height: 5px;
+    border-radius: 10px;
+}
+  
+input[type="range"]::-moz-range-track {
+    height: 5px;
+    border-radius: 10px;
+}
+  
+input[type="range"]::-ms-track {
+    height: 5px;
+    border-radius: 10px;
+    border: none;
+    color: transparent;
+}
+  
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 15px;
+    height: 15px;
+    background: #ffffff;
+    border: 2px solid #6e8192;
+    border-radius: 50%;
+    margin-top: -6px; 
+}
+  
+input[type="range"]::-moz-range-thumb {
+    width: 15px;
+    height: 15px;
+    background: #ffffff;
+    border: 2px solid #6e8192;
+    border-radius: 50%;
+}
+
+input[type="range"]::-ms-thumb {
+    width: 15px;
+    height: 15px;
+    background: #ffffff;
+    border: 2px solid #6e8192;
+    border-radius: 50%;
+}
+
+.simulador table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.simulador th,.simulador td {
+    padding: 12px 10px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+.simulador th {
+    background-color: #6e8192;
+    color: white;
+}
+
+.estadoNormal {
+    background-color: #d4edda;
+    color: #155724;
+    font-weight: bold;
+}
+.estadoModerado {
+    background-color: #fff3cd;
+    color: #856404;
+    font-weight: bold;
+}
+.estadoCritico {
+    background-color: #f8d7da;
+    color: #721c24;
+    font-weight: bold;
+}
+
+
+#contenInfoParamQui{
+    background: white;
+    width: 90%;
+    margin: 0 auto 40px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+#contenInfoParamQui h2{
+    font-family: 'Gliker';
+    color: #6e8192;
+    font-size: 15px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.cardGrid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 40px;
+    margin-bottom: 50px;
+    margin-top: 50px;
+}
+
+.card {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border-left: 4px solid #6e8192;
+}
+
+.cardTitulo {
+    font-weight: bold;
+    font-size: 17px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.cardDesc {
+    font-size: 14px;
+    color: #555;
+}
+
+.cardGrid .card a {
+    display: inline-block;
+    margin-top: 10px;
+    text-decoration: none;
+    color: #6e8192;
+    font-weight: bold;
+}
+
+.cardIcono img{
+    width: 40px;
+    margin: 5px;
+}
+
+
+#dialogParamQui {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 1rem;
+  border: 3.5px solid #c3981d;
+  outline: none;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  width: 80%;
+  max-width: 400px;
+  background-color: white;
+  box-sizing: border-box;
+  text-align: center;
+
+}
+
+#cerrarBoton {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 8px;
+  height: 8px;
+  cursor: pointer;
+}
+
+.contenidoDialogo {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+/* ===================== MEDIA QUERY  400px - 500px  ================================= */
+@media (min-width: 400px) {
+    #contenParamQui{
+        font-size: 1.2rem;
+    }
+
+    .simulador h2{
+        font-size: 1.2rem;
+    }
+
+    #contenInfoParamQui h2{
+        font-size: 1.2rem;
+    }
+
+    #diasValorMov, #diasValorFin {
+        font-size: 14px;
+    }
+
+    input[type="range"] {
+        height: 6px; 
+    }
+      
+    input[type="range"]::-webkit-slider-thumb {
+        width: 16px;
+        height: 16px;
+    }
+      
+    input[type="range"]::-moz-range-thumb {
+        width: 16px;
+        height: 16px;
+    }
+    
+    input[type="range"]::-ms-thumb {
+        width: 16px;
+        height: 16px;
+    }
+}   
+
+/* ===================== MEDIA QUERY  500px - 800px  ================================= */
+@media (min-width: 501px) {
+    #diasValorMov, #diasValorFin {
+        font-size: 16px;
+    }
+
+    input[type="range"] {
+        height: 7px; 
+    }
+      
+    input[type="range"]::-webkit-slider-thumb {
+        width: 17px;
+        height: 17px;
+    }
+      
+    input[type="range"]::-moz-range-thumb {
+        width: 17px;
+        height: 17px;
+    }
+    
+    input[type="range"]::-ms-thumb {
+        width: 17px;
+        height: 17px;
+    }
+}
+
+/* ===================== MEDIA QUERY  801px - 1000px  ================================= */
+@media (min-width: 801px) {
+    #contenParamQui{
+        font-size: 1.4rem;
+    }
+
+    .simulador h2{
+        font-size: 1.4rem;
+    }
+
+    #contenInfoParamQui h2{
+        font-size: 1.4rem;
+    }
+
+    #diasValorMov, #diasValorFin {
+        font-size: 18px;
+    }
+
+    input[type="range"] {
+        height: 8px; 
+    }
+      
+    input[type="range"]::-webkit-slider-thumb {
+        width: 18px;
+        height: 18px;
+    }
+      
+    input[type="range"]::-moz-range-thumb {
+        width: 18px;
+        height: 18px;
+    }
+    
+    input[type="range"]::-ms-thumb {
+        width: 18px;
+        height: 18px;
+    }
+}
+
+/* ===================== MEDIA QUERY  1001px - 1200px  ================================= */
+@media (min-width: 1001px) {
+    #diasValorMov, #diasValorFin {
+        font-size: 19px;
+    }
+
+    input[type="range"] {
+        height: 9px; 
+    }
+      
+    input[type="range"]::-webkit-slider-thumb {
+        width: 19px;
+        height: 19px;
+    }
+      
+    input[type="range"]::-moz-range-thumb {
+        width: 19px;
+        height: 19px;
+    }
+    
+    input[type="range"]::-ms-thumb {
+        width: 19px;
+        height: 19px;
+    }
+}
+
+/* ===================== MEDIA QUERY  1201px - 1600px  ================================= */
+@media (min-width: 1201px) {
+    #contenParamQui{
+        font-size: 1.6rem;
+    }
+
+    .simulador h2{
+        font-size: 1.6rem;
+    }
+
+    #contenInfoParamQui h2{
+        font-size: 1.6rem;
+    }
+
+    #diasValorMov, #diasValorFin {
+        font-size: 15px;
+    }
+
+    input[type="range"] {
+        height: 10px; 
+    }
+      
+    input[type="range"]::-webkit-slider-thumb {
+        width: 20px;
+        height: 20px;
+    }
+      
+    input[type="range"]::-moz-range-thumb {
+        width: 20px;
+        height: 20px;
+    }
+    
+    input[type="range"]::-ms-thumb {
+        width: 20px;
+        height: 20px;
+    }
+
+    .cardGrid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+}
+
+/* ===================== MEDIA QUERY  1601px  ================================= */
+@media (min-width: 1601px) {
+    #diasValorMov, #diasValorFin {
+        font-size: 17px;
+    }
+
+    input[type="range"] {
+        height: 13px; 
+    }
+      
+    input[type="range"]::-webkit-slider-thumb {
+        width: 23px;
+        height: 23px;
+    }
+      
+    input[type="range"]::-moz-range-thumb {
+        width: 23px;
+        height: 23px;
+    }
+    
+    input[type="range"]::-ms-thumb {
+        width: 23px;
+        height: 23px;
+    }
+}

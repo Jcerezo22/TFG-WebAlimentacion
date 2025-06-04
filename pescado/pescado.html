@@ -6,6 +6,7 @@
 		<meta name="author" content="tu nombre" />
         <link rel="stylesheet" href="css/pescado_banner.css" type="text/css">
 		<link rel="stylesheet" href="css/pescado_menu.css" type="text/css" />
+		<link rel="stylesheet" href="css/pescado_compQui.css" type="text/css" />
         <link rel="stylesheet" href="../jquery/jquery-ui.min.css">
         <script src="../jquery/jquery-3.7.1.min.js"></script>
         <script src="../jquery/jquery-ui.min.js"></script>
@@ -53,29 +54,170 @@
 				<article>
 					<div id="pestannas">
                         <ol>
-                            <li><a href="#param">PARÁMETROS FÍSICO-QUÍMICOS</a></li>
-                            <li><a href="#cantabria">SIMULADOR</a></li>
-                            <li><a href="#cordoba">COMPARADOR DE LECHES</a></li>
-                            <li><a href="#salamanca">APLICACIONES DIETÉTICAS</a></li>
-                            <li><a href="#segovia">MAPA</a></li>
-                            <li><a href="#sevilla">CURIOSIDADES</a></li>
-							<li><a href="#sevilla">RECETAS</a></li>
+                            <li><a href="#paramFi">PARÁM. FÍSICOS Y SENSORIALES</a></li>
+                            <li><a href="#paramQui">PARÁMETROS QUÍMICOS</a></li>
+                            <li><a href="#paramBio">PARÁMETROS MICROBIOLÓGICOS</a></li>
                         </ol>
-                        <div id="param">
-hola
+                        <div id="paramFi">
                         </div>
-                        <div id="cantabria">
+                        <div id="paramQui">
+							<div id="contenParamQui">
+								<h2 class="tituloParamQui">PARÁMETROS QUÍMICOS</h2>
+							</div>
+							<div class="simulador">
+								<h2>🧪 Simulador de Deterioro Químico</h2>
+								<h4>Días post-captura:</h4>
+								<label>
+									<input type="range" id="diasRango" min="0" max="10" step="1" value="0">
+									<div id="valoresRango">
+										<span id="diasValorMov">Día 0</span>
+										<span id="diasValorFin">Día 10</span>
+									</div>
+								</label>
+								<table>
+								<thead>
+									<tr>
+									<th>Parámetro</th>
+									<th>Valor</th>
+									<th>Estado</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+									<td>BVT (mg N/100g)</td>
+									<td id="bvtValor">5</td>
+									<td id="bvtEstado" class="estadoNormal">Normal</td>
+									</tr>
+									<tr>
+									<td>Amoniaco (mg)</td>
+									<td id="amoniacoValor">2</td>
+									<td id="amoniacoEstado" class="estadoNormal">Normal</td>
+									</tr>
+									<tr>
+									<td>TMA (mg)</td>
+									<td id="tmaValor">1</td>
+									<td id="tmaEstado" class="estadoNormal">Normal</td>
+									</tr>
+									<tr>
+									<td>pH</td>
+									<td id="phValor">6.8</td>
+									<td id="phEstado" class="estadoNormal">Normal</td>
+									</tr>
+								</tbody>
+								</table>
+							</div>
+							<div id="contenInfoParamQui">
+								<h2>Información Parámetros Químicos</h2>
+								<div class="cardGrid">
+									<div class="card">
+										<div class="cardIcono"><img src="../img/bvt.png" alt=""></i></div>
+										<div class="cardTitulo">Bases Volátiles Totales (BVT)</div>
+										<div class="cardDesc">La medición de BVT es un método común para evaluar la calidad de los productos pesqueros.</div>
+										<a href="#" class="leerMas" id="bvt">Leer más</a>
+									</div>
+									<div class="card">
+										<div class="cardIcono"><img src="../img/amoniaco.png" alt=""></i></div>
+										<div class="cardTitulo">Amoniaco</div>
+										<div class="cardDesc">El amoniaco se produce por la degradación bacteriana o autolítica de proteínas, péptidos y aminoácidos en productos pesqueros.</div>
+										<a href="#" class="leerMas" id="amoniaco">Leer más</a>
+									</div>
+										<div class="card">
+										<div class="cardIcono"><img src="../img/TMA.png" alt=""></i></div>
+										<div class="cardTitulo">Trimetilamina (TMA)</div>
+										<div class="cardDesc">La trimetilamina genera el olor característico a pescado en deterioro. </div>
+										<a href="#" class="leerMas" id="tma">Leer más</a>
+									</div>
+									<div class="card">
+										<div class="cardIcono"><img src="../img/ph_pescado.png" alt=""></i></div>
+										<div class="cardTitulo">pH</div>
+										<div class="cardDesc">El pH del pescado fresco suele estar entre 6.0 y 7.0.</div>
+										<a href="#" class="leerMas" id="ph">Leer más</a>
+									</div>
+									<div class="card">
+										<div class="cardIcono"><img src="../img/agua.png" alt=""></i></div>
+										<div class="cardTitulo">Composición de agua</div>
+										<div class="cardDesc">El contenido de agua en el pescado es alto, generalmente 70% a 80%.</div>
+										<a href="#" class="leerMas" id="compAgua">Leer más</a>
+									</div>
+									<div class="card">
+										<div class="cardIcono"><img src="../img/proteina.png" alt=""></i></div>
+										<div class="cardTitulo">Proteínas</div>
+										<div class="cardDesc">Las proteínas del pescado representan entre 15% y 25% de su peso.</div>
+										<a href="#" class="leerMas" id="proteinas">Leer más</a>
+									</div>
+									<div class="card">
+										<div class="cardIcono"><img src="../img/lipido.png" alt=""></i></div>
+										<div class="cardTitulo">Lípidos (Grasas)</div>
+										<div class="cardDesc">El contenido de lípidos varía según la especie, pero suele estar entre 1% y 15%.</div>
+										<a href="#" class="leerMas" id="lipidos">Leer más</a>
+									</div>
+									<div class="card">
+										<div class="cardIcono"><img src="../img/aminoacidos.png" alt=""></i></div>
+										<div class="cardTitulo">Aminoácidos</div>
+										<div class="cardDesc">Los pescados son ricos en aminoácidos esenciales.</div>
+										<a href="#" class="leerMas" id="aminoacidos">Leer más</a>
+									</div>
+									<div class="card">
+										<div class="cardIcono"><img src="../img/minerales.png" alt=""></i></div>
+										<div class="cardTitulo">Minerales</div>
+										<div class="cardDesc">Los pescados son una buena fuente de minerales.</div>
+										<a href="#" class="leerMas" id="minerales">Leer más</a>
+									</div>
+									<div class="card">
+										<div class="cardIcono"><img src="../img/acidosGrasosPescado.png" alt=""></i></div>
+										<div class="cardTitulo">Ácidos grasos</div>
+										<div class="cardDesc">El pescado es una fuente importante de ácidos grasos poliinsaturados</div>
+										<a href="#" class="leerMas" id="acidosGrasos">Leer más</a>
+									</div>
+									<div class="card">
+										<div class="cardIcono"><img src="../img/colorPescado.png" alt=""></i></div>
+										<div class="cardTitulo">Color</div>
+										<div class="cardDesc"> El color del pescado puede indicar su frescura.</div>
+										<a href="#" class="leerMas" id="color">Leer más</a>
+									</div>
+									<div class="card">
+										<div class="cardIcono"><img src="../img/aw.png" alt=""></i></div>
+										<div class="cardTitulo">Actividad de agua (Aw)</div>
+										<div class="cardDesc">El valor de actividad de agua es un indicador importante de la vida útil del pescado.</div>
+										<a href="#" class="leerMas" id="aw">Leer más</a>
+									</div>
+									<div class="card">
+										<div class="cardIcono"><img src="../img/tamanoYFormaPescado.png" alt=""></i></div>
+										<div class="cardTitulo">Tamaño y forma</div>
+										<div class="cardDesc">El tamaño y la forma también son parámetros físico-químicos que afectan la calidad del pescado.</div>
+										<a href="#" class="leerMas" id="tamForma">Leer más</a>
+									</div>
+									<div class="card">
+										<div class="cardIcono"><img src="../img/salinidad.png" alt=""></i></div>
+										<div class="cardTitulo">Salinidad</div>
+										<div class="cardDesc">En los pescados de agua salada.</div>
+										<a href="#" class="leerMas" id="salinidad">Leer más</a>
+									</div>
+									<div class="card">
+										<div class="cardIcono"><img src="../img/texturaPescado.png" alt=""></i></div>
+										<div class="cardTitulo">Textura</div>
+										<div class="cardDesc">La textura del pescado fresco es firme pero no dura</div>
+										<a href="#" class="leerMas" id="textura">Leer más</a>
+									</div>
+									<div class="card">
+										<div class="cardIcono"><img src="../img/temperaturaPescado.png" alt=""></i></div>
+										<div class="cardTitulo">Temperatura</div>
+										<div class="cardDesc">: La temperatura en la que se mantiene el pescado es esencial para su conservación.</div>
+										<a href="#" class="leerMas" id="temperatura">Leer más</a>
+									</div>
+								</div>
+								<dialog id="dialogParamQui">
+									<img src="../img/cruz.png" alt="Icono cruz" id="cerrarBoton">
+									<div class="contenidoDialogo">
+										<h2 id="infoTitulo"></h2>
+										<div id="infoContenido">
+											<p><span id="infoDesc"></span></p>
+										</div>
+									</div>
+								</dialog>
+							</div>
                         </div>
-                        <div id="cordoba">
-                        </div>
-                        <div id="salamanca">
-                        </div>
-                        <div id="segovia">
-                        </div>
-                        <div id="sevilla">
-                        </div>
-						<div id="sevilla">
-                        </div>
+                        <div id="paramBio">
                     </div>
 				</article>
 			</section>
