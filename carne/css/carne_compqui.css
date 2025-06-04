@@ -1,0 +1,162 @@
+@font-face {
+    font-family: 'Gliker';
+    src: url('../../tipoLetra/Gliker-Regular.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+#contenedorCompQui{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-sizing: border-box;
+    font-size: 1rem;
+    margin-top: 30px;
+    padding: 0 20px;
+}
+
+#tituloCompQui{
+    font-family: 'Gliker';
+    color: #ab2a20;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+#contenidoCompQui {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 98%;
+    gap: 40px;
+    flex-wrap: wrap;
+    padding: 30px;
+    margin-bottom: 50px;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    border: 2px solid #ab2a20;
+}
+
+#infoCompQui {
+  flex: 1 1 50%;
+  min-width: 200px;
+  padding: 40px;
+
+}
+
+#contenedorGrafico {
+  flex: 1 1 40%;
+  max-width: 400px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+canvas {
+  padding: 20px;
+  width: 100% !important; 
+  height: auto !important; 
+}
+
+#listaCompQui {
+  list-style-type: decimal;
+  padding-left: 2em;
+}
+
+#listaCompQui > li{
+  color: #ab2a20;
+    margin-bottom: 20px;
+    font-weight: bolder;
+    font-size: 1.2rem;
+}
+
+#listaCompQui  ul {
+  list-style-type: disc;
+  padding-left: 1.5em;
+  font-weight: normal;
+  line-height: 1.7rem;
+  color: black;
+  font-size: 1rem;
+}
+
+#listaCompQui  ul li::marker {
+  color: #ab2a20; 
+}
+
+#listaCompQui  ul ul {
+  list-style-type: circle;
+  font-weight: bolder;
+  line-height: 4rem;
+  color: black;
+  font-size: 1rem;
+}
+
+/* ===================== MEDIA QUERY  400px - 500px  ================================= */
+@media (min-width: 400px) {
+  
+}
+
+/* ===================== MEDIA QUERY  500px - 800px  ================================= */
+@media (min-width: 501px) {
+  #contenedorGrafico {
+    flex: 1 1 50%;
+    max-width: 870px; 
+  }
+
+}
+
+/* ===================== MEDIA QUERY  801px - 1000px  ================================= */
+@media (min-width: 801px) {
+  #tituloCompQui{
+    font-size: 1.3rem;
+  }
+
+  #contenedorGrafico {
+    max-width: 550px; 
+  }
+}
+
+/* ===================== MEDIA QUERY  1001px - 1200px  ================================= */
+@media (min-width: 1001px) {
+    #tituloCompQui{
+        font-size: 1.4rem;
+    }
+
+    #contenidoCompQui {
+        align-items: center;
+    }
+
+    #contenedorGrafico {
+        flex: 1 1 45%;
+        max-width: 780px; 
+    }
+}
+
+/* ===================== MEDIA QUERY  1201px - 1600px  ================================= */
+@media (min-width: 1201px) {
+  #tituloCompQui{
+    font-size: 1.6rem;
+  }
+
+  #contenedorGrafico {
+    flex: 1 1 40%;
+    max-width: 950px; 
+  }
+}
+
+/* ===================== MEDIA QUERY  1601px  ================================= */
+@media (min-width: 1601px) {
+    #tituloCompQui{
+        font-size: 1.8rem;
+    }
+
+    #infoCompQui {
+        flex: 1 1 40%;
+        min-width: 200px;
+    }
+
+    #contenedorGrafico {
+        flex: 1 1 50%;
+        max-width: 1000px; 
+    }
+}

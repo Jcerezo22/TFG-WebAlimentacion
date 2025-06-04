@@ -1,0 +1,130 @@
+@font-face {
+    font-family: 'Gliker';
+    src: url('../../tipoLetra/Gliker-Regular.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+#contenedorComparador{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  box-sizing: border-box;
+  font-size: 1rem;
+  margin-top: 30px;
+}
+
+#tituloComparador{
+  font-family: 'Gliker';
+  color: #77b4d8;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+canvas {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  width: 100% !important; 
+  height: auto !important; 
+}
+
+#contenedorGrafico {
+  width: 100%; 
+  max-width: 800px; 
+  margin: 20px auto;
+}
+
+#contenedorGraficosPeque {
+  display: flex;
+  flex-direction: row; 
+  flex-wrap: wrap;     
+  justify-content: center;
+  align-items: stretch; 
+  gap: 30px;            
+  margin: 30px auto;
+  width: 100%;
+}
+
+.grafico-pequeno {
+  flex: 1 1 300px;     
+  max-width: 460px;    
+  width: 100%;         
+}
+
+/* ===================== MEDIA QUERY  400px - 500px  ================================= */
+@media (min-width: 400px) {
+  
+}
+
+/* ===================== MEDIA QUERY  500px - 800px  ================================= */
+@media (min-width: 501px) {
+  #contenedorGrafico {
+    max-width: 770px; 
+  }
+
+  .grafico-pequeno {   
+    max-width: 570px;  
+  }
+}
+
+/* ===================== MEDIA QUERY  801px - 1000px  ================================= */
+@media (min-width: 801px) {
+  #tituloComparador{
+    font-size: 1.3rem;
+  }
+
+  #contenedorGrafico {
+    max-width: 700px; 
+  }
+
+  .grafico-pequeno {   
+    max-width: 335px;         
+  }
+}
+
+/* ===================== MEDIA QUERY  1001px - 1200px  ================================= */
+@media (min-width: 1001px) {
+  #tituloComparador{
+    font-size: 1.4rem;
+  }
+  #contenedorGrafico {
+    max-width: 780px; 
+  }
+
+  .grafico-pequeno {   
+    max-width: 380px;         
+  }
+}
+
+/* ===================== MEDIA QUERY  1201px - 1600px  ================================= */
+@media (min-width: 1201px) {
+  #tituloComparador{
+    font-size: 1.6rem;
+  }
+
+  #contenedorGrafico {
+    max-width: 950px; 
+  }
+
+  .grafico-pequeno {   
+    max-width: 460px;         
+  }
+}
+
+/* ===================== MEDIA QUERY  1601px  ================================= */
+@media (min-width: 1601px) {
+  #tituloComparador{
+    font-size: 1.8rem;
+  }
+
+  #contenedorGrafico {
+    max-width: 1100px; 
+  }
+
+  .grafico-pequeno {   
+    max-width: 530px;         
+  }
+}

@@ -1,4 +1,4 @@
-$(window).on("load",inicio);
+$(window).on("load", inicio);
 
 function inicio(){
     $("#pestannas").tabs({

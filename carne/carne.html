@@ -4,11 +4,15 @@
 		<title>Carne </title>
 		<meta charset="utf-8" />
 		<meta name="author" content="tu nombre" />
-        <link rel="stylesheet" href="css/carne.css">
+        <link rel="stylesheet" href="css/carne_banner.css">
 		<link rel="stylesheet" href="css/carne_menu.css" type="text/css" />
+		<link rel="stylesheet" href="css/carne_checklist.css" type="text/css" />
+		<link rel="stylesheet" href="css/carne_compqui.css" type="text/css" />
+		<link rel="stylesheet" href="css/carne_ph.css" type="text/css" />
         <link rel="stylesheet" href="../jquery/jquery-ui.min.css">
         <script src="../jquery/jquery-3.7.1.min.js"></script>
         <script src="../jquery/jquery-ui.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
         <script src="js/carne.js" type="text/javascript"> </script>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	</head>
@@ -50,28 +54,342 @@
 				<article>
 					<div id="pestannas">
                         <ol>
-                            <li><a href="#param">PARÁMETROS FÍSICO-QUÍMICOS</a></li>
-                            <li><a href="#cantabria">SIMULADOR</a></li>
-                            <li><a href="#cordoba">COMPARADOR DE LECHES</a></li>
-                            <li><a href="#salamanca">APLICACIONES DIETÉTICAS</a></li>
-                            <li><a href="#segovia">MAPA</a></li>
-                            <li><a href="#sevilla">CURIOSIDADES</a></li>
-							<li><a href="#sevilla">RECETAS</a></li>
+                            <li><a href="#compQui">COMPOSICIÓN QUÍMICA</a></li>
+                            <li><a href="#ph">PH</a></li>
+							<li><a href="#contaminantes">CRA, CE Y CONTAMINANTES</a></li>
+							<li><a href="#micro">MICROORGANISMOS</a></li>
+                            <li><a href="#apliDiet">APLICACIONES DIETÉTICAS</a></li>
+                            <li><a href="#checklist">CHECKLIST</a></li>
                         </ol>
-                        <div id="param">
-hola
+                        <div id="compQui">
+							<div id="contenedorCompQui">
+								<div id="tituloCompQui">
+									<h2>COMPOSICIÓN QUÍMICA</h2>
+								</div>
+								<div id="contenidoCompQui">
+									<div id="infoCompQui">
+										<ol id="listaCompQui">
+											<li>Agua (60-75%)
+												<ul>
+													<li>Mantiene la textura y jugosidad de la carne</li>
+												</ul>
+											</li>
+											<li>Proteínas (≈19%)
+												<ul>
+													<li>Componente nutricional clave</li>
+													<li>Incluye proteínas contráctiles (actina, miosina) y estructurales (colágeno).
+														<ul>
+															<li>Sustancias nitrogenadas (20-25%)</li>
+														</ul>
+													</li>
+													<li>Mioglobina: almacena oxígeno</li>
+													<li>Milofibrillas: estructuras musculares (actina y miosina).</li>
+													<li>Colágeno: proteína del tejido conectivo.
+														<ul>
+															<li>Nitrógeno no proteico (≈3%)</li>
+														</ul>
+													</li>
+													<li>Incluye urea, ácido úrico, creatina, creatinina, amoníaco y purinas (responsables del olor).</li>
+												</ul>
+											</li>
+											<li>Grasas (0.5%-30%)
+												<ul>
+													<li>Varía según tipo de carne, edad, sexo y dieta del animal.</li>
+													<li>Grasa visible: se puede retirar.</li>
+													<li>Grasa intramuscular (invisible): dentro del músculo, no se elimina fácilmente</li>
+													<li>Carnes magras: hasta 10% de grasa (pollo, conejo, ternera, hígado).</li>
+													<li>Carnes grasas: hasta 20% (cerdo, pato, cordero).</li>
+												</ul>
+											</li>
+											<li>Carbohidratos (1-2%)
+												<ul>
+													<li>Principalmente ácido láctico y algo de glucógeno (se degrada postmortem).</li>
+												</ul>
+											</li>
+											<li>Minerales (&lt;1%)
+												<ul>
+													<li>Buena fuente de K, Zn, P, S y hierro tipo hemo (alta absorción).</li>
+												</ul>
+											</li>
+											<li>Vitaminas (&lt;1%)
+												<ul>
+													<li>Hidrosolubles: grupo B (tiamina, riboflavina, niacina, cobalamina).</li>
+													<li>Liposolubles: A y D.</li>
+													<li>No contiene vitamina C, ácido fólico ni E</li>
+												</ul>
+											</li>
+										</ol>
+									</div>
+									<div id="contenedorGrafico">
+										<canvas id="graficoCarne" width="300" height="300"></canvas>
+									</div>
+								</div>	
+							</div>
                         </div>
-                        <div id="cantabria">
+                        <div id="ph">
+							<div id="contenedorPh">
+								<div id="phTituloConten">
+									<h2 id="phTitulo">pH</h2>
+									<p>El pH es una medida de la acidez o alcalinidad de un material. En el caso de la carne, el pH tiene un impacto directo sobre su textura, sabor, color y vida útil. Este valor cambia en el tiempo después de que el animal es sacrificado, debido a los procesos metabólicos que ocurren en los músculos. </p>
+								</div>
+								<div id="contenInfoPh">
+									<div class="infoPh" id="infoHigPh">
+										<h3>PH Y CALIDAD HIGIÉNICA</h3>
+										<ul>
+											<li>El pH afecta textura, sabor, color y vida útil.</li>
+											<li>Tras el sacrificio, el pH baja por ácido láctico</li>
+											<li>pH bajo (&lt;5.5): menos bacterias, pero textura más dura y sabor ácido.</li>
+											<li>pH alto (>6.2): más riesgo de bacterias como E. coli y Salmonella.</li>
+										</ul>
+										<h4>Calidad higiénica:</h3>
+										<ul>
+											<li>Crucial para evitar proliferación bacteriana</li>
+											<li>Factores: manipulación, conservación, refrigeración, contaminación cruzada</li>
+										</ul>
+										<h4>Maduración:</h3>
+										<ul>
+											<li>Durante este proceso, el pH baja lentamente, mejorando sabor y ternura</li>
+											<li>Requiere buena higiene para evitar contaminación.</li>
+										</ul>
+									</div>
+									<div class="infoPh" id="infoTecPh">
+										<h3>PH Y CALIDAD TECNOLÓGICA</h3>
+										<div id="infophParra1">
+											El pH de la carne es un indicador fundamental de su calidad y se mide utilizando un
+											pH-metro previamente calibrado con soluciones tampón de pH 4.0 y 7.0. En
+											condiciones normales, el pH medido a los 45 minutos post mortem (pH₄₅) debe
+											situarse entre 6.0 y 6.5, mientras que a las 24 horas (pH₂₄) debe haber descendido
+											hasta un rango de 5.4 a 5.8. Estos valores indican que la carne ha seguido un
+											proceso de acidificación adecuado.
+										</div>
+										<div  id="infophParra2">
+											Cuando el pH₂₄ supera 6.0, existe riesgo de que la carne sea DFD (oscura, firme y
+											seca), lo que puede deberse a un agotamiento del glucógeno muscular antes del
+											sacrificio. Por otro lado, si el pH₄₅ es inferior a 6.0, se puede desarrollar carne PSE
+											(pálida, blanda y exudativa), normalmente asociada a un descenso rápido del pH
+											mientras la temperatura aún es elevada
+										</div>
+									</div>
+								</div>
+								<div id="contenSliderPh">
+									<h3>SIMULADOR DE pH EN TIEMPO POST MORTEM</h3>
+									<h4>Tiempo transcurrido desde el sacrificio (horas/min):</h4>
+									<label>
+										<input type="range" id="horasRango" min="0" max="24" step="0.25" value="4">
+										<div id="valoresRango">
+											<span id="horasValorMov">4 h</span>
+											<span id="horasValorFin">24 h</span>
+										</div>
+									</label>
+									<div id="resultadoSliderPh">
+										<h4>Efectos en la carne:</h4>
+										<ul>
+											<li>pH estimado: <span id="phCarne"></span></li>
+											<li>Estado de la carne: <span id="estadoCarne"></span></li>
+											<li>Riesgo bacteriano: <span id="riesgoBacteriano"></span></li>
+										</ul>
+									</div>
+									<div class="botonesInfoPh">
+										<button id="botonDfd" class="botonpH">¿Cuándo hay riesgo de DFD?</button>
+										<button id="botonPse" class="botonpH">¿Cuándo hay riesgo de PSE?</button>
+									</div>
+									<div id="infoExtra"></div>
+								</div>
+							</div>
                         </div>
-                        <div id="cordoba">
+						<div id="contaminantes">
                         </div>
-                        <div id="salamanca">
+						<div id="micro">
                         </div>
-                        <div id="segovia">
+                        <div id="apliDiet">
                         </div>
-                        <div id="sevilla">
-                        </div>
-						<div id="sevilla">
+						<div id="checklist">
+							<div id="checklistTituloConten">
+								<h2 id="checklistTitulo">CHECKLIST</h2>
+								<p>Marca las opciones que observes en tu carne o que recuerdes que debe cumplir una carne en buenas condiciones. Puede haber más de una opción correcta.</p>
+							</div>
+							<div id="contenedorPreguntas">
+								<div class="contendorPregunta" id="p0">
+									<h3>1 - Aspecto general y contenido de agua</h3>
+									<label for="" >
+										<input type="checkbox" class="correcta">
+										<span>La carne tiene un aspecto brillante, húmedo y fresco</span>
+									</label>
+									<label for="" >
+										<input type="checkbox" class="incorrecta">
+										<span>Presencia de sangre coagulada, mucosidad o mal olor.</span>
+									</label>
+									<p class="recordatorio">&#x2139;&#xfe0f; La carne contiene entre un 60 y 75% de agua. Una buena CRA indica frescura, jugosidad y mejor rendimiento al cocinar.</p>
+								</div>
+								<div class="contendorPregunta" id="p1">
+									<h3>2 - Textura y Consistencia</h3>
+									<label for="">
+										<input type="checkbox" class="correcta">
+										<span>Textura firme, elástica y no pegajosa.</span>
+									</label>
+									<label for="" >
+										<input type="checkbox" class="incorrecta">
+										<span>Presenta flacidez o sensación pegajosa.</span>
+									</label>
+									<label for="">
+										<input type="checkbox" class="incorrecta">
+										<span>No presenta signos de sequedad o deshidratación</span>
+									</label>
+									<p class="recordatorio">&#x2139;&#xfe0f; El color y la textura están directamente influenciados por el pH y las proteínas musculares.</p>
+								</div>
+								<div class="contendorPregunta" id="p3">
+									<h3>3 - Color</h3>
+									<label for="" >
+										<input type="checkbox" class="incorrecta">
+										<span>Color pálido o muy oscuro (PSE o DFD).</span>
+									</label>
+									<label for="">
+										<input type="checkbox"  class="correcta">
+										<span>Color uniforme: rojo brillante (ternera), rosado claro (cerdo), rosado pálido (pollo).</span>
+									</label>
+									<label for="" >
+										<input type="checkbox" class="incorrecta">
+										<span>Presencia de zonas verdosas, pardas o viscosas</span>
+									</label>
+									<p class="recordatorio">&#x2139;&#xfe0f; El color y la textura están directamente influenciados por el pH y las proteínas musculares.</p>
+								</div>
+								<div class="contendorPregunta" id="p4">
+									<h3>4 - Conductividad eléctrica</h3>
+									<label for="" >
+										<input type="checkbox" class="incorrecta">
+										<span>Conductividad mayor a 6 mS/cm</span>
+									</label>
+									<label for="" >
+										<input type="checkbox" class="correcta">
+										<span>Conductividad entre 2,5 y 4 mS/cm.</span>
+									</label>
+									<p class="recordatorio">&#x2139;&#xfe0f; Refleja la liberación de electrolitos por degradación celular.</p>
+								</div>
+								<div class="contendorPregunta" id="p5">
+									<h3>5 - pH de la carne</h3>
+									<label for="" >
+										<input type="checkbox" class="incorrecta">
+										<span>pH a los 45 min menor a 6.0 (riesgo PSE).</span>
+									</label>
+									<label for="" >
+										<input type="checkbox" class="correcta">
+										<span>pH a los 45 min entre 6.0 y 6.5</span>
+									</label>
+									<label for="" >
+										<input type="checkbox" class="correcta">
+										<span>pH a las 24 h entre 5.4 y 5.8.</span>
+									</label>
+									<label for="" >
+										<input type="checkbox" class="incorrecta">
+										<span>pH a las 24 h mayor a 6.0 (riesgo DFD).</span>
+									</label>
+									<p class="recordatorio">&#x2139;&#xfe0f; El pH afecta textura, jugosidad, vida útil y seguridad microbiológica. Se mide en el músculo Longissimus dorsi a los 45 min y 24 h post-mortem.</p>
+								</div>
+								<div class="contendorPregunta" id="p6">
+									<h3>6 - Análisis colorimétrico (CIELAB)</h3>
+									<label for="" >
+										<input type="checkbox" class="correcta">
+										<span>L* medio, a* alto (rojo), b* equilibrado.</span>
+									</label>
+									<label for="">
+										<input type="checkbox"  class="incorrecta">
+										<span>L* alto y a* bajo (indicativo de PSE).</span>
+									</label>
+									<label for="" >
+										<input type="checkbox" class="incorrecta">
+										<span>L* muy bajo y a* alto (indicativo de DFD).</span>
+									</label>
+									<p class="recordatorio">&#x2139;&#xfe0f; El color es un indicador rápido y objetivo del estado de la carne.</p>
+								</div>
+								<div class="contendorPregunta" id="p7">
+									<h3>7 - Capacidad de Retención de Agua (CRA)</h3>
+									<label for="" >
+										<input type="checkbox" class="correcta">
+										<span>Baja pérdida por goteo, presión o centrifugación.</span>
+									</label>
+									<label for="" >
+										<input type="checkbox" class="incorrecta">
+										<span>Alta pérdida por goteo, presión o centrifugación.</span>
+									</label>
+									<p class="recordatorio">&#x2139;&#xfe0f; La CRA depende de la estructura proteica y del pH. Es clave para rendimiento industrial y calidad doméstica.</p>
+								</div>
+								<div class="contendorPregunta" id="p8">
+									<h3>8 - Composición nutricional</h3>
+									<label >
+										<input type="checkbox" class="correcta">
+										<span>Baja o moderada en grasa visible (&lt;30%).</span>
+									</label>
+									<label >
+										<input type="checkbox" class="incorrecta">
+										<span>Contenido proteico inferior al 10%.</span>
+									</label>
+									<label >
+										<input type="checkbox" class="correcta">
+										<span>Alto contenido proteico (18-22%).</span>
+									</label>
+									<p class="recordatorio">&#x2139;&#xfe0f; La calidad nutricional también se asocia con el tipo de corte y alimentación del animal.</p>
+								</div>
+								<div class="contendorPregunta" id="p9">
+									<h3>9 - Estado microbiológico e higiene</h3>
+									<label>
+										<input type="checkbox" class="correcta">
+										<span>Temperatura constante de refrigeración (0-4 °C).</span>
+									</label>
+									<label>
+										<input type="checkbox" class="correcta">
+										<span>Sin olores extraños, viscosidad o coloración anómala.</span>
+									</label>
+									<label>
+										<input type="checkbox" class="incorrecta">
+										<span>Olor fuerte, viscosidad o cambio de color evidente.</span>
+									</label>
+									<p class="recordatorio">&#x2139;&#xfe0f; El pH inadecuado y la pérdida de agua pueden favorecer la proliferación microbiana</p>
+								</div>
+								<div class="contendorPregunta" id="p10">
+									<h3>10 - Contaminantes abióticos y químicos</h3>
+									<label>
+										<input type="checkbox" class="incorrecta">
+										<span>Procedencia dudosa y sin garantías sanitarias.</span>
+									</label>
+									<label>
+										<input type="checkbox" class="correcta">
+										<span>Libre de residuos de antibióticos, metales pesados o plaguicidas.</span>
+									</label>
+									<label>
+										<input type="checkbox" class="correcta">
+										<span>Procedencia verificada con control de contaminantes (dioxinas, PCBs).</span>
+									</label>
+									<p class="recordatorio">&#x2139;&#xfe0f; Los contaminantes alteran la inocuidad y la calidad tecnológica de la carne.</p>
+								</div>
+								<div class="contendorPregunta" id="p11">
+									<h3>11 - Etiquetado y trazabilidad</h3>
+									<label>
+										<input type="checkbox" class="correcta">
+										<span>Información clara sobre especie, origen, fecha y conservación.</span>
+									</label>
+									<label>
+										<input type="checkbox" class="correcta">
+										<span>Cumple con normativas de bienestar animal y sostenibilidad.</span>
+									</label>
+									<label>
+										<input type="checkbox" class="incorrecta"> 
+										<span>Etiqueta incompleta o sin trazabilidad del producto.</span>
+									</label>
+									<p class="recordatorio">&#x2139;&#xfe0f; La trazabilidad garantiza la calidad y permite verificar condiciones de producción</p>
+								</div>
+								<div>
+									<button id="botonCorregir">Corregir respuestas</button>
+									<button id="botonVolverEmp">Volver a empezar</button>
+								</div>
+								<div id="leyenda">
+									<h4>Leyenda de colores:</h4>
+									<div class="leyendaCasilla"><span class="cajaColor correctaAcertada"></span> Correcta marcada</div>
+									<div class="leyendaCasilla"><span class="cajaColor incorrectaMarcada"></span> Incorrecta marcada</div>
+									<div class="leyendaCasilla"><span class="cajaColor correctaNoMarcada"></span> Correcta no marcada</div>
+								</div>
+								<div id="resultado">
+								</div>
+							</div>
                         </div>
                     </div>
 				</article>

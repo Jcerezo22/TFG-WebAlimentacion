@@ -1,0 +1,988 @@
+@font-face {
+  font-family: 'Gliker';
+  src: url('../../tipoLetra/Gliker-Regular.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+#mapa {
+    text-align: center;
+    margin-top: 20px;
+}
+
+
+#contenProductores{
+  text-align: left;
+}
+
+.titulosMapa{
+  font-family: 'Gliker';
+  font-size: 23px;
+  margin-bottom: 15px;
+  color: #77b4d8;
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+.descMapa{
+  font-size: 12px;
+  margin-bottom: 20px;
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+.mapaContenedor {
+  max-width: 100%;
+  text-align: left;
+}
+
+#imagenMapa {
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+
+
+#contenTipicaPais{
+  text-align: left;
+  margin-top: 50px;
+}
+
+#paisesTipica{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  text-align: center;
+}
+
+.paisTipica {
+  width: 80%; 
+  margin: 2%;
+  box-sizing: border-box;
+  height: 250px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+#tipicoIndia{
+  border: 2px solid orange;
+  border-radius: 18px;
+  padding: 15px;
+  font-size: 12px;
+}
+
+.tituloTipica{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+#tipicoIndia .tituloTipica h3{
+  font-family: 'Chunkfive';
+  font-size: 18px;
+  color: orange;
+  margin-left: 10px;
+}
+
+#tipicoIndia .tituloTipica img{
+  width: 50px;
+}
+
+.descTipica{
+  margin-bottom: 10px;
+}
+
+#indiaTipica{
+  margin-top: 10px;
+  width: 75%;
+  border-radius: 8px;
+}
+
+
+
+#tipicoEEUU{
+  border: 2px solid #293682;
+  border-radius: 18px;
+  padding: 15px;
+  font-size: 12px;
+}
+
+#tipicoEEUU .tituloTipica h3{
+  font-family: 'Chunkfive';
+  font-size: 15px;
+  color: #293682;
+  margin-left: 10px;
+}
+
+#tipicoEEUU .tituloTipica img{
+  width: 45px;
+}
+
+#eeuuTipica{
+  margin-top: 10px;
+  width: 85%;
+  border-radius: 8px;
+}
+
+
+#tipicoNZ{
+  border: 2px solid #031c64;
+  border-radius: 18px;
+  padding: 15px;
+  font-size: 12px;
+}
+
+#tipicoNZ .tituloTipica h3{
+  font-family: 'Chunkfive';
+  font-size: 15px;
+  color: #031c64;
+  margin-left: 10px;
+}
+
+#tipicoNZ .tituloTipica img{
+  width: 45px;
+}
+
+#nzTipica{
+  margin-top: 10px;
+  width: 85%;
+  border-radius: 8px;
+}
+
+
+#tipicoEspa{
+  border: 2px solid #aa291f;
+  border-radius: 18px;
+  padding: 15px;
+  font-size: 12px;
+}
+
+#tipicoEspa .tituloTipica h3{
+  font-family: 'Chunkfive';
+  font-size: 15px;
+  color: #aa291f;
+  margin-left: 10px;
+}
+
+#tipicoEspa .tituloTipica img{
+  width: 50px;
+}
+
+#espaTipica{
+  margin-top: 10px;
+  width: 70%;
+  border-radius: 8px;
+}
+
+
+#tipicoBrasil{
+  border: 2px solid #0a7b0d;
+  border-radius: 18px;
+  padding: 15px;
+  font-size: 12px;
+}
+
+#tipicoBrasil .tituloTipica h3{
+  font-family: 'Chunkfive';
+  font-size: 15px;
+  color: #0a7b0d;
+  margin-left: 10px;
+}
+
+#tipicoBrasil .tituloTipica img{
+  width: 50px;
+}
+
+#brasilTipica{
+  margin-top: 10px;
+  width: 90%;
+  border-radius: 8px;
+}
+
+
+
+#contenExportadores{
+  text-align: left;
+  margin-top: 50px;
+  margin-bottom: 60px;
+}
+
+#listaExportadores{
+  font-size: 12px;
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+
+#dialogPaises {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	padding: 2rem;
+	border: 3.5px solid #77b4d8;
+	border-radius: 8px;
+	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+	min-width: 150px;
+	min-height: 50px;
+	text-align: center;
+}
+
+#cerrarBoton {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	width: 8px;
+	height: 8px;
+	cursor: pointer;
+}
+
+.contenidoDialogo {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+  width: 80%;
+  font-size: 6px;
+}
+
+#infoTitulo{
+  margin-bottom: 10px;
+}
+
+/* ===================== MEDIA QUERY  400px - 500px  ================================= */
+@media (min-width: 400px) {
+  .titulosMapa{
+    font-size: 25px;
+    margin-bottom: 17px;
+  }
+
+  .descMapa{
+    font-size: 14px;
+    margin-bottom: 22px;
+  }
+
+  #mapa {
+    margin-top: 30px;
+  }
+
+
+  .paisTipica {
+    height: 280px;
+  }
+
+  #tipicoIndia .tituloTipica h3{
+    font-size: 22px;
+  }
+
+  #tipicoEEUU .tituloTipica h3{
+    font-size: 22px;
+  }
+
+  #tipicoNZ .tituloTipica h3{
+    font-size: 22px;
+  }
+
+  #tipicoEspa .tituloTipica h3{
+    font-size: 22px;
+  }
+
+  #tipicoBrasil .tituloTipica h3{
+    font-size: 22px;
+  }
+
+
+
+  #tipicoIndia .tituloTipica img{
+    width: 55px;
+  }
+
+  #tipicoEEUU .tituloTipica img{
+    width: 50px;
+  }
+
+  #tipicoNZ .tituloTipica img{
+    width: 55px;
+  }
+
+  #tipicoEspa .tituloTipica img{
+    width: 55px;
+  }
+
+  #tipicoBrasil .tituloTipica img{
+    width: 55px;
+  }
+
+
+
+  #tipicoIndia{
+    font-size: 14px;
+  }
+
+  #tipicoEEUU{
+    font-size: 14px;
+  }
+
+  #tipicoNZ{
+    font-size: 14px;
+  }
+
+  #tipicoEspa{
+    font-size: 14px;
+  }
+
+  #tipicoBrasil{
+    font-size: 14px;
+  }
+
+  #espaTipica{
+    width: 60%;
+  }
+
+
+  #listaExportadores{
+    font-size: 14px;
+  }
+
+  #dialogPaises {
+    min-width: 240px;
+    min-height: 75px;
+  }
+
+  .contenidoDialogo {
+    font-size: 8px;
+  }
+
+
+}
+
+/* ===================== MEDIA QUERY  500px - 800px  ================================= */
+@media (min-width: 501px) {
+  .titulosMapa{
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+
+  .descMapa{
+    font-size: 16px;
+    margin-bottom: 24px;
+  }
+
+  #mapa {
+    margin-top: 40px;
+  }
+
+  .paisTipica {
+    width: 45%; 
+    margin: 2%;
+    box-sizing: border-box;
+    height: 280px;
+  }
+
+
+  
+  #tipicoIndia .tituloTipica h3{
+    font-size: 23px;
+  }
+
+  #tipicoEEUU .tituloTipica h3{
+    font-size: 23px;
+  }
+
+  #tipicoNZ .tituloTipica h3{
+    font-size: 23px;
+  }
+
+  #tipicoEspa .tituloTipica h3{
+    font-size: 23px;
+  }
+
+  #tipicoBrasil .tituloTipica h3{
+    font-size: 23px;
+  }
+
+
+
+  #tipicoIndia .tituloTipica img{
+    width: 57px;
+  }
+
+  #tipicoEEUU .tituloTipica img{
+    width: 52px;
+  }
+
+  #tipicoNZ .tituloTipica img{
+    width: 57px;
+  }
+
+  #tipicoEspa .tituloTipica img{
+    width: 57px;
+  }
+
+  #tipicoBrasil .tituloTipica img{
+    width: 57px;
+  }
+
+
+
+  #tipicoIndia{
+    font-size: 16px;
+  }
+
+  #tipicoEEUU{
+    font-size: 16px;
+  }
+
+  #tipicoNZ{
+    font-size: 16px;
+  }
+
+  #tipicoEspa{
+    font-size: 16px;
+  }
+
+  #tipicoBrasil{
+    font-size: 16px;
+  }
+
+  
+  #indiaTipica{
+    width: 72%;
+  }
+
+  #eeuuTipica{
+    width: 87%;
+  }
+
+  #nzTipica{
+    width: 78%;
+  }
+
+  #espaTipica{
+    width: 58%;
+  }
+
+  #listaExportadores{
+    font-size: 16px;
+  }
+
+
+  #dialogPaises {
+    min-width: 320px;
+    min-height: 100px;
+  }
+
+  .contenidoDialogo {
+    font-size: 11px;
+  }
+
+  #cerrarBoton {
+    width: 10px;
+    height: 10px;
+  }
+}
+
+/* ===================== MEDIA QUERY  801px - 1000px  ================================= */
+@media (min-width: 801px) {
+  .titulosMapa{
+    font-size: 30px;
+    margin-bottom: 22px;
+  }
+
+  .descMapa{
+    font-size: 18px;
+    margin-bottom: 26px;
+  }
+
+  #mapa {
+    margin-top: 50px;
+  }
+
+  .paisTipica {
+    height: 310px;
+  }
+
+
+  #tipicoIndia .tituloTipica h3{
+    font-size: 26px;
+  }
+
+  #tipicoEEUU .tituloTipica h3{
+    font-size: 26px;
+  }
+
+  #tipicoNZ .tituloTipica h3{
+    font-size: 26px;
+  }
+
+  #tipicoEspa .tituloTipica h3{
+    font-size: 26px;
+  }
+
+  #tipicoBrasil .tituloTipica h3{
+    font-size: 26px;
+  }
+
+
+
+  #tipicoIndia .tituloTipica img{
+    width: 60px;
+  }
+
+  #tipicoEEUU .tituloTipica img{
+    width: 55px;
+  }
+
+  #tipicoNZ .tituloTipica img{
+    width: 60px;
+  }
+
+  #tipicoEspa .tituloTipica img{
+    width: 60px;
+  }
+
+  #tipicoBrasil .tituloTipica img{
+    width: 60px;
+  }
+
+
+
+  #tipicoIndia{
+    font-size: 18px;
+  }
+
+  #tipicoEEUU{
+    font-size: 18px;
+  }
+
+  #tipicoNZ{
+    font-size: 18px;
+  }
+
+  #tipicoEspa{
+    font-size: 18px;
+  }
+
+  #tipicoBrasil{
+    font-size: 18px;
+  }
+
+
+  
+  #indiaTipica{
+    width: 71%;
+  }
+
+  #eeuuTipica{
+    width: 79%;
+  }
+
+  #nzTipica{
+    width: 73%;
+  }
+
+  #espaTipica{
+    width: 53%;
+  }
+
+  #brasilTipica{
+    width: 78%;
+  }
+
+  #listaExportadores{
+    font-size: 18px;
+  }
+
+
+  #dialogPaises {
+    min-width: 350px;
+    min-height: 120px;
+  }
+
+  .contenidoDialogo {
+    font-size: 14px;
+  }
+}
+
+/* ===================== MEDIA QUERY  1001px - 1200px  ================================= */
+@media (min-width: 1001px) {
+  .titulosMapa{
+    font-size: 31px;
+    margin-bottom: 23px;
+  }
+
+  .descMapa{
+    font-size: 19px;
+    margin-bottom: 27px;
+  }
+
+  #mapa {
+    margin-top: 60px;
+  }
+
+  .paisTipica {
+    width: 29%; 
+    margin: 2%;
+    height: 308px;
+  }
+
+
+  #tipicoIndia .tituloTipica h3{
+    font-size: 28px;
+  }
+
+  #tipicoEEUU .tituloTipica h3{
+    font-size: 28px;
+  }
+
+  #tipicoNZ .tituloTipica h3{
+    font-size: 28px;
+  }
+
+  #tipicoEspa .tituloTipica h3{
+    font-size: 28px;
+  }
+
+  #tipicoBrasil .tituloTipica h3{
+    font-size: 28px;
+  }
+
+
+
+  #tipicoIndia .tituloTipica img{
+    width: 65px;
+  }
+
+  #tipicoEEUU .tituloTipica img{
+    width: 60px;
+  }
+
+  #tipicoNZ .tituloTipica img{
+    width: 65px;
+  }
+
+  #tipicoEspa .tituloTipica img{
+    width: 65px;
+  }
+
+  #tipicoBrasil .tituloTipica img{
+    width: 65px;
+  }
+
+
+
+  #tipicoIndia{
+    font-size: 19px;
+  }
+
+  #tipicoEEUU{
+    font-size: 19px;
+  }
+
+  #tipicoNZ{
+    font-size: 19px;
+  }
+
+  #tipicoEspa{
+    font-size: 19px;
+  }
+
+  #tipicoBrasil{
+    font-size: 19px;
+  }
+
+
+  
+  #indiaTipica{
+    width: 78%;
+  }
+
+  #eeuuTipica{
+    width: 88%;
+  }
+
+  #nzTipica{
+    width: 80%;
+  }
+
+  #espaTipica{
+    width: 58%;
+  }
+
+  #brasilTipica{
+    width: 80%;
+  }
+
+  #listaExportadores{
+    font-size: 19px;
+  }
+
+  #dialogPaises {
+    min-width: 380px;
+    min-height: 170px;
+  }
+
+  .contenidoDialogo {
+    font-size: 16px;
+  }
+}
+
+/* ===================== MEDIA QUERY  1201px - 1600px  ================================= */
+@media (min-width: 1201px) {
+  .titulosMapa{
+    font-size: 45px;
+    margin-bottom: 27px;
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+
+  .descMapa{
+    font-size: 21px;
+    margin-bottom: 30px;
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+
+  #mapa {
+    margin-top: 65px;
+  }
+
+  .paisTipica {
+    width: 30%; 
+    margin: 1%;
+    height: 325px;
+  }
+
+
+  #tipicoIndia .tituloTipica h3{
+    font-size: 30px;
+  }
+
+  #tipicoEEUU .tituloTipica h3{
+    font-size: 30px;
+  }
+
+  #tipicoNZ .tituloTipica h3{
+    font-size: 30px;
+  }
+
+  #tipicoEspa .tituloTipica h3{
+    font-size: 30px;
+  }
+
+  #tipicoBrasil .tituloTipica h3{
+    font-size: 30px;
+  }
+
+
+
+  #tipicoIndia .tituloTipica img{
+    width: 68px;
+  }
+
+  #tipicoEEUU .tituloTipica img{
+    width: 63px;
+  }
+
+  #tipicoNZ .tituloTipica img{
+    width: 68px;
+  }
+
+  #tipicoEspa .tituloTipica img{
+    width: 68px;
+  }
+
+  #tipicoBrasil .tituloTipica img{
+    width: 68px;
+  }
+
+
+
+  #tipicoIndia{
+    font-size: 21px;
+  }
+
+  #tipicoEEUU{
+    font-size: 21px;
+  }
+
+  #tipicoNZ{
+    font-size: 21px;
+  }
+
+  #tipicoEspa{
+    font-size: 21px;
+  }
+
+  #tipicoBrasil{
+    font-size: 21px;
+  }
+
+
+  
+  #indiaTipica{
+    width: 62%;
+  }
+
+  #eeuuTipica{
+    width: 78%;
+  }
+
+  #nzTipica{
+    width: 70%;
+  }
+
+  #espaTipica{
+    width: 50%;
+  }
+
+  #brasilTipica{
+    width: 76%;
+  }
+
+  #listaExportadores{
+    font-size: 21px;
+    margin-left: 80px;
+    margin-right: 80px;
+  }
+
+  #dialogPaises {
+    min-width: 550px;
+    min-height: 200px;
+  }
+
+  .contenidoDialogo {
+    font-size: 20px;
+  }
+
+  #cerrarBoton {
+    width: 20px;
+    height: 20px;
+  }
+
+}
+
+/* ===================== MEDIA QUERY  1601px  ================================= */
+@media (min-width: 1601px) {
+  .titulosMapa{
+    font-size: 45px;
+    margin-bottom: 32px;
+  }
+
+  .descMapa{
+    font-size: 25px;
+    margin-bottom: 34px;
+  }
+
+  #mapa {
+    margin-top: 75px;
+  }
+
+  .paisTipica {
+    width: 19%; 
+    height: 350px;
+  }
+
+
+  #tipicoIndia .tituloTipica h3{
+    font-size: 35px;
+  }
+
+  #tipicoEEUU .tituloTipica h3{
+    font-size: 35px;
+  }
+
+  #tipicoNZ .tituloTipica h3{
+    font-size: 35px;
+  }
+
+  #tipicoEspa .tituloTipica h3{
+    font-size: 35px;
+  }
+
+  #tipicoBrasil .tituloTipica h3{
+    font-size: 35px;
+  }
+
+
+
+  #tipicoIndia .tituloTipica img{
+    width: 70px;
+  }
+
+  #tipicoEEUU .tituloTipica img{
+    width: 65px;
+  }
+
+  #tipicoNZ .tituloTipica img{
+    width: 70px;
+  }
+
+  #tipicoEspa .tituloTipica img{
+    width: 70px;
+  }
+
+  #tipicoBrasil .tituloTipica img{
+    width: 70px;
+  }
+
+
+
+  #tipicoIndia{
+    font-size: 25px;
+  }
+
+  #tipicoEEUU{
+    font-size: 25px;
+  }
+
+  #tipicoNZ{
+    font-size: 25px;
+  }
+
+  #tipicoEspa{
+    font-size: 25px;
+  }
+
+  #tipicoBrasil{
+    font-size: 25px;
+  }
+
+
+  
+  #indiaTipica{
+    width: 70%;
+  }
+
+  #eeuuTipica{
+    width: 78%;
+  }
+
+  #nzTipica{
+    width: 78%;
+  }
+
+  #espaTipica{
+    width: 55%;
+  }
+
+  #brasilTipica{
+    width: 80%;
+  }
+
+  #listaExportadores{
+    font-size: 25px;
+  }
+
+  #dialogPaises {
+    min-width: 700px;
+    min-height: 250px;
+  }
+
+  .contenidoDialogo {
+    font-size: 24px;
+  }
+}

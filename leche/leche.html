@@ -9,10 +9,14 @@
 		<link rel="stylesheet" href="css/leche_menu.css" type="text/css" />
 		<link rel="stylesheet" href="css/leche_param.css">
 		<link rel="stylesheet" href="css/leche_recetas.css">
+		<link rel="stylesheet" href="css/leche_mapa.css" type="text/css" />
+		<link rel="stylesheet" href="css/leche_grafico.css" type="text/css" />
 		<link rel="stylesheet" href="css/leche_paramfq.css">
         <link rel="stylesheet" href="../jquery/jquery-ui.min.css">
         <script src="../jquery/jquery-3.7.1.min.js"></script>
         <script src="../jquery/jquery-ui.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/image-map-resizer@1.0.10/js/imageMapResizer.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
         <script src="js/leche.js" type="text/javascript"> </script>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	</head>
@@ -56,9 +60,9 @@
                         <ol id="pestannasMenu">
                             <li><a href="#param">PARÁMETROS FÍSICO-QUÍMICOS</a></li>
                             <li><a href="#cantabria">SIMULADOR</a></li>
-                            <li><a href="#cordoba">COMPARADOR DE LECHES</a></li>
+                            <li><a href="#comparador">COMPARADOR DE LECHES</a></li>
                             <li><a href="#apliDiet">APLICACIONES DIETÉTICAS</a></li>
-                            <li><a href="#segovia">MAPA</a></li>
+                            <li><a href="#mapa">MAPA</a></li>
                             <li><a href="#sevilla">CURIOSIDADES</a></li>
 							<li><a href="#recetasTab">RECETAS</a></li>
                         </ol>
@@ -126,7 +130,25 @@
                         </div>
 						<div id="cantabria">
                         </div>
-                        <div id="cordoba">
+                        <div id="comparador">
+							<div id="contenedorComparador">
+								<div id="tituloComparador">
+									<h2>Comparador de Leches (por tipo)</h2>
+								</div>
+								<div id="contenedorGrafico">
+									<canvas id="graficoLeche"  height="300"></canvas>
+								</div>
+								<div id="contenedorGraficosPeque">
+									<div id="contenedorGraficoDensi" class="grafico-pequeno">
+										<canvas id="graficoDensi"  height="300"></canvas>
+									</div>
+									<div id="contenedorGraficoDiges" class="grafico-pequeno">
+										<canvas id="graficoDiges"  height="300"></canvas>
+									</div>
+								</div>
+							</div>
+							
+							
                         </div>
                         <div id="apliDiet">
 							<h2>APLICACIONES DIETÉTICAS</h2>
@@ -166,7 +188,240 @@
 								</div>		
 							</div>
                         </div>
-                        <div id="segovia">
+                        <div id="mapa">
+							<div id="contenProductores">
+								<h2 class="titulosMapa">Principales Productores de Leche</h2>
+								<p class="descMapa">India lidera la producción mundial de leche con aproximadamente 209 millones de toneladas anuales. La Unión Europea (UE-27) sigue con 154,1 millones de toneladas, representando el 20,7% del suministro mundial. Estados Unidos ocupa el tercer lugar con 102,6 millones de toneladas</p>
+							</div>
+							<div class="mapaContenedor">
+								<h2 class="titulosMapa">Mapa Interactivo</h2>
+								<p class="descMapa">Explora el mapa del mundo con íconos de vaca, cabra, oveja, búfala y leche infantil. Haz clic en cada país para conocer el tipo de leche más consumido y sus características.</p>
+								<img src="../img/mapaLeche2.png" usemap="#map" id="imagenMapa"/>
+								<map name="map">
+									<!-- #$-:Image map file created by GIMP Image Map plug-in -->
+									<!-- #$-:GIMP Image Map plug-in by Maurits Rijk -->
+									<!-- #$-:Please do not edit lines starting with "#$" -->
+									<!-- #$VERSION:2.3 -->
+									<!-- #$AUTHOR:Alba -->
+									<area shape="poly" coords="177,202,177,270,187,273,191,277,199,275,198,280,194,283,196,285,201,281,201,290,211,288,207,296,207,298,215,298,216,306,228,317,226,321,247,332,346,331,360,337,369,335,362,341,375,341,386,347,379,353,378,363,378,368,383,355,391,353,393,359,398,360,399,365,393,371,399,374,410,365,419,364,424,355,438,352,442,339,450,338,455,344,454,353,464,349,465,355,463,360,474,356,510,342,495,310,488,300,471,293,471,289,476,287,468,272,458,253,462,248,463,243,453,232,457,225,469,232,478,223,464,213,453,210,454,200,447,196,442,192,436,188,423,182,413,178,408,181,403,178,400,170,409,160,410,147,413,143,411,133,420,133,426,127,425,122,427,116,439,114,453,105,462,100,459,95,472,93,478,89,471,87,463,84,451,84,452,82,432,82,428,82,426,80,414,83,410,82,403,84,398,88,387,88,380,91,373,91,368,92,367,97,357,100,347,105,347,108,347,118,338,124,328,125,319,119,311,119,310,122,314,126,297,124,286,124,281,129,271,136,259,136,246,145,248,149,239,163,238,173,233,182,224,195,213,205,208,202,203,204,196,204,197,208,191,209" alt="Canada" onclick="mostrarInfo('canada')" href="#" />
+									<area shape="poly" coords="226,326,245,344,247,336,349,335,358,340,360,346,371,347,383,346,380,349,374,350,374,373,379,371,382,365,386,358,390,356,390,362,394,363,394,366,388,368,396,376,406,374,410,370,410,366,416,366,424,361,427,356,435,356,441,354,445,350,444,344,449,342,451,353,455,354,452,357,445,356,440,361,440,369,439,372,430,371,428,376,424,384,419,382,417,384,419,395,418,401,399,420,403,447,397,438,392,429,386,428,379,425,370,424,366,428,352,430,338,436,338,445,336,444,328,433,319,429,314,431,310,420,302,419,296,422,287,420,280,415,269,417,266,414,257,408,252,404,242,387,239,371,240,355,240,343,240,341" alt="Estados Unidos" onclick="mostrarInfo('estados Unidos')" href="#" />
+									<area shape="poly" coords="268,419,280,419,290,426,298,425,307,422,315,434,322,435,324,432,335,447,339,450,338,461,350,485,358,482,364,483,367,473,375,471,375,483,364,486,363,493,358,498,352,493,341,492,333,490,314,470,311,459,301,452,292,460,285,454,279,445,275,436,270,429,269,423" alt="Mexico" onclick="mostrarInfo('mexico')" href="#" />
+									<area shape="poly" coords="514,545,518,556,513,564,514,567,522,566,521,572,530,568,543,577,559,576,576,587,564,617,563,625,553,649,553,656,538,659,528,667,522,674,521,687,516,696,512,692,510,701,509,707,495,693,504,681,504,667,498,661,492,657,490,648,491,636,483,629,478,621,471,615,462,609,460,602,448,606,439,602,433,596,431,584,442,579,446,563,446,557,453,557,461,559,469,554,468,546,477,543,483,542,484,553,493,557,497,557,502,554,510,553" alt="Brasil" onclick="mostrarInfo('brasil')" href="#" />
+									<area shape="poly" coords="820,201,818,212,824,216,822,236,829,251,818,264,821,269,815,273,814,282,814,289,823,293,831,305,836,313,850,325,861,329,861,339,855,341,855,350,852,354,862,360,867,367,881,367,894,376,887,362,887,352,894,349,888,340,886,332,899,321,913,320,921,325,932,321,939,324,942,310,964,300,979,301,989,306,1008,308,1013,323,1028,325,1039,334,1057,327,1071,329,1078,322,1087,319,1097,326,1111,328,1124,332,1139,329,1151,330,1157,325,1158,312,1177,311,1188,323,1194,335,1204,340,1213,340,1215,348,1210,358,1204,363,1203,367,1207,365,1212,366,1236,336,1235,328,1239,317,1237,308,1231,308,1217,303,1248,274,1271,272,1286,275,1309,256,1320,260,1332,252,1328,268,1315,279,1301,288,1299,312,1301,321,1309,310,1316,301,1322,294,1321,280,1333,267,1342,267,1354,268,1381,252,1371,236,1384,239,1392,230,1408,235,1415,240,1425,232,1410,227,1377,204,1355,204,1353,211,1344,207,1347,205,1339,204,1325,206,1320,209,1306,197,1282,196,1268,186,1256,189,1253,185,1280,160,1261,154,1237,150,1222,149,1227,159,1237,181,1232,192,1218,193,1210,190,1206,194,1193,191,1192,178,1181,174,1173,181,1160,180,1149,171,1135,171,1119,176,1105,172,1136,155,1126,148,1115,145,1103,143,1098,130,1106,130,1096,122,1080,114,1068,103,1060,104,1057,117,1059,156,1048,156,1040,166,1027,172,1018,174,1023,188,1012,183,1005,185,1008,192,998,195,993,189,983,181,972,147,962,143,943,147,928,153,917,169,905,182,902,184,902,210,892,223,881,219,882,215,878,211,865,218" alt="Rusia" onclick="mostrarInfo('rusia')" href="#" />
+									<area shape="poly" coords="1038,335,1050,344,1051,356,1061,359,1073,373,1092,373,1107,376,1124,369,1127,359,1139,358,1158,351,1156,340,1144,338,1157,332,1162,314,1180,319,1197,341,1208,345,1209,351,1198,366,1201,371,1183,375,1178,384,1172,382,1168,384,1165,376,1150,388,1156,404,1161,418,1163,430,1166,437,1156,446,1149,456,1126,470,1111,467,1107,466,1103,462,1089,467,1078,457,1079,446,1070,437,1068,431,1058,437,1040,440,1013,427,1008,415,1002,398,994,386,1013,374,1017,355,1025,356,1025,347,1032,347" alt="China" onclick="mostrarInfo('china')" href="#" />
+									<area shape="poly" coords="1043,335,1051,340,1055,355,1067,359,1072,369,1092,368,1101,372,1123,364,1124,358,1141,356,1149,349,1156,348,1152,344,1141,343,1144,335,1145,331,1136,331,1126,336,1115,333,1107,330,1095,330,1085,321,1078,325,1076,332,1066,331,1056,329" alt="Mongolia" onclick="mostrarInfo('mongolia')" href="#" />
+									<area shape="poly" coords="1001,404,1000,409,991,411,993,422,977,444,980,457,971,462,973,468,975,473,987,465,990,506,1002,527,1011,519,1011,501,1037,472,1042,465,1042,451,1033,449,1026,445,1021,444,1016,442,1012,431,1007,426,1006,414" alt="India" onclick="mostrarInfo('india')" href="#" />
+									<area shape="poly" coords="943,437,940,454,960,451,965,457,975,455,972,442,983,433,990,423,990,409,998,407,994,396,984,398,982,407,975,415,970,424,962,429,957,438,943,436" alt="Pakistan" onclick="mostrarInfo('pakistan')" href="#" />
+									<area shape="poly" coords="1192,627,1205,614,1223,617,1219,624,1233,639,1238,631,1241,609,1246,621,1254,629,1270,658,1283,678,1285,687,1282,708,1275,713,1275,721,1272,723,1272,733,1263,736,1256,742,1252,735,1251,738,1246,740,1234,737,1230,724,1224,720,1223,715,1215,722,1211,711,1202,709,1194,704,1188,710,1179,709,1167,719,1154,717,1148,722,1136,716,1138,702,1129,681,1133,662,1143,654,1151,652,1161,649,1164,635,1170,640,1179,626,1187,626,1192,630" alt="Australia" onclick="mostrarInfo('australia')" href="#" />
+									<area shape="rect" coords="1326,703,1406,797" alt="Nueva Zelanda" onclick="mostrarInfo('nueva Zelanda')" href="#" />
+									<area shape="poly" coords="679,363,677,371,689,371,686,379,683,390,686,398,696,394,713,387,721,373,714,371,708,368,704,364,689,365" alt="España" onclick="mostrarInfo('españa')" href="#" />
+									<area shape="poly" coords="695,339,704,346,707,352,707,366,723,368,727,361,737,366,737,357,734,347,737,340,738,336,737,332,730,331,722,323,718,329,709,332,704,336,696,338" alt="Francia" onclick="mostrarInfo('francia')" href="#" />
+									<area shape="poly" coords="740,353,740,362,750,356,754,369,764,373,770,381,771,384,772,379,775,379,764,371,761,367,757,351,763,351,770,358,775,355,779,354,772,347,766,347,752,344" alt="Italia" onclick="mostrarInfo('italia')" href="#" />
+									<area shape="poly" coords="690,278,686,290,692,296,696,302,698,310,694,310,693,315,696,319,691,325,700,325,711,324,715,318,718,313,711,310,709,299,705,296,701,295,701,288,702,285,697,282,697,276" alt="Reino Unido" onclick="mostrarInfo('reinoUnido')" href="#" />
+									<area shape="poly" coords="677,301,672,307,674,314,672,319,685,314,687,307,689,303,688,297,686,297" alt="Irlanda" onclick="mostrarInfo('irlanda')" href="#" />
+									<area shape="poly" coords="436,126,442,135,460,135,442,139,454,152,477,147,489,152,499,167,503,180,502,189,512,192,504,197,504,202,512,200,511,210,507,220,513,240,522,254,526,263,545,271,557,236,567,225,571,231,589,214,602,211,620,205,621,202,612,200,615,186,624,199,629,197,629,189,618,177,619,171,631,173,629,164,637,163,632,155,637,153,627,144,636,142,635,134,628,129,633,111,664,99,653,91,645,99,635,97,623,104,629,93,623,91,612,100,608,94,593,94,609,89,626,87,607,79,576,75,565,79,550,78,536,82,543,92,534,92,519,88,521,94,511,89,510,95,504,91,493,91,488,94,478,93,478,100,468,101,457,107,457,110,464,113,463,119,460,120" alt="Groenlandia" onclick="mostrarInfo('groenlandia')" href="#" />
+									<area shape="circle" coords="642,235,16" alt="Islandia" onclick="mostrarInfo('islandia')" href="#" />
+									<area shape="poly" coords="460,659,469,662,468,660,480,669,489,672,487,682,497,687,485,700,486,718,493,727,470,736,469,747,461,744,458,752,453,767,454,779,446,794,442,801,446,812,458,825,444,823,442,811,435,804,439,778,440,726,444,715,444,695,448,682,450,670" alt="Argentina" onclick="mostrarInfo('argentina')" href="#" />
+									<area shape="poly" coords="444,640,451,659,452,663,448,667,447,678,444,685,440,695,442,712,438,727,435,738,433,762,433,786,429,801,426,791,423,789,427,777,426,774,430,770,432,749,429,730,435,719,437,713,437,706" alt="Chile" onclick="mostrarInfo('chile')" href="#" />
+									<area shape="poly" coords="401,582,414,581,427,567,433,576,442,574,435,578,429,587,431,600,439,607,444,611,445,627,441,639,431,629,420,624,418,614,410,602,412,598,403,587" alt="Perú" onclick="mostrarInfo('peru')" href="#" />
+									<area shape="poly" coords="471,653,459,655,454,657,451,646,448,641,449,609,458,605,465,619,476,620,478,628,485,634,488,641,487,645,479,642,471,652" alt="Bolivia" onclick="mostrarInfo('bolivia')" href="#" />
+									<area shape="poly" coords="480,648,488,646,497,664,504,672,498,684,490,681,492,673,486,668,477,663,475,657,475,648" alt="Paraguay" onclick="mostrarInfo('paraguay')" href="#" />
+									<area shape="poly" coords="493,697,489,716,501,716,508,709" alt="Uruguay" onclick="mostrarInfo('uruguay')" href="#" />
+									<area shape="poly" coords="408,556,425,563,421,568,409,576,409,580,402,580,406,575,403,569" alt="Ecuador" onclick="mostrarInfo('ecuador')" href="#" />
+									<area shape="poly" coords="426,516,417,529,413,528,416,535,416,551,413,558,428,558,433,568,444,571,441,557,448,554,453,554,451,538,443,535,434,534,428,519" alt="Colombia" onclick="mostrarInfo('colombia')" href="#" />
+									<area shape="poly" coords="437,511,430,514,435,524,438,531,445,532,455,534,455,550,459,557,465,555,467,544,474,543,477,536,481,531,478,521,465,520,454,520,448,513,444,517,443,521,441,525,437,526,437,514" alt="Venezuela" onclick="mostrarInfo('venezuela')" href="#" />
+									<area shape="poly" coords="481,529,479,537,484,540,484,552,494,552,491,542,493,536,488,533,485,528" alt="Guayana" onclick="mostrarInfo('guayana')" href="#" />
+									<area shape="poly" coords="392,461,390,463,394,467,402,464,406,467,418,475,428,484,431,480,425,472,418,467,412,463,405,460,400,459" alt="Cuba" onclick="mostrarInfo('cuba')" href="#" />
+									<area shape="poly" coords="429,484,432,479,434,474,439,476,445,478,448,479,448,482,442,483,439,484" alt="Puerto Rico" onclick="mostrarInfo('puerto Rico')" href="#" />
+									<area shape="poly" coords="364,486,374,485,372,493,370,499,368,503,360,499,364,495" alt="Guatemala" onclick="mostrarInfo('guatemala')" href="#" />
+									<area shape="poly" coords="379,507,385,501,392,500,389,512,384,515,384,514" alt="Nicaragua" onclick="mostrarInfo('nicaragua')" href="#" />
+									<area shape="poly" coords="385,516,391,516,390,520,396,522,394,524,391,525,390,522,384,519,386,519" alt="Costa Rica" onclick="mostrarInfo('costa Rica')" href="#" />
+									<area shape="poly" coords="396,523,394,524,400,526,404,530,405,524,409,524,412,525,413,528,414,526,412,523,410,521,406,521,403,522,403,525,401,525,398,524" alt="Panama" onclick="mostrarInfo('panama')" href="#" />
+									<area shape="poly" coords="375,495,380,500,385,498,391,497,386,493,382,492,379,494,377,495" alt="Honduras" onclick="mostrarInfo('honduras')" href="#" />
+									<area shape="poly" coords="374,497,373,502,371,503,377,502,380,502" alt="El Salvador" onclick="mostrarInfo('elSalvador')" href="#" />
+									<area shape="poly" coords="495,536,493,542,493,548,495,553,500,551,504,551,504,538" alt="Surinam" onclick="mostrarInfo('surinam')" href="#" />
+									<area shape="poly" coords="367,485,372,492,375,488,376,485" alt="Belice" onclick="mostrarInfo('belice')" href="#" />
+									<area shape="poly" coords="506,540,506,553,511,546,511,543" alt="Guayana Francesa" onclick="mostrarInfo('guayanaFrancesa')" href="#" />
+									<area shape="poly" coords="735,252,731,258,734,271,741,278,751,270,754,274,757,266,755,250,759,240,763,238,764,228,775,211,780,208,791,205,797,207,799,210,805,208,808,200,815,198,823,196,814,193,805,199,804,197,800,197,796,199,794,197,790,201,782,200,778,201,777,203,777,208,770,206,770,210,769,216,766,222,759,229,757,236,750,244,736,250,734,255" alt="Noruega" onclick="mostrarInfo('noruega')" href="#" />
+									<area shape="poly" coords="756,277,762,294,768,291,773,289,772,276,780,271,774,258,778,244,786,240,794,227,799,226,800,217,797,209,784,209,779,212,770,222,765,234,764,244,761,245,760,265" alt="Suecia" onclick="mostrarInfo('suecia')" href="#" />
+									<area shape="poly" coords="800,211,808,210,811,205,816,203,817,213,820,219,820,228,820,243,823,248,825,254,821,257,817,263,814,266,801,266,798,267,794,264,791,256,794,250,800,244,805,238,807,232,803,231,800,230" alt="Finlandia" onclick="mostrarInfo('finlandia')" href="#" />
+									<area shape="poly" coords="724,321,727,319,735,322,734,324,735,328,735,330,733,331" alt="Belgica" onclick="mostrarInfo('belgica')" href="#" />
+									<area shape="poly" coords="729,315,736,320,736,313,736,309" alt="Paises Bajos" onclick="mostrarInfo('paises Bajos')" href="#" />
+									<area shape="poly" coords="745,302,747,301,751,307,763,305,763,307,763,316,763,322,759,325,759,330,758,337,751,342,744,347,738,349,735,348,741,341,741,336,739,332,735,326,738,319,740,310,745,309" alt="Alemania" onclick="mostrarInfo('alemania')" href="#" />
+									<area shape="poly" coords="747,289,741,292,745,297,747,300,749,292,750,287" alt="Dinamarca" onclick="mostrarInfo('dinamarca')"  href="#" />
+									<area shape="poly" coords="734,347,737,354,740,360,746,357,746,348,739,351,745,349" alt="Suiza" onclick="mostrarInfo('suiza')" href="#" />
+									<area shape="poly" coords="766,307,778,301,783,304,794,304,798,307,797,311,797,317,799,321,797,326,794,327,789,328,778,326,771,323,768,321" alt="Polonia" onclick="mostrarInfo('polonia')" href="#" />
+									<area shape="poly" coords="791,293,790,301,799,304,804,301,810,296,807,295,804,291,802,291" alt="Lituania" onclick="mostrarInfo('lituania')" href="#" />
+									<area shape="poly" coords="793,285,791,288,799,288,813,292,812,286,810,283,801,283,801,286,796,286" alt="Letonia" onclick="mostrarInfo('letonia')" href="#" />
+									<area shape="poly" coords="801,272,800,278,810,279,811,274,811,272" alt="Estonia" onclick="mostrarInfo('estonia')" href="#" />
+									<area shape="poly" coords="801,308,812,300,814,294,825,297,827,304,827,309,822,317,816,319,810,317,806,315,799,316" alt="Bielorrusia" onclick="mostrarInfo('bielorrusia')" href="#" />
+									<area shape="poly" coords="801,319,806,318,815,322,825,320,831,310,835,313,839,324,853,330,857,332,857,338,850,341,850,346,841,347,841,352,836,356,836,348,829,345,825,349,821,343,818,334,811,335,808,337,805,339,797,339,796,336,795,332,798,330,801,327" alt="Ucrania" onclick="mostrarInfo('ucrania')" href="#" />
+									<area shape="poly" coords="813,339,817,344,817,354,822,353,821,345" alt="Moldavia" onclick="mostrarInfo('moldavia')" href="#" />
+									<area shape="poly" coords="787,382,792,378,802,372,815,372,814,374,807,377,802,375,796,380,795,387,799,390,795,394,792,398" alt="Grecia" onclick="mostrarInfo('grecia')" href="#" />
+									<area shape="poly" coords="782,351,788,351,791,358,793,362,793,367,788,369,784,366,784,363,784,362,784,354" alt="Serbia" onclick="mostrarInfo('serbia')" href="#" />
+									<area shape="poly" coords="789,370,794,367,794,372,793,376,790,377,789,373" alt="Macedonia del Norte" onclick="mostrarInfo('macedonia Norte')" href="#" />
+									<area shape="poly" coords="783,371,786,373,788,378,788,380,785,383,784,380" alt="Albania" onclick="mostrarInfo('albania')" href="#" />
+									<area shape="poly" coords="779,367,782,371,785,370,782,365" alt="Montenegro" onclick="mostrarInfo('montenegro')" href="#" />
+									<area shape="poly" coords="773,362,773,357,779,355,782,353,783,358,780,358,778,357,777,361,776,365" alt="Croacia" onclick="mostrarInfo('croacia')" href="#" />
+									<area shape="poly" coords="779,359,782,359,782,362,781,365,778,366,777,365" alt="Bosnia y Hezergovina" onclick="mostrarInfo('bosnia Y Herzegovina')" href="#" />
+									<area shape="poly" coords="796,361,814,360,814,365,813,368,813,371,804,371,800,370,796,376" alt="Bulgaria" onclick="mostrarInfo('bulgaria')" href="#" />
+									<area shape="poly" coords="789,351,793,343,794,341,803,343,809,341,812,342,812,347,815,354,815,357,816,359,808,359,800,358,796,360" alt="Rumania" onclick="mostrarInfo('rumania')" href="#" />
+									<area shape="poly" coords="774,342,773,345,780,349,782,348,787,348,789,343,790,339,791,339" alt="Hungría" onclick="mostrarInfo('hungria')" href="#" />
+									<area shape="poly" coords="756,342,766,344,771,344,772,341,775,338,771,336,770,334,765,335,762,334,762,335,762,338,761,338" alt="Austria" onclick="mostrarInfo('austria')" href="#" />
+									<area shape="poly" coords="779,331,778,334,776,337,781,339,782,337,787,335,792,336,793,337,795,337,794,332" alt="Eslovaquia" onclick="mostrarInfo('eslovaquia')" href="#" />
+									<area shape="poly" coords="763,326,761,329,763,333,768,332,773,332,775,333,777,332,777,330,777,328,772,326,768,323,767,322" alt="Chequia" onclick="mostrarInfo('chequia')" href="#" />
+									<area shape="poly" coords="1248,314,1246,345,1239,369,1234,390,1222,400,1213,406,1201,411,1199,419,1209,425,1220,417,1236,407,1239,388,1245,372,1259,370,1257,357,1249,353,1252,336" alt="Japon" onclick="mostrarInfo('japon')" href="#" />
+									<area shape="poly" coords="1184,380,1179,386,1179,393,1185,394,1188,392,1186,388,1187,383,1190,380,1195,377,1198,371" alt="Corea del Norte" onclick="mostrarInfo('corea Norte')" href="#" />
+									<area shape="poly" coords="1186,395,1192,394,1194,396,1194,403,1191,406,1186,408,1184,411" alt="Corea del Sur" onclick="mostrarInfo('corea Sur')" href="#" />
+									<area shape="poly" coords="1163,484,1168,493,1182,523,1182,534,1179,541,1169,534,1169,529,1167,525,1164,517,1164,511,1162,503,1157,497" alt="Filipinas" onclick="mostrarInfo('filipinas')" href="#" />
+									<area shape="poly" coords="1238,574,1237,608,1246,602,1251,595,1258,598,1263,610,1274,608,1262,596,1263,592,1264,589,1259,588,1251,581" alt="Papúa Nueva Guinea" onclick="mostrarInfo('nueva Guinea')" href="#" />
+									<area shape="poly" coords="1067,540,1075,541,1086,555,1094,558,1099,573,1106,571,1116,565,1116,556,1122,553,1125,558,1135,558,1140,555,1144,545,1148,544,1150,547,1161,555,1176,556,1189,553,1191,557,1206,564,1212,568,1214,577,1223,575,1224,571,1236,575,1236,593,1234,599,1229,599,1227,598,1226,596,1230,594,1226,585,1217,584,1208,578,1198,577,1199,582,1196,581,1183,601,1175,605,1172,608,1170,601,1164,601,1157,599,1151,600,1147,605,1143,601,1139,601,1133,602,1128,601,1121,598,1115,596,1108,594,1100,588,1092,582,1088,574,1086,569" alt="Indonesia" onclick="mostrarInfo('indonesia')" href="#" />
+									<area shape="poly" coords="1085,535,1085,543,1088,548,1093,550,1096,549,1108,548,1125,552,1129,556,1137,556,1141,548,1144,544,1156,543,1153,539,1148,535,1146,533,1146,542,1141,545,1136,543,1134,550,1130,551" alt="Malasia" onclick="mostrarInfo('malasia')" href="#" />
+									<area shape="circle" coords="1096,554,4" alt="Singapur" onclick="mostrarInfo('singapur')" href="#" />
+									<area shape="circle" coords="1142,540,3" alt="Brunéi" onclick="mostrarInfo('brunei')" href="#" />
+									<area shape="poly" coords="1015,430,1016,437,1021,439,1029,443,1037,445,1040,447,1037,442,1027,437,1024,433" alt="Nepal" onclick="mostrarInfo('nepal')" href="#" />
+									<area shape="circle" coords="1046,444,5" alt="Bután" onclick="mostrarInfo('butan')" href="#" />
+									<area shape="poly" coords="1044,451,1045,463,1045,469,1052,463,1055,464,1057,459,1055,454" alt="Bangladesh" onclick="mostrarInfo('bangladesh')" href="#" />
+									<area shape="poly" coords="1055,468,1063,460,1065,448,1073,440,1076,445,1076,453,1076,462,1083,469,1079,472,1074,477,1072,488,1075,498,1069,488,1069,491,1062,494,1063,485,1063,480" alt="Myanmar" onclick="mostrarInfo('myanmar')" href="#" />
+									<area shape="poly" coords="1083,477,1088,490,1097,489,1100,493,1101,500,1095,500,1092,502,1089,505,1090,508,1086,506,1083,505,1080,518,1080,523,1084,531,1086,534,1084,536,1080,532,1077,525,1077,521,1079,517,1077,505,1076,499,1077,493,1077,481,1076,480" alt="Tailandia" onclick="mostrarInfo('tailandia')" href="#" />
+									<area shape="poly" coords="1086,474,1092,469,1096,473,1099,476,1100,478,1097,481,1096,485,1096,487,1088,485,1087,480" alt="Laos" onclick="mostrarInfo('laos')" href="#" />
+									<area shape="poly" coords="1096,465,1104,465,1107,470,1107,475,1104,480,1108,488,1115,497,1118,500,1115,510,1112,515,1110,518,1108,513,1113,508,1113,503,1110,501,1106,499,1104,498,1102,490,1100,487" alt="Vietnam" onclick="mostrarInfo('vietnam')" href="#" />
+									<area shape="poly" coords="1094,504,1098,504,1105,501,1110,504,1110,507,1105,511,1107,517,1108,520,1104,524,1099,517,1093,514,1093,513,1093,512,1094,513" alt="Camboya" onclick="mostrarInfo('camboya')" href="#" />
+									<area shape="poly" coords="871,488,883,491,891,488,906,481,908,487,905,493,898,497,893,499,884,504,879,506,875,504,873,504" alt="Yemen" onclick="mostrarInfo('yemen')" href="#" />
+									<area shape="poly" coords="909,480,919,474,920,470,920,462,919,454,925,457,930,461,935,468,929,473,926,476,924,481,919,485,914,488,909,490" alt="Omán" onclick="mostrarInfo('oman')" href="#" />
+									<area shape="circle" coords="912,456,6" alt="Emiratos Arabes Unidos" onclick="mostrarInfo('emiratos Arabes Unidos')" href="#" />
+									<area shape="poly" coords="837,424,836,428,837,432,840,438,848,448,852,453,857,463,858,473,869,488,877,486,887,487,892,486,908,479,914,472,917,467,916,465,905,467,901,452,896,454,891,440,890,435,884,436,878,438,863,427,856,422,853,423,853,428,852,433,848,435,844,435,841,434,840,433" alt="Arabia Saudita" onclick="mostrarInfo('arabiaSaudita')" href="#" />
+									<area shape="circle" coords="889,430,4" alt="Kuwait" onclick="mostrarInfo('Kuwait')" href="#" />
+									<area shape="poly" coords="849,419,854,420,860,418,867,424,879,433,888,422,887,417,881,412,881,405,879,397,873,397,866,396,866,399,866,407,864,408" alt="Irak" onclick="mostrarInfo('irak')" href="#" />
+									<area shape="poly" coords="846,407,849,411,844,414,847,416,854,412,862,407,863,399,861,397,857,401,848,399,845,400" alt="Siria" onclick="mostrarInfo('sirira')" href="#" />
+									<area shape="circle" coords="844,409,3" alt="Libano" onclick="mostrarInfo('libano')" href="#" />
+									<area shape="circle" coords="841,422,3" alt="Israel" onclick="mostrarInfo('israel')" href="#" />
+									<area shape="poly" coords="841,418,843,415,846,421,850,423,850,425,850,428,847,429,846,431,841,430,843,428,846,424" alt="Jordania" onclick="mostrarInfo('jordania')" href="#" />
+									<area shape="poly" coords="812,380,812,391,827,399,833,401,845,396,854,398,861,394,870,394,875,395,874,389,876,385,874,381,872,379,865,377,862,376,857,378,850,378,845,376,837,371,830,374,825,379,812,379" alt="Turquía" onclick="mostrarInfo('turquia')" href="#" />
+									<area shape="poly" coords="866,369,865,375,873,374,881,371,884,372" alt="Georgia" onclick="mostrarInfo('georgia')" href="#" />
+									<area shape="poly" coords="877,394,877,387,882,386,888,388,894,392,902,399,912,401,914,395,921,392,932,395,937,399,941,405,938,408,937,413,939,423,941,432,943,438,942,451,941,452,936,452,926,449,926,443,918,443,911,445,902,438,899,430,896,429,894,429,891,424,891,418,889,417,885,414,883,412" alt="Irán" onclick="mostrarInfo('iran')" href="#" />
+									<area shape="poly" coords="881,376,884,383,892,386,896,379" alt="Azerbaiyán" onclick="mostrarInfo('azerbaiyan')" href="#" />
+									<area shape="poly" coords="876,377,880,377,884,382,886,385,883,384,878,381,876,381" alt="Armenia" onclick="mostrarInfo('armenia')" href="#" />
+									<area shape="poly" coords="941,406,940,418,942,426,944,433,958,433,960,427,970,419,979,407,979,405,979,396,979,392,968,397,963,396,956,396,952,403,947,407" alt="Afganistán" onclick="mostrarInfo('afganistan')" href="#" />
+									<area shape="poly" coords="971,379,969,385,970,394,978,390,982,392,986,397,992,397,992,392,991,387,985,385,983,381,981,379" alt="Tayikistán" onclick="mostrarInfo('tayikistan')" href="#" />
+									<area shape="poly" coords="975,375,982,369,992,369,1004,368,1008,370,1011,372,1005,375,999,379,994,383,989,385,986,380,984,377" alt="Kirguistán" onclick="mostrarInfo('kirguistan')" href="#" />
+									<area shape="poly" coords="923,356,932,354,939,354,945,364,958,369,959,376,968,380,968,385,967,393,967,396,961,395,960,390,952,386,947,383,944,375,939,374,934,371,929,370,926,372,926,373,924,373" alt="Uzbekistán" onclick="mostrarInfo('uzbekistan')" href="#" />
+									<area shape="poly" coords="912,382,916,377,923,377,930,372,937,375,941,377,947,385,958,393,959,394,952,394,952,399,944,404,940,398,928,390,925,388,919,390,912,392" alt="Turkmenistán" onclick="mostrarInfo('turkmenistan')" href="#" />
+									<area shape="poly" coords="922,373,911,372,907,368,903,360,903,356,908,353,909,346,905,342,897,344,894,348,891,342,889,335,892,331,895,325,901,322,910,321,916,325,920,327,926,324,928,323,933,326,941,328,944,322,944,316,953,307,960,304,973,302,978,304,984,310,1001,310,1012,323,1025,325,1034,334,1035,339,1033,344,1026,345,1022,348,1021,354,1013,355,1014,365,1012,368,1007,364,1001,364,986,365,979,367,976,373,974,376,967,376,963,375,956,368,955,363,946,361,939,352,931,350,927,354,921,354" alt="Kazajistán" onclick="mostrarInfo('kazajistán')" href="#" />
+									<area shape="poly" coords="806,421,805,462,841,462,838,453,833,443,829,434,829,432,837,433,835,427,835,424,828,424,820,428" alt="Egipto" onclick="mostrarInfo('egipto')" href="#" />
+									<area shape="poly" coords="758,420,777,429,788,430,788,419,797,419,802,428,802,473,799,478,787,470,775,461,766,460,762,460,753,456,748,452,747,436,749,423" alt="Libia" onclick="mostrarInfo('libia')" href="#" />
+									<area shape="poly" coords="744,398,749,401,749,408,752,415,749,422,747,423,742,420,741,412" alt="Tunez" onclick="mostrarInfo('tunez')" href="#" />
+									<area shape="poly" coords="707,405,738,397,742,399,739,409,742,423,746,431,744,442,749,463,754,461,743,466,729,478,725,481,720,473,695,457,680,441,682,433,694,430,706,422,709,419" alt="Argelia" onclick="mostrarInfo('argelia')" href="#" />
+									<area shape="poly" coords="668,438,675,431,675,423,679,417,687,410,690,404,696,408,702,408,704,418,699,421,691,429,681,430,676,438" alt="Marruecos" onclick="mostrarInfo('marruecos')" href="#" />
+									<area shape="poly" coords="666,440,674,443,678,443,674,446,666,446,663,448,665,454,660,465,657,469,649,470,646,470,644,464,647,463" alt="Sahara Occidental" onclick="mostrarInfo('sahara Occidental')" href="#" />
+									<area shape="poly" coords="650,472,660,467,666,461,667,450,675,447,681,444,687,453,684,456,682,467,686,478,686,488,687,492,679,494,673,494,667,494,662,494,656,487,651,487,649,487" alt="Mauritania" onclick="mostrarInfo('mauritania')" href="#" />
+									<area shape="poly" coords="667,498,681,495,689,496,692,492,690,484,690,471,690,464,689,454,700,463,724,481,726,493,720,495,712,495,709,496,705,498,699,499,694,506,691,513,684,517,681,514,678,508,672,507,669,507" alt="Malí" onclick="mostrarInfo('mali')" href="#" />
+									<area shape="poly" coords="713,498,726,496,729,479,743,471,759,463,768,465,768,472,767,486,764,495,762,499,759,505,751,506,739,505,734,503,727,503,724,505,717,505" alt="Níger" onclick="mostrarInfo('niger')" href="#" />
+									<area shape="poly" coords="768,463,799,481,796,495,792,505,792,512,785,521,776,528,768,521,765,518,768,513,768,507,765,501,767,492,771,489" alt="Chad" onclick="mostrarInfo('chad')" href="#" />
+									<area shape="poly" coords="798,495,794,504,796,511,798,516,833,525,842,502,845,490,849,483,849,475,842,464,838,465,819,466,806,468" alt="Sudán" onclick="mostrarInfo('sudan')" href="#" />
+									<area shape="poly" coords="799,517,832,526,832,532,838,535,839,538,836,543,830,546,826,546,824,541,817,542,812,538" alt="Sudán del Sur" onclick="mostrarInfo('sudan Sur')" href="#" />
+									<area shape="poly" coords="851,487,849,498,861,500" alt="Eritrea" onclick="mostrarInfo('eritrea')" href="#" />
+									<area shape="poly" coords="860,501,869,517,886,530,877,539,873,542,862,543,856,547,850,546,841,536,834,527,835,521,842,508,846,503" alt="Etiopía" onclick="mostrarInfo('etiopia')" href="#" />
+									<area shape="circle" coords="866,507,4" alt="Yibuti" onclick="mostrarInfo('yibuti')" href="#" />
+									<area shape="poly" coords="869,512,880,520,900,515,896,523,890,537,883,547,874,556,865,564,862,567,863,551,865,544,871,542,881,539,887,535,887,529,880,526,873,518" alt="Somalia" onclick="mostrarInfo('somalia')" href="#" />
+									<area shape="poly" coords="648,493,647,498,656,498,655,499,654,500,649,503,654,503,658,505,663,507,665,506,668,506,664,498,656,494,655,493" alt="Senegal" onclick="mostrarInfo('senegal')" href="#" />
+									<area shape="circle" coords="648,500,2" alt="Gambia" onclick="mostrarInfo('gambia')" href="#" />
+									<area shape="circle" coords="652,509,4" alt="Guinea Bisáu" onclick="mostrarInfo('guineaBisau')" href="#" />
+									<area shape="poly" coords="656,515,661,509,672,509,675,512,677,518,678,526,676,527,671,521,668,520,657,519" alt="Guinea" onclick="mostrarInfo('guinea')" href="#" />
+									<area shape="circle" coords="665,525,4" alt="Sierra Leona" onclick="mostrarInfo('sierra Leona')" href="#" />
+									<area shape="poly" coords="668,530,671,527,677,529,679,533,679,538,686,540,686,542,680,541,674,537,669,531" alt="Liberia" onclick="mostrarInfo('liberia')" href="#" />
+									<area shape="poly" coords="684,520,693,522,700,523,698,528,697,533,697,540,693,539,688,538,683,536,680,533,680,524,681,519" alt="Costa de Marfíl" onclick="mostrarInfo('costa de Marfil')" href="#" />
+									<area shape="poly" coords="692,517,696,507,710,500,715,506,720,508,716,512,706,513,701,512,700,517,699,519" alt="Burkina Faso" onclick="mostrarInfo('burkina Faso')" href="#" />
+									<area shape="poly" coords="702,523,701,517,711,515,711,529,711,536,706,540,703,542,700,540" alt="Ghana" onclick="mostrarInfo('ghana')" href="#" />
+									<area shape="poly" coords="717,515,717,532,713,534,713,518" alt="Togo" onclick="mostrarInfo('togo')" href="#" />
+									<area shape="poly" coords="719,514,722,509,723,519,721,523,720,533,718,532,716,533" alt="Benín" onclick="mostrarInfo('benin')" href="#" />
+									<area shape="poly" coords="736,540,732,540,728,538,730,535,723,527,723,522,725,520,725,509,731,505,735,509,757,508,761,506,766,511,763,514,760,523,758,527,752,528,747,529,744,536,745,539,744,541" alt="Nigeria" onclick="mostrarInfo('nigeria')" href="#" />
+									<area shape="poly" coords="748,549,746,543,747,535,758,532,760,529,763,525,764,528,769,528,765,532,763,539,764,549,769,550,759,550,753,551,749,551" alt="Camerún" onclick="mostrarInfo('camerun')" href="#" />
+									<area shape="poly" coords="768,532,767,546,771,547,777,543,781,540,791,541,800,539,807,537,808,534,803,529,796,519,795,515,792,516,787,522,778,529" alt="República Centroafricana" onclick="mostrarInfo('republica Centro Africana')" href="#" />
+									<area shape="poly" coords="749,558,753,559,755,553,761,553,764,566,763,569,757,570,753,573,753,577,748,573,746,570" alt="Gabón" onclick="mostrarInfo('gabon')" href="#" />
+									<area shape="circle" coords="751,554,3" alt="Guinea Ecuatorial" onclick="mostrarInfo('guinea Ecuatorial')" href="#" />
+									<area shape="poly" coords="753,579,759,572,766,571,766,561,762,552,771,552,777,548,773,560,773,564,772,571,769,580,754,581" alt="Congo" onclick="mostrarInfo('congo')" href="#" />
+									<area shape="poly" coords="758,585,772,580,774,568,779,559,779,549,782,545,793,543,804,540,811,539,814,544,822,548,822,557,820,570,818,572,814,578,814,587,817,596,815,602,814,610,814,614,800,614,793,605,793,596,787,590,781,593,776,593,769,588,762,587" alt="República Democrática del Congo" onclick="mostrarInfo('republica Democratica del Congo')" href="#" />
+									<area shape="poly" coords="757,589,771,590,777,597,787,596,788,606,797,612,788,620,789,630,791,640,784,640,778,636,764,635,756,635,762,617,766,608,765,608" alt="Angola" onclick="mostrarInfo('angola')" href="#" />
+									<area shape="poly" coords="757,640,778,640,787,642,785,655,782,660,781,668,784,672,784,678,782,685,779,689,772,686,770,686,767,679,765,668,765,663" alt="Namibia" onclick="mostrarInfo('namibia')" href="#" />
+									<area shape="poly" coords="791,642,804,642,807,647,814,653,817,657,813,660,806,664,806,671,798,672,791,676,790,676,786,674,786,662,787,657,789,655" alt="Botsuana" onclick="mostrarInfo('botsuana')" href="#" />
+									<area shape="poly" coords="787,677,786,684,778,693,773,690,777,697,778,704,780,714,788,715,794,711,803,713,821,704,828,689,827,682,823,681,822,676,823,671,824,668,822,661,814,659,810,666,808,672,803,675" alt="Sudáfrica" onclick="mostrarInfo('sudafrica')" href="#" />
+									<area shape="circle" coords="813,678,5" alt="Lesoto" onclick="mostrarInfo('lesoto')" href="#" />
+									<area shape="rect" coords="873,614,897,677" alt="Madagascar" onclick="mostrarInfo('madagascar')" href="#" />
+									<area shape="poly" coords="809,641,815,639,818,633,826,634,830,636,829,649,829,654,825,657,821,658,818,657,817,652,814,650,810,647,809,647,809,645" alt="Zimbabue" onclick="mostrarInfo('zimbabue')" href="#" />
+									<area shape="poly" coords="824,629,829,624,838,637,842,634,846,624,843,617,842,612,852,612,859,610,860,625,855,635,839,644,836,651,838,654,838,665,832,669,830,670,831,676,830,680,826,679,826,670,827,660,833,652,832,639,831,633" alt="Mozambique" onclick="mostrarInfo('mozambique')" href="#" />
+									<area shape="poly" coords="800,617,792,621,793,637,803,639,809,640,815,631,821,628,827,619,833,609,830,604,824,597,819,598,817,602,816,609,816,613,820,613,820,622,819,625,817,622,814,614" alt="Zambia" onclick="mostrarInfo('zambia')" href="#" />
+									<area shape="poly" coords="836,603,844,607,842,612,842,619,844,622,843,631,841,633,836,628,837,624,832,624,831,621" alt="Malaui" onclick="mostrarInfo('malaui')" href="#" />
+									<area shape="poly" coords="823,577,820,571,823,568,829,575,837,570,845,574,855,582,851,591,856,601,857,610,848,610,842,609,840,601,832,599,827,599,825,594" alt="Tanzania" onclick="mostrarInfo('tanzania')" href="#" />
+									<area shape="poly" coords="839,567,850,571,855,580,858,573,860,568,860,559,861,545,852,548,845,542,840,540" alt="Kenia" onclick="mostrarInfo('kenia')" href="#" />
+									<area shape="poly" coords="826,566,834,558,836,559,836,547,827,547,825,556,822,560,819,564" alt="Uganda" onclick="mostrarInfo('uganda')" href="#" />
+									<area shape="circle" coords="830,567,5" alt="Ruanda" onclick="mostrarInfo('ruanda')" href="#" />
+									<area shape="circle" coords="817,618,4" alt="Burundi" onclick="mostrarInfo('burundi')" href="#" />
+									<area shape="circle" coords="825,678,3" alt="Esuatini" onclick="mostrarInfo('esuatini')" href="#" />
+								</map>
+							</div>
+							<dialog id="dialogPaises">
+								<img src="../img/cruzAzul.png" alt="Icono cruz" id="cerrarBoton">
+								<div class="contenidoDialogo">
+									<h2 id="infoTitulo">Título</h2>
+									<div id="infoContenido">Contenido aquí</div>
+								</div>
+							</dialog>
+							<div id="contenTipicaPais">
+								<h2 class="titulosMapa"> Leche Típica por País</h2>
+								<p class="descMapa">Cada país tiene su propia especialidad láctea. Algunas de las más representativas:</p>
+								<div id="paisesTipica">
+									<div class="paisTipica" id="tipicoIndia">
+										<div class="tituloTipica">
+											<img src="../img/indiaBufala.png" alt="Icono bandera de inidia y bufalo">
+											<h3>India</h3>
+										</div>
+										<p class="descTipica">Leche de búfala, esencial en la cocina india.</p>
+										<img src="../img/indiaTipica.jpg" alt="" id="indiaTipica">
+									</div>
+									<div class="paisTipica" id="tipicoEEUU">
+										<div class="tituloTipica">
+											<img src="../img/bandEEUUvaca.png" alt="Icono bandera de estados unidos y vaca">
+											<h3>Estados Unidos</h3>
+										</div>
+										<p class="descTipica">Leche de vaca, base para una variedad de productos lácteos</p>
+										<img src="../img/eeuuVaca.jpg" alt="" id="eeuuTipica">
+									</div>
+									<div class="paisTipica" id="tipicoEspa">
+										<div class="tituloTipica">
+											<img src="../img/bandEspaVaca.png" alt="Icono bandera de españa y vaca">
+											<h3>España</h3>
+										</div>
+										<p class="descTipica">Leche de vaca, destacando en regiones como Asturias.</p>
+										<img src="../img/lecheEspa.png" alt="" id="espaTipica">
+									</div>
+									<div class="paisTipica" id="tipicoNZ">
+										<div class="tituloTipica">
+											<img src="../img/bandNZvaca.png" alt="Icono bandera de nueva zelanda y vaca">
+											<h3>Nueva Zelanda</h3>
+										</div>
+										<p class="descTipica">Leche de vaca, conocida por su alta calidad y exportación.</p>
+										<img src="../img/vacaNZ.png" alt="" id="nzTipica">
+									</div>
+									<div class="paisTipica" id="tipicoBrasil">
+										<div class="tituloTipica">
+											<img src="../img/bandBrasilGry.png" alt="Icono bandera de brasil y vaca gir">
+											<h3>Brasil</h3>
+										</div>
+										<p class="descTipica">Leche de vaca, producida principalmente por la raza Gir</p>
+										<img src="../img/brasilGir.jpg" alt="" id="brasilTipica">
+									</div>
+								</div>
+							</div>
+							<div id="contenExportadores">
+								<h2 class="titulosMapa">Exportadores Principales</h2>
+								<p class="descMapa">Los principales exportadores de leche a nivel mundial en 2023 fueron:</p>
+								<ul id="listaExportadores">
+									<li><strong>Nueva Zelanda:</strong> $6.800 millones en exportaciones.</li>
+									<li><strong>Alemania:</strong> $4.500 millones.</li>
+									<li><strong>Países Bajos:</strong> $4.200 millones .</li>
+								</ul>
+							</div>
                         </div>
                         <div id="sevilla">
                         </div>
