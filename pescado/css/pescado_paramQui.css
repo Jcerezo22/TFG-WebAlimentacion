@@ -274,6 +274,57 @@ dialog[open] {
 
 
 
+#imgInfoParamQui{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    margin: 0 auto 40px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.cardImgParamQui {
+    box-sizing: border-box;
+    padding: 20px;
+    margin: 20px 0; 
+    width: 100%;
+    border: 2px solid #6e8192;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 250px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+}
+
+.infoParamQuiTit{
+    margin-bottom: 10px;
+    text-align: center;
+    font-family: 'Gliker';
+    color: #6e8192;
+    font-size: 15px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cardImgParamQui:hover {
+    transform: translateY(-5px);
+}
+
+.cardImgParamQui img{
+    width: 200px;
+    border-radius: 20px;
+    margin-top: 10px;
+    object-fit: cover;
+}
+
 /* ===================== MEDIA QUERY  400px - 500px  ================================= */
 @media (min-width: 400px) {
     #contenParamQui{
@@ -315,6 +366,15 @@ dialog[open] {
         width: 10px;
         height: 10px;
     }
+
+    .cardImgParamQui {
+        width: 80%;
+    }
+
+    
+    .infoParamQuiTit{
+        font-size: 1.2rem;
+    }
 }   
 
 /* ===================== MEDIA QUERY  500px - 800px  ================================= */
@@ -345,6 +405,11 @@ dialog[open] {
     #cerrarBoton {
         width: 15px;
         height: 15px;
+    }
+
+    .cardImgParamQui {
+        width: 45%;
+        margin: 20px 5px; 
     }
 }
 
@@ -394,6 +459,19 @@ dialog[open] {
         width: 15px;
         height: 15px;
     }
+
+    .cardImgParamQui {
+        width: 45%;
+        margin: 20px; 
+    }
+
+    .infoParamQuiTit{
+        font-size: 1.3rem;
+    }
+
+    .cardImgParamQui img{
+        width: 240px;
+    }
 }
 
 /* ===================== MEDIA QUERY  1001px - 1200px  ================================= */
@@ -430,6 +508,19 @@ dialog[open] {
         width: 18px;
         height: 18px;
     }
+
+    .cardImgParamQui {
+        width: 35%;
+        margin: 20px; 
+    }
+
+    .cardImgParamQui img{
+        width: 265px;
+    }
+    .cardImgParamQui {
+        height: 270px;
+    }
+
 }
 
 /* ===================== MEDIA QUERY  1201px - 1600px  ================================= */
@@ -481,6 +572,18 @@ dialog[open] {
     #cerrarBoton {
         width: 20px;
         height: 20px;
+    }
+
+    .cardImgParamQui img{
+        width: 290px;
+    }
+
+    .cardImgParamQui {
+        height: 300px;
+    }
+
+    .infoParamQuiTit{
+        font-size: 1.5rem;
     }
 }
 

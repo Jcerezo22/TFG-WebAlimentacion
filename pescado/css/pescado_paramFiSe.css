@@ -16,6 +16,7 @@
     justify-content: center;
     align-items: center;
     width: 100%;
+    text-align: center;
 }
 
 .infoParamFi {
@@ -23,11 +24,72 @@
     padding: 20px;
     margin: 20px 0; 
     width: 100%;
-    height: 100px;
+    height: 160px;
     border: 2px solid #6e8192;
     border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
 }
 
+.infoParamFi:hover {
+    transform: translateY(-5px);
+}
+
+#imgInfoParamFi{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.cajaImgParamFi {
+    box-sizing: border-box;
+    padding: 20px;
+    margin: 20px 0; 
+    width: 100%;
+    border: 2px solid #6e8192;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 250px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+}
+
+.infoParamFiTit{
+    margin-bottom: 10px;
+    text-align: center;
+    font-family: 'Gliker';
+    color: #6e8192;
+    font-size: 15px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cajaImgParamFi:hover {
+    transform: translateY(-5px);
+}
+
+.cajaImgParamFi img{
+    width: 200px;
+    border-radius: 20px;
+    margin-top: 10px;
+    object-fit: cover;
+}
+
+.infoParamFiDesc{
+    margin-top: 20px;
+}
+
+.infoParamFiTit img{
+    width: 40px;
+    margin-right: 10px;
+}
 
 
 
@@ -40,11 +102,25 @@
     .infoParamFi {
         width: 80%;
     }
+
+    .cajaImgParamFi {
+        width: 80%;
+    }
+
+    
+    .infoParamFiTit{
+        font-size: 1.2rem;
+    }
 }   
 
 /* ===================== MEDIA QUERY  500px - 800px  ================================= */
 @media (min-width: 501px) {
     .infoParamFi {
+        width: 45%;
+        margin: 20px 5px; 
+    }
+
+    .cajaImgParamFi {
         width: 45%;
         margin: 20px 5px; 
     }
@@ -60,6 +136,19 @@
         width: 40%;
         margin: 20px; 
     }
+
+    .cajaImgParamFi {
+        width: 45%;
+        margin: 20px; 
+    }
+
+    .infoParamFiTit{
+        font-size: 1.3rem;
+    }
+
+    .cajaImgParamFi img{
+        width: 240px;
+    }
 }
 
 /* ===================== MEDIA QUERY  1001px - 1200px  ================================= */
@@ -67,6 +156,18 @@
     .infoParamFi {
         width: 35%;
         margin: 20px; 
+    }
+
+    .cajaImgParamFi {
+        width: 35%;
+        margin: 20px; 
+    }
+
+    .cajaImgParamFi img{
+        width: 265px;
+    }
+    .cajaImgParamFi {
+        height: 270px;
     }
 }
 
@@ -81,6 +182,17 @@
         margin: 20px; 
     }
 
+    .infoParamFiTit{
+        font-size: 1.5rem;
+    }
+
+    .cajaImgParamFi img{
+        width: 290px;
+    }
+
+    .cajaImgParamFi {
+        height: 300px;
+    }
 }
 
 /* ===================== MEDIA QUERY  1601px  ================================= */
