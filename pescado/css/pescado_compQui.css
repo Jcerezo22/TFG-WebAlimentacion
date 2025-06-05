@@ -218,7 +218,7 @@ input[type="range"]::-ms-thumb {
   left: 50%;
   transform: translate(-50%, -50%);
   padding: 1rem;
-  border: 3.5px solid #c3981d;
+  border: 3.5px solid #6e8192;
   outline: none;
   border-radius: 10px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
@@ -243,6 +243,36 @@ input[type="range"]::-ms-thumb {
   margin-top: 20px;
   margin-bottom: 20px;
 }
+
+dialog[open] {
+  animation: fadeInDialog 0.3s ease forwards;
+}
+
+@keyframes fadeInDialog {
+  from {
+    opacity: 0;
+  }
+  50%{
+    opacity: 0.5;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.card {
+  transition: all 0.3s ease;
+  border-radius: 10px;
+  padding: 1rem;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+  background-color: #f0f8ff;
+}
+
+
 
 /* ===================== MEDIA QUERY  400px - 500px  ================================= */
 @media (min-width: 400px) {
@@ -280,6 +310,11 @@ input[type="range"]::-ms-thumb {
         width: 16px;
         height: 16px;
     }
+
+    #cerrarBoton {
+        width: 10px;
+        height: 10px;
+    }
 }   
 
 /* ===================== MEDIA QUERY  500px - 800px  ================================= */
@@ -305,6 +340,11 @@ input[type="range"]::-ms-thumb {
     input[type="range"]::-ms-thumb {
         width: 17px;
         height: 17px;
+    }
+
+    #cerrarBoton {
+        width: 15px;
+        height: 15px;
     }
 }
 
@@ -344,6 +384,16 @@ input[type="range"]::-ms-thumb {
         width: 18px;
         height: 18px;
     }
+
+    #dialogParamQui {
+        width: 80%;
+        max-width: 450px;
+    }
+
+    #cerrarBoton {
+        width: 15px;
+        height: 15px;
+    }
 }
 
 /* ===================== MEDIA QUERY  1001px - 1200px  ================================= */
@@ -369,6 +419,16 @@ input[type="range"]::-ms-thumb {
     input[type="range"]::-ms-thumb {
         width: 19px;
         height: 19px;
+    }
+
+    #dialogParamQui {
+        width: 80%;
+        max-width: 480px;
+    }
+
+    #cerrarBoton {
+        width: 18px;
+        height: 18px;
     }
 }
 
@@ -412,6 +472,16 @@ input[type="range"]::-ms-thumb {
     .cardGrid {
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     }
+
+    #dialogMindMap {
+        width: 80%;
+        max-width: 590px;
+    }
+
+    #cerrarBoton {
+        width: 20px;
+        height: 20px;
+    }
 }
 
 /* ===================== MEDIA QUERY  1601px  ================================= */
@@ -437,5 +507,15 @@ input[type="range"]::-ms-thumb {
     input[type="range"]::-ms-thumb {
         width: 23px;
         height: 23px;
+    }
+
+    #dialogMindMap {
+        width: 80%;
+        max-width: 620px;
+    }
+
+    #cerrarBoton {
+        width: 22px;
+        height: 22px;
     }
 }

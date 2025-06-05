@@ -30,6 +30,10 @@ function inicio(){
     $("#temperatura").on("click", () => mostrarInfo('temperatura'));
 
     $("#cerrarBoton").on("click", cerrarInfo);
+
+    $('a.leerMas[href="#"]').on('click', function(e) {
+        e.preventDefault();
+    });
 }
 
 function actualizarValorSlider(event) {
@@ -40,8 +44,6 @@ function actualizarValorSlider(event) {
     let max = parseFloat(barra.attr("max"));
 
     let porcentaje = ((valor - min) / (max - min)) * 100;
-
-    // $("#diasValorMov").text("Día " + valor);
 
     let colorIzquierda = "#6e8192";
     let colorDerecha = "#ddd";

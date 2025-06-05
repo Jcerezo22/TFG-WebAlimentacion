@@ -296,11 +296,6 @@ svg {
         max-width: 42%;
     }
 
-    #cerrarBoton {
-        width: 8px;
-        height: 8px;
-    }
-
     #dialogMindMap {
         width: 80%;
         max-width: 590px;
