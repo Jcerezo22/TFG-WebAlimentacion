@@ -29,11 +29,7 @@
 
 .infoParte img {
     display: block;
-    margin: 24px auto 0 auto;
-    max-width: 90%;
-    border-radius: 12px;
-    box-shadow: 0 2px 8px rgba(30, 69, 110, 0.08);
-    background: #e6f0fa;
+    max-width: 90%;   
     padding: 8px;
 }
 
@@ -58,6 +54,29 @@
     margin: 0; 
 }
   
+#resultadoAcidez{
+    margin-top: 45px;
+    margin-bottom: 0px;
+}
+
+.contenedorAcidez {
+    display: flex;
+    align-items: flex-start;
+}
+
+.contenedorAcidez img {
+    margin-top: 20px; 
+    min-width: 19%; 
+}
+
+#informacionAcidezLeche {
+    margin-left: 20px;
+    margin-top: 30px; 
+    font-size: 16px;
+    line-height: 1.4;
+    color: #333;
+}
+
 #barraRango label {
     display: flex;
     flex-direction: column;
