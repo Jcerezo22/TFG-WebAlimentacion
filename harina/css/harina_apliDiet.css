@@ -1,0 +1,41 @@
+#contenTirApli{
+    display: flex;
+    margin-top: 50px;
+    margin-bottom: 30px;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Gliker';
+    color: #8b461b;
+    font-size: 15px;
+}
+
+
+/* ===================== MEDIA QUERY  400px - 500px  ================================= */
+@media (min-width: 400px) {
+    #contenTirApli{
+        font-size: 1.2rem;
+    }
+}   
+
+/* ===================== MEDIA QUERY  500px - 800px  ================================= */
+@media (min-width: 501px) {
+}
+
+/* ===================== MEDIA QUERY  801px - 1000px  ================================= */
+@media (min-width: 801px) {
+    #contenTirApli{
+        font-size: 1.4rem;
+    }
+}
+
+/* ===================== MEDIA QUERY  1001px - 1200px  ================================= */
+@media (min-width: 1001px) {
+
+}
+
+/* ===================== MEDIA QUERY  1201px - 1600px  ================================= */
+@media (min-width: 1201px) {
+    #contenTirApli{
+        font-size: 1.6rem;
+    }
+}
