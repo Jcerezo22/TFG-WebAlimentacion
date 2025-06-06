@@ -52,29 +52,24 @@
 
 #tituloRangoAcidez h2 {
     margin: 0; 
+    font-size: 24px;
 }
   
-#resultadoAcidez{
-    margin-top: 45px;
+#resultadoAcidez, #resultadopH{
+    margin-top: 20px;
     margin-bottom: 0px;
 }
 
-.contenedorAcidez {
-    display: flex;
-    align-items: flex-start;
-}
-
-.contenedorAcidez img {
+.contenedorAcidez img, .contenedorPh img {
     margin-top: 20px; 
     min-width: 19%; 
 }
 
 #informacionAcidezLeche {
-    margin-left: 20px;
     margin-top: 30px; 
     font-size: 16px;
     line-height: 1.4;
-    color: #333;
+    color: #204060;
 }
 
 #barraRango label {
@@ -160,8 +155,8 @@ input[type="range"]::-ms-thumb {
 
 button {
     margin-top: 20px;
-    padding: 10px 20px;
-    font-size: 1rem;
+    font-size: 18px;
+    padding: 12px 24px;
     background-color: #77b4d8;
     color: white;
     border: none;
@@ -172,3 +167,128 @@ button {
 button:hover {
     background-color: #86c7ed;
 }
+
+/* ===================== MEDIA QUERY  400px - 500px  ================================= */
+@media (min-width: 400px) {
+    #tituloRangoAcidez h2 {
+        font-size: 18px;
+    }
+
+    #barraRango label,
+    #barraRango,
+    #resultadoAcidez,
+    .infoParte,
+    #informacionAcidezLeche {
+        font-size: 15px;
+    }
+
+    button {
+        font-size: 15px;
+        padding: 10px 14px;
+    }
+
+    #botonesAcidez {
+        width: 100%;
+        max-width: 340px; /* O el ancho que prefieras */
+        margin: 0 auto;
+    }
+
+    #botonesAcidez button {
+        width: 100%;
+        display: block;
+        margin-bottom: 12px; /* Espacio entre botones */
+        box-sizing: border-box;
+    }
+}
+
+/* ===================== MEDIA QUERY  500px - 800px  ================================= */
+@media (min-width: 501px) {
+    #tituloRangoAcidez h2 {
+        font-size: 20px;
+    }
+
+    #barraRango label,
+    #barraRango,
+    #resultadoAcidez,
+    .infoParte,
+    #informacionAcidezLeche {
+        font-size: 16px;
+    }
+
+    button {
+        font-size: 15px;
+        padding: 11px 18px;
+    }
+
+    #botonesAcidez {
+        display: flex;
+        gap: 16px; /* Espacio entre los botones */
+        margin-top: 20px;
+        justify-content: flex-start; /* O usa center para centrar */
+    }
+}
+
+/* ===================== MEDIA QUERY  801px - 1000px  ================================= */
+@media (min-width: 801px) {
+    #tituloRangoAcidez h2 {
+        font-size: 22px;
+    }
+
+    .contenedorAcidez {
+        display: flex;
+        align-items: flex-start;
+    }
+
+    .contenedorAcidez img {
+        margin-top: 20px; 
+        min-width: 19%; 
+    }
+
+    #informacionAcidezLeche {
+        margin-left: 20px;
+        margin-top: 30px; 
+        font-size: 16px;
+        line-height: 1.4;
+        color: #204060;
+    }
+
+    button {
+        margin-top: 20px;
+        padding: 10px 20px;
+        font-size: 1rem;
+    }
+
+    #botonesAcidez {
+        width: auto;        /* Quita el 100% */
+        max-width: none;    /* Quita el máximo ancho */
+        margin: 0;          /* Quita el centrado */
+    }
+
+    #botonesAcidez button {
+        width: auto;        /* Botones solo tan anchos como su contenido */
+        display: inline-block;
+        margin-bottom: 0;   /* Quita el espacio entre botones */
+        box-sizing: border-box;
+    }
+}
+
+/* ===================== MEDIA QUERY  1201px - 1600px  ================================= */
+@media (min-width: 1201px) {
+    #tituloRangoAcidez h2 {
+        font-size: 24px;
+    }
+
+    #barraRango label,
+    #barraRango,
+    #resultadoAcidez,
+    .infoParte,
+    #informacionAcidezLeche {
+        font-size: 18px;
+    }
+    
+    button {
+        font-size: 18px;
+        padding: 14px 28px;
+    }
+}
+

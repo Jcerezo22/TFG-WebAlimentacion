@@ -68,15 +68,74 @@
                         </ol>
                         <div id="param">
 							<div id="contenedorCirculos">
-								<a href=""><div class="circulo ph">PH</div></a>
+								<a href="#infoPH"><div class="circulo ph">PH</div></a>
 								<a href="#infoAcidez"><div class="circulo acidez">Acidez</div></a>
-								<a href=""><div class="circulo densidad">Densidad<br>específica</div></a>
-								<a href=""><div class="circulo congelacion">Punto de<br>congelación</div></a>
-								<a href=""><div class="circulo ebullicion">Punto de<br>ebullición</div></a>
-								<a href=""><div class="circulo microorganismos">Microorganismos</div></a>
+								<a href="#infoDensEsp"><div class="circulo densidad">Densidad<br>específica</div></a>
+								<a href="#infoPunCon"><div class="circulo congelacion">Punto de<br>congelación</div></a>
+								<a href="#infoPunEbu"><div class="circulo ebullicion">Punto de<br>ebullición</div></a>
+								<a href="#infoMicro"><div class="circulo microorganismos">Microorganismos</div></a>
 							</div>
 							<div id="infoAcidez" class="infoParte">
 								<h2>Acidez</h2>
+								<div id="barraRango">
+									<div id="tituloRangoAcidez">
+										<h3>Medidor de acidez:</h3>
+									</div>
+									<label>
+										<input type="range" id="acidezRango" min="10" max="25" step="0.1" value="14">
+										<div id="valoresRango">
+											<span id="acidezValorMov">10ºD</span>
+											<span id="acidezValorFin">25ºD</span>
+										</div>
+									</label>
+									<div id="resultadoAcidez" style="display: none;">
+										<div class="contenidoResultado">
+											<div id="descripcionAcidez"></div>
+										</div>
+									</div>
+									<div id="botonesAcidez">
+										<button id="cambiarAcidez">¿Qué pasa si cambia la acidez?</button>
+									</div>
+									<div id="cambioAcidez" style="display: none;">
+										<div class="contenedorAcidez">
+											<img id="imagenLecheAcidez" src="../img/leche_acidez_baja.png" alt="Leche con acidez normal" width="150px" height="200px">
+											<div id="informacionAcidezLeche"></div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div id="infoPH" class="infoParte">
+								<h2>PH</h2>
+								<div id="barraRango">
+									<div id="tituloRangoPH">
+										<h3>Medidor de ph:</h3>
+									</div>
+									<label>
+										<input type="range" id="phRango" min="6.4" max="8.0" step="0.1" value="6.6">
+										<div id="valoresRango">
+											<span id="phValorMov">6.6</span>
+											<span id="phValorFin">8.0</span>
+										</div>
+									</label>
+									<div id="resultadopH" style="display: none;">
+										<div class="contenidoResultado">
+											<div id="mensajePh"></div>
+										</div>
+									</div>
+									<div id="botonesPh">
+										<button id="cambiarPh">¿Qué pasa si sube o baja el pH?</button>
+									</div>
+								
+									<div id="cambioPh" style="display: none;">
+										<div class="contenedorPh">
+											<img id="imagenLechePh" src="../img/leche_ph_6.5.png" alt="Leche con ph bajo" width="150px" height="200px">
+											<div id="informacionPhLeche"></div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div id="infoDensEsp" class="infoParte">
+								<h2>Densidad Específica</h2>
 								<div id="barraRango">
 									<div id="tituloRangoAcidez">
 										<h3>Medidor de acidez:</h3>
@@ -105,33 +164,95 @@
 									</div>
 								</div>
 							</div>
-							<div id="infoClara" class="infoParte">
-								<h2>Clara (albumen)</h2>
-								<ul>
-									<li>Es <strong>88% agua y 12% proteínas</strong>, sin grasa.</li>
-									<li>
-										Contiene proteínas importantes:
-										<ul>
-											<li><strong>Ovoalbúmina</strong> (54%)</li>
-											<li><strong>Ovotransferrina</strong> (12%)</li>
-											<li><strong>Ovomucoide</strong> (11%)</li>
-											<li><strong>Lisozima</strong> (3.5%), que destruye bacterias.</li>
-										</ul>
-									</li>
-									<li>Con el tiempo, la clara se vuelve más líquida.</li>
-									<li>Las <strong>nubes blancas</strong> son normales y signo de frescura</li>
-								</ul>
+							<div id="infoMicro" class="infoParte">
+								<h2>Microorganismos</h2>
+								<div id="barraRango">
+									<div id="tituloRangoAcidez">
+										<h3>Medidor de acidez:</h3>
+									</div>
+									<label>
+										<input type="range" id="acidezRango" min="10" max="25" step="0.1" value="14">
+										<div id="valoresRango">
+											<span id="acidezValorMov">10ºD</span>
+											<span id="acidezValorFin">25ºD</span>
+										</div>
+									</label>
+									<div id="botonesAcidez">
+										<button id="medirAcidez">Medir de acidez</button>
+										<button id="cambiarAcidez">¿Qué pasa si cambia la acidez?</button>
+									</div>
+									<div id="resultadoAcidez" style="display: none;">
+										<div class="contenidoResultado">
+											<div id="descripcion"></div>
+										</div>
+									</div>
+									<div id="cambioAcidez" style="display: none;">
+										<div class="contenedorAcidez">
+											<img id="imagenLeche" src="../img/leche_acidez_baja.png" alt="Leche con acidez normal" width="150px" height="200px">
+											<div id="informacionAcidezLeche"></div>
+										</div>
+									</div>
+								</div>
 							</div>
-							<div id="infoYema" class="infoParte">
-								<h2>Yema (vitelo)</h2>
-								<ul>
-									<li>Parte amarilla rica en nutrientes: <strong>vitaminas, minerales, grasas y antioxidantes.</strong></li>
-									<li>Es <strong>50% agua</strong>, el resto proteínas y lípidos</li>
-									<li>Su color depende de la alimentación de la gallina.</li>
-									<li>Tiene <strong>propiedades funcionales:</strong> emulsionante, colorante, gelificante</li>
-									<li>Contiene las <strong>chalazas</strong>, que la mantienen centrada.</li>
-									<li>Con el tiempo, <strong>pierde firmeza y sube su pH.</strong></li>
-								</ul>
+							<div id="infoPunEbu" class="infoParte">
+								<h2>Punto de Ebullición</h2>
+								<div id="barraRango">
+									<div id="tituloRangoAcidez">
+										<h3>Medidor de acidez:</h3>
+									</div>
+									<label>
+										<input type="range" id="acidezRango" min="10" max="25" step="0.1" value="14">
+										<div id="valoresRango">
+											<span id="acidezValorMov">10ºD</span>
+											<span id="acidezValorFin">25ºD</span>
+										</div>
+									</label>
+									<div id="botonesAcidez">
+										<button id="medirAcidez">Medir de acidez</button>
+										<button id="cambiarAcidez">¿Qué pasa si cambia la acidez?</button>
+									</div>
+									<div id="resultadoAcidez" style="display: none;">
+										<div class="contenidoResultado">
+											<div id="descripcion"></div>
+										</div>
+									</div>
+									<div id="cambioAcidez" style="display: none;">
+										<div class="contenedorAcidez">
+											<img id="imagenLeche" src="../img/leche_acidez_baja.png" alt="Leche con acidez normal" width="150px" height="200px">
+											<div id="informacionAcidezLeche"></div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div id="infoPunCon" class="infoParte">
+								<h2>Punto de Congelación</h2>
+								<div id="barraRango">
+									<div id="tituloRangoAcidez">
+										<h3>Medidor de acidez:</h3>
+									</div>
+									<label>
+										<input type="range" id="acidezRango" min="10" max="25" step="0.1" value="14">
+										<div id="valoresRango">
+											<span id="acidezValorMov">10ºD</span>
+											<span id="acidezValorFin">25ºD</span>
+										</div>
+									</label>
+									<div id="botonesAcidez">
+										<button id="medirAcidez">Medir de acidez</button>
+										<button id="cambiarAcidez">¿Qué pasa si cambia la acidez?</button>
+									</div>
+									<div id="resultadoAcidez" style="display: none;">
+										<div class="contenidoResultado">
+											<div id="descripcion"></div>
+										</div>
+									</div>
+									<div id="cambioAcidez" style="display: none;">
+										<div class="contenedorAcidez">
+											<img id="imagenLeche" src="../img/leche_acidez_baja.png" alt="Leche con acidez normal" width="150px" height="200px">
+											<div id="informacionAcidezLeche"></div>
+										</div>
+									</div>
+								</div>
 							</div>
                         </div>
 						<div id="cantabria">

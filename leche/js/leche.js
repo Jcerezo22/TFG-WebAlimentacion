@@ -31,21 +31,42 @@ function inicio(){
 
   $("#acidezRango").on('input', actualizarValorAcidez);
   $("#acidezRango").trigger('input');
-  $('#medirAcidez').on('click', calcularAcidez);
   $('#cambiarAcidez').on('click', cambioAcidez);
 
-
-  $('#clara').on('click', function() {
+  $('.ph').on('click', function() {
     ocultarTodo();
-    $('.acidez').css('background-color', '#2875a8');
-    $('#infoClara').show();
+    $('.ph').css('background-color', '#2875a8');
+    $('#infoPH').show();
   });
 
-  $('#yema').on('click', function() {
+  $("#phRango").on('input', actualizarValorPh);
+  $("#phRango").trigger('input');
+  $('#cambiarPh').on('click', cambioPh);
+
+  $('.densidad').on('click', function() {
     ocultarTodo();
-    $('.acidez').css('background-color', '#2875a8');
-    $('#infoYema').show();
+    $('.densidad').css('background-color', '#2875a8');
+    $('#infoDensEsp').show();
   });
+
+  $('.congelacion').on('click', function() {
+    ocultarTodo();
+    $('.congelacion').css('background-color', '#2875a8');
+    $('#infoPunCon').show();
+  });
+
+  $('.ebullicion').on('click', function() {
+    ocultarTodo();
+    $('.ebullicion').css('background-color', '#2875a8');
+    $('#infoPunEbu').show();
+  });
+
+  $('.microorganismos').on('click', function() {
+    ocultarTodo();
+    $('.microorganismos').css('background-color', '#2875a8');
+    $('#infoMicro').show();
+  });
+ 
 
 }
 
@@ -443,6 +464,7 @@ function graficoLecheDiges(){
 
 function ocultarTodo() {
   $('.infoParte').hide();
+  $('.circulo').css('background-color', '#7ab7d9');
 }
 
 function actualizarValorAcidez(event){
@@ -458,15 +480,19 @@ function actualizarValorAcidez(event){
     $("#acidezValorMov").text(valor.toFixed(1) + "ºD");
   }
 
-  let colorIzquierda = "#77b4d8"; 
-  let colorDerecha = "#ddd";      
-
-  barra.css('background', `linear-gradient(to right, ${colorIzquierda} 0%, ${colorIzquierda} ${porcentaje}%, ${colorDerecha} ${porcentaje}%, ${colorDerecha} 100%)`);
-}
-
-function calcularAcidez(event){
-  let valor = parseFloat($("#acidezRango").val());
-  $("#acidezValorMov").text(valor.toFixed(1) + "ºD");
+  // Determinar los colores según el valor
+  let colorIzquierda; 
+  
+  if (valor > 18) {
+    // vieja (peligro, rojo)
+    colorIzquierda = "#e74c3c"; // rojo
+  } else if (valor >= 14 && valor <= 18) {
+    // Normal (ideal, verde)
+    colorIzquierda = "#43b66e"; // verde
+  } else if (valor < 14) {
+    // aguada (advertencia, amarillo)
+    colorIzquierda = "#f1c40f"; // amarillo
+  } 
 
   let mensaje = "";
   if (valor < 14) {
@@ -477,8 +503,10 @@ function calcularAcidez(event){
     mensaje = "🚫 <b>Alta:</b> leche vieja o mal refrigerada";
   }
 
-  $("#descripcion").html(mensaje);
+  $("#descripcionAcidez").html(mensaje);
   $("#resultadoAcidez").show();
+
+    barra.css('background', `linear-gradient(to right, ${colorIzquierda} 0%, ${colorIzquierda} ${porcentaje}%, #ddd ${porcentaje}%, #ddd 100%)`);
 }
 
 const imagenesAcidezLeche = [
@@ -496,13 +524,89 @@ const imagenesAcidezLeche = [
   }
 ];
 
-let indice = 0;
+let indiceAcidezLeche = 0;
 
 function cambioAcidez() {
   document.getElementById('cambioAcidez').style.display = 'block';
-  const imagen = document.getElementById('imagenLeche');
+  const imagen = document.getElementById('imagenLecheAcidez');
   const informacion = document.getElementById('informacionAcidezLeche');
-  imagen.src = imagenesAcidezLeche[indice].src;
-  informacion.textContent = imagenesAcidezLeche[indice].informacion;
-  indice = (indice + 1) % imagenesAcidezLeche.length;
+  imagen.src = imagenesAcidezLeche[indiceAcidezLeche].src;
+  informacion.textContent = imagenesAcidezLeche[indiceAcidezLeche].informacion;
+  indiceAcidezLeche = (indiceAcidezLeche + 1) % imagenesAcidezLeche.length;
+}
+
+function actualizarValorPh(event){
+  let barra = $(event.target);
+
+  let valor = parseFloat(barra.val());
+  let min = parseFloat(barra.attr('min'));
+  let max = parseFloat(barra.attr('max'));
+
+  let porcentaje = ((valor - min) / (max - min)) * 100;
+
+  // Determinar los colores según el valor
+  let colorIzquierda;
+
+  if (valor < 6.6) {
+    // Fermentada (peligro, rojo)
+    colorIzquierda = "#e74c3c"; // rojo
+  } else if (valor >= 6.6 && valor <= 6.8) {
+    // Fresca (ideal, verde)
+    colorIzquierda = "#43b66e"; // verde
+  } else if (valor > 6.8 && valor <= 7.0) {
+    // Límite superior, transición a peligro
+    colorIzquierda = "#f1c40f"; // amarillo
+  } else {
+    // Contaminada (peligro, rojo)
+    colorIzquierda = "#e74c3c"; // rojo
+  }
+
+  // Actualiza el valor mostrado
+  if (barra.attr('id') === "phRango") {
+    $("#phValorMov").text(valor.toFixed(1));
+  }
+
+  // Determina el mensaje
+  let mensaje = '';
+  if (valor < 6.6) {
+    mensaje = '❌ Fermentada: pH < 6.6';
+  } else if (valor >= 6.6 && valor <= 6.8) {
+    mensaje = '✔️ Fresca: pH 6.6–6.8';
+  } else if (valor > 7.0) {
+    mensaje = '❌ Contaminada: pH > 7.0';
+  } else {
+    mensaje = '⚠️ Advertencia: pH fuera del rango ideal';
+  }
+
+  $("#mensajePh").html(mensaje);
+  $("#resultadopH").show();
+
+  // Aplica el degradado de color
+  barra.css('background', `linear-gradient(to right, ${colorIzquierda} 0%, ${colorIzquierda} ${porcentaje}%, #ddd ${porcentaje}%, #ddd 100%)`);
+}
+
+const imagenesPhLeche = [
+  {
+    src: '../img/leche_ph_6.5.png',
+    informacion: 'Leche fermentada (pH <6.5).'
+  },
+  {
+    src: '../img/leche_ph_6.6.png',
+    informacion: 'Leche fresca (pH 6.6-6.8).'
+  },
+  {
+    src: '../img/leche_ph_7.png',
+    informacion: 'Leche contaminada (pH >7.0).'
+  }
+];
+
+let indicePhLeche = 0;
+
+function cambioPh() {
+  document.getElementById('cambioPh').style.display = 'block';
+  const imagen = document.getElementById('imagenLechePh');
+  const informacion = document.getElementById('informacionPhLeche');
+  imagen.src = imagenesPhLeche[indicePhLeche].src;
+  informacion.textContent = imagenesPhLeche[indicePhLeche].informacion;
+  indicePhLeche = (indicePhLeche + 1) % imagenesAcidezLeche.length;
 }
