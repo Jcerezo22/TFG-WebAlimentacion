@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Aplicaciones Dietéticas de Harinas</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background: #f4f4f4;
+      margin: 0;
+      padding: 2rem;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .card {
+      background: #fff;
+      padding: 1.2rem;
+      border-radius: 12px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      transition: 0.3s;
+      cursor: pointer;
+    }
+
+    .card:hover {
+      box-shadow: 0 5px 12px rgba(0,0,0,0.15);
+    }
+
+    .info, .tecnico {
+      display: none;
+      margin-top: 1rem;
+      font-size: 0.95rem;
+    }
+
+    .btn-tecnico {
+      margin-top: 0.7rem;
+      padding: 0.4rem 0.8rem;
+      background: #007acc;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .btn-tecnico:hover {
+      background: #005f99;
+    }
+
+    ul {
+      padding-left: 1.2rem;
+    }
+
+    li {
+      margin-bottom: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Aplicaciones Dietéticas de Harinas</h1>
+
+  <div class="grid">
+    <!-- Alta proteína -->
+    <div class="card" onclick="toggleInfo(this)">
+      <h3>Dietas altas en proteína y panificación</h3>
+      <div class="info">
+        <p>Indicadas para personas con alta demanda energética y proteica. Útiles en dietas hiperproteicas y panificación con masas elásticas.</p>
+        <button class="btn-tecnico" onclick="toggleTecnico(event, this)">Ver análisis técnico</button>
+        <div class="tecnico">
+          <ul>
+            <li><strong>Proteína:</strong> 10–15%</li>
+            <li><strong>Gluten:</strong> Alto, útil para elasticidad y fermentación</li>
+            <li><strong>Actividad enzimática:</strong> Acelerada por humedad, mejora fermentación</li>
+            <li><strong>Uso:</strong> Panes de fuerza, integrales, fermentaciones largas</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sin gluten -->
+    <div class="card" onclick="toggleInfo(this)">
+      <h3>Dietas bajas o sin gluten</h3>
+      <div class="info">
+        <p>Aptas para personas con celiaquía o sensibilidad al gluten. Usan harinas como arroz, maíz, almendra, garbanzo.</p>
+        <button class="btn-tecnico" onclick="toggleTecnico(event, this)">Ver análisis técnico</button>
+        <div class="tecnico">
+          <ul>
+            <li><strong>Gluten:</strong> Ausente o bajo</li>
+            <li><strong>Composición:</strong> Suplementar con almidón y espesantes</li>
+            <li><strong>Riesgo:</strong> Déficits de hierro y vitaminas B si no se equilibra</li>
+            <li><strong>Conservación:</strong> Suelen tener menor vida útil sin conservantes</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Keto / bajo carbohidrato -->
+    <div class="card" onclick="toggleInfo(this)">
+      <h3>Dietas bajas en carbohidratos y cetogénicas</h3>
+      <div class="info">
+        <p>Recomendadas en dietas keto. Se usan harinas como coco, almendra, linaza, garbanzo por su bajo almidón y alto en grasas y fibra.</p>
+        <button class="btn-tecnico" onclick="toggleTecnico(event, this)">Ver análisis técnico</button>
+        <div class="tecnico">
+          <ul>
+            <li><strong>Almidón:</strong> Bajo. Menor aporte glucémico</li>
+            <li><strong>Fibra:</strong> Alta, mejora saciedad</li>
+            <li><strong>Micronutrientes:</strong> Ricas en calcio, magnesio y grasas saludables</li>
+            <li><strong>Uso:</strong> Panes y postres keto, bajo IG</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Alta fibra -->
+    <div class="card" onclick="toggleInfo(this)">
+      <h3>Dietas altas en fibra y digestión saludable</h3>
+      <div class="info">
+        <p>Indicadas para estreñimiento, control de peso o salud digestiva. Harinas integrales o con salvado.</p>
+        <button class="btn-tecnico" onclick="toggleTecnico(event, this)">Ver análisis técnico</button>
+        <div class="tecnico">
+          <ul>
+            <li><strong>Fibra:</strong> Alta (&gt;10%)</li>
+            <li><strong>Índice glucémico:</strong> Bajo, mejora respuesta glucémica</li>
+            <li><strong>Cenizas:</strong> Altas (harinas menos refinadas = más minerales)</li>
+            <li><strong>Almidón resistente:</strong> Efecto prebiótico y antiinflamatorio</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Control glucémico -->
+    <div class="card" onclick="toggleInfo(this)">
+      <h3>Dietas para control glucémico (diabetes)</h3>
+      <div class="info">
+        <p>Uso de harinas con bajo IG y alto contenido en fibra y proteína, como avena, centeno o almendra.</p>
+        <button class="btn-tecnico" onclick="toggleTecnico(event, this)">Ver análisis técnico</button>
+        <div class="tecnico">
+          <ul>
+            <li><strong>Índice glucémico:</strong> Bajo, gracias al almidón resistente</li>
+            <li><strong>Proteínas:</strong> Ralentizan la absorción de carbohidratos</li>
+            <li><strong>Almidón:</strong> Lento, reduce picos glucémicos</li>
+            <li><strong>Harinas:</strong> Integrales (centeno, avena), frutos secos</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function toggleInfo(card) {
+      const info = card.querySelector(".info");
+      const isVisible = info.style.display === "block";
+      document.querySelectorAll(".info").forEach(el => el.style.display = "none");
+      if (!isVisible) info.style.display = "block";
+    }
+
+    function toggleTecnico(e, btn) {
+      e.stopPropagation();
+      const tecnico = btn.nextElementSibling;
+      tecnico.style.display = tecnico.style.display === "block" ? "none" : "block";
+    }
+  </script>
+
+</body>
+</html>
