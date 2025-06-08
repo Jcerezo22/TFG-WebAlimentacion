@@ -1,7 +1,7 @@
 $(window).on("load", inicio);
 
 function inicio() {
-    $("#pestannas").tabs({ event: "click" });
+  $("#pestannas").tabs({ event: "click" });
 
   let imagenMapa = $("#imagenMapa");
 
