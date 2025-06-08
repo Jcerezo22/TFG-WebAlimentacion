@@ -6,6 +6,8 @@
 		<meta name="author" content="Javier Cerezo y Alba Sánchez" />
 		<link rel="stylesheet" href="css/aceite_menu.css" type="text/css" />
 		<link rel="stylesheet" href="css/aceite_banner.css" type="text/css" >
+		<link rel="stylesheet" href="css/aceite_compQui.css" type="text/css" >
+		<link rel="stylesheet" href="css/aceite_benefSalud.css" type="text/css" >
         <link rel="stylesheet" href="../jquery/jquery-ui.min.css">
         <script src="../jquery/jquery-3.7.1.min.js"></script>
         <script src="../jquery/jquery-ui.min.js"></script>
@@ -41,37 +43,118 @@
 					<div id="bannerAceite">
 						<h1 id="tituloAceite">Aceite</h1>
 						<div id="introAceite">
-							Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-                            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+							El aceite de oliva es un aceite vegetal obtenido del fruto del olivo (Olea europaea),
+							ampliamente utilizado en la gastronomía y apreciado por sus propiedades
+							nutricionales. Su calidad depende del método de extracción y del grado de
+							refinamiento.
 						</div>
-						<img src="../img/aceite_img.png" alt="Jarra de leche" id="aceiteBannerImg">
+						<img src="../img/aceite_img.png" alt="Botellas de aceite" id="aceiteBannerImg">
 					</div>
 				</article>
 				<article>
 					<div id="pestannas">
                         <ol>
-                            <li><a href="#param">PARÁMETROS FÍSICO-QUÍMICOS</a></li>
-                            <li><a href="#cantabria">SIMULADOR</a></li>
-                            <li><a href="#cordoba">COMPARADOR DE LECHES</a></li>
-                            <li><a href="#salamanca">APLICACIONES DIETÉTICAS</a></li>
-                            <li><a href="#segovia">MAPA</a></li>
-                            <li><a href="#sevilla">CURIOSIDADES</a></li>
-							<li><a href="#sevilla">RECETAS</a></li>
+                            <li><a href="#compQui">COMPOSICIÓN QUÍMICA</a></li>
+                            <li><a href="#benefSalud">BENEFICIOS PARA LA SALUD</a></li>
+                            <li><a href="#critAnali">CRITERIOS ANALÍTICOS</a></li>
+                            <li><a href="#apliDiet">APLICACIONES DIETÉTICAS</a></li>
                         </ol>
-                        <div id="param">
-hola
+                        <div id="compQui">
+							<div id="contenTituloCompQui">
+								<h2 class="tituloCompQui">COMPOSICIÓN QUÍMICA</h2>
+							</div>
+							<div id="contenCompQui">
+								<div class="mapa">
+									<!-- SVG con viewBox para que escale bien -->
+									<svg viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet">
+									<defs>
+										<marker id="arrow" markerWidth="5" markerHeight="5" refX="4" refY="2.5" orient="auto">
+										<polygon points="0,0 0,5 5,2.5" fill="#cba000"/>
+										</marker>
+									</defs>
+									<!-- De Aceite al resto -->
+									<line x1="50" y1="50" x2="50" y2="25" stroke="#cba000" stroke-width="1" marker-end="url(#arrow)"/>
+									<line x1="50" y1="50" x2="50" y2="75" stroke="#cba000" stroke-width="1" marker-end="url(#arrow)"/>
+									<line x1="50" y1="50" x2="90" y2="50" stroke="#cba000" stroke-width="1" marker-end="url(#arrow)"/>
+									<line x1="50" y1="50" x2="10" y2="50" stroke="#cba000" stroke-width="1" marker-end="url(#arrow)"/>
+									</svg>
+
+									<!-- Nodos -->
+									<div class="nodo aceite"><img src="../img/mind_map_aceite.png" alt=""></div>
+									<div class="nodo acidosGrasos" id="acidosGrasos">Ácidos grasos</div>
+									<div class="nodo polifenoles" id="polifenoles">Polifenoles</div>
+									<div class="nodo tocoferoles" id="tocoferoles">Tocoferoles</div>
+									<div class="nodo compVolAro" id="compVolAro">Compuestos volátiles y aromáticos</div>
+								</div>
+								<dialog id="dialogMindMap">
+									<img src="../img/cruzAceite.png" alt="Icono cruz" id="cerrarBoton">
+									<div class="contenidoDialogo">
+										<h2 id="infoTitulo">Título</h2>
+										<div id="infoContenido">
+											<p><span class="inofNegrita">Información:</span> <span id="infoDesc"></span></p>
+										</div>
+									</div>
+								</dialog>
+							</div>
                         </div>
-                        <div id="cantabria">
+                        <div id="benefSalud">
+							<div id="contenBenefSalud">
+								<h2 class="tituloBenefSalud">BENEFICIOS PARA LA SALUD</h2>
+							</div>
+							<div id="contenTarjetas">
+								<div class="tarjetaBenefSalud">
+									<div class="tarjeta">
+										<div class="front">
+											<div class="tituloFront">Salud cardiovascular</div>
+											<img src="../img/arritmia.png" alt="Icono corazón" class="iconoTarjeta">
+										</div>
+										<div class="back">
+											Su alto contenido en ácido oleico y polifenoles
+											ayuda a reducir el colesterol LDL (“malo”) y aumentar el HDL (“bueno”),
+											protegiendo contra enfermedades cardíacas.
+										</div>
+									</div>
+								</div>
+								<div class="tarjetaBenefSalud">
+									<div class="tarjeta">
+										<div class="front">
+											<div class="tituloFront">Propiedades antiinflamatorias</div>
+											<img src="../img/antiflamatorio.png" alt="Icono antiinflamatorio" class="iconoTarjeta">
+										</div>
+										<div class="back">
+											Gracias a los polifenoles, como el
+											oleocantal, que tienen un efecto similar al de los antiinflamatorios naturales.
+										</div>
+									</div>
+								</div>
+								<div class="tarjetaBenefSalud">
+									<div class="tarjeta">
+										<div class="front">
+											<div class="tituloFront">Protección cerebral</div>
+											<img src="../img/cerebroProteccion.png" alt="Icono cerebro y escudo" class="iconoTarjeta">
+										</div>
+										<div class="back">
+											Puede reducir el riesgo de enfermedades neurodegenerativas como el Alzheimer
+										</div>
+									</div>
+								</div>
+								<div class="tarjetaBenefSalud">
+									<div class="tarjeta">
+										<div class="front">
+											<div class="tituloFront">Regulación del metabolismo</div>
+											<img src="../img/metabolism.png" alt="Icono metabolismo" class="iconoTarjeta">
+										</div>
+										<div class="back">
+											Mejora la sensibilidad a la insulina y puede
+											ayudar en el control del peso cuando se consume con moderación.
+										</div>
+									</div>
+								</div>
+							</div>
                         </div>
-                        <div id="cordoba">
+                        <div id="critAnali">
                         </div>
-                        <div id="salamanca">
-                        </div>
-                        <div id="segovia">
-                        </div>
-                        <div id="sevilla">
-                        </div>
-						<div id="sevilla">
+                        <div id="apliDiet">
                         </div>
                     </div>
 				</article>

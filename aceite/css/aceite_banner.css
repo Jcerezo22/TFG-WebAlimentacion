@@ -134,7 +134,7 @@
     }
 
     #introAceite {
-        font-size: 20px;
+        font-size: 16px;
         top: 130px;
     }
 
@@ -157,7 +157,7 @@
     }
 
     #introAceite {
-        font-size: 20px;
+        font-size: 16.5px;
         top: 145px;
         width: 50%;
     }
@@ -272,6 +272,6 @@
         top: 225px;
         left: 30%;
         width: 40%;
-        font-size: 22px;        
+        font-size: 20px;        
     }
 }
