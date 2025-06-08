@@ -1,0 +1,165 @@
+@font-face {
+    font-family: 'LeagueSpartan';
+    src: url('../../tipoLetra/LeagueSpartan-VariableFont_wght.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+#contenTirApli{
+    display: flex;
+    margin-top: 50px;
+    margin-bottom: 30px;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Gliker';
+    color: #8b461b;
+    font-size: 15px;
+}
+
+#contenInfoApli {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.tarjetaApli {
+    background: white;
+    box-shadow: 0 2px 8px rgb(0 0 0 / 0.1);
+    border-radius: 10px;
+    padding: 20px;
+    width: 280px;
+    height: 150px;
+    cursor: pointer;
+    transition: transform 0.15s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-weight: 600;
+    user-select: none;
+    color: #8b461b;
+    font-size: 1.2rem;
+    font-family: 'LeagueSpartan';
+    border: 2px solid #8b461b;
+}
+
+.tarjetaApli:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgb(0 0 0 / 0.15);
+}
+
+.dietas {
+    max-width: 900px;
+    margin: 40px auto 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 3px 14px rgb(0 0 0 / 0.15);
+    padding: 30px 40px;
+    display: none;
+    line-height: 1.6;
+    width: 90%;
+}
+
+.dietas.active {
+    display: block;
+}
+
+.dietas h2{
+    color: #8b461b;
+    font-family: 'Gliker';
+    margin-bottom: 20px;
+}
+.dietas p{
+    margin-bottom: 20px;
+}
+
+.dietas strong{
+    color: #8b461b;
+}
+
+.dietas ul{
+    margin-left: 40px;
+}
+
+.dietas ul li::marker {
+  color: #8b461b; 
+}
+
+.subtituloDetallado {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    color: #8b461b;
+    border-bottom: 1px solid #8b461b;
+    padding-bottom: 6px;
+}
+
+.cerrarCruz {
+    float: right;
+    top: 10px;
+    right: 10px;
+    width: 8px;
+    height: 8px;
+    cursor: pointer;
+}
+
+/* ===================== MEDIA QUERY  400px - 500px  ================================= */
+@media (min-width: 400px) {
+    #contenTirApli{
+        font-size: 1.2rem;
+    }
+
+    .cerrarCruz {
+        width: 10px;
+        height: 10px;
+    }
+}   
+
+/* ===================== MEDIA QUERY  500px - 800px  ================================= */
+@media (min-width: 501px) {
+    .tarjetaApli {
+        width: 290px;
+    }
+
+    .cerrarCruz {
+        width: 15px;
+        height: 15px;
+    }
+}
+
+/* ===================== MEDIA QUERY  801px - 1000px  ================================= */
+@media (min-width: 801px) {
+    #contenTirApli{
+        font-size: 1.4rem;
+    }
+
+    .cerrarCruz {
+        width: 15px;
+        height: 15px;
+    }
+}
+
+/* ===================== MEDIA QUERY  1001px - 1200px  ================================= */
+@media (min-width: 1001px) {
+    .dietas {
+        width: 90%;
+    }
+
+    .cerrarCruz {
+        width: 16px;
+        height: 16px;
+    }
+}
+
+/* ===================== MEDIA QUERY  1201px - 1600px  ================================= */
+@media (min-width: 1201px) {
+    #contenTirApli{
+        font-size: 1.6rem;
+    }
+
+    .cerrarCruz {
+        width: 16px;
+        height: 16px;
+    }
+}

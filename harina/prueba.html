@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Aplicaciones Dietéticas de Harinas</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      background: #fafafa;
+      padding: 20px;
+      color: #333;
+    }
+    h1, h2, h3 {
+      color: #2c3e50;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .card-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+    .card {
+      background: white;
+      box-shadow: 0 2px 8px rgb(0 0 0 / 0.1);
+      border-radius: 10px;
+      padding: 20px;
+      width: 280px;
+      cursor: pointer;
+      transition: transform 0.15s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-weight: 600;
+      user-select: none;
+    }
+    .card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 12px rgb(0 0 0 / 0.15);
+    }
+    .details {
+      max-width: 900px;
+      margin: 40px auto 20px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 3px 14px rgb(0 0 0 / 0.15);
+      padding: 30px 40px;
+      display: none;
+      line-height: 1.6;
+    }
+    .details.active {
+      display: block;
+    }
+    .close-btn {
+      float: right;
+      cursor: pointer;
+      font-size: 24px;
+      color: #999;
+      transition: color 0.2s ease;
+      user-select: none;
+    }
+    .close-btn:hover {
+      color: #e74c3c;
+    }
+    ul {
+      padding-left: 20px;
+    }
+    ul li {
+      margin-bottom: 8px;
+    }
+    .section-subtitle {
+      margin-top: 20px;
+      margin-bottom: 10px;
+      color: #34495e;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 6px;
+    }
+    @media(max-width: 640px){
+      .card-container {
+        flex-direction: column;
+        align-items: center;
+      }
+      .card {
+        width: 90%;
+      }
+      .details {
+        padding: 20px;
+        margin: 20px 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<h1>Aplicaciones Dietéticas de Harinas</h1>
+
+<div class="card-container">
+  <div class="card" onclick="showDetails('dieta-proteica')">Dietas altas en proteína y panificación</div>
+  <div class="card" onclick="showDetails('dieta-gluten')">Dietas bajas o sin gluten</div>
+  <div class="card" onclick="showDetails('dieta-keto')">Dietas bajas en carbohidratos y cetogénicas</div>
+  <div class="card" onclick="showDetails('dieta-fibra')">Dietas altas en fibra y digestión saludable</div>
+  <div class="card" onclick="showDetails('dieta-glucemica')">Dietas para control glucémico (diabetes)</div>
+  <div class="card" onclick="showDetails('criterios-analiticos')">Criterios analíticos y propiedades de las harinas</div>
+</div>
+
+<!-- Dietas altas en proteína y panificación -->
+<div id="dieta-proteica" class="details">
+  <span class="close-btn" onclick="hideDetails('dieta-proteica')">&times;</span>
+  <h2>Dietas altas en proteína y panificación (Harinas fuertes, W > 250)</h2>
+  <p><strong>Criterio analítico clave:</strong> Alto contenido de proteína (10-15%) y gluten.</p>
+  <p><strong>Aplicaciones dietéticas:</strong></p>
+  <ul>
+    <li>Indicadas para personas con alta demanda energética y proteica (atletas, personas con alto gasto calórico).</li>
+    <li>Útiles en dietas hiperproteicas para mejorar la saciedad.</li>
+    <li>Usadas en panificación con fermentaciones largas y masas elásticas (panes de fuerza, pan integral, masas fermentadas).</li>
+  </ul>
+  
+  <h3 class="section-subtitle">Aspectos analíticos relevantes</h3>
+  <ul>
+    <li><strong>Proteínas:</strong> Apoyan la saciedad y reparación muscular.</li>
+    <li><strong>Gluten:</strong> Proporciona elasticidad y estructura.</li>
+    <li><strong>Actividad enzimática:</strong> Favorece fermentación adecuada.</li>
+    <li><strong>Cenizas:</strong> Si son harinas integrales, aportan minerales adicionales.</li>
+  </ul>
+</div>
+
+<!-- Dietas bajas o sin gluten -->
+<div id="dieta-gluten" class="details">
+  <span class="close-btn" onclick="hideDetails('dieta-gluten')">&times;</span>
+  <h2>Dietas bajas o sin gluten</h2>
+  <p><strong>Criterio analítico clave:</strong> Bajo contenido de gluten o sin gluten (harinas de arroz, maíz, almendra, garbanzo).</p>
+  <p><strong>Aplicaciones dietéticas:</strong></p>
+  <ul>
+    <li>Apta para personas con enfermedad celíaca o sensibilidad al gluten no celíaca.</li>
+    <li>Requiere mezclas con almidones y espesantes para mejorar la textura en panadería.</li>
+    <li>Se usa en productos sin gluten como panes, galletas y pastas especiales.</li>
+  </ul>
+
+  <h3 class="section-subtitle">Aspectos analíticos relevantes</h3>
+  <ul>
+    <li><strong>Ausencia o bajo gluten:</strong> Fundamental para evitar reacciones adversas.</li>
+    <li><strong>Humedad:</strong> Controlar para textura y fermentación.</li>
+    <li><strong>Proteínas vegetales:</strong> Para complementar el valor nutricional.</li>
+  </ul>
+</div>
+
+<!-- Dietas bajas en carbohidratos y cetogénicas -->
+<div id="dieta-keto" class="details">
+  <span class="close-btn" onclick="hideDetails('dieta-keto')">&times;</span>
+  <h2>Dietas bajas en carbohidratos y cetogénicas</h2>
+  <p><strong>Criterio analítico clave:</strong> Bajo contenido de almidón, alto en grasas y proteínas (harinas de frutos secos, coco, linaza, garbanzo).</p>
+  <p><strong>Aplicaciones dietéticas:</strong></p>
+  <ul>
+    <li>Recomendadas en dietas cetogénicas y bajas en carbohidratos.</li>
+    <li>Usadas en productos horneados bajos en carbohidratos (pan keto, postres sin azúcar).</li>
+    <li>Mayor contenido de fibra y grasas saludables, que ayuda a la saciedad.</li>
+  </ul>
+
+  <h3 class="section-subtitle">Aspectos analíticos relevantes</h3>
+  <ul>
+    <li><strong>Bajo almidón:</strong> Reduce carga glucémica.</li>
+    <li><strong>Fibra y grasas saludables:</strong> Promueven saciedad y energía sostenida.</li>
+    <li><strong>Cenizas:</strong> Indican riqueza en micronutrientes.</li>
+  </ul>
+</div>
+
+<!-- Dietas altas en fibra y digestión saludable -->
+<div id="dieta-fibra" class="details">
+  <span class="close-btn" onclick="hideDetails('dieta-fibra')">&times;</span>
+  <h2>Dietas altas en fibra y digestión saludable</h2>
+  <p><strong>Criterio analítico clave:</strong> Alto contenido de fibra (>10%) y bajo índice glucémico.</p>
+  <p><strong>Aplicaciones dietéticas:</strong></p>
+  <ul>
+    <li>Indicadas para personas con estreñimiento y control de peso (aumenta saciedad).</li>
+    <li>Beneficiosas para el control del azúcar en sangre (diabetes).</li>
+    <li>Harinas integrales y de salvado se usan en panes, galletas y cereales ricos en fibra.</li>
+  </ul>
+
+  <h3 class="section-subtitle">Aspectos analíticos relevantes</h3>
+  <ul>
+    <li><strong>Fibra:</strong> Mejora tránsito intestinal y controla glucemia.</li>
+    <li><strong>Índice glucémico bajo:</strong> Para evitar picos de azúcar.</li>
+    <li><strong>Almidón resistente:</strong> Efecto prebiótico y antiinflamatorio.</li>
+  </ul>
+</div>
+
+<!-- Dietas para control glucémico -->
+<div id="dieta-glucemica" class="details">
+  <span class="close-btn" onclick="hideDetails('dieta-glucemica')">&times;</span>
+  <h2>Dietas para control glucémico (diabetes)</h2>
+  <p><strong>Criterio analítico clave:</strong> Bajo índice glucémico (IG), alto contenido de fibra y proteínas.</p>
+  <p><strong>Aplicaciones dietéticas:</strong></p>
+  <ul>
+    <li>Harinas integrales (centeno, avena, almendra) para controlar la glucosa en sangre.</li>
+    <li>Reducción de picos de azúcar en pacientes diabéticos.</li>
+    <li>Uso en panes y pastas con menor impacto glicémico.</li>
+  </ul>
+
+  <h3 class="section-subtitle">Aspectos analíticos relevantes</h3>
+  <ul>
+    <li><strong>Índice glucémico bajo:</strong> Harinas con almidón lento y fibra.</li>
+    <li><strong>Proteínas:</strong> Ralentizan absorción de carbohidratos.</li>
+    <li><strong>Cenizas:</strong> Apoyo en minerales esenciales.</li>
+  </ul>
+</div>
+
+<!-- Criterios analíticos generales -->
+<div id="criterios-analiticos" class="details">
+  <span class="close-btn" onclick="hideDetails('criterios-analiticos')">&times;</span>
+  <h2>Criterios analíticos y propiedades de las harinas</h2>
+
+  <h3 class="section-subtitle">Humedad</h3>
+  <p>La humedad influye directamente en la solubilidad y disponibilidad de los nutrientes presentes en la harina, afectando su valor nutricional y su comportamiento en procesos como la cocción o fermentación.</p>
+  <ul>
+    <li>Mayor humedad activa enzimas naturales, modificando la masa y acelerando fermentaciones.</li>
+    <li>Condiciona hidratación del gluten y almidón, claves para la masa y retención de gases.</li>
+    <li>Exceso de humedad puede favorecer crecimiento microbiano, mohos y reducir la vida útil.</li>
+  </ul>
+
+  <h3 class="section-subtitle">Cenizas</h3>
+  <p>Indicador del contenido mineral total (calcio, hierro, magnesio, fósforo, zinc, etc.).</p>
+  <ul>
+    <li>Harinas con mayor ceniza (integrales) son más ricas en micronutrientes.</li>
+    <li>Clasificación de harinas (tipo 00, 0, 1, 2) según cenizas, ayuda a profesionales en nutrición.</li>
+    <li>En dietas terapéuticas (anemia, deficiencias minerales), se prefieren harinas con más ceniza.</li>
+    <li>El análisis de cenizas también detecta fraudes o adulteraciones en harina.</li>
+  </ul>
+
+  <h3 class="section-subtitle">Proteínas</h3>
+  <ul>
+    <li>Reducen índice glucémico al ralentizar la digestión y absorción de hidratos.</li>
+    <li>Importantes como complemento proteico en dietas vegetarianas y veganas.</li>
+  </ul>
+
+  <h3 class="section-subtitle">Gluten</h3>
+  <ul>
+    <li>En dietas hiperproteicas y deportivas, el gluten aporta aminoácidos para reparación muscular.</li>
+    <li>Fundamental en panificación para estructura, elasticidad y volumen.</li>
+    <li>En dietas sin gluten, su ausencia es clave para celíacos y sensibles, pero debe suplirse adecuadamente para evitar déficits nutricionales.</li>
+  </ul>
+
+  <h3 class="section-subtitle">Almidón</h3>
+  <ul>
+    <li>Fuente principal de energía (glucosa), base en dietas equilibradas.</li>
+    <li>Tipo y gelatinización del almidón afectan índice glucémico.</li>
+    <li>Almidón resistente funciona como fibra fermentable y prebiótico, favoreciendo la salud intestinal.</li>
+  </ul>
+</div>
+
+<script>
+  function showDetails(id) {
+    document.querySelectorAll('.details').forEach(d => d.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+  function hideDetails(id) {
+    document.getElementById(id).classList.remove('active');
+  }
+</script>
+
+</body>
+</html>
