@@ -1,4 +1,4 @@
-#contenTarjetas{
+.contenTarjetas{
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
@@ -48,7 +48,7 @@
     width: 100%;
     height: 100%;
     backface-visibility: hidden;
-    border: 2px solid #2980b9;
+    border: 2px solid #ab2a20;
     border-radius: 10px;
     padding: 1rem;
     box-sizing: border-box;
@@ -61,11 +61,11 @@
 }
 
 .front {
-    background: #b7e3fc;
+    background: #fbbbb1;
     font-family: 'LeagueSpartan';
     font-size: 1.5rem;
     font-weight: bolder;
-    color: #165883;
+    color: #86160e;
 }
 
 .back {
@@ -73,33 +73,20 @@
     transform: rotateY(180deg);
 }
 
-#contenAprender{
+.contenAprender{
     display: flex;
     margin-top: 40px;
     margin-bottom: 30px;
     justify-content: center;
     align-items: center;
     font-family: 'Gliker';
-    color: #398ec6;
+    color: #ab2a20;
     font-size: 15px;
-}
-
-#contenAprender img{
-    width: 25px;
-    margin: 8px;
-}
-
-#inter1 {
-    transform: rotate(-15deg);
-}
-
-#inter2 {
-    transform: rotate(15deg);
 }
 
 #curiosidad{
     text-align: center;
-    color: #204060;
+    color: black;
 }
 
 
@@ -110,13 +97,8 @@
         width: 80%;
     }
 
-    #contenAprender{
+    .contenAprender{
         font-size: 1.2rem;
-    }
-
-    #contenAprender img{
-        width: 35px;
-        margin: 10px;
     }
 }   
 
@@ -135,12 +117,8 @@
         margin: 20px; 
     }
 
-    #contenAprender{
+    .contenAprender{
         font-size: 1.4rem;
-    }
-
-    #contenAprender img{
-        width: 45px;
     }
 
     .front {
@@ -163,12 +141,8 @@
         margin: 20px; 
     }
 
-    #contenAprender{
+    .contenAprender{
         font-size: 1.6rem;
-    }
-
-    #contenAprender img{
-        width: 55px;
     }
 }
 
@@ -179,11 +153,7 @@
         margin: 20px; 
     }
 
-    #contenAprender{
+    .contenAprender{
         font-size: 1.8rem;
-    }
-
-    #contenAprender img{
-        width: 65px;
     }
 }
