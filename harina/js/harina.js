@@ -8,6 +8,19 @@ function inicio(){
     $('a.leerMas[href="#"]').on('click', function(e) {
         e.preventDefault();
     });
+
+    $("#hidratosCarbono").on("click", () => mostrarInfo('hidratosCarbono'));
+    $("#proteinas").on("click", () => mostrarInfo('proteinas'));
+    $("#lipidos").on("click", () => mostrarInfo('lipidos'));
+    $("#fibra").on("click", () => mostrarInfo('fibra'));
+    $("#minerales").on("click", () => mostrarInfo('minerales'));
+    $("#vitaminas").on("click", () => mostrarInfo('vitaminas'));
+    $("#enzimas").on("click", () => mostrarInfo('enzimas'));
+    $("#fenoAnti").on("click", () => mostrarInfo('fenoAnti'));
+    $("#pigNat").on("click", () => mostrarInfo('pigNat'));
+    $("#antiNutri").on("click", () => mostrarInfo('antiNutri'));
+
+    $("#cerrarBoton").on("click", cerrarInfo);
 }
 
 
@@ -15,48 +28,48 @@ function mostrarInfo(param){
     const info = {
         hidratosCarbono: {
             title: "Hidratos de carbono",
-            desc: " Incluye la medición de compuestos como la trimetilamina, dimetilamina y amoniaco, que se producen durante el deterioro bacteriano y autolítico. Aunque el análisis de BVT es útil, generalmente refleja los últimos estadios del deterioro avanzado y no es confiable para medir el deterioro durante los primeros días de almacenamiento"
+            desc: " Dentro de los hidratos de carbono encontramos: <br> - <strong>Almidón</strong>: es el polisacárido predominante.Proporciona energía y es esencial para la textura y estructura de los productos tras la cocción, gracias al proceso de gelatinización. <br> -<strong>Azúcares simples</strong> (como glucosa y maltosa): están presentes en pequeñas cantidades. Son importantes porque alimentan a las levaduras durante la fermentación, favoreciendo el crecimiento de las masas"
         },
         proteinas: {
             title: "Proteínas",
-            desc: "Es un buen indicador de calidad en productos como el calamar. Se ha demostrado que el amoniaco puede ser más útil para predecir el deterioro en productos pesqueros que se degradan principalmente por la vía autolítica, en lugar de la microbiológica."
+            desc: "En el caso del trigo, destacan la <strong>gliadina</strong> y la <strong>glutenina</strong>, que, al mezclarse con agua, forman el <strong>gluten</strong>, responsable de la elasticidad y firmeza de las masas.<br> En otros tipos de harinas (como de maíz o arroz), las proteínas no forman gluten, lo que afecta la textura y estructura de los productos finales. <br>Además, las proteínas aportan aminoácidos esenciales para la nutrición humana."
         },
         lipidos: {
             title: "Lípidos (grasas)",
-            desc: "Aunque su presencia no correlaciona siempre con el número de bacterias, la TMA es útil para evaluar la calidad de muchos pescados marinos demersales. Su medición permite una evaluación objetiva y rápida del deterioro del pescado."
+            desc: "Aportan sabor y contribuyen a la textura (untuosidad y ternura).<br> En harinas de frutos secos o semillas (como almendra o nuez) el contenido graso es más elevado. <br> Sin embargo, los lípidos pueden oxidarse con el tiempo, provocando enranciamiento y reduciendo la vida útil de la harina."
         },
         fibra: {
             title: "Fibra",
-            desc: "Tras la muerte del animal, el pH disminuye debido a la acumulación de ácido láctico, lo que refleja la frescura y calidad del pescado. Un pH bajo puede indicar un proceso de descomposición o deterioro."
+            desc: "Harinas refinadas: contienen entre un 2% y un 3% de fibra. <br> Harinas integrales: pueden alcanzar del 5% al 15%- <br> La fibra es fundamental para la salud digestiva y también influye en la capacidad de absorción de agua y en la textura de las masas."
         },
         minerales: {
             title: "Minerales (cenizas)",
-            desc: "El porcentaje de agua puede variar dependiendo de la especie y el estado del pescado (fresco, congelado, seco, etc.)"
+            desc: "Entre ellos destacan minerales como el hierro, fósforo, magnesio, potasio y zinc. <br> La cantidad de minerales está relacionada con el grado de extracción: las harinas integrales, que conservan el salvado y el germen, son más ricas en minerales que las harinas refinadas"
         },
         vitaminas: {
             title: "Vitaminas",
-            desc: "Los pescados son una excelente fuente de proteínas de alta calidad, que incluyen aminoácidos esenciales para el organismo."
+            desc: "Estas vitaminas son esenciales para el metabolismo energético y otras funciones vitales. <br>Sin embargo, en el proceso de refinado se pierde una gran parte de las vitaminas originales, lo que hace que las harinas integrales sean nutricionalmente más completas."
         },
         enzimas: {
             title: "Enzimas",
-            desc: "Los pescados grasos, como el salmón, pueden tener un contenido mucho mayor (hasta un 30%). Los ácidos grasos omega-3 presentes en los pescados grasos son beneficiosos para la salud cardiovascular"
+            desc: "<strong>Amilasas</strong>: que descomponen el almidón en azúcares simples durante la fermentación.<br><strong>Proteasas</strong>: que actúan sobre las proteínas, modificando la elasticidad de la masa. Estas enzimas son fundamentales para procesos como la fermentación y la maduración de la masa."
         },
         fenoAnti: {
             title: "Compuestos fenólicos y antioxidantes",
-            desc: "Especialmente los aminoácidos ramificados y los de cadena larga. Estos son esenciales para la síntesis de proteínas en el cuerpo humano."
+            desc: "También contribuyen al sabor, color y conservación del producto final."
         },
         pigNat: {
             title: "Pigmentos naturales",
-            desc: "Como calcio, fósforo, hierro, yodo y magnesio. La concentración varía dependiendo de la especie"
+            desc: "Estos pigmentos también tienen propiedades antioxidantes"
         },
         antiNutri: {
             title: "Antinutrientes",
-            desc: "Especialmente los omega-3 (EPA y DHA), que son conocidos por sus beneficios para la salud"
+            desc: "Los <strong>fitatos</strong>, por ejemplo, pueden reducir la absorción de minerales como el hierro y el zinc, aunque también ofrecen efectos antioxidantes beneficiosos."
         }
     };
 
     $('#infoTitulo').text(info[param].title);
-    $('#infoDesc').text(info[param].desc);
+    $('#infoDesc').html(info[param].desc);
 
     $("#dialogCompQui")[0].showModal(); 
 
