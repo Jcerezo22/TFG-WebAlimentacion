@@ -21,6 +21,13 @@ function inicio(){
     $("#antiNutri").on("click", () => mostrarInfo('antiNutri'));
 
     $("#cerrarBoton").on("click", cerrarInfo);
+
+    $("#dietaProteicaBtn").on("click", () => mostrarDietas('dietaProteica'));
+    $("#dietaGlutenBtn").on("click", () => mostrarDietas('dietaGluten'));
+    $("#dietaCarboBtn").on("click", () => mostrarDietas('dietaCarbo'));
+    $("#dietaFibraBtn").on("click", () => mostrarDietas('dietaFibra'));
+    $("#dietaGlucemicaBtn").on("click", () => mostrarDietas('dietaGlucemica'));
+    $("#infoDetalladaBtn").on("click", () => mostrarDietas('infoDetallada'));
 }
 
 
@@ -78,4 +85,22 @@ function mostrarInfo(param){
 
 function cerrarInfo() {
     $("#dialogCompQui")[0].close(); 
+}
+
+
+function mostrarDietas(dieta) {
+    $('.dietas').removeClass('active').hide();
+
+    let target = $('#' + dieta);
+
+    if (target.length) {
+        target.addClass('active').fadeIn(200);
+
+
+    $('html, body').animate({
+        scrollTop: target.offset().top
+    }, 500);
+    } else {
+        console.warn("No se encontró el panel con ID:", dieta);
+    }
 }
