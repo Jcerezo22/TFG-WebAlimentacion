@@ -28,6 +28,8 @@ function inicio(){
     $("#dietaFibraBtn").on("click", () => mostrarDietas('dietaFibra'));
     $("#dietaGlucemicaBtn").on("click", () => mostrarDietas('dietaGlucemica'));
     $("#infoDetalladaBtn").on("click", () => mostrarDietas('infoDetallada'));
+
+    $(".cerrarCruz").on("click", cerrarDieta);
 }
 
 
@@ -103,4 +105,8 @@ function mostrarDietas(dieta) {
     } else {
         console.warn("No se encontró el panel con ID:", dieta);
     }
+}
+
+function cerrarDieta() {
+  $(this).closest('.dietas').removeClass('active');
 }
