@@ -1,0 +1,159 @@
+.contenTarjetas{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+@font-face {
+    font-family: 'Gliker';
+    src: url('../../tipoLetra/Gliker-Regular.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'LeagueSpartan';
+    src: url('../../tipoLetra/LeagueSpartan-VariableFont_wght.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.sabiasQue {
+    box-sizing: border-box;
+    padding: 20px;
+    margin: 20px 0; 
+    width: 100%;
+    perspective: 1000px;
+}
+
+
+.tarjeta {
+    width: 100%;
+    height: 230px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+    cursor: pointer;
+}
+
+.tarjeta:hover {
+    transform: rotateY(180deg);
+}
+
+.front, .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border: 2px solid #8b461b;
+    border-radius: 10px;
+    padding: 1rem;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 1.1rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.front {
+    background: rgb(235, 214, 185);
+    font-family: 'LeagueSpartan';
+    font-size: 1.5rem;
+    font-weight: bolder;
+    color: #612f10;
+}
+
+.back {
+    background: #ffffff;
+    transform: rotateY(180deg);
+}
+
+.contenAprender{
+    display: flex;
+    margin-top: 40px;
+    margin-bottom: 30px;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Gliker';
+    color: #8b461b;
+    font-size: 15px;
+}
+
+#curiosidad{
+    text-align: center;
+    color: black;
+}
+
+
+
+/* ===================== MEDIA QUERY  400px - 500px  ================================= */
+@media (min-width: 400px) {
+   .sabiasQue {
+        width: 80%;
+    }
+
+    .contenAprender{
+        font-size: 1.2rem;
+    }
+}   
+
+/* ===================== MEDIA QUERY  500px - 800px  ================================= */
+@media (min-width: 501px) {
+    .sabiasQue {
+        width: 45%;
+        margin: 20px 5px; 
+    }
+}
+
+/* ===================== MEDIA QUERY  801px - 1000px  ================================= */
+@media (min-width: 801px) {
+    .sabiasQue {
+        width: 40%;
+        margin: 20px; 
+    }
+
+    .contenAprender{
+        font-size: 1.4rem;
+    }
+
+    .front {
+        font-size: 2rem;
+    }
+}
+
+/* ===================== MEDIA QUERY  1001px - 1200px  ================================= */
+@media (min-width: 1001px) {
+    .sabiasQue {
+        width: 35%;
+        margin: 20px; 
+    }
+}
+
+/* ===================== MEDIA QUERY  1201px - 1600px  ================================= */
+@media (min-width: 1201px) {
+   .sabiasQue {
+        width: 30%;
+        margin: 20px; 
+    }
+
+    .contenAprender{
+        font-size: 1.6rem;
+    }
+}
+
+/* ===================== MEDIA QUERY  1601px  ================================= */
+@media (min-width: 1601px) {
+   .sabiasQue {
+        width: 20%;
+        margin: 20px; 
+    }
+
+    .contenAprender{
+        font-size: 1.8rem;
+    }
+}
