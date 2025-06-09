@@ -1,0 +1,279 @@
+/* Default ---- < 400px */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'Gliker';
+    src: url('../../tipoLetra/Gliker-Regular.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+#pestannas {
+    border: none;
+    box-shadow: none;
+    margin: 0;
+    padding: 0;
+}
+
+#pestannas ol {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+	gap: 6px;
+}
+
+#pestannas li {
+	flex: 1 1 auto;
+	width: 100%;
+}
+
+#pestannas li a {
+	display: block;
+    width: 100%;
+    padding: 10px;
+	font-size: 15px;
+	color: white;
+    background-color: #8b461b;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+#pestannas li a:hover {
+    background-color: #744223;
+    color: white;
+}
+
+#pestannas .ui-tabs-active a {
+    background-color: #713916;
+    font-weight: bold;
+    border: 2px solid #8b461b;
+}
+
+#pestannas .ui-state-active {
+    border: none;
+    box-shadow: none;
+}
+
+#pestannas .ui-tabs-panel {
+    border: none;
+    padding: 0;
+}
+
+#pestannas .ui-widget-header {
+    border: none;
+    background-color: #ecebe9;
+}
+
+#bannerHarina {
+    background-color: #ecebe9;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: auto;
+    min-height: 380px;
+    position: relative;
+}
+
+#tituloHarina {
+    font-family: 'Gliker';
+    color: #8b461b;
+    position: absolute;
+	font-size: 45px;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-59%);
+	z-index: 2;
+} 
+
+#introHarina {
+    position: absolute;
+    top: 110px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 55%;
+    font-size: 14px;
+    color: #545454;
+    line-height: 1.4;
+    font-weight: 500;
+    text-align: center;
+	z-index: 2;
+    background-color: white;
+    border: 2px solid #8b461b;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+#harinaBannerImg {
+    position: absolute;
+    top: 13px;
+    left: 63%;
+    height: 56px;
+	z-index: 1;
+}
+
+
+/* ===================== MEDIA QUERY  400px - 500px  ================================= */
+@media (min-width: 400px) {
+	#pestannas li a {
+		font-size: 16px;
+	}
+
+    #tituloHarina {
+        font-size: 75px;
+        top: 20px;
+    }
+
+    #introHarina {
+        font-size: 20px;
+        top: 138px;
+    }
+
+    #harinaBannerImg {
+        top: 19px;
+        left: 63%;
+        height: 89px;
+    }
+}
+
+/* ===================== MEDIA QUERY  500px - 800px  ================================= */
+@media (min-width: 501px) {
+	#pestannas li a {
+		font-size: 17px;
+	}
+
+    #tituloHarina {
+        font-size: 95px;
+        top: 23px;
+        transform: translateX(-62%);
+    }
+
+    #introHarina {
+        font-size: 20px;
+        top: 156px;
+        width: 50%;
+    }
+
+    #harinaBannerImg {
+        top: 22px;
+        left: 63%;
+        height: 115px;
+    }
+    
+}
+
+/* ===================== MEDIA QUERY  801px - 1000px  ================================= */
+@media (min-width: 801px) {
+	#pestannas li a {
+		font-size: 18px;
+	}
+	
+	#pestannas ol {
+    	flex-direction: row;
+	}
+
+	#pestannas li {
+		width: auto;
+	}
+
+    #harinaBannerImg {
+        top: 70px;
+        left: 60%;
+        height: 197px;
+    }
+
+    #tituloHarina {
+        font-size: 100px;
+        top: 57px;
+        left: 32%;
+        transform: translateX(-59%);
+    }
+
+    #introHarina {
+        top: 180px;
+        left: 29%;
+        width: 40%;
+        font-size: 18px;        
+    }
+}
+
+/* ===================== MEDIA QUERY  1001px - 1200px  ================================= */
+@media (min-width: 1001px) {
+	#pestannas li a {
+		font-size: 19px;
+	}
+
+    #harinaBannerImg {
+        top: 65px;
+        left: 60%;
+        height: 250px;
+    }
+
+    #tituloHarina {
+        font-size: 120px;
+        top: 62px;
+        left: 33%;
+    }
+
+    #introHarina {
+        top: 210px;
+        left: 30%;
+        font-size: 18px;        
+    }
+}
+
+/* ===================== MEDIA QUERY  1201px - 1600px  ================================= */
+@media (min-width: 1201px) {
+    #harinaBannerImg {
+        top: 45px;
+        left: 60%;
+        height: 270px;
+    }
+
+    #tituloHarina {
+        font-size: 130px;
+        top: 62px;
+        left: 33%;
+    }
+
+    #introHarina {
+        top: 210px;
+        left: 30%;
+        width: 35%;
+        font-size: 19px;        
+    }
+}
+
+/* ===================== MEDIA QUERY  1601px  ================================= */
+@media (min-width: 1601px) {
+	#pestannas li a {
+		font-size: 20px;
+	}
+
+    #harinaBannerImg {
+        top: 50px;
+        left: 60%;
+        height: 290px;
+    }
+    #tituloHarina {
+        font-size: 140px;
+        top: 50px;
+        left: 33%;
+    }
+
+    #introHarina {
+        top: 225px;
+        left: 30%;
+        width: 40%;
+        font-size: 22px;        
+    }
+}
