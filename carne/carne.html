@@ -11,6 +11,7 @@
 		<link rel="stylesheet" href="css/carne_ph.css" type="text/css" />
 		<link rel="stylesheet" href="css/carne_contam.css" type="text/css" />
 		<link rel="stylesheet" href="css/carne_aplicaciones.css" type="text/css" />
+		<link rel="stylesheet" href="css/carne_micro.css" type="text/css" />
         <link rel="stylesheet" href="../jquery/jquery-ui.min.css">
         <script src="../jquery/jquery-3.7.1.min.js"></script>
         <script src="../jquery/jquery-ui.min.js"></script>
@@ -317,6 +318,56 @@
 							</div>
                         </div>
 						<div id="micro">
+							<h2>Microorganismos en la Carne</h2>
+
+							<button class="botonMicro" id="todoMicro">Mostrar todos</button>
+							<button class="botonMicro" id="patogenosM">Solo patógenos</button>
+							<button class="botonMicro" id="indicadoresM">Solo indicadores</button>
+							
+							<div class="tabla-responsive">
+								<table id="tablaMicroorganismos">
+									<thead>
+										<tr>
+										<th>Nombre</th>
+										<th>Tipo</th>
+										<th>Riesgo</th>
+										<th>Origen</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr class="fila patogeno">
+										<td>Salmonella</td>
+										<td>Patógeno</td>
+										<td>Alto</td>
+										<td>Contaminación fecal</td>
+										</tr>
+										<tr class="fila patogeno">
+										<td>Listeria monocytogenes</td>
+										<td>Patógeno</td>
+										<td>Alto</td>
+										<td>Ambiente sucio</td>
+										</tr>
+										<tr class="fila patogeno">
+										<td>Trichinella</td>
+										<td>Patógeno</td>
+										<td>Medio</td>
+										<td>Carne mal cocida</td>
+										</tr>
+										<tr class="fila indicador">
+										<td>Escherichia coli (E. coli)</td>
+										<td>Indicador</td>
+										<td>Bajo</td>
+										<td>Contaminación fecal</td>
+										</tr>
+										<tr class="fila indicador">
+										<td>Enterobacterias</td>
+										<td>Indicador</td>
+										<td>Bajo</td>
+										<td>Agua o superficies contaminadas</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
                         </div>
 						<div id="apliDiet">
 							<h2>APLICACIONES DIETÉTICAS</h2>

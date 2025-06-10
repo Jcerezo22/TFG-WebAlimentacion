@@ -66,6 +66,7 @@
     font-size: 1.5rem;
     font-weight: bolder;
     color: #86160e;
+    text-align: center;
 }
 
 .back {
@@ -79,6 +80,7 @@
     margin-bottom: 30px;
     justify-content: center;
     align-items: center;
+    text-align: center;
     font-family: 'Gliker';
     color: #ab2a20;
     font-size: 15px;
@@ -87,18 +89,21 @@
 #curiosidad{
     text-align: center;
     color: black;
+    font-size: 17px;
 }
 
 
 
 /* ===================== MEDIA QUERY  400px - 500px  ================================= */
 @media (min-width: 400px) {
-   .sabiasQue {
+    .sabiasQue {
         width: 80%;
     }
-
     .contenAprender{
         font-size: 1.2rem;
+    }
+    #curiosidad{
+        font-size: 16px;
     }
 }   
 
@@ -108,6 +113,9 @@
         width: 45%;
         margin: 20px 5px; 
     }
+    #curiosidad{
+        font-size: 14px;
+    }
 }
 
 /* ===================== MEDIA QUERY  801px - 1000px  ================================= */
@@ -116,13 +124,14 @@
         width: 40%;
         margin: 20px; 
     }
-
     .contenAprender{
         font-size: 1.4rem;
     }
-
     .front {
         font-size: 2rem;
+    }
+    #curiosidad{
+        font-size: 17px;
     }
 }
 
@@ -140,9 +149,11 @@
         width: 30%;
         margin: 20px; 
     }
-
     .contenAprender{
         font-size: 1.6rem;
+    }
+    #curiosidad{
+        font-size: 18px;
     }
 }
 
@@ -152,7 +163,6 @@
         width: 20%;
         margin: 20px; 
     }
-
     .contenAprender{
         font-size: 1.8rem;
     }

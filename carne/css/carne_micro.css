@@ -1,0 +1,192 @@
+#micro {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    align-items: center;
+    text-align: center;
+}
+
+#micro h2{
+    margin-bottom: 50px;
+    font-family: 'Gliker';
+    color: #ab2a20;
+    font-size: 24px;
+}
+
+.botonMicro{
+    width: 90%;
+    max-width: 220px;
+    height: 45px;
+    padding: 5px 10px;
+    background-color: #ab2a20;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-right: 0;
+ 
+    font-size: 1em;
+}
+
+.botonMicro:hover {
+    background-color: #ca4d44;
+}
+
+.tabla-responsive {
+  width: 100%;
+  overflow-x: auto;
+}
+
+#tablaMicroorganismos {
+    min-width: 500px; /* Puedes ajustar este valor según tus columnas */
+    width: 100%;
+    max-width: none;
+    margin: 1em auto;
+    border-collapse: collapse;
+    margin-top: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    font-size: 0.92em;
+}
+
+#tablaMicroorganismos th, #tablaMicroorganismos td {
+    padding: 6px 2px;
+    font-size: 0.92em;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+#tablaMicroorganismos thead {
+    background-color: #ab2a20;
+    color: white;
+}
+
+.estadoNormal {
+    background-color: #d4edda;
+    color: #155724;
+    font-weight: bold;
+}
+.estadoModerado {
+    background-color: #fff3cd;
+    color: #856404;
+    font-weight: bold;
+}
+.estadoCritico {
+    background-color: #f8d7da;
+    color: #721c24;
+    font-weight: bold;
+}
+
+
+/* ===================== MEDIA QUERY  400px - 500px  ================================= */
+@media (min-width: 400px) {
+    #micro h2{
+        font-size: 26px;
+    }
+    .botonMicro {
+        font-size: 1.05em;
+    }
+    .tabla-responsive {
+        overflow-x: visible;
+    }
+    #tablaMicroorganismos {
+        font-size: 1em;
+        min-width: 0;
+        width: 98%;
+        max-width: 100%;
+    }
+}
+
+/* ===================== MEDIA QUERY  500px - 800px  ================================= */
+@media (min-width: 501px) {
+    #micro h2{
+        font-size: 32px;
+    }
+    .botonMicro {
+        width: 200px;
+        margin-right: 10px;
+        margin-bottom: 0;
+        font-size: 1.08em;
+    }
+    #tablaMicroorganismos {
+        width: 95%;
+        font-size: 1.05em;
+    }
+    #tablaMicroorganismos th, #tablaMicroorganismos td {
+        padding: 10px 7px;
+    }
+}
+
+/* ===================== MEDIA QUERY  801px - 1000px  ================================= */
+@media (min-width: 801px) {
+    #micro h2{
+        font-size: 38px;
+    }
+    .botonMicro {
+        width: 210px;
+        font-size: 1.1em;
+    }
+    #tablaMicroorganismos {
+        width: 90%;
+        font-size: 1.12em;
+    }
+    #tablaMicroorganismos th, #tablaMicroorganismos td {
+        padding: 12px 10px;
+    }
+}
+
+/* ===================== MEDIA QUERY  1001px - 1200px  ================================= */
+@media (min-width: 1001px) {
+    #micro h2{
+        font-size: 40px;
+    }
+    .botonMicro {
+        width: 220px;
+        font-size: 1.13em;
+    }
+    #tablaMicroorganismos {
+        width: 85%;
+        font-size: 1.15em;
+    }
+    #tablaMicroorganismos th, #tablaMicroorganismos td {
+        padding: 14px 12px;
+    }
+}
+
+/* ===================== MEDIA QUERY  1201px - 1600px  ================================= */
+@media (min-width: 1201px) {
+    #micro h2{
+        font-size: 40px;
+    }
+    .botonMicro {
+        width: 220px;
+        font-size: 1.15em;
+    }
+    #tablaMicroorganismos {
+        width: 75%;
+        font-size: 1.17em;
+    }
+    #tablaMicroorganismos th, #tablaMicroorganismos td {
+        padding: 16px 14px;
+    }
+}
+
+/* ===================== MEDIA QUERY  1601px  ================================= */
+@media (min-width: 1601px) {
+    #micro h2{
+        font-size: 42px;
+    }
+    .botonMicro {
+        width: 230px;
+        font-size: 1.2em;
+    }
+    #tablaMicroorganismos {
+        width: 65%;
+        font-size: 1.2em;
+    }
+    #tablaMicroorganismos th, #tablaMicroorganismos td {
+        padding: 18px 16px;
+    }
+}

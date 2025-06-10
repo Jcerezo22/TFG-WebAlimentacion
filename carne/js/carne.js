@@ -19,6 +19,12 @@ function inicio(){
 
     $("#botonDfd").on("click", mostrarInfopH);
     $("#botonPse").on("click", mostrarInfopH);
+
+    colorRiesgoMicro();
+
+    $("#todoMicro").on("click", () => filtrar("todos"));
+    $("#patogenosM").on("click", () => filtrar("patogeno"));
+    $("#indicadoresM").on("click", () => filtrar("indicador"));
 }
 
 function corregirChecklist() {
@@ -194,4 +200,38 @@ function mostrarInfopH(event){
     }
 
     $("#infoExtra").show();
+}
+
+function filtrar(tipo) {
+    const filas = document.querySelectorAll("#tablaMicroorganismos tbody tr");
+    filas.forEach(fila => {
+      if (tipo === "todos") {
+        fila.style.display = "";
+      } else {
+        fila.style.display = fila.classList.contains(tipo) ? "" : "none";
+      }
+    });
+}
+
+function colorRiesgoMicro(){
+    // Seleccionar todas las filas del cuerpo de la tabla
+    const filas = document.querySelectorAll('#tablaMicroorganismos tbody tr');
+    
+    filas.forEach(fila => {
+        // Seleccionar la celda de riesgo (tercera columna)
+        const celdaRiesgo = fila.cells[2];
+        const textoRiesgo = celdaRiesgo.textContent.trim().toLowerCase();
+        
+        // Eliminar clases existentes por si hubiera alguna
+        celdaRiesgo.classList.remove('estadoNormal', 'estadoModerado', 'estadoCritico');
+        
+        // Aplicar clase según el texto del riesgo
+        if(textoRiesgo === 'bajo') {
+            celdaRiesgo.classList.add('estadoNormal');
+        } else if(textoRiesgo === 'medio') {
+            celdaRiesgo.classList.add('estadoModerado');
+        } else if(textoRiesgo === 'alto') {
+            celdaRiesgo.classList.add('estadoCritico');
+        }
+    });
 }

@@ -569,13 +569,13 @@ function actualizarValorPh(event){
   // Determina el mensaje
   let mensaje = '';
   if (valor < 6.6) {
-    mensaje = '❌ Fermentada: pH < 6.6';
+    mensaje = '❌ <b>Fermentada:</b> pH < 6.6';
   } else if (valor >= 6.6 && valor <= 6.8) {
-    mensaje = '✔️ Fresca: pH 6.6–6.8';
+    mensaje = '✔️ <b>Fresca:</b> pH 6.6–6.8';
   } else if (valor > 7.0) {
-    mensaje = '❌ Contaminada: pH > 7.0';
+    mensaje = '❌ <b>Contaminada:</b> pH > 7.0';
   } else {
-    mensaje = '⚠️ Advertencia: pH fuera del rango ideal';
+    mensaje = '⚠️ <b>Advertencia:</b> pH fuera del rango ideal';
   }
 
   $("#mensajePh").html(mensaje);

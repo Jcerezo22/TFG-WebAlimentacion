@@ -42,22 +42,18 @@
     padding-top: 20px;
 }
 
-#tituloRangoAcidez {
+#tituloRangoAcidez, #tituloRangoPH {
     display: flex;
     align-items: center; 
     gap: 10px;
     margin-bottom: 20px;
     margin-top: 10px;
 }
-
-#tituloRangoAcidez h2 {
-    margin: 0; 
-    font-size: 24px;
-}
   
 #resultadoAcidez, #resultadopH{
     margin-top: 20px;
     margin-bottom: 0px;
+    font-size: 15px;
 }
 
 .contenedorAcidez img, .contenedorPh img {
@@ -65,9 +61,9 @@
     min-width: 19%; 
 }
 
-#informacionAcidezLeche {
+#informacionAcidezLeche, #informacionPhLeche {
     margin-top: 30px; 
-    font-size: 16px;
+    font-size: 15px;
     line-height: 1.4;
     color: #204060;
 }
@@ -78,24 +74,17 @@
     align-items:flex-start;
     width: 100%;
     gap: 10px;
-
 }
 
 #valoresRango{
     display: flex;
     justify-content: space-between; 
     width: 100%;
-}
-
-#phValorMov, #phValorFin {
-    font-size: 13px;
-    color: #6d716f;
-    text-align: center;
-}
+} 
 
 input[type="range"] {
     width: 100%;  
-    height: 4px; 
+    height: 6px; 
     appearance: none;             
     -webkit-appearance: none;     
     -moz-appearance: none; 
@@ -106,7 +95,7 @@ input[type="range"] {
   
 /* Estilo de la barra*/
 input[type="range"]::-webkit-slider-runnable-track {
-    height: 5px;
+    height: 6px;
     border-radius: 10px;
 }
   
@@ -124,8 +113,8 @@ input[type="range"]::-ms-track {
   
 input[type="range"]::-webkit-slider-thumb {
     -webkit-appearance: none;
-    width: 15px;
-    height: 15px;
+    width: 16px;
+    height: 16px;
     background: #ffffff;
     border: 2px solid #77b4d8;
     border-radius: 50%;
@@ -133,16 +122,16 @@ input[type="range"]::-webkit-slider-thumb {
 }
   
 input[type="range"]::-moz-range-thumb {
-    width: 15px;
-    height: 15px;
+    width: 16px;
+    height: 16px;
     background: #ffffff;
     border: 2px solid #77b4d8;
     border-radius: 50%;
 }
 
 input[type="range"]::-ms-thumb {
-    width: 15px;
-    height: 15px;
+    width: 16px;
+    height: 16px;
     background: #ffffff;
     border: 2px solid #77b4d8;
     border-radius: 50%;
@@ -170,16 +159,37 @@ button:hover {
 
 /* ===================== MEDIA QUERY  400px - 500px  ================================= */
 @media (min-width: 400px) {
-    #tituloRangoAcidez h2 {
+    #tituloRangoAcidez h3, #tituloRangoPH h3 {
         font-size: 18px;
     }
 
     #barraRango label,
     #barraRango,
     #resultadoAcidez,
+    #resultadopH,
     .infoParte,
-    #informacionAcidezLeche {
+    #informacionAcidezLeche,
+    #informacionPhLeche {
         font-size: 15px;
+    }
+
+    input[type="range"] {
+        height: 6px; 
+    }
+      
+    input[type="range"]::-webkit-slider-thumb {
+        width: 16px;
+        height: 16px;
+    }
+      
+    input[type="range"]::-moz-range-thumb {
+        width: 16px;
+        height: 16px;
+    }
+    
+    input[type="range"]::-ms-thumb {
+        width: 16px;
+        height: 16px;
     }
 
     button {
@@ -187,51 +197,128 @@ button:hover {
         padding: 10px 14px;
     }
 
-    #botonesAcidez {
+    #botonesAcidez, #botonesPh {
         width: 100%;
         max-width: 340px; /* O el ancho que prefieras */
-        margin: 0 auto;
-    }
-
-    #botonesAcidez button {
-        width: 100%;
-        display: block;
-        margin-bottom: 12px; /* Espacio entre botones */
-        box-sizing: border-box;
     }
 }
 
 /* ===================== MEDIA QUERY  500px - 800px  ================================= */
 @media (min-width: 501px) {
-    #tituloRangoAcidez h2 {
+    #tituloRangoAcidez h3, #tituloRangoPH h3 {
         font-size: 20px;
     }
 
     #barraRango label,
     #barraRango,
     #resultadoAcidez,
+    #resultadopH,
     .infoParte,
-    #informacionAcidezLeche {
+    #informacionAcidezLeche,
+    #informacionPhLeche {
         font-size: 16px;
+    }
+
+    input[type="range"] {
+        height: 7px; 
+    }
+      
+    input[type="range"]::-webkit-slider-thumb {
+        width: 17px;
+        height: 17px;
+    }
+      
+    input[type="range"]::-moz-range-thumb {
+        width: 17px;
+        height: 17px;
+    }
+    
+    input[type="range"]::-ms-thumb {
+        width: 17px;
+        height: 17px;
     }
 
     button {
         font-size: 15px;
         padding: 11px 18px;
     }
-
-    #botonesAcidez {
-        display: flex;
-        gap: 16px; /* Espacio entre los botones */
-        margin-top: 20px;
-        justify-content: flex-start; /* O usa center para centrar */
-    }
 }
 
 /* ===================== MEDIA QUERY  801px - 1000px  ================================= */
 @media (min-width: 801px) {
-    #tituloRangoAcidez h2 {
+    #tituloRangoAcidez h3, #tituloRangoPH h3 {
         font-size: 22px;
+    }
+
+    #barraRango label,
+    #barraRango,
+    #resultadoAcidez,
+    #resultadopH,
+    .infoParte,
+    #informacionAcidezLeche,
+    #informacionPhLeche {
+        font-size: 17px;
+    }
+
+    input[type="range"] {
+        height: 8px; 
+    }
+      
+    input[type="range"]::-webkit-slider-thumb {
+        width: 18px;
+        height: 18px;
+    }
+      
+    input[type="range"]::-moz-range-thumb {
+        width: 18px;
+        height: 18px;
+    }
+    
+    input[type="range"]::-ms-thumb {
+        width: 18px;
+        height: 18px;
+    }
+
+    button {
+        margin-top: 20px;
+        padding: 10px 20px;
+        font-size: 17px;
+    }
+}
+
+/* ===================== MEDIA QUERY  1001px - 1200px  ================================= */
+@media (min-width: 1001px) {
+    #tituloRangoAcidez h3, #tituloRangoPH h3 {
+        font-size: 23px;
+    }
+
+    #barraRango label,
+    #barraRango,
+    #resultadoAcidez,
+    #resultadopH,
+    .infoParte,
+    #informacionAcidezLeche,
+    #informacionPhLeche {
+        font-size: 18px;
+    }
+
+    input[type="range"] {
+        height: 9px; 
+    }
+      
+    input[type="range"]::-webkit-slider-thumb {
+        width: 19px;
+        height: 19px;
+    }
+      
+    input[type="range"]::-moz-range-thumb {
+        width: 19px;
+        height: 19px;
+    }
+    
+    input[type="range"]::-ms-thumb {
+        width: 19px;
+        height: 19px;
     }
 
     .contenedorAcidez {
@@ -239,56 +326,85 @@ button:hover {
         align-items: flex-start;
     }
 
-    .contenedorAcidez img {
-        margin-top: 20px; 
-        min-width: 19%; 
-    }
-
-    #informacionAcidezLeche {
+    #informacionAcidezLeche, #informacionPhLeche {
         margin-left: 20px;
-        margin-top: 30px; 
-        font-size: 16px;
-        line-height: 1.4;
-        color: #204060;
     }
-
+    
     button {
-        margin-top: 20px;
-        padding: 10px 20px;
-        font-size: 1rem;
-    }
-
-    #botonesAcidez {
-        width: auto;        /* Quita el 100% */
-        max-width: none;    /* Quita el máximo ancho */
-        margin: 0;          /* Quita el centrado */
-    }
-
-    #botonesAcidez button {
-        width: auto;        /* Botones solo tan anchos como su contenido */
-        display: inline-block;
-        margin-bottom: 0;   /* Quita el espacio entre botones */
-        box-sizing: border-box;
+        font-size: 18px;
+        padding: 14px 28px;
     }
 }
 
 /* ===================== MEDIA QUERY  1201px - 1600px  ================================= */
 @media (min-width: 1201px) {
-    #tituloRangoAcidez h2 {
+    #tituloRangoAcidez h3, #tituloRangoPH h3 {
         font-size: 24px;
     }
 
     #barraRango label,
     #barraRango,
     #resultadoAcidez,
+    #resultadopH,
     .infoParte,
-    #informacionAcidezLeche {
-        font-size: 18px;
+    #informacionAcidezLeche,
+    #informacionPhLeche {
+        font-size: 19px;
+    }
+
+    input[type="range"] {
+        height: 10px; 
+    }
+      
+    input[type="range"]::-webkit-slider-thumb {
+        width: 20px;
+        height: 20px;
+    }
+      
+    input[type="range"]::-moz-range-thumb {
+        width: 20px;
+        height: 20px;
     }
     
-    button {
-        font-size: 18px;
-        padding: 14px 28px;
+    input[type="range"]::-ms-thumb {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+/* ===================== MEDIA QUERY  1601px  ================================= */
+@media (min-width: 1601px) {
+    #tituloRangoAcidez h3, #tituloRangoPH h3 {
+        font-size: 25px;
+    }
+
+    #barraRango label,
+    #barraRango,
+    #resultadoAcidez,
+    #resultadopH,
+    .infoParte,
+    #informacionAcidezLeche,
+    #informacionPhLeche {
+        font-size: 20px;
+    }
+
+    input[type="range"] {
+        height: 13px; 
+    }
+      
+    input[type="range"]::-webkit-slider-thumb {
+        width: 23px;
+        height: 23px;
+    }
+      
+    input[type="range"]::-moz-range-thumb {
+        width: 23px;
+        height: 23px;
+    }
+    
+    input[type="range"]::-ms-thumb {
+        width: 23px;
+        height: 23px;
     }
 }
 
