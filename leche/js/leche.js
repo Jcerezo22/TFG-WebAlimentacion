@@ -506,7 +506,7 @@ function actualizarValorAcidez(event){
   $("#descripcionAcidez").html(mensaje);
   $("#resultadoAcidez").show();
 
-    barra.css('background', `linear-gradient(to right, ${colorIzquierda} 0%, ${colorIzquierda} ${porcentaje}%, #ddd ${porcentaje}%, #ddd 100%)`);
+  barra.css('background', `linear-gradient(to right, ${colorIzquierda} 0%, ${colorIzquierda} ${porcentaje}%, #ddd ${porcentaje}%, #ddd 100%)`);
 }
 
 const imagenesAcidezLeche = [

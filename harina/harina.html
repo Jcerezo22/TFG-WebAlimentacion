@@ -10,6 +10,7 @@
 		<link rel="stylesheet" href="css/harina_queEs.css" type="text/css"/>
 		<link rel="stylesheet" href="css/harina_compQui.css" type="text/css"/>
 		<link rel="stylesheet" href="css/harina_paramQui.css" type="text/css"/>
+		<link rel="stylesheet" href="css/harina_paramFi.css" type="text/css"/>
         <link rel="stylesheet" href="../jquery/jquery-ui.min.css">
         <script src="../jquery/jquery-3.7.1.min.js"></script>
         <script src="../jquery/jquery-ui.min.js"></script>
@@ -216,6 +217,35 @@
 							</div>
                         </div>
                         <div id="paramFi">
+							<div id="contenTitParamFi">
+								<h2 class="tituloParamFi">PARÁMETROS FÍSICOS</h2>
+							</div>
+							<div id="contenTitParamFi">
+								<h4>Simulador Interactivo: </h4>
+							</div>
+							<div id="simuladorParamFi">
+								<div class="slider-group">
+									<label>Granulometría (micras): <span id="gVal">250</span></label>
+									<input type="range" min="50" max="500" value="250" id="granulometria">
+								</div>
+								<div class="slider-group">
+									<label>Humedad (%): <span id="hVal">13</span></label>
+									<input type="range" min="10" max="20" value="13" id="humedad">
+								</div>
+								<div class="slider-group">
+									<label>Densidad (g/mL): <span id="dVal">0.6</span></label>
+									<input type="range" min="0.4" max="0.9" step="0.05" value="0.6" id="densidad">
+								</div>
+								<div class="slider-group">
+									<label>Temperatura almacenamiento (°C): <span id="tVal">22</span></label>
+									<input type="range" min="15" max="35" value="22" id="temperatura">
+								</div>
+								<div class="status-box" id="resultado">
+									<p><strong>Recomendación:</strong> Cargando...</p>
+									<p><strong>Estado de conservación:</strong> Cargando...</p>
+									<p><strong>Uso ideal:</strong> Cargando...</p>
+								</div>
+							</div>
                         </div>
 						<div id="paramQui">
 							<div class="contenAprender">
