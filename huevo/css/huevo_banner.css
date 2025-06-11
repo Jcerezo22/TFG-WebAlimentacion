@@ -5,6 +5,10 @@
     box-sizing: border-box;
 }
 
+body{
+    background: linear-gradient(to bottom, #FBCBA3 0%, #FBCBA3 50%,#FFFFFF 70%, #FFFFFF 100%);
+}
+
 @font-face {
     font-family: 'Gliker';
     src: url('../../tipoLetra/Gliker-Regular.ttf');
@@ -17,6 +21,7 @@
     box-shadow: none;
     margin: 0;
     padding: 0;
+    background-color: white;
 }
 
 #pestannas ol {
@@ -165,14 +170,17 @@
 
     #huevoBannerImg {
         top: 7px;
-        left: 67%;
-        height: 145px;
+        left: 62%;
+        height: 140px;
     }
     
 }
 
 /* ===================== MEDIA QUERY  801px - 1000px  ================================= */
 @media (min-width: 801px) {
+    body{
+        background: white;
+    }
 	#pestannas #pestannasMenu li a {
 		font-size: 18px;
 	}
@@ -187,8 +195,8 @@
 
     #huevoBannerImg {
         top: 40px;
-        left: 64%;
-        height: 240px;
+        left: 60%;
+        height: 230px;
     }
 
     #tituloHuevo {
@@ -203,6 +211,8 @@
         width: 40%;
         font-size: 18px;        
     }
+
+
 }
 
 /* ===================== MEDIA QUERY  1001px - 1200px  ================================= */
@@ -213,7 +223,7 @@
 
     #huevoBannerImg {
         top: 10px;
-        left: 64%;
+        left: 60%;
         height: 300px;
     }
 
