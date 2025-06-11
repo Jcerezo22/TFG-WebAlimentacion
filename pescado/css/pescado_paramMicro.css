@@ -1,0 +1,301 @@
+@font-face {
+    font-family: 'Gliker';
+    src: url('../../tipoLetra/Gliker-Regular.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+#checklistTituloConten{
+    text-align: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 40px;
+    font-size: 1rem;
+}
+
+#checklistTitulo{
+    font-family: 'Gliker';
+    color: #6e8192;
+}
+
+#checklistTituloConten p{
+    width: 80%;
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+#contenedorPreguntas{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+       
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.contendorPregunta{
+    width: 80%;
+    border: 2px solid #6e8192;
+    padding: 30px;
+    border-radius: 8px;
+    box-sizing: border-box;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.contendorPregunta h3 {
+    margin-bottom: 30px;
+    color: #6e8192;
+}
+
+.tablaCasos{
+    width: 30%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-size: 15px;
+}
+.tablaCasos td {
+    padding: 12px 10px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+.tablaCasos th {
+    background-color: #6e8192;
+    color: white;
+    height: 40px;
+}
+
+.contendorPregunta label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 16px;
+    line-height: 1.4;
+    cursor: pointer;
+}
+
+.contendorPregunta input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+.expCaso{
+    margin-top: 30px;
+    display: none;
+}
+
+.bloqueBotones {
+    text-align: center;
+}
+
+#botonCorregir{
+    width: 220px;
+    height: 40px;
+    padding: 5px 10px;
+    background-color: #6e8192;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+#botonCorregir:hover {
+    background-color: #8fa7bd;
+}
+
+#botonCorregir:active {
+    background-color: #9ab5ce;
+}
+
+#botonVolverEmp{
+    width: 220px;
+    height: 40px;
+    padding: 5px 10px;
+    background-color: #6e8192;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+#botonVolverEmp:hover {
+    background-color: #8fa7bd;
+}
+
+#botonVolverEmp:active {
+    background-color: #9ab5ce;
+}
+
+
+label.correctaAcertada {
+    background-color: #d4edda;
+    color: #155724;
+    border-left: 4px solid #28a745;
+    padding: 4px;
+    display: block;
+}
+
+label.incorrectaMarcada {
+    background-color: #f8d7da;
+    color: #721c24;
+    border-left: 4px solid #dc3545;
+    padding: 4px;
+    display: block;
+}
+
+label.correctaNoMarcada {
+    background-color: #fff3cd;
+    color: #856404;
+    border-left: 4px solid #ffc107;
+    padding: 4px;
+    display: block;
+}
+
+
+#resultado{
+    width: 20%;
+    display: none;
+    border: 2px solid #6e8192;
+    padding: 30px;
+    border-radius: 8px;
+    box-sizing: border-box;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+#resultado p{
+    margin: 15px;
+}
+
+#leyenda {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin: 20px 30px;
+    font-size: 14px;
+}
+
+.leyendaCasilla {
+    display: flex;
+    align-items: center;
+}
+
+.cajaColor {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    margin-right: 8px;
+    border: 1px solid #999;
+}
+
+.cajaColor.correctaAcertada {
+    background-color: #d4edda;
+    border-left: 4px solid #28a745;
+}
+
+.cajaColor.incorrectaMarcada{
+    background-color: #f8d7da;
+    border-left: 4px solid #dc3545;
+}
+
+.cajaColor.correctaNoMarcada {
+    background-color: #fff3cd;
+    border-left: 4px solid #ffc107;
+}
+
+/* ===================== MEDIA QUERY  400px - 500px  ================================= */
+@media (min-width: 400px) {
+    #checklistTituloConten{
+        font-size: 1.2rem;
+    }
+    #checklistTituloConten p{
+        font-size: 1rem;
+    }
+    .tablaCasos {
+        width: 90%;
+        margin-left: 10px;
+        margin-bottom: 10px;
+        margin-top: 10px;
+    }
+    .opcionesCaso {
+        margin-left: 10px;
+        margin-top: 20px; 
+    }
+    .opcionesCaso label{
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+}   
+
+/* ===================== MEDIA QUERY  500px - 800px  ================================= */
+@media (min-width: 501px) {
+    #botonCorregir{
+        width: 220px;
+        height: 40px;
+        padding: 5px 10px;
+        margin-top: 10px;
+    }
+    .tablaCasos {
+        width: 90%;
+    }
+}
+
+/* ===================== MEDIA QUERY  801px - 1000px  ================================= */
+@media (min-width: 801px) {
+    #checklistTituloConten{
+        font-size: 1.6rem;
+    }
+    #checklistTituloConten p{
+        font-size: 1.15rem;
+    }
+    .casoFlex {
+        display: flex;
+        align-items: flex-start;
+    }
+    .tablaCasos {
+        width: 40%;
+        margin-left: 30px;
+        margin-bottom: 0;
+        margin-top: 10px;
+    }
+    .opcionesCaso {
+        margin-left: 20px;
+        margin-top: 10px; 
+    }
+    .opcionesCaso label{
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+    .contendorPregunta label {
+        margin-left: 30px;
+    }
+}
+
+/* ===================== MEDIA QUERY  1001px - 1200px  ================================= */
+@media (min-width: 1001px) {
+
+
+}
+
+/* ===================== MEDIA QUERY  1201px - 1600px  ================================= */
+@media (min-width: 1201px) {
+    #checklistTituloConten{
+        font-size: 1.8rem;
+    }
+
+    #checklistTituloConten p {
+        font-size: 1.3rem;
+    }
+
+}
+
+/* ===================== MEDIA QUERY  1601px  ================================= */
+@media (min-width: 1601px) {
+    #checklistTituloConten{
+        font-size: 1.9rem;
+    }
+}

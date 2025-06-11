@@ -34,6 +34,9 @@ function inicio(){
     $('a.leerMas[href="#"]').on('click', function(e) {
         e.preventDefault();
     });
+
+    $("#botonCorregir").on("click", corregirChecklist);
+    $("#botonVolverEmp").on("click", reiniciarChecklist);
 }
 
 function actualizarValorSlider(event) {
@@ -211,4 +214,40 @@ function mostrarInfo(param){
 
 function cerrarInfo() {
     $("#dialogParamQui")[0].close(); 
+}
+
+function corregirChecklist() {
+    let total = 0;
+    const casos = document.querySelectorAll(".contendorPregunta");
+
+    casos.forEach(caso => {
+        const radio = caso.querySelector("input[type='radio']:checked");
+        const explicacion = caso.querySelector(".expCaso");
+        const correcta = caso.querySelector("input.correcta");
+
+        // Resetear estilos
+        caso.querySelectorAll("label").forEach(label => {
+            label.classList.remove("correctaAcertada", "incorrectaMarcada", "correctaNoMarcada");
+        });
+
+        // Mostrar explicación
+        if (explicacion) explicacion.style.display = "block";
+
+        if (radio) {
+            const esCorrecta = radio.classList.contains("correcta");
+            radio.parentElement.classList.add(esCorrecta ? "correctaAcertada" : "incorrectaMarcada");
+            total += esCorrecta ? 1 : -1;
+        } else if (correcta) {
+            correcta.parentElement.classList.add("correctaNoMarcada");
+        }
+    });
+
+    $("#resultado").html(`<p>Puntuación final: ${total}/${casos.length}</p>`).fadeIn();
+}
+
+function reiniciarChecklist() {
+    $("input[type='radio']").prop("checked", false);
+    $("label").removeClass("correctaAcertada incorrectaMarcada correctaNoMarcada");
+    $(".expCaso").hide();
+    $("#resultado").hide();
 }
