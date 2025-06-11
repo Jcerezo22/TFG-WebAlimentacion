@@ -5,6 +5,10 @@
     box-sizing: border-box;
 }
 
+body{
+    background: linear-gradient(to bottom, #e0d1cb 0%, #e0d1cb 50%,#FFFFFF 70%, #FFFFFF 100%);
+}
+
 @font-face {
     font-family: 'Gliker';
     src: url('../../tipoLetra/Gliker-Regular.ttf');
@@ -276,6 +280,6 @@
         top: 225px;
         left: 30%;
         width: 40%;
-        font-size: 22px;        
+        font-size: 17px;        
     }
 }
