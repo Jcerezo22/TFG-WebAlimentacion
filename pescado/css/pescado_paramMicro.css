@@ -87,6 +87,11 @@
     text-align: center;
 }
 
+#contenedorResultado{
+    display: flex;
+    justify-content: center;
+}
+
 #botonCorregir{
     width: 220px;
     height: 40px;
@@ -152,9 +157,8 @@ label.correctaNoMarcada {
     display: block;
 }
 
-
 #resultado{
-    width: 20%;
+    width: 50%;
     display: none;
     border: 2px solid #6e8192;
     padding: 30px;
