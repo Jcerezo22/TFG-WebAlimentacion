@@ -101,6 +101,13 @@
     background-color: #eb736b;
 }
 
+#bloqueBotones{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
 
 label.correctaAcertada {
     background-color: #d4edda;
@@ -148,6 +155,7 @@ label.correctaNoMarcada {
 #leyenda {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 30px;
     flex-wrap: wrap;
     margin: 20px 30px;
