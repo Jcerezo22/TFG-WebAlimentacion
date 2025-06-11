@@ -9,6 +9,7 @@
 		<link rel="stylesheet" href="css/aceite_compQui.css" type="text/css" >
 		<link rel="stylesheet" href="css/aceite_benefSalud.css" type="text/css" >
 		<link rel="stylesheet" href="css/aceite_aplicaiones.css" type="text/css" >
+		<link rel="stylesheet" href="css/aceite_critAna.css" type="text/css" >
         <link rel="stylesheet" href="../jquery/jquery-ui.min.css">
         <script src="../jquery/jquery-3.7.1.min.js"></script>
         <script src="../jquery/jquery-ui.min.js"></script>
@@ -154,6 +155,84 @@
 							</div>
                         </div>
                         <div id="critAnali">
+							<div id="checklistTituloConten">
+								<h2 id="checklistTitulo">QUIZ/SIMULADOR</h2>
+								<p>Simula el análisis de un aceite de oliva: responde las 4 preguntas clave y descubre cómo cada criterio afecta su uso en la dieta</p>
+							</div>
+							<div id="contenedorPreguntas">
+								<div class="contendorPregunta" id="p1">
+									<h3>1 - Grado de Acidez</h3>
+									<h4>¿Cuál es el grado de acidez de tu aceite?</h4>
+									<label for="" >
+										<input type="radio" name="acidez" value="0.5">
+										<span>0.5%</span>
+									</label>
+									<label for="" >
+										<input type="radio" name="acidez" value="1.2">
+										<span>1.2%</span>
+									</label>
+									<label for="" >
+										<input type="radio" name="acidez" value="2.5">
+										<span>2.5%</span>
+									</label>
+									<div class="retro"></div>
+								</div>
+								<div class="contendorPregunta" id="p2">
+									<h3>2 - Índice de Peróxidos</h3>
+									<h4>¿Qué índice de peróxidos presenta tu aceite?</h4>
+									<label for="" >
+										<input type="radio" name="peroxidos" value="5">
+										<span>5 meq O2/kg</span>
+									</label>
+									<label for="" >
+										<input type="radio" name="peroxidos" value="12">
+										<span>12 meq O2/kg </span>
+									</label>
+									<label for="" >
+										<input type="radio" name="peroxidos" value="25">
+										<span>25 meq O2/kg</span>
+									</label>
+									<div class="retro"></div>
+								</div>
+								<div class="contendorPregunta" id="p3">
+									<h3>3 - Contenido de Polifenoles y Tocoferoles </h3>
+									<h4>¿Qué cantidad de antioxidantes contiene?</h4>
+									<label for="" >
+										<input type="radio" name="antioxidantes" value="Alta">
+										<span>Alta (rico en polifenoles y vitamina E)</span>
+									</label>
+									<label for="" >
+										<input type="radio" name="antioxidantes" value="Media">
+										<span>Media</span>
+									</label>
+									<label for="" >
+										<input type="radio" name="antioxidantes" value="Baja">
+										<span>Baja</span>
+									</label>
+									<div class="retro"></div>
+								</div>
+								<div class="contendorPregunta" id="p4">
+									<h3>4 - Punto de Humo</h3>
+									<h4>¿A qué temperatura comienza a descomponerse?</h4>
+									<label for="" >
+										<input type="radio" name="humo" value="200">
+										<span>200°C</span>
+									</label>
+									<label for="" >
+										<input type="radio" name="humo" value="230">
+										<span>230°C</span>
+									</label>
+									<label for="" >
+										<input type="radio" name="humo" value="170">
+										<span>170°C</span>
+									</label>
+									<div class="retro"></div>
+								</div>
+								<div class="bloqueBotones">
+									<button id="botonCorregir">Ver resultado</button>
+									<button id="botonVolverEmp">Volver a empezar</button>
+								</div>
+							</div>
                         </div>
                         <div id="apliDiet">
 							<h2>APLICACIONES DIETÉTICAS</h2>

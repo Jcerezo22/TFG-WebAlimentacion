@@ -74,10 +74,6 @@
     cursor: pointer;
 }
 
-.contendorPregunta input[type="checkbox"] {
-    margin-right: 10px;
-}
-
 .expCaso{
     margin-top: 30px;
     display: none;
@@ -290,7 +286,6 @@ label.correctaNoMarcada {
     #checklistTituloConten p {
         font-size: 1.3rem;
     }
-
 }
 
 /* ===================== MEDIA QUERY  1601px  ================================= */
