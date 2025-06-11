@@ -1,5 +1,9 @@
 $(window).on("load", inicio);
 
+let p, a, d, t;
+let pHVal, acVal, dVal, tVal;
+let resultado;
+
 function inicio() {
   $("#pestannas").tabs({ event: "click" });
 
@@ -67,7 +71,22 @@ function inicio() {
     $('#infoMicro').show();
   });
  
+  // Inicializar variables
+  p = $("#pHBarra");
+  a = $("#acicezBarra");
+  d = $("#densidadBarra");
+  t = $("#temperaturaBarra");
 
+  pHVal = $("#pHVal");
+  acVal = $("#acVal");
+  dVal = $("#dVal");
+  tVal = $("#tVal");
+
+  resultado = $("#resultado");
+
+  [p, a, d, t].forEach(el => el.on("input", actualizar));
+
+  actualizar(); // inicial
 }
 
 function mostrarInfo(pais) {
@@ -609,4 +628,58 @@ function cambioPh() {
   imagen.src = imagenesPhLeche[indicePhLeche].src;
   informacion.textContent = imagenesPhLeche[indicePhLeche].informacion;
   indicePhLeche = (indicePhLeche + 1) % imagenesAcidezLeche.length;
+}
+
+function actualizar() {
+  const pH = parseFloat(p.val());
+  const acicez = parseFloat(a.val());
+  const densidad = parseFloat(d.val());
+  const temperatura = parseFloat(t.val());
+
+  pHVal.text(pH);
+  acVal.text(acicez);
+  dVal.text(densidad.toFixed(2));
+  tVal.text(temperatura);
+
+  // Diagnóstico dinámico
+  let uso, estado, recomendacion;
+
+  if (pH < 150) {
+    uso = "Repostería y panes suaves";
+  } else if (pH < 300) {
+    uso = "Panificación general";
+  } else {
+    uso = "Productos integrales o rústicos";
+  }
+
+  if (acicez > 15 || temperatura > 25) {
+    estado = "Riesgo alto de proliferación microbiana 🚨";
+  } else if (acicez < 12) {
+    estado = "Harina muy seca, podría afectar absorción";
+  } else {
+    estado = "Buena estabilidad";
+  }
+
+  if (densidad > 0.75) {
+    recomendacion = "Almacenar en recipientes resistentes, poco aireados.";
+  } else {
+    recomendacion = "Harina aireada, fácil de mezclar.";
+  }
+
+  resultado.html(`
+    <p><strong>Recomendación:</strong> ${recomendacion}</p>
+    <p><strong>Estado de conservación:</strong> ${estado}</p>
+    <p><strong>Uso ideal:</strong> ${uso}</p>
+  `);
+
+  // Cambiar color de fondo de cada barra
+  [p, a, d, t].forEach(barra => {
+    let valor = parseFloat(barra.val());
+    let min = parseFloat(barra.attr('min'));
+    let max = parseFloat(barra.attr('max'));
+    let porcentaje = ((valor - min) / (max - min)) * 100;
+    let colorIzquierda = "#77b4d8";
+    let colorDerecha = "#ddd";
+    barra.css('background', `linear-gradient(to right, ${colorIzquierda} 0%, ${colorIzquierda} ${porcentaje}%, ${colorDerecha} ${porcentaje}%, ${colorDerecha} 100%)`);
+  });
 }

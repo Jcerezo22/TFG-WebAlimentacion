@@ -41,15 +41,6 @@ function inicio(){
     d = $("#densidad");
     t = $("#temperatura");
 
-    g.on('input', actualizarColorBarra);
-    g.trigger('input');
-    h.on('input', actualizarColorBarra);
-    h.trigger('input');
-    d.on('input', actualizarColorBarra);
-    d.trigger('input');
-    t.on('input', actualizarColorBarra);
-    t.trigger('input');
-
     gVal = $("#gVal");
     hVal = $("#hVal");
     dVal = $("#dVal");
@@ -141,60 +132,58 @@ function cerrarDieta() {
 }
 
 function actualizar() {
-    const granulometria = parseInt(g.val());
-    const humedad = parseFloat(h.val());
-    const densidad = parseFloat(d.val());
-    const temperatura = parseFloat(t.val());
+  const granulometria = parseInt(g.val());
+  const humedad = parseFloat(h.val());
+  const densidad = parseFloat(d.val());
+  const temperatura = parseFloat(t.val());
 
-    gVal.text(granulometria);
-    hVal.text(humedad);
-    dVal.text(densidad.toFixed(2));
-    tVal.text(temperatura);
+  gVal.text(granulometria);
+  hVal.text(humedad);
+  dVal.text(densidad.toFixed(2));
+  tVal.text(temperatura);
 
-    // Diagnóstico dinámico
-    let uso, estado, recomendacion;
+  // Diagnóstico dinámico
+  let uso, estado, recomendacion;
 
-    if (granulometria < 150) {
-        uso = "Repostería y panes suaves";
-    } else if (granulometria < 300) {
-        uso = "Panificación general";
-    } else {
-        uso = "Productos integrales o rústicos";
-    }
+  if (granulometria < 150) {
+    uso = "Repostería y panes suaves";
+  } else if (granulometria < 300) {
+    uso = "Panificación general";
+  } else {
+    uso = "Productos integrales o rústicos";
+  }
 
-    if (humedad > 15 || temperatura > 25) {
-        estado = "Riesgo alto de proliferación microbiana 🚨";
-    } else if (humedad < 12) {
-        estado = "Harina muy seca, podría afectar absorción";
-    } else {
-        estado = "Buena estabilidad";
-    }
+  if (humedad > 15 || temperatura > 25) {
+    estado = "Riesgo alto de proliferación microbiana 🚨";
+  } else if (humedad < 12) {
+    estado = "Harina muy seca, podría afectar absorción";
+  } else {
+    estado = "Buena estabilidad";
+  }
 
-    if (densidad > 0.75) {
-        recomendacion = "Almacenar en recipientes resistentes, poco aireados.";
-    } else {
-        recomendacion = "Harina aireada, fácil de mezclar.";
-    }
+  if (densidad > 0.75) {
+    recomendacion = "Almacenar en recipientes resistentes, poco aireados.";
+  } else {
+    recomendacion = "Harina aireada, fácil de mezclar.";
+  }
 
-    resultado.html(`
-        <p><strong>Recomendación:</strong> ${recomendacion}</p>
-        <p><strong>Estado de conservación:</strong> ${estado}</p>
-        <p><strong>Uso ideal:</strong> ${uso}</p>
-    `);
-}
+  resultado.html(`
+    <p><strong>Recomendación:</strong> ${recomendacion}</p>
+    <p><strong>Estado de conservación:</strong> ${estado}</p>
+    <p><strong>Uso ideal:</strong> ${uso}</p>
+  `);
 
-function actualizarColorBarra(event){
-    let barra = $(event.target);
-
+  // Cambiar color de fondo de cada barra
+  [g, h, d, t].forEach(barra => {
     let valor = parseFloat(barra.val());
     let min = parseFloat(barra.attr('min'));
     let max = parseFloat(barra.attr('max'));
-
-    // Determinar los colores según el valor
-    let colorIzquierda = "#8b461b";
     let porcentaje = ((valor - min) / (max - min)) * 100;
-
-    barra.css('background', `linear-gradient(to right, ${colorIzquierda} 0%, ${colorIzquierda} ${porcentaje}%, #ddd ${porcentaje}%, #ddd 100%)`);
+    let colorIzquierda = "#8b461b";
+    let colorDerecha = "#ddd";
+    barra.css('background', `linear-gradient(to right, ${colorIzquierda} 0%, ${colorIzquierda} ${porcentaje}%, ${colorDerecha} ${porcentaje}%, ${colorDerecha} 100%)`);
+  });
 }
+
 
 
