@@ -84,9 +84,9 @@ function inicio() {
 
   resultado = $("#resultado");
 
-  [p, a, d, t].forEach(el => el.on("input", actualizar));
+  [p, a, d, t].forEach(el => el.on("input", diagnosticarLeche));
 
-  actualizar(); // inicial
+  diagnosticarLeche(); // inicial
 }
 
 function mostrarInfo(pais) {
@@ -630,47 +630,16 @@ function cambioPh() {
   indicePhLeche = (indicePhLeche + 1) % imagenesAcidezLeche.length;
 }
 
-function actualizar() {
+function diagnosticarLeche() {
   const pH = parseFloat(p.val());
-  const acicez = parseFloat(a.val());
+  const acidez = parseFloat(a.val());
   const densidad = parseFloat(d.val());
   const temperatura = parseFloat(t.val());
 
-  pHVal.text(pH);
-  acVal.text(acicez);
-  dVal.text(densidad.toFixed(2));
+  pHVal.text(pH.toFixed(1));
+  acVal.text(acidez);
+  dVal.text(densidad.toFixed(3));
   tVal.text(temperatura);
-
-  // Diagnóstico dinámico
-  let uso, estado, recomendacion;
-
-  if (pH < 150) {
-    uso = "Repostería y panes suaves";
-  } else if (pH < 300) {
-    uso = "Panificación general";
-  } else {
-    uso = "Productos integrales o rústicos";
-  }
-
-  if (acicez > 15 || temperatura > 25) {
-    estado = "Riesgo alto de proliferación microbiana 🚨";
-  } else if (acicez < 12) {
-    estado = "Harina muy seca, podría afectar absorción";
-  } else {
-    estado = "Buena estabilidad";
-  }
-
-  if (densidad > 0.75) {
-    recomendacion = "Almacenar en recipientes resistentes, poco aireados.";
-  } else {
-    recomendacion = "Harina aireada, fácil de mezclar.";
-  }
-
-  resultado.html(`
-    <p><strong>Recomendación:</strong> ${recomendacion}</p>
-    <p><strong>Estado de conservación:</strong> ${estado}</p>
-    <p><strong>Uso ideal:</strong> ${uso}</p>
-  `);
 
   // Cambiar color de fondo de cada barra
   [p, a, d, t].forEach(barra => {
@@ -682,4 +651,79 @@ function actualizar() {
     let colorDerecha = "#ddd";
     barra.css('background', `linear-gradient(to right, ${colorIzquierda} 0%, ${colorIzquierda} ${porcentaje}%, ${colorDerecha} ${porcentaje}%, ${colorDerecha} 100%)`);
   });
+
+  // Diagnóstico individual y estado global
+  let estadoGlobal = "bueno"; // bueno > advertencia > malo
+
+  // pH
+  let pHDiag;
+  if (pH < 6.6) {
+    pHDiag = "❌ Fermentada";
+    estadoGlobal = "malo";
+  } else if (pH >= 6.6 && pH <= 6.8) {
+    pHDiag = "✔️ Fresca";
+  } else if (pH > 7.0) {
+    pHDiag = "❌ Contaminada";
+    estadoGlobal = "malo";
+  } else {
+    pHDiag = "⚠️ Advertencia";
+    if (estadoGlobal !== "malo") 
+      estadoGlobal = "advertencia";
+  }
+
+  // Acidez
+  let acidezDiag;
+  if (acidez < 14) {
+    acidezDiag = "⚠️ Baja";
+    if (estadoGlobal === "bueno") 
+      estadoGlobal = "advertencia";
+  } else if (acidez >= 14 && acidez <= 18) {
+    acidezDiag = "✔️ Normal";
+  } else {
+    acidezDiag = "🚫 Alta";
+    estadoGlobal = "malo";
+  }
+
+  // Densidad
+  let densidadDiag;
+  if (densidad == 1.028) {
+    densidadDiag = "⚠️ Aguada o adulterada";
+    if (estadoGlobal === "bueno") 
+      estadoGlobal = "advertencia";
+  } else if (densidad > 1.033) {
+    densidadDiag = "🚫 Concentrada o descremada";
+    estadoGlobal = "malo";
+  } else {
+    densidadDiag = "✔️ Ideal";
+  }
+
+  // Temperatura
+  let temperaturaDiag;
+  if (temperatura == 2) {
+    temperaturaDiag = "⚠️ Muy baja, riesgo de congelación";
+    if (estadoGlobal === "bueno") estadoGlobal = "advertencia";
+  } else if (temperatura > 8) {
+    temperaturaDiag = "🚫 Inadecuada, riesgo de deterioro";
+    estadoGlobal = "malo";
+  } else {
+    temperaturaDiag = "✔️ Ideal";
+  }
+
+  // Diagnóstico global
+  let diagnostico;
+  if (estadoGlobal === "bueno") {
+    diagnostico = "✅ Leche óptima para consumo.";
+  } else if (estadoGlobal === "advertencia") {
+    diagnostico = "⚠️ Precaución: revise los parámetros en amarillo.";
+  } else {
+    diagnostico = "❌ No apta para consumo: revise los parámetros en rojo.";
+  }
+
+  resultado.html(`
+    <p><strong>pH:</strong> ${pHDiag}</p>
+    <p><strong>Acidez:</strong> ${acidezDiag}</p>
+    <p><strong>Densidad:</strong> ${densidadDiag}</p>
+    <p><strong>Temperatura:</strong> ${temperaturaDiag}</p>
+    <p><strong>Diagnóstico global:</strong> ${diagnostico}</p>
+  `);
 }
