@@ -270,7 +270,11 @@ div#productoHarina::after {
     font-size: 2rem;
     color: #d35318; 
     position: absolute;
-    left: 27%;
+}
+
+#contetTitiProduc{
+    display: flex;
+    justify-content: center;
 }
 
 @font-face{
@@ -549,10 +553,6 @@ footer{
         margin-top: 50px;
     }
 
-    #tituloProduc{
-        left: 37%;
-    }
-
     footer{
         min-height: 300px;
     }
@@ -605,10 +605,6 @@ footer{
 
     .promocionIncio{
         min-height: 40px;
-    }
-
-    #tituloProduc{
-        left: 40%;
     }
 
     footer{
@@ -683,7 +679,6 @@ footer{
 
     #tituloProduc{
         font-size: 3rem;
-        left: 40%;
     }
 
     footer{
@@ -845,7 +840,6 @@ footer{
 
     #tituloProduc{
         font-size: 3.5rem;
-        left: 40%;
     }
     
     footer{
@@ -1018,7 +1012,6 @@ footer{
 
     #tituloProduc{
         font-size: 4rem;
-        left: 40%;
     }
 
     footer{
