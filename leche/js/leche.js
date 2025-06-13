@@ -690,7 +690,7 @@ function diagnosticarLeche() {
     densidadDiag = "⚠️ Aguada o adulterada";
     if (estadoGlobal === "bueno") 
       estadoGlobal = "advertencia";
-  } else if (densidad > 1.033) {
+  } else if (densidad > 1.035) {
     densidadDiag = "🚫 Concentrada o descremada";
     estadoGlobal = "malo";
   } else {

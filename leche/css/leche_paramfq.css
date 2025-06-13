@@ -33,7 +33,7 @@
     padding: 8px;
 }
 
-#barraRango {
+.contenedorParamfq {
     display: flex;
     flex-direction: column;   
     align-items: flex-start;     
@@ -42,7 +42,49 @@
     padding-top: 20px;
 }
 
-#tituloRangoAcidez, #tituloRangoPH {
+.contenedorVideo {
+    margin-bottom: 20px;
+    position: relative;
+    width: 100%;
+    /* 16:9 aspect ratio */
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+}
+
+.contenedorVideo iframe {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+#graficaDensidad {
+    display: block;
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    border-radius: 20px;
+}
+
+.gif-css {
+    width: 200px;
+    height: 300px;
+    background-image: url('../../img/microOrgLeche1.png');
+    background-size:cover;
+    animation: gifFrames 1s steps(2) infinite;
+}
+
+@keyframes gifFrames {
+  0%   { background-image: url('../../img/microOrgLeche1.png'); }
+  50%  { background-image: url('../../img/microOrgLeche2.png'); }
+  100% { background-image: url('../../img/microOrgLeche1.png'); }
+}
+
+.tituloParamfq {
     display: flex;
     align-items: center; 
     gap: 10px;
@@ -50,7 +92,7 @@
     margin-top: 10px;
 }
   
-#resultadoAcidez, #resultadopH{
+#resultadoAcidez, #resultadopH, .informacionParamfq{
     margin-top: 20px;
     margin-bottom: 0px;
     font-size: 15px;
@@ -68,7 +110,7 @@
     color: #204060;
 }
 
-#barraRango label {
+.contenedorParamfq label {
     display: flex;
     flex-direction: column;
     align-items:flex-start;
@@ -159,18 +201,24 @@ button:hover {
 
 /* ===================== MEDIA QUERY  400px - 500px  ================================= */
 @media (min-width: 400px) {
-    #tituloRangoAcidez h3, #tituloRangoPH h3 {
+    .tituloParamfq h3 {
         font-size: 18px;
     }
 
-    #barraRango label,
-    #barraRango,
+    .contenedorParamfq label,
+    .contenedorParamfq,
     #resultadoAcidez,
     #resultadopH,
     .infoParte,
     #informacionAcidezLeche,
-    #informacionPhLeche {
+    #informacionPhLeche,
+    .informacionParamfq {
         font-size: 15px;
+    }
+
+    .contenedorVideo {
+        max-width: 350px;
+        margin: 0 auto;
     }
 
     input[type="range"] {
@@ -205,18 +253,24 @@ button:hover {
 
 /* ===================== MEDIA QUERY  500px - 800px  ================================= */
 @media (min-width: 501px) {
-    #tituloRangoAcidez h3, #tituloRangoPH h3 {
+    .tituloParamfq h3 {
         font-size: 20px;
     }
 
-    #barraRango label,
-    #barraRango,
+    .contenedorParamfq label,
+    .contenedorParamfq,
     #resultadoAcidez,
     #resultadopH,
     .infoParte,
     #informacionAcidezLeche,
-    #informacionPhLeche {
+    #informacionPhLeche,
+    .informacionParamfq {
         font-size: 16px;
+    }
+
+    .contenedorVideo {
+        max-width: 480px;
+        margin: 0 auto;
     }
 
     input[type="range"] {
@@ -246,18 +300,24 @@ button:hover {
 
 /* ===================== MEDIA QUERY  801px - 1000px  ================================= */
 @media (min-width: 801px) {
-    #tituloRangoAcidez h3, #tituloRangoPH h3 {
+    .tituloParamfq h3 {
         font-size: 22px;
     }
 
-    #barraRango label,
-    #barraRango,
+    .contenedorParamfq label,
+    .contenedorParamfq,
     #resultadoAcidez,
     #resultadopH,
     .infoParte,
     #informacionAcidezLeche,
-    #informacionPhLeche {
+    #informacionPhLeche,
+    .informacionParamfq {
         font-size: 17px;
+    }
+
+    .contenedorVideo {
+        max-width: 700px;
+        margin: 0 auto;
     }
 
     input[type="range"] {
@@ -288,18 +348,24 @@ button:hover {
 
 /* ===================== MEDIA QUERY  1001px - 1200px  ================================= */
 @media (min-width: 1001px) {
-    #tituloRangoAcidez h3, #tituloRangoPH h3 {
+    .tituloParamfq h3 {
         font-size: 23px;
     }
 
-    #barraRango label,
-    #barraRango,
+    .contenedorParamfq label,
+    .contenedorParamfq,
     #resultadoAcidez,
     #resultadopH,
     .infoParte,
     #informacionAcidezLeche,
-    #informacionPhLeche {
+    #informacionPhLeche,
+    .informacionParamfq {
         font-size: 18px;
+    }
+
+    .contenedorVideo {
+        max-width: 900px;
+        margin: 0 auto;
     }
 
     input[type="range"] {
@@ -338,20 +404,26 @@ button:hover {
 
 /* ===================== MEDIA QUERY  1201px - 1600px  ================================= */
 @media (min-width: 1201px) {
-    #tituloRangoAcidez h3, #tituloRangoPH h3 {
+    .tituloParamfq h3 {
         font-size: 24px;
     }
 
-    #barraRango label,
-    #barraRango,
+    .contenedorParamfq label,
+    .contenedorParamfq,
     #resultadoAcidez,
     #resultadopH,
     .infoParte,
     #informacionAcidezLeche,
-    #informacionPhLeche {
+    #informacionPhLeche,
+    .informacionParamfq {
         font-size: 19px;
     }
     
+    .contenedorVideo {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
     input[type="range"] {
         height: 10px; 
     }
@@ -374,18 +446,24 @@ button:hover {
 
 /* ===================== MEDIA QUERY  1601px  ================================= */
 @media (min-width: 1601px) {
-    #tituloRangoAcidez h3, #tituloRangoPH h3 {
+    .tituloParamfq h3 {
         font-size: 25px;
     }
 
-    #barraRango label,
-    #barraRango,
+    .contenedorParamfq label,
+    .contenedorParamfq,
     #resultadoAcidez,
     #resultadopH,
     .infoParte,
     #informacionAcidezLeche,
-    #informacionPhLeche {
+    #informacionPhLeche, 
+    .informacionParamfq {
         font-size: 20px;
+    }
+
+    .contenedorVideo {
+        max-width: 1400px;
+        margin: 0 auto;
     }
 
     input[type="range"] {
